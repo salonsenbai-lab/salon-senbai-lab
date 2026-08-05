@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOA THE OIL PARFUM ザ ネロリ｜サロン専売品ラボ</title>
+<style>
+  :root {
+    --ink: #212b21;
+    --ink-soft: #4c5a4a;
+    --paper: #f6f7f0;
+    --paper-raise: #ffffff;
+    --sage: #7c9473;
+    --sage-deep: #47593f;
+    --sage-line: #c7d2bd;
+    --mist: #e9ede2;
+    --clay: #b5674a;
+    --clay-deep: #954f37;
+    --clay-tint: #f1ded3;
+    --shadow: 0 1px 2px rgba(33, 43, 33, 0.06);
+    --measure: 38em;
+    --radius: 3px;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #e9ecE2;
+    --ink-soft: #b9c2b2;
+    --paper: #171d15;
+    --paper-raise: #1e251b;
+    --sage: #9bb391;
+    --sage-deep: #c3d4b9;
+    --sage-line: #3a462f;
+    --mist: #212a1d;
+    --clay: #dd9270;
+    --clay-deep: #eaab8b;
+    --clay-tint: #2c211b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e9ecE2;
+      --ink-soft: #b9c2b2;
+      --paper: #171d15;
+      --paper-raise: #1e251b;
+      --sage: #9bb391;
+      --sage-deep: #c3d4b9;
+      --sage-line: #3a462f;
+      --mist: #212a1d;
+      --clay: #dd9270;
+      --clay-deep: #eaab8b;
+      --clay-tint: #2c211b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Noto Sans JP", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    color: var(--sage-deep);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  p { margin: 0 0 1.1em; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---- PR bar ---- */
+  .prbar {
+    background: var(--sage-deep);
+    color: var(--paper-raise);
+  }
+  .prbar .wrap-wide {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #eef1e8;
+  }
+  .prbar strong { color: var(--clay-tint); font-weight: 700; }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    padding: 76px 0 88px;
+    background: linear-gradient(180deg, var(--mist) 0%, var(--paper) 78%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--sage-line), transparent 70%);
+    opacity: 0.55;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero .prehead {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    box-shadow: inset 0 -0.42em 0 var(--clay-tint);
+  }
+  .hero .sub {
+    max-width: 32em;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  .sprig {
+    margin-top: 40px;
+    width: 96px;
+    height: auto;
+    color: var(--sage);
+  }
+
+  /* ---- CTA button ---- */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 15px 30px;
+    background: var(--clay);
+    color: #fff8f3;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: var(--clay-deep); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+  .cta .arrow { font-size: 1.05em; }
+  .cta-row { display: flex; justify-content: flex-start; }
+  .cta-row.center { justify-content: center; }
+  .price-note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Section rhythm ---- */
+  section.beat {
+    padding: 68px 0;
+  }
+  section.beat.tint { background: var(--mist); }
+  section.beat.deep {
+    background: var(--sage-deep);
+    color: #eef1e8;
+  }
+  section.beat.deep h2 { color: #fff; }
+  section.beat.deep .eyebrow { color: var(--clay-tint); }
+  section.beat.deep p { color: #dbe3d3; }
+
+  .beat h2 {
+    font-size: clamp(1.28rem, 2.6vw, 1.6rem);
+    line-height: 1.6;
+    margin: 10px 0 26px;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Figures (images/ 配下・後で実画像を差し替え) ---- */
+  .shot {
+    margin: 32px 0 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    background: var(--mist);
+  }
+  .shot figcaption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Check list ---- */
+  .checks {
+    list-style: none;
+    margin: 26px 0 24px;
+    padding: 0;
+  }
+  .checks li {
+    position: relative;
+    padding: 12px 0 12px 32px;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.96rem;
+    color: var(--ink);
+  }
+  .checks li:first-child { border-top: 1px solid var(--sage-line); }
+  .checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    color: var(--clay);
+    font-weight: 700;
+  }
+
+  /* ---- Reasons / cards ---- */
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .reason-card {
+    background: var(--paper-raise);
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+  }
+  .reason-card .num {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 1.7rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .reason-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .reason-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Spec table ---- */
+  .spec {
+    margin: 30px 0;
+    border-top: 1px solid var(--sage-line);
+  }
+  .spec dl {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    margin: 0;
+  }
+  .spec dt, .spec dd {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.92rem;
+  }
+  .spec dt {
+    color: var(--sage);
+    font-weight: 700;
+  }
+  .spec dd { margin: 0; }
+
+  .price-tag {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- Feature rows ---- */
+  .feature {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--sage-line);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .feature:first-of-type { border-top: 1px solid var(--sage-line); }
+  .feature .f-title { font-weight: 700; color: var(--ink); }
+  .feature .f-chain {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .feature .f-chain span.step { color: var(--sage); }
+
+  /* ---- Trust grid ---- */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .trust-item {
+    padding: 20px;
+    background: var(--paper-raise);
+    border-radius: var(--radius);
+    border: 1px solid var(--sage-line);
+  }
+  .trust-item h3 {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+  .trust-item p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Voice quotes ---- */
+  .voice {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .voice-item {
+    padding-left: 18px;
+    border-left: 2px solid var(--sage);
+  }
+  .voice-item .v-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .voice-item p { font-size: 0.94rem; margin: 0; }
+  .voice-foot {
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- FAQ ---- */
+  .faq { margin-top: 28px; border-top: 1px solid var(--sage-line); }
+  .faq details {
+    border-bottom: 1px solid var(--sage-line);
+  }
+  .faq summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    font-size: 0.96rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before {
+    content: "Q";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--clay);
+    flex: none;
+  }
+  .faq summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq .a {
+    display: flex;
+    gap: 12px;
+    padding: 0 4px 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .faq .a::before {
+    content: "A";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage);
+    flex: none;
+  }
+
+  /* ---- Price reflection ---- */
+  .price-box {
+    margin-top: 28px;
+    padding: 26px 24px;
+    background: var(--clay-tint);
+    border-radius: var(--radius);
+  }
+  .price-box .amount {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 2rem;
+    color: var(--clay-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .price-box .amount span { font-size: 0.9rem; margin-left: 6px; color: var(--ink-soft); font-family: inherit; }
+
+  /* ---- Final ---- */
+  .final h2 { color: #fff; }
+  .ps {
+    margin-top: 46px;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+  }
+  .ps .eyebrow { color: var(--clay-tint); }
+
+  footer {
+    padding: 40px 0 56px;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  footer .brand {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage-deep);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  /* ---- Series nav (round1/2/3/4/5 相互リンク) ---- */
+  .series-nav {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--sage-line);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .series-nav a { color: var(--sage-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .spec dl { grid-template-columns: 7em 1fr; }
+    section.beat { padding: 52px 0; }
+    .hero { padding: 56px 0 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="prbar">
+  <div class="wrap-wide">
+    【PR】本ページはアフィリエイトプログラム(A8.net)を利用して商品を紹介しています。ページ内リンクからの購入により、当方に<strong>成果報酬</strong>が発生する場合があります。記載内容は特定の効果効能を保証するものではなく、一般的な商品情報と個人の使用感に基づいています。
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="prehead">洗う・足す・整える・週2〜3回の集中ケア。4つ全部やった。それなのに鏡の前で「悪くないけど、何か足りない」と思ってしまう人へ。</p>
+    <h1>髪の状態は、もう整っている。それでも満たされなかった私に、5本目にしてやっと分かった"最後の1ピース"は、<em>補修じゃなくて香り</em>でした。</h1>
+    <p class="sub">LOA THE OIL PARFUM「ザ ネロリ」。¥8,800 / 70ml(¥125/ml)。2026年5月に発売されたばかりのプレミアムラインで、発売から日が浅いにもかかわらず直近1ヶ月で200点以上が購入されている新商品です。補修目的のオイルではなく"香水オイル"。だから第1〜4弾のケアと役割がぶつからず、そのまま上に重ねられます。4回かけて「髪そのもの」を整えてきた私が、5回目にしてようやく気づいた"補修と香りを分ける"という考え方を紹介します。</p>
+    <div class="cta-row">
+      <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4573682690624" target="_blank" rel="noopener sponsored">
+        LOA THE OIL PARFUM ザ ネロリを見てみる <span class="arrow">→</span>
+      </a>
+    </div>
+    <svg class="sprig" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 118 C50 80 44 50 50 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M50 70 C34 62 24 46 22 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M50 44 C64 38 74 24 76 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="50" cy="8" r="4" fill="currentColor"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">EMPATHY</p>
+      <h2>こんな「整ったのに、満たされない」、心当たりありませんか。</h2>
+      <ul class="checks">
+        <li>ケアを一通り見直して髪の調子は安定したのに、鏡を見て「悪くない」で止まってしまう</li>
+        <li>髪をなびかせたときにふわっと香ってほしいのに、実際は何も香っていない気がする</li>
+        <li>シャンプーやトリートメントの香りが、乾かした瞬間にほとんど消えていることに気づいてしまった</li>
+        <li>香水はつけたいけれど、朝つけると夕方には飛んでいて、結局つけ直す習慣が続かない</li>
+        <li>ケアアイテムを「香りが良さそう」という理由で選んで、補修力のほうで後悔したことがある</li>
+        <li>逆に、補修力で選んだアイテムの香りが好みじゃなくて、毎日ちょっとだけ我慢している</li>
+        <li>「髪をきれいにする」ことは頑張れるのに、「自分の気分を上げる」ためだけの買い物は後回しにしてきた</li>
+      </ul>
+      <p>一つでも頷いたなら、あと3分だけ読み進めてほしいんです。</p>
+      <p>私自身、このシリーズで4回かけて「髪そのもの」を整えてきました。第2弾で毎日のシャンプーを変え、第1弾で洗い流さないトリートメントを足し、第3弾で仕上げのバームを加え、第4弾で週2〜3回の集中ケアを挟んだ。正直、「髪のコンディション」という意味では、もうやれることはほぼやり切った感覚があります。</p>
+      <p>でも、ある日ふと気づいたんです。髪は整った。手触りも変わった。それなのに、鏡の前で「よし、いい感じ」と心から思える日が、そんなに増えていない。──足りなかったのは、補修じゃなかった。「他人から見た髪の状態」は整ったのに、「自分が感じる自分」の部分が、まるごと手つかずだったんです。</p>
+
+      <figure class="shot">
+        <img src="images/01_eyecatch.png" alt="補修は土台、香りは仕上げというイメージ" loading="lazy">
+        <figcaption>補修は"土台"。香りは"仕上げ"。役割が違います。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">IF NOTHING CHANGES</p>
+      <h2>正直に言うと、いちばん怖いのは「香りがしないこと」そのものじゃありません。<br>「ケアさえ整えば、そのうち満足できるはず」と信じたまま、"整えること"だけを永遠に続けてしまうことです。</h2>
+      <p>シャンプーを変える。オイルを足す。バームで仕上げる。マスクで集中ケアする。一つずつ積み上げてきた達成感は、確かにあります。だからこそ、まだ物足りなさが残っているとき、人はこう考えます。「まだケアが足りないんだ」と。</p>
+      <p>そして、6本目のトリートメントを探し始める。7本目のシャンプーを比較し始める。でも半年後も、1年後も、たぶん同じです。補修の物差しで満たそうとしているかぎり、"補修では埋まらない場所"は、いつまでも埋まりません。</p>
+      <p>しかもこれ、お金の話でもあります。「この香り好きかも」という理由でシャンプーやトリートメントを選び、使ってみたら補修力がいまひとつで、また別のものに買い替える。逆に補修力で選んだら香りが好みじゃなくて、1本まるごと我慢して使い切る。1本3,000〜4,000円のアイテムでそれを5回繰り返せば、1万5,000円以上。"補修と香りを1本でまかなおうとして、どちらにも振り切れなかったコスト"を、すでに何年も払い続けていた、ということも珍しくありません。</p>
+      <p>そしてもう一つ。すれ違ったときにふわっといい香りがした人のこと、覚えていませんか。あの数秒で「この人、ちゃんとしてるな」と思った、あの感じ。自分の番になったとき、渡せるものが何もない。これは髪の話であると同時に、「自分で自分の機嫌を取れる手段を、いくつ持っているか」という話でもあります。</p>
+      <p>いちばんもったいないのは、ここです。第1〜4弾のケアで髪はもう整っているのに、その"整った土台"の上に、何も乗せないまま毎日が過ぎていくこと。土台だけあって、仕上げがない。だから「悪くない」で止まる。</p>
+      <p>でも──足りなかったのは、ケアの質でも量でも本数でもなかったんです。「補修」と「香り」を、別々の役割として持っていなかっただけ。まだ間に合います。変えられるのは、出かける前の、たった1プッシュからです。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">THE TURN</p>
+      <h2>そこでたどり着いたのが、「LOA THE OIL PARFUM ザ ネロリ」でした。</h2>
+      <p>ここで一つ、決定的なことに気づいたんです。これまで紹介してきた第1〜4弾のアイテムは、どれも「補修」や「保護」を主目的に設計された商品でした。香りはあくまで、その過程で感じる副次的な要素。メインの役割ではありません。</p>
+      <p>これは「ケアアイテムの香りが弱い」という話ではありません。むしろ当然です。補修成分を最優先に設計されている以上、香りは"添えるもの"になる。毎日使うケアアイテムとして、それが正しい設計なんです。</p>
+      <p>一方で今回のアイテムは、そもそもの設計思想が違います。補修オイルではなく<strong>"香水オイル"というジャンル</strong>。香りそのものが主役として設計されているから、香りの持続力も、変化の仕方も、質感も、まったく別物になります。</p>
+      <p>言ってしまえば、第1〜4弾のケアが"土台"。そしてこの1本が"仕上げ"。土台だけでも髪は整います。でも、仕上げを1つ乗せるだけで、「今日の自分、悪くないな」と思える瞬間を、自分で作れるようになります。</p>
+      <p class="lede">私がこのオイルを信頼できると感じた理由は、大きく3つ。</p>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <span class="num">壱</span>
+          <h3>香りが3段階で変化していく"香水"としての設計</h3>
+          <p>トップはシダーウッドのウッディ&amp;スパイシー、ミドルで華やかなネロリ、ラストはムスク・アンバー・ウッドの余韻。「つけたときの香り」だけで終わらない設計が、決定的な違いです。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">弐</span>
+          <h3>第1〜4弾と役割がぶつからない</h3>
+          <p>補修目的ではなく香り目的。使うタイミングも"出かける直前"。既存のケアを何ひとつ変えずに、上に1つ乗せるだけで完結します。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">参</span>
+          <h3>ヘアもボディも1本で完結するマルチユース</h3>
+          <p>髪に使って手に残ったぶんを、そのまま手の甲や首筋へ。「髪だけ香る」でも「肌だけ香る」でもない、自分ごと包まれる感覚が作れます。</p>
+        </div>
+      </div>
+      <p style="margin-top:28px;">「髪を整えるケア」から、「自分を満たすケア」へ。4回かけて土台を作ってきたからこそ、いま乗せる意味がある1本です。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">THE PRODUCT</p>
+      <h2>LOA THE OIL PARFUM ザ ネロリ とは</h2>
+      <p>LOA(ロア)の「THE OIL」シリーズは、ヘアにもボディにも使えるマルチオイル。その中で「THE OIL PARFUM」は、2026年5月に発売されたばかりのプレミアムラインです。</p>
+      <p>ベースラインの「LOA THE OIL」(¥5,500 / 100ml)が"香りも楽しめるマルチオイル"なら、この「THE OIL PARFUM」は、香りそのものを主役に置いた"香水オイル"。全3香調(ザ ネロリ / パチュリ グリス / パリジャン フラワー)のうち、今回選んだのは、いちばん清潔感があって男女問わず使いやすい「ザ ネロリ」です。</p>
+
+      <figure class="shot">
+        <img src="images/04_product_photo.png" alt="LOA THE OIL PARFUM ザ ネロリ 70ml" loading="lazy">
+        <figcaption>LOA THE OIL PARFUM ザ ネロリ / 70ml</figcaption>
+      </figure>
+
+      <div class="spec">
+        <dl>
+          <dt>タイプ</dt><dd>マルチオイル(ヘア+ボディ兼用の香水オイル/洗い流さない)</dd>
+          <dt>価格</dt><dd class="price-tag">¥8,800(ALBUM ONLINE STORE・70ml/¥125/ml)</dd>
+          <dt>使うタイミング</dt><dd>乾いた髪に、外出前や人と会う前。毛先中心に1〜2プッシュ</dd>
+          <dt>使える場所</dt><dd>髪、ボディ、ハンド、ネイル</dd>
+          <dt>香りの流れ</dt><dd>トップ=シダーウッドのウッディ&amp;スパイシー → ミドル=華やかなネロリ → ラスト=ムスク・アンバー・ウッドが重なる、微かに官能的な余韻</dd>
+          <dt>香りの方向性</dt><dd>清潔感があり甘すぎない。男女問わず使いやすい設計</dd>
+          <dt>発売</dt><dd>2026年5月14日(新商品/直近1ヶ月で200点以上購入)</dd>
+          <dt>位置づけ</dt><dd>「LOA THE OIL」(¥5,500 / 100ml)の上位プレミアムライン</dd>
+        </dl>
+      </div>
+
+      <p>このオイルのいちばんの特徴は、「ケアの工程を、1つも変えない」という点です。お風呂上がりのルーティンは今のまま。第1〜4弾で作った流れに、何も手を加えません。出かける直前に1〜2プッシュ足すだけ。だから「新しいケアを覚える」負担がゼロです。</p>
+      <p>そして70mlという容量。1回2プッシュ・約0.6mlを目安にすると、およそ116回分。毎日使っても3ヶ月以上もつ計算になります。"1本"として見ると高く感じる価格が、"1回あたり"で見るとまったく違う数字に見えてくる──ここが、このアイテムの面白いところです。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4573682690624" target="_blank" rel="noopener sponsored">
+          商品ページで詳細・価格を確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHY IT WORKS</p>
+      <h2>「で、結局それの何がいいの?」に、飾らず正直に答えます。</h2>
+
+      <div class="features">
+        <div class="feature">
+          <div class="f-title">補修オイルではなく"香水オイル"として設計されている</div>
+          <div class="f-chain"><span class="step">だから</span> 香りが「ついで」ではなく主役の性能で作られている ── <span class="step">つまり</span> ケアアイテムの香りでは埋まらなかった"物足りなさ"に、初めて正面から手が届く</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">トップ・ミドル・ラストの3段階で香りが変化していく</div>
+          <div class="f-chain"><span class="step">だから</span> つけた直後から時間が経つまで、香りの表情が変わり続ける ── <span class="step">つまり</span> 朝つけた自分と夕方の自分が、同じ香りで飽きない</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">ヘア・ボディ・ハンド・ネイルに使えるマルチユース設計</div>
+          <div class="f-chain"><span class="step">だから</span> 髪に使って手に残ったぶんを、そのまま肌にも使える ── <span class="step">つまり</span> ヘアオイルとボディ用の香りアイテムを、2本持たなくてよくなる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">洗い流さない/使うのは"出かける直前"</div>
+          <div class="f-chain"><span class="step">だから</span> お風呂上がりのケアルーティンを1ミリも変えなくていい ── <span class="step">つまり</span> 第1〜4弾のケアと競合せず、そのまま上に重ねられる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">清潔感があり甘すぎない、男女問わず使える香り設計</div>
+          <div class="f-chain"><span class="step">だから</span> オフィスでも人と会う場でも使いどころを選びにくい ── <span class="step">つまり</span> 「休日だけのご褒美アイテム」で終わらず、平日の毎日に組み込める</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">70ml・1回2プッシュ(約0.6ml)目安で約116回分</div>
+          <div class="f-chain"><span class="step">だから</span> 1回あたりに換算すると約76円という計算になる ── <span class="step">つまり</span> "今日の自分を仕上げる1回"のコストとして、現実的な範囲におさまる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">2026年5月発売の新商品・直近1ヶ月で200点以上購入</div>
+          <div class="f-chain"><span class="step">だから</span> 話題性がありながら、まだ持っている人はそこまで多くない ── <span class="step">つまり</span> 「みんなと同じ」にならない香りを、早い段階で選べる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">第1〜4弾(補修)の"外側"に位置する仕上げアイテム</div>
+          <div class="f-chain"><span class="step">だから</span> これまで紹介してきた4本と役割が一切かぶらない ── <span class="step">つまり</span> 「洗う→足す→整える→集中ケア」の先に、"香りで仕上げる"という新しい軸が加わる</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;">髪を整えるだけじゃなく、自分の気分まで仕上げる。これは、補修を4回ぶん積み上げてきたからこそ、「補修では埋まらない場所がある」と分かった、私のいちばん正直な実感です。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">WHY TRUST IT</p>
+      <h2>正直に言うと、私は「新商品だから」だけでは商品を信じないタイプです。</h2>
+      <p class="lede">それでもこのオイルを紹介したいと思えたのは、こんな背景があるからです。</p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>香りの構成が、香水と同じ言葉で設計・公開されている</h3>
+          <p>トップ=シダーウッド、ミドル=ネロリ、ラスト=ムスク・アンバー・ウッド。"いい香り"という曖昧な表現ではなく、何がどう変化するのかが明示されている。香りを主役に据えた商品として、設計思想がはっきりしています。</p>
+        </div>
+        <div class="trust-item">
+          <h3>既存ラインの"上位版"として設計されている</h3>
+          <p>ベースの「LOA THE OIL」(¥5,500 / 100ml / 9種の香り展開)がすでにある上で、香りに振り切ったプレミアムラインとして新設されたのが THE OIL PARFUM。思いつきの新商品ではなく、既存ラインの延長線上に置かれた上位モデルです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>2026年5月発売、直近1ヶ月で200点以上が購入されている</h3>
+          <p>発売からまだ日が浅い商品にもかかわらず、この動き。「話題になっているけれど、まだ持っている人は多くない」という、香りアイテムとしていちばんおいしいタイミングだと思っています。</p>
+        </div>
+        <div class="trust-item">
+          <h3>全3香調の中で、いちばん万人向けの香調を選んでいる</h3>
+          <p>パチュリ グリス(ローズとレザー)、パリジャン フラワーと並ぶ中で、ザ ネロリは「清潔感があり男女問わず使いやすい」と明記されている香調。初めての1本として、いちばん失敗しにくい選択だと判断しました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>サロン専売品を、公式通販でそのまま買える</h3>
+          <p>今回紹介する ALBUM ONLINE STORE(株式会社オニカム運営)は、美容室専売品を扱う美容通販サイト。第1弾のオラプレックス、第2弾・第4弾のケラスターゼ、第3弾のTHE HAIR BALM 997、そして第5弾のLOA。5回ぜんぶ、ずっと同じお店です。</p>
+        </div>
+        <div class="trust-item">
+          <h3>「補修」と「香り」を、はじめから別軸として扱っている</h3>
+          <p>補修性能を謳って香りも兼ねようとする商品ではなく、香りの体験に振り切った設計。だからこそ、これまで紹介した4本の上に、役割をぶつけずに重ねられます。</p>
+        </div>
+      </div>
+      <p style="margin-top:24px; font-size:0.8rem; color:var(--ink-soft);">※香りの感じ方には個人差があり、体温・肌質・使用量・その日の環境によって変わります。効果効能を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHAT PEOPLE NOTICE</p>
+      <h2>こんな使用感(声の傾向)</h2>
+      <p>香りアイテムなので、感じ方の個人差はどうしても大きくなります。そのうえで、レビューでよく見かける傾向と、私自身が使って感じたことを、盛らずに、そのまま整理してみます。</p>
+
+      <div class="voice">
+        <div class="voice-item">
+          <p class="v-label">香りの立ち方について</p>
+          <p>つけた瞬間はウッディでスパイシー、少し置くとネロリの華やかさが前に出てくる。「最初の印象と、30分後の印象が違う」というのが、いちばん分かりやすい特徴でした。ケアアイテムの香りに慣れていると、この"変化する"感覚がまず新鮮です。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">強さについて</p>
+          <p>「香水ほど主張しないけれど、ちゃんと香る」という距離感。すれ違いざまに気づかれるくらいで、部屋に入った瞬間に充満するタイプではないと感じています。オフィスや人と会う場面でも使いどころを選びにくいのは、この設計のおかげだと思います。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">テクスチャについて</p>
+          <p>オイルなので当然しっとりしますが、「重くてベタつく」というより"薄くのびて肌になじむ"感触。手に残ったぶんを首筋や手の甲に伸ばしても、テカリが残りにくいのは正直ありがたいポイントでした。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">使い方の自由度について</p>
+          <p>「髪に使ったあと、そのまま手や首に使えるのが便利」という声が印象的です。ヘアオイルとボディオイルとフレグランス、と3つ持つ必要がなくなる。持ち物が減ることが、そのまま続けやすさになります。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">使う量について</p>
+          <p>つけすぎると香りが強く出やすいので、まずは1プッシュから試すのがおすすめです。私は毛先中心に1〜2プッシュで落ち着きました。「足りなければ足す」の順番で試すほうが、失敗しにくいと感じています。</p>
+        </div>
+      </div>
+      <p class="voice-foot">もちろん、香りの好みも肌質も人それぞれ。だからこそ、「自分の体温で、この香りがどう立つか」を一度確かめてみる価値があるアイテムだと思っています。<br>※上記は一般的な使用感の傾向および個人の感想であり、効果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>よくある質問</h2>
+
+      <div class="faq">
+        <details>
+          <summary>普通のヘアオイルと、何が違うんですか?</summary>
+          <div class="a">いちばん大きいのは「主役が何か」です。普通のヘアオイルは補修・保護が主目的で、香りは副次的な要素。このアイテムは"香水オイル"、つまり香りそのものが主役として設計されています。狙っている場所がそもそも違う、と考えると分かりやすいと思います。</div>
+        </details>
+        <details>
+          <summary>第1弾のオラプレックスNo.6や、第3弾のTHE HAIR BALM 997と併用できますか?</summary>
+          <div class="a">できます。というより、それが本来の使い方です。補修と香りは別の軸なので、役割がぶつかりません。「お風呂上がりにNo.6 → 乾かして997で整える → 出かける直前にこのオイルを1プッシュ」という流れがそのまま組めます。</div>
+        </details>
+        <details>
+          <summary>使う順番とタイミングを教えてください。</summary>
+          <div class="a">乾いた髪に、毛先を中心に1〜2プッシュなじませます。洗い流しは不要です。お風呂上がりのケアではなく、"外出前・人と会う前"の仕上げとして使うのがおすすめ。手に残ったぶんは、そのまま手の甲や首筋にひと塗りできます。</div>
+        </details>
+        <details>
+          <summary>香水とはどう使い分けるんですか?</summary>
+          <div class="a">香水は肌に直接つけるもの、これは髪とボディの両方に使える香りオイルです。髪から香るぶん、動いたときにふわっと立ち上がるのが特徴。香水ほど主張しないので、私は「香水を使うほどじゃない日」の選択肢として使っています。併用する場合は、香りが混ざりすぎないよう量を控えめにするのがおすすめです。</div>
+        </details>
+        <details>
+          <summary>香りはどのくらい続きますか?</summary>
+          <div class="a">体温・肌質・使用量・その日の環境によって変わるので一概には言えませんが、トップ→ミドル→ラストと段階的に変化していく設計なので、つけた直後の香りがそのまま続くタイプではありません。時間とともに表情が変わるのを楽しむアイテムだと考えてください。</div>
+        </details>
+        <details>
+          <summary>男性が使っても大丈夫ですか?</summary>
+          <div class="a">大丈夫です。ザ ネロリは「清潔感があり男女問わず使いやすい」と明記されている香調で、甘さに振り切った香りではありません。全3香調の中で、いちばん性別を選びにくいものを選んで紹介しています。</div>
+        </details>
+        <details>
+          <summary>¥8,800は、正直高くないですか?</summary>
+          <div class="a">1本の値札で見れば、たしかに安くはありません。ただ70mlで1回2プッシュ(約0.6ml)目安なら約116回分、1回あたり約76円という計算になります。そして一般的な香水を1本買う金額を考えると、ヘアオイルとボディ用の香りを1本で兼ねられる、という見方もできると思います。</div>
+        </details>
+        <details>
+          <summary>どのくらいの期間もちますか?</summary>
+          <div class="a">70ml、1回2プッシュ・約0.6ml前後を目安にすると約116回分。毎日使っても3ヶ月以上が目安になります。使用量は髪の長さや量で変わるので、あくまで目安として考えてください。</div>
+        </details>
+        <details>
+          <summary>髪がベタつきませんか?</summary>
+          <div class="a">つけすぎると重く感じることはあるので、まず1プッシュから試すのがおすすめです。根元ではなく毛先中心につけると、ベタつきを感じにくくなります。</div>
+        </details>
+        <details>
+          <summary>肌に使っても大丈夫ですか?</summary>
+          <div class="a">ヘアだけでなくボディ・ハンド・ネイルにも使えるマルチユース設計の商品です。ただし肌に合うかどうかは体質によるので、心配な場合は目立たない部分で試してから使ってください。</div>
+        </details>
+        <details>
+          <summary>効果には個人差がありますか?</summary>
+          <div class="a">あります。特に香りは、体温・肌質・使用量・その日の環境によって感じ方が大きく変わります。本商品は効果効能を保証するものではなく、日々のスタイリングの最後に足すアイテムです。</div>
+        </details>
+        <details>
+          <summary>まず1つだけ試したいのですが、それでも大丈夫?</summary>
+          <div class="a">もちろんです。むしろ、この1つだけを足すのがいちばん分かりやすい試し方だと思います。今のケアは何ひとつ変えず、出かける前に1プッシュ足すだけ。それだけで十分です。</div>
+        </details>
+        <details>
+          <summary>どこで買えますか?</summary>
+          <div class="a">下記リンクの ALBUM ONLINE STORE で購入できます。第1弾から第5弾までずっと同じ、美容室専売品を扱う美容通販サイトです。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">ABOUT THE PRICE</p>
+      <h2>価格の考え方</h2>
+      <p>LOA THE OIL PARFUM ザ ネロリは ¥8,800。このシリーズで紹介してきた4本(¥3,740 / ¥4,180 / ¥4,290 / ¥7,260)より、はっきり高い。これは正直に認めます。数字だけ見れば、5本の中でいちばん高いアイテムです。</p>
+      <p>でも、比べる相手が違うんです。過去4本は、すべて「髪を補修するためのケア用品」でした。ケア用品は、ケア用品の相場で考える。だから3,000〜7,000円台という基準になる。一方このアイテムは、香りを主役にした"フレグランス"です。一般的な香水(オードパルファム)なら、1万円を超えるものも珍しくありません。ケア用品の物差しで測ると、話が合わなくなります。</p>
+      <p>70mlで、1回2プッシュ・約0.6ml目安なら約116回分。1回あたり、約76円。毎日使っても3ヶ月以上もつ計算になります。</p>
+      <p>ここで一度だけ、正直に振り返ってみてほしいんです。「この香り好きかも」でシャンプーやトリートメントを選んで、補修力で後悔した回数。逆に補修力で選んで、香りを1本ぶん我慢しながら使い切った回数。1本3,000〜4,000円で5回繰り返せば、1万5,000円以上。私はこの計算をして、正直ちょっと笑ってしまいました。"補修と香りを1本でまかなおうとして、どちらにも振り切れなかったコスト"のほうが、よっぽど高くついていたからです。</p>
+
+      <div class="price-box">
+        <div class="amount">¥8,800<span>/ 70ml・約116回分・1回あたり約76円</span></div>
+        <p style="margin-top:14px;">そしてもう一つ。これはヘアオイルであり、ボディオイルであり、フレグランスでもあります。別々に3つ買っていたものが、1本にまとまる。高いか安いかは、値札だけでは決まりません。"髪の状態を整える"だけでなく、"今日の自分の気分まで仕上げられるか"。そこで考えたとき、¥8,800は、一度試してみる価値のある金額だと、私は思っています。</p>
+      </div>
+
+      <div class="cta-row" style="margin-top:30px;">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4573682690624" target="_blank" rel="noopener sponsored">
+          最新の価格・在庫を商品ページで確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">BEFORE YOU GO</p>
+      <h2>安心して試すために</h2>
+      <p>「8,000円超の香りオイルって、香りを試さずに通販で買って大丈夫なの?」その気持ち、よく分かります。私も最初はまったく同じでした。</p>
+      <p>だからこそ、この商品の香りの構成が細かく公開されているのは大きいと思っています。トップ=シダーウッドのウッディ&amp;スパイシー、ミドル=華やかなネロリ、ラスト=ムスク・アンバー・ウッドの余韻。「なんとなくいい香り」ではなく、何がどう変化するかが分かったうえで選べます。そして全3香調の中でも、ザ ネロリは「清潔感があり男女問わず使いやすい」と明記されている、いちばん冒険しにくい香調です。</p>
+      <p>今回紹介している ALBUM ONLINE STORE は、株式会社オニカムが運営する、美容室専売品を扱う美容通販サイトです。第1弾のオラプレックス、第2弾・第4弾のケラスターゼ、第3弾のTHE HAIR BALM 997、そして今回のLOA。5回ぜんぶ、ずっと同じお店です。</p>
+      <p>そして何より、いきなり5本すべてを揃える必要はありません。第1〜4弾で紹介した補修のケアを、まず一巡させる。そのうえで「髪の調子は悪くないのに、なんとなく物足りない」と感じたタイミングで、この1本を足す。その順番でまったく問題ありません。</p>
+      <p>というより、この5本の中でいちばん最後に足すべきなのが、たぶんこのオイルです。補修という土台が整っていない状態で香りだけ足しても、順番が逆になってしまう。逆に、髪のコンディションがすでに整っている人にとっては、これがいちばん分かりやすい"次の一手"になります。</p>
+      <p>補修は土台、香りは仕上げ。大きく生活を変える買い物ではなく、「出かける前に1プッシュ足す」だけの、小さな一歩。ケアの工程が1つも増えないという気軽さこそが、続けられる理由になります。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※価格・在庫・配送などの詳細は、リンク先の販売ページの情報をご確認ください。<br>※香りの感じ方には個人差があります。心配な場合は少量から試してください。</p>
+
+      <div class="series-nav">
+        シリーズで読む:
+        <a href="../round1/">第1弾・オラプレックス No.6(洗い流さないトリートメント)</a> ／
+        <a href="../round2/">第2弾・ケラスターゼ バン セラピュート(シャンプー)</a> ／
+        <a href="../round3/">第3弾・THE HAIR BALM 997(スタイリングバーム)</a> ／
+        <a href="../round4/">第4弾・ケラスターゼ RE マスク セラピュート(集中ヘアパック)</a> ／
+        第5弾・LOA THE OIL PARFUM ザ ネロリ(香水オイル・このページ)
+      </div>
+    </div>
+  </section>
+
+  <section class="beat deep final">
+    <div class="wrap">
+      <p class="eyebrow">LAST WORD</p>
+      <h2>「洗う」「足す」「整える」「週2〜3回の集中ケア」。4回かけて紹介してきた補修のケアは、これで完成しています。<br>でも、補修は"土台"です。</h2>
+      <p>髪のコンディションを整える仕組みであって、「今日の自分、悪くないな」と思える瞬間を作る仕組みではありません。</p>
+      <p>このまま6本目のトリートメントを探し続けて、「まだケアが足りないのかも」と思いながらまた半年過ごすのか。それとも、整った土台の上に"香り"という仕上げを1つ乗せて、自分の機嫌を自分で取れるようにするのか。</p>
+      <p>小さな選択に見えて、玄関を出る瞬間の気分は、案外ここで変わります。そして、変えられるのは、いつだって"出かける前の1プッシュ"からです。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4573682690624" target="_blank" rel="noopener sponsored">
+          今すぐ ALBUM ONLINE STORE で詳細を見る <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ps">
+        <p class="eyebrow">追伸</p>
+        <p>正直に言うと、このオイルも「魔法の1本」ではありません。どんなアイテムも、髪質や体温、使用量によって感じ方は変わります。香りに至っては、好みそのものが人それぞれです。</p>
+        <p>それでも私がこの1つを紹介したいのは、「満たされないのは、まだケアが足りないからだ」と思い込むのをやめられたからです。足りなかったのは、ケアの質でも量でも本数でもなく、"補修"と"香り"を、別々の役割として持つという考え方でした。</p>
+        <p>5回に分けて紹介してきましたが、この5つを全部揃える必要はまったくありません。市販品ジプシーだった頃の私は、この2つをずっと同じもの(シャンプーやトリートメントの香り)でまかなおうとしていました。分けて考えるようになってから、鏡を見たときの満足度が一段階変わった気がしています。</p>
+        <p>もし、髪の調子はもう悪くないのに、「なんとなく物足りない」がずっと消えていないなら。足りない最後の1つは、たぶん補修ではなく香りです。明日の朝、出かける前の1プッシュから、確かめてみてください。</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4573682690624" target="_blank" rel="noopener sponsored">
+            LOA THE OIL PARFUM ザ ネロリを見てみる <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="brand">サロン専売品ラボ</p>
+    <p>本ページはアフィリエイトプログラム(A8.net)を利用した商品紹介であり、記載内容は一般的な商品情報および個人の使用感に基づくものです。特定の効果効能・結果を保証するものではありません。香りの感じ方・持続の感じ方には、体温・肌質・使用量・環境による個人差があります。1回あたりの使用量・使用回数・容量の目安は、髪の長さや量によって変動します。記載の使用方法・使用量は一般的な目安であり、必ずパッケージの表示をご確認ください。価格・在庫・仕様は変更される場合があるため、最新情報は販売ページをご確認ください。</p>
+  </div>
+</footer>
+
+</body>
+</html>
