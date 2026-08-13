@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アデノバイタル アドバンスト スカルプエッセンス｜サロン専売品ラボ</title>
+<style>
+  :root {
+    --ink: #212b21;
+    --ink-soft: #4c5a4a;
+    --paper: #f6f7f0;
+    --paper-raise: #ffffff;
+    --sage: #7c9473;
+    --sage-deep: #47593f;
+    --sage-line: #c7d2bd;
+    --mist: #e9ede2;
+    --clay: #b5674a;
+    --clay-deep: #954f37;
+    --clay-tint: #f1ded3;
+    --shadow: 0 1px 2px rgba(33, 43, 33, 0.06);
+    --measure: 38em;
+    --radius: 3px;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #e9ecE2;
+    --ink-soft: #b9c2b2;
+    --paper: #171d15;
+    --paper-raise: #1e251b;
+    --sage: #9bb391;
+    --sage-deep: #c3d4b9;
+    --sage-line: #3a462f;
+    --mist: #212a1d;
+    --clay: #dd9270;
+    --clay-deep: #eaab8b;
+    --clay-tint: #2c211b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e9ecE2;
+      --ink-soft: #b9c2b2;
+      --paper: #171d15;
+      --paper-raise: #1e251b;
+      --sage: #9bb391;
+      --sage-deep: #c3d4b9;
+      --sage-line: #3a462f;
+      --mist: #212a1d;
+      --clay: #dd9270;
+      --clay-deep: #eaab8b;
+      --clay-tint: #2c211b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Noto Sans JP", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    color: var(--sage-deep);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  p { margin: 0 0 1.1em; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---- PR bar ---- */
+  .prbar {
+    background: var(--sage-deep);
+    color: var(--paper-raise);
+  }
+  .prbar .wrap-wide {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #eef1e8;
+  }
+  .prbar strong { color: var(--clay-tint); font-weight: 700; }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    padding: 76px 0 88px;
+    background: linear-gradient(180deg, var(--mist) 0%, var(--paper) 78%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--sage-line), transparent 70%);
+    opacity: 0.55;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero .prehead {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    box-shadow: inset 0 -0.42em 0 var(--clay-tint);
+  }
+  .hero .sub {
+    max-width: 32em;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  .sprig {
+    margin-top: 40px;
+    width: 96px;
+    height: auto;
+    color: var(--sage);
+  }
+
+  /* ---- CTA button ---- */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 15px 30px;
+    background: var(--clay);
+    color: #fff8f3;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: var(--clay-deep); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+  .cta .arrow { font-size: 1.05em; }
+  .cta-row { display: flex; justify-content: flex-start; }
+  .cta-row.center { justify-content: center; }
+  .price-note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Section rhythm ---- */
+  section.beat {
+    padding: 68px 0;
+  }
+  section.beat.tint { background: var(--mist); }
+  section.beat.deep {
+    background: var(--sage-deep);
+    color: #eef1e8;
+  }
+  section.beat.deep h2 { color: #fff; }
+  section.beat.deep .eyebrow { color: var(--clay-tint); }
+  section.beat.deep p { color: #dbe3d3; }
+
+  .beat h2 {
+    font-size: clamp(1.28rem, 2.6vw, 1.6rem);
+    line-height: 1.6;
+    margin: 10px 0 26px;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Figures (images/ 配下・後で実画像を差し替え) ---- */
+  .shot {
+    margin: 32px 0 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    background: var(--mist);
+  }
+  .shot figcaption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Check list ---- */
+  .checks {
+    list-style: none;
+    margin: 26px 0 24px;
+    padding: 0;
+  }
+  .checks li {
+    position: relative;
+    padding: 12px 0 12px 32px;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.96rem;
+    color: var(--ink);
+  }
+  .checks li:first-child { border-top: 1px solid var(--sage-line); }
+  .checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    color: var(--clay);
+    font-weight: 700;
+  }
+
+  /* ---- Reasons / cards ---- */
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .reason-card {
+    background: var(--paper-raise);
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+  }
+  .reason-card .num {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 1.7rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .reason-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .reason-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Spec table ---- */
+  .spec {
+    margin: 30px 0;
+    border-top: 1px solid var(--sage-line);
+  }
+  .spec dl {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    margin: 0;
+  }
+  .spec dt, .spec dd {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.92rem;
+  }
+  .spec dt {
+    color: var(--sage);
+    font-weight: 700;
+  }
+  .spec dd { margin: 0; }
+
+  .price-tag {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- Feature rows ---- */
+  .feature {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--sage-line);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .feature:first-of-type { border-top: 1px solid var(--sage-line); }
+  .feature .f-title { font-weight: 700; color: var(--ink); }
+  .feature .f-chain {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .feature .f-chain span.step { color: var(--sage); }
+
+  /* ---- Trust grid ---- */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .trust-item {
+    padding: 20px;
+    background: var(--paper-raise);
+    border-radius: var(--radius);
+    border: 1px solid var(--sage-line);
+  }
+  .trust-item h3 {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+  .trust-item p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Voice quotes ---- */
+  .voice {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .voice-item {
+    padding-left: 18px;
+    border-left: 2px solid var(--sage);
+  }
+  .voice-item .v-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .voice-item p { font-size: 0.94rem; margin: 0; }
+  .voice-foot {
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- FAQ ---- */
+  .faq { margin-top: 28px; border-top: 1px solid var(--sage-line); }
+  .faq details {
+    border-bottom: 1px solid var(--sage-line);
+  }
+  .faq summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    font-size: 0.96rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before {
+    content: "Q";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--clay);
+    flex: none;
+  }
+  .faq summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq .a {
+    display: flex;
+    gap: 12px;
+    padding: 0 4px 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .faq .a::before {
+    content: "A";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage);
+    flex: none;
+  }
+
+  /* ---- Price reflection ---- */
+  .price-box {
+    margin-top: 28px;
+    padding: 26px 24px;
+    background: var(--clay-tint);
+    border-radius: var(--radius);
+  }
+  .price-box .amount {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 2rem;
+    color: var(--clay-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .price-box .amount span { font-size: 0.9rem; margin-left: 6px; color: var(--ink-soft); font-family: inherit; }
+
+  /* ---- Final ---- */
+  .final h2 { color: #fff; }
+  .ps {
+    margin-top: 46px;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+  }
+  .ps .eyebrow { color: var(--clay-tint); }
+
+  footer {
+    padding: 40px 0 56px;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  footer .brand {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage-deep);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  /* ---- Series nav (round1/2/3/4/5/6 相互リンク) ---- */
+  .series-nav {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--sage-line);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .series-nav a { color: var(--sage-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .spec dl { grid-template-columns: 7em 1fr; }
+    section.beat { padding: 52px 0; }
+    .hero { padding: 56px 0 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="prbar">
+  <div class="wrap-wide">
+    【PR】本ページはアフィリエイトプログラム(A8.net)を利用して商品を紹介しています。ページ内リンクからの購入により、当方に<strong>成果報酬</strong>が発生する場合があります。記載内容は特定の効果効能を保証するものではなく、一般的な商品情報と個人の使用感に基づいています。本商品は<strong>医薬部外品</strong>であり、承認された効能は「薄毛・脱毛の予防」です。
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="prehead">洗う・足す・整える・週数回の特別ケア・香りの仕上げ。5本ぜんぶ揃えた。それなのに「なんとなく髪全体に元気がない気がする」が消えないままの人へ。</p>
+    <h1>毛先には5本・合計¥28,270をかけてきたのに、その髪が生えてくる<em>土台には、ずっと¥0だった</em>。6本目にしてようやく、順番が逆だったと気づきました。</h1>
+    <p class="sub">ザ・ヘアケア アデノバイタル アドバンスト スカルプエッセンス(資生堂プロフェッショナル)。¥5,776 / 180mL。通常価格¥7,700から24%オフ、差額¥1,924。アデノシンをはじめとする6つの有効成分を配合した、医薬部外品の薬用育毛エッセンスです。承認されている効能は「薄毛・脱毛の予防」。"今ある髪"を補修するアイテムではなく、"これから生えてくる髪の環境"を整える1本なので、第1〜5弾で紹介したケアと役割がひとつもぶつかりません。5回かけて毛先ばかり見てきた私が、6回目でやっと下を向いた話をします。</p>
+    <div class="cta-row">
+      <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4901872037353" target="_blank" rel="noopener sponsored">
+        アデノバイタル アドバンスト スカルプエッセンスを見てみる <span class="arrow">→</span>
+      </a>
+    </div>
+    <svg class="sprig" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 118 C50 80 44 50 50 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M50 70 C34 62 24 46 22 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M50 44 C64 38 74 24 76 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="50" cy="8" r="4" fill="currentColor"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">EMPATHY</p>
+      <h2>こんな「毛先は整ったのに」、心当たりありませんか。</h2>
+      <ul class="checks">
+        <li>トリートメントもオイルも一通り揃えたのに、髪全体の印象だけが変わらない</li>
+        <li>手触りは良くなったはずなのに、写真に写った自分の髪だけ、なぜか元気がなく見える</li>
+        <li>美容師さんに「地肌、少し乾燥気味ですね」と言われて、そのまま何もしていない</li>
+        <li>シャンプーで洗っている=頭皮のケアはできている、と何となく思っていた</li>
+        <li>分け目やつむじの写真を撮られるのが、前より少しだけ苦手になった</li>
+        <li>排水口やブラシに残る髪の量を、以前より意識して見るようになった</li>
+        <li>頭皮ケアという言葉は知っているのに、「まだ自分には早い」で毎回止めてきた</li>
+      </ul>
+      <p>一つでも頷いたなら、あと3分だけ読み進めてほしいんです。</p>
+      <p>私はこのシリーズで、5回かけて「髪そのもの」を整えてきました。第2弾で毎日のシャンプーを変え、第1弾で洗い流さないトリートメントを足し、第3弾で仕上げのバームを加え、第4弾で週数回の集中ケアを挟み、第5弾で香りという仕上げまで乗せた。正直、「今ある髪」に対してやれることは、ほぼやり切った感覚がありました。</p>
+      <p>でも、ある日ふと気づいたんです。5回とも、私が見ていたのは「毛先から中間」だけだった。傷み、まとまり、艶、香り。ぜんぶ、鏡を見ればすぐ分かる場所です。</p>
+      <p>頭皮は、鏡を見ても直接は見えません。だから、5回ぶん時間もお金もかけておきながら、髪が生えてくる場所そのものには、ただの一度も手を伸ばしていなかった。──足りなかったのは、ケアの本数じゃなかった。「見える場所」ばかり数えて、「見えない場所」を数に入れていなかっただけなんです。</p>
+
+      <figure class="shot">
+        <img src="images/01_eyecatch.png" alt="毛先は結果、頭皮は土台というイメージ" loading="lazy">
+        <figcaption>毛先は"結果"。頭皮は"土台"。見ている階層が違います。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">IF NOTHING CHANGES</p>
+      <h2>正直に言うと、いちばん怖いのは「頭皮が乾燥していること」そのものじゃありません。<br>"予防"という選択肢を持てる時期を、気づかないまま通り過ぎてしまうことです。</h2>
+      <p>頭皮ケアって、不思議な立ち位置にあります。困っていない人は「まだ自分には早い」と言って始めない。そして本気で気になり始めた人は、もう「予防」という言葉では探さなくなる。つまり、予防のためのケアは、"まだ困っていない今"にしか始められないんです。やらない理由がいちばん強い時期と、始めるべき時期が、まるごと重なっている。</p>
+      <p>そして、この構造にはお金の話も付いてきます。私はこのシリーズで、毛先から中間のケアに5本を積み上げてきました。¥3,740 + ¥4,180 + ¥4,290 + ¥7,260 + ¥8,800 で、合計¥28,270。1本ずつは納得して買ったものばかりです。後悔もしていません。</p>
+      <p>でも同じ期間、頭皮に使った金額は、¥0でした。</p>
+      <p>毛先に¥28,270、土台に¥0。数字にして並べた瞬間、私はちょっと言葉を失いました。畑でいえば、収穫した野菜を毎日ていねいに磨きながら、土には一度も水をやっていなかった、ということです。</p>
+      <p>さらに厄介なのは、この状態が"感覚では気づけない"ことです。毛先のケアは、使ったその日に手触りで分かる。だから続けられる。頭皮のケアは、使った日に何かが劇的に変わるわけではありません。だから、後回しにしても痛みがない。痛みがないから、10年でも後回しにできてしまう。</p>
+      <p>半年後も、1年後も、たぶん同じです。6本目のトリートメントを比較して、7本目のオイルを探している。見える場所の解像度だけが上がっていって、見えない場所は、ずっと手つかずのまま。</p>
+      <p>いちばんもったいないのは、ここです。第1〜5弾で「今ある髪」はもう整っているのに、その髪が出てくる場所だけが、5回ぶん置き去りになっていること。</p>
+      <p>でも──足りなかったのは、ケアの質でも量でも本数でもなかったんです。「結果(毛先)」と「土台(頭皮)」を、別の階層として持っていなかっただけ。まだ間に合います。変えられるのは、今夜のお風呂上がりの、たった20プッシュからです。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">THE TURN</p>
+      <h2>そこでたどり着いたのが、「アデノバイタル アドバンスト スカルプエッセンス」でした。</h2>
+      <p>ここで一つ、決定的なことに気づいたんです。第1〜5弾で紹介してきたアイテムは、どれも「今ある髪」に対する設計でした。補修する、まとまりを出す、艶を足す、香らせる。すでに生えている髪を、どう良く見せるかという発想です。</p>
+      <p>これは欠点ではありません。むしろ当然です。毛先の傷みは今そこにある問題なので、今ある髪に効く設計が正しい。5本とも、その役割をきちんと果たしてくれました。</p>
+      <p>一方で今回のアイテムは、そもそも見ている場所が違います。補修でもスタイリングでもなく、頭皮に使う<strong>薬用育毛エッセンス(医薬部外品)</strong>。承認されている効能は「薄毛・脱毛の予防」です。"今ある髪をどうするか"ではなく、"これから生えてくる髪の環境をどう保つか"。時間軸が、まるごと1段階うしろにあります。</p>
+      <p>言ってしまえば、第1〜5弾が"結果"へのケア。そしてこの1本が"土台"へのケア。結果だけを磨いても髪はきれいになります。でも、土台に1枚敷いておくと、「今」と「これから」の両方に手が届くようになります。</p>
+      <p class="lede">私がこのエッセンスを信頼できると感じた理由は、大きく3つ。</p>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <span class="num">壱</span>
+          <h3>医薬部外品として、効能の範囲がはっきりしている</h3>
+          <p>アデノシン、パナックスジンセンエキス、ソフォラ抽出液など6つの有効成分が明記され、「薄毛・脱毛の予防」という承認された効能の範囲が定まっています。"なんとなく良さそう"ではなく、表示で判断できます。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">弐</span>
+          <h3>第1〜5弾と役割がひとつもぶつからない</h3>
+          <p>使う場所は頭皮、使うタイミングは洗髪後または乾いた頭皮。洗い流しません。今のケアを1つも変えず、その下に1枚敷くだけで完結します。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">参</span>
+          <h3>頭皮保湿成分APコンプレックスも入っている</h3>
+          <p>アンズ果汁由来の保湿成分を配合。薬用育毛エッセンスでありながら、頭皮の乾燥ケアも同時にできる設計です。「地肌が乾燥気味」と言われた人には、地味だけれど大きい違いでした。</p>
+        </div>
+      </div>
+      <p style="margin-top:28px;">「髪を良く見せるケア」から、「髪が育つ場所を保つケア」へ。5回かけて結果ばかり磨いてきたからこそ、いま土台に手を伸ばす意味があります。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※本商品は医薬部外品であり、承認された効能は「薄毛・脱毛の予防」です。発毛を確約するものではなく、感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">THE PRODUCT</p>
+      <h2>ザ・ヘアケア アデノバイタル アドバンスト スカルプエッセンス とは</h2>
+      <p>資生堂プロフェッショナルは、美容室・サロンの現場向けにヘア製品を展開しているブランド。その中で「アデノバイタル」は、頭皮ケアの領域を担うラインです。今回のアドバンスト スカルプエッセンスは、そのラインの薬用育毛エッセンスにあたります。</p>
+      <p>第1〜5弾で紹介した5本は、すべて化粧品でした。今回は初めて医薬部外品です。ジャンルそのものが変わる、シリーズ唯一の1本になります。</p>
+
+      <figure class="shot">
+        <img src="images/04_product_photo.png" alt="ザ・ヘアケア アデノバイタル アドバンスト スカルプエッセンス 180mL" loading="lazy">
+        <figcaption>ザ・ヘアケア アデノバイタル アドバンスト スカルプエッセンス / 180mL</figcaption>
+      </figure>
+
+      <div class="spec">
+        <dl>
+          <dt>タイプ</dt><dd>薬用育毛エッセンス(医薬部外品/頭皮用美容液・洗い流さない)</dd>
+          <dt>価格</dt><dd class="price-tag">¥5,776(ALBUM ONLINE STORE・180mL/通常¥7,700から24%オフ・差額¥1,924/約¥32.1/mL)</dd>
+          <dt>有効成分</dt><dd>アデノシン、パナックスジンセンエキス、ソフォラ抽出液、β-グリチルレチン酸、パントテニールエチルエーテル、ニコチン酸アミド</dd>
+          <dt>その他成分</dt><dd>頭皮保湿成分APコンプレックス(アンズ果汁由来)</dd>
+          <dt>効能</dt><dd>薄毛・脱毛の予防(医薬部外品として承認された範囲)</dd>
+          <dt>使うタイミング</dt><dd>洗髪後のタオルドライ後、または乾いた頭皮に。朝晩1日2回が目安</dd>
+          <dt>使い方</dt><dd>ノズルを頭皮に直接あて、頭皮全体に約20プッシュ。そのまま指の腹でなじませ、軽くマッサージ</dd>
+          <dt>使う場所</dt><dd>頭皮(毛先ではありません)</dd>
+          <dt>ブランド</dt><dd>資生堂プロフェッショナル(第1〜5弾とは別ブランド・シリーズ初登場)</dd>
+        </dl>
+      </div>
+
+      <p>このエッセンスのいちばんの特徴は、「今のケアの工程を、1つも置き換えない」という点です。シャンプーもトリートメントもオイルもバームも、今のまま。第1〜5弾で作った流れには、何も手を加えません。その"下"に、頭皮への20プッシュを1工程足すだけ。だから「今使っているものを捨てる」という判断が、一度も発生しません。</p>
+      <p>そして180mLという容量。朝晩1日2回・1回約20プッシュを目安にすると、1日おおよそ4mL前後。180mLなら、およそ45日分。1日あたりにすると約128円という計算になります。夜だけの1日1回で使う場合は、単純計算で約90日分・1日あたり約64円。"1本"として見ると身構える金額が、"1日あたり"で見るとまったく違う数字に見えてきます。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※使用量は髪の長さ・量・地肌の状態によって変わるため、あくまで目安です。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4901872037353" target="_blank" rel="noopener sponsored">
+          商品ページで詳細・価格を確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHY IT WORKS</p>
+      <h2>「で、結局それの何がいいの?」に、飾らず正直に答えます。</h2>
+
+      <div class="features">
+        <div class="feature">
+          <div class="f-title">医薬部外品の薬用育毛エッセンスである</div>
+          <div class="f-chain"><span class="step">だから</span> 承認された効能の範囲(薄毛・脱毛の予防)がはっきりしている ── <span class="step">つまり</span> 何を期待していい商品なのかを、勘ではなく表示で判断できる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">アデノシンほか6つの有効成分が名前で明記されている</div>
+          <div class="f-chain"><span class="step">だから</span> 気になったら自分で成分名を調べられる ── <span class="step">つまり</span> 「良さそうだから」ではなく、納得したうえで続けられる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">頭皮保湿成分APコンプレックス(アンズ果汁由来)も配合されている</div>
+          <div class="f-chain"><span class="step">だから</span> 育毛エッセンスでありながら、頭皮の乾燥ケアも兼ねられる ── <span class="step">つまり</span> 「地肌が乾燥気味」と言われた人が、1本で両方に手を届かせられる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">洗い流さないタイプ</div>
+          <div class="f-chain"><span class="step">だから</span> お風呂の中の工程が1つも増えない ── <span class="step">つまり</span> すすぎ時間も入浴時間も、今日までと同じで済む</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">ノズルを頭皮に直接あてるスプレー式</div>
+          <div class="f-chain"><span class="step">だから</span> 髪をかき分けて狙った場所に届けられる ── <span class="step">つまり</span> 手のひらで塗り広げるより、毛ではなく地肌に届いている実感を持てる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">頭皮全体に約20プッシュ、朝晩1日2回という明確な使用量</div>
+          <div class="f-chain"><span class="step">だから</span> 「どのくらい使えばいいのか」で迷う時間がゼロになる ── <span class="step">つまり</span> 自己流にならず、続ける形が最初から決まっている</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">180mL・1日約4mL目安で約45日分</div>
+          <div class="f-chain"><span class="step">だから</span> 1回あたりではなく1日あたり約128円という計算になる ── <span class="step">つまり</span> "毎日続ける前提のケア"として、現実的な金額の範囲に収まる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">第1〜5弾(今ある髪のケア)の"下"に位置する土台のケア</div>
+          <div class="f-chain"><span class="step">だから</span> 5本のどれとも役割が競合しない ── <span class="step">つまり</span> 「洗う→足す→整える→特別ケア→香り」の手前に、"土台"という階層が加わる</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;">毛先を良く見せるだけじゃなく、その髪が出てくる場所を保っておく。これは、結果へのケアを5本ぶん積み上げてきたからこそ、「結果だけ磨いても届かない場所がある」と分かった、私のいちばん正直な実感です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※感じ方には個人差があります。効果効能を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">WHY TRUST IT</p>
+      <h2>正直に言うと、私は「有名ブランドだから」だけでは商品を信じないタイプです。</h2>
+      <p class="lede">それでもこのエッセンスを紹介したいと思えたのは、こんな背景があるからです。</p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>資生堂プロフェッショナルという、サロン向けの作り手</h3>
+          <p>第1〜5弾で紹介したどのブランドとも重なりません。今回がシリーズ初登場です。美容室で扱われる製品を作り続けている作り手が、頭皮ケア向けに設計したラインです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>医薬部外品として、効能の範囲が承認されている</h3>
+          <p>化粧品ではなく医薬部外品。「薄毛・脱毛の予防」という効能の範囲が定められています。効果が大きいという意味ではなく、"何を言っていい商品なのかが決まっている"という意味で、判断材料としてはっきりしています。</p>
+        </div>
+        <div class="trust-item">
+          <h3>有効成分が6つ、すべて名前で公開されている</h3>
+          <p>アデノシン、パナックスジンセンエキス、ソフォラ抽出液、β-グリチルレチン酸、パントテニールエチルエーテル、ニコチン酸アミド。"独自複合成分"のような曖昧なまとめ方ではなく、個別の名前で確認できます。</p>
+        </div>
+        <div class="trust-item">
+          <h3>「アデノバイタル」は頭皮ケアのラインとして展開されている</h3>
+          <p>思いつきの単発商品ではなく、頭皮ケアという領域に絞って構成されたラインの中の1本。ラインとして継続しているという事実そのものが、私にとっては安心材料でした。</p>
+        </div>
+        <div class="trust-item">
+          <h3>通常¥7,700が¥5,776(24%オフ・差額¥1,924)</h3>
+          <p>毎日続けることが前提のアイテムだからこそ、この差額は無視できません。1本あたり¥1,924の差は、続ける年数の分だけ効いてきます。</p>
+        </div>
+        <div class="trust-item">
+          <h3>サロン専売品を、公式通販でそのまま買える</h3>
+          <p>今回紹介する ALBUM ONLINE STORE(株式会社オニカム運営)は、美容室専売品を扱う美容通販サイト。第1弾のオラプレックス、第2弾・第4弾のケラスターゼ、第3弾のTHE HAIR BALM 997、第5弾のLOA、そして第6弾の資生堂プロフェッショナル。6回ぜんぶ、ずっと同じお店です。</p>
+        </div>
+      </div>
+      <p style="margin-top:24px; font-size:0.8rem; color:var(--ink-soft);">※本商品は医薬部外品であり、承認された効能は「薄毛・脱毛の予防」です。発毛を確約するものではありません。感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHAT PEOPLE NOTICE</p>
+      <h2>こんな使用感(声の傾向)</h2>
+      <p>頭皮ケアは、毛先のケアと違って"その日に手触りで分かる"タイプのアイテムではありません。そのうえで、レビューでよく見かける傾向と、私自身が使って感じたことを、盛らずに、そのまま整理してみます。</p>
+
+      <div class="voice">
+        <div class="voice-item">
+          <p class="v-label">ノズルの使い勝手について</p>
+          <p>髪をかき分けてノズルを地肌にあてる、という動作が最初は少し不慣れでした。ただ2〜3日で慣れます。手のひらでバシャッと塗るタイプではないので、「毛ではなく地肌に届いている」という感覚が持ちやすいのは、私には合っていました。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">テクスチャについて</p>
+          <p>オイルやバームのような重さはなく、さらっとした液体です。つけたあとに髪をベタつかせたくない人にとって、この質感は続けやすさに直結します。ただし一度に出しすぎると流れてしまうので、少しずつ位置を変えながら出すのがコツでした。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">使うタイミングについて</p>
+          <p>「洗髪後」と「乾いた頭皮」の両方に使えるので、生活のどこに置いても成立します。私は夜、第1〜5弾のケアを済ませたあと、最後に頭皮へ足す流れに落ち着きました。朝は出かける前の身支度に混ぜてしまうと、忘れにくくなります。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">20プッシュという量について</p>
+          <p>数字だけ見ると多く感じますが、頭皮全体に分けて出すので、1か所あたりはごく少量です。前頭部・頭頂部・側頭部・後頭部と、場所を決めて回すと数えなくても済むようになります。迷ったら「全体に行き渡ったか」を基準にするほうが続きます。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">続け方について</p>
+          <p>これがいちばん正直な話なのですが、頭皮ケアは"実感で続けるアイテム"ではありません。毛先のケアのような即日の手応えを期待すると、たぶん3日で飽きます。歯磨きや日焼け止めと同じで、「やった日に何も起きないこと」を前提に、生活の手順として組み込んでしまうほうがうまくいきました。</p>
+        </div>
+      </div>
+      <p class="voice-foot">もちろん、地肌の状態も髪質も人それぞれ。だからこそ、「自分の生活のどこに置けるか」を一度試してみる価値があるアイテムだと思っています。<br>※上記は一般的な使用感の傾向および個人の感想であり、効果を保証するものではありません。本商品の承認された効能は「薄毛・脱毛の予防」です。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>よくある質問</h2>
+
+      <div class="faq">
+        <details>
+          <summary>育毛剤って、もう薄毛が気になっている人が使うものでは?</summary>
+          <div class="a">その認識のせいで、私も5回ぶん後回しにしてきました。この商品の効能は「薄毛・脱毛の予防」です。予防なので、本来は"まだそこまで気にしていない時期"に始めるものだと考えています。困ってから探すのと、その前に土台を整えておくのとでは、選べる手段そのものが変わってきます。</div>
+        </details>
+        <details>
+          <summary>第1〜5弾のケアと併用できますか?</summary>
+          <div class="a">できます。というより、それが本来の使い方です。第1〜5弾は「今ある髪」へのケア、これは「頭皮」へのケアなので、そもそも役割がぶつかりません。「シャンプー(第2弾)→ No.6(第1弾)→ 乾かして997(第3弾)→ 頭皮にこのエッセンス」という流れが、そのまま組めます。</div>
+        </details>
+        <details>
+          <summary>使う順番とタイミングを教えてください。</summary>
+          <div class="a">洗髪後のタオルドライした頭皮、または乾いた頭皮に使います。ノズルを地肌に直接あてて、頭皮全体に約20プッシュ。そのまま指の腹でなじませ、軽くマッサージします。洗い流しは不要です。朝晩1日2回が目安です。</div>
+        </details>
+        <details>
+          <summary>20プッシュって多くないですか?</summary>
+          <div class="a">数字だけ見ると多く感じますが、頭皮全体に分けて出すので1か所あたりはごく少量です。前頭部・頭頂部・側頭部・後頭部と場所を決めて回すと、自然にその程度になります。</div>
+        </details>
+        <details>
+          <summary>朝晩2回、忙しくても続けられますか?</summary>
+          <div class="a">洗い流さないので、工程としては「出して、なじませる」だけです。夜はお風呂上がりのケアの最後に、朝は身支度のどこかに混ぜてしまうと忘れにくいです。どうしても難しい日は夜だけでも、生活から消えてしまうよりはずっといいと思っています。</div>
+        </details>
+        <details>
+          <summary>女性が使っても大丈夫ですか?</summary>
+          <div class="a">頭皮に使う薬用育毛エッセンスで、性別を限定した商品ではありません。「地肌が乾燥気味」と言われたことがある方にとっては、頭皮保湿成分APコンプレックスが入っている点も選ぶ理由になると思います。</div>
+        </details>
+        <details>
+          <summary>どのくらいで実感できますか?</summary>
+          <div class="a">ここは正直にお伝えします。頭皮のケアは、毛先のケアのように使ったその日に手触りで分かるものではありません。承認されている効能も「薄毛・脱毛の予防」であり、短期間で何かが変わることを保証するものではありません。感じ方には個人差があります。即日の手応えを期待するより、生活の手順として置いてしまうほうが続きます。</div>
+        </details>
+        <details>
+          <summary>180mLでどのくらいもちますか?</summary>
+          <div class="a">朝晩1日2回・1回約20プッシュ(1日およそ4mL前後)を目安にすると約45日分、夜だけの1日1回なら単純計算で約90日分です。使用量は髪の長さや量、地肌の状態で変わるので、あくまで目安として考えてください。</div>
+        </details>
+        <details>
+          <summary>髪がベタつきませんか?</summary>
+          <div class="a">オイルやバームのような重さのある質感ではなく、さらっとした液体です。毛先ではなく地肌に届けるアイテムなので、髪の表面に塗り広げないのがコツです。</div>
+        </details>
+        <details>
+          <summary>頭皮が敏感なのですが大丈夫ですか?</summary>
+          <div class="a">肌に合うかどうかは体質によります。心配な場合は少量から試し、異常を感じたときは使用を中止して、必要に応じて医師等にご相談ください。パッケージの使用上の注意も必ずご確認ください。</div>
+        </details>
+        <details>
+          <summary>カラーやパーマをしていても使えますか?</summary>
+          <div class="a">頭皮に使うアイテムなので、髪の施術内容そのものを妨げる設計ではありません。ただし施術直後の頭皮の状態は人によって異なるため、気になる場合は担当の美容師さんに相談してから始めるのが安心です。</div>
+        </details>
+        <details>
+          <summary>¥5,776は、正直高くないですか?</summary>
+          <div class="a">1本の値札で見れば、安くはありません。ただ180mL・朝晩使用で約45日分なら1日あたり約128円、夜だけなら約64円という計算になります。さらに今回は通常¥7,700から24%オフ、差額¥1,924。毎日続ける前提のアイテムなので、私は「1日いくらか」で判断することにしました。</div>
+        </details>
+        <details>
+          <summary>まず1つだけ試したいのですが、それでも大丈夫?</summary>
+          <div class="a">もちろんです。むしろ、これは"足すだけ"のアイテムなので、いちばん試しやすい1本です。今のケアは何ひとつ変えず、その下に20プッシュを足すだけで始められます。</div>
+        </details>
+        <details>
+          <summary>どこで買えますか?</summary>
+          <div class="a">下記リンクの ALBUM ONLINE STORE で購入できます。第1弾から第6弾までずっと同じ、美容室専売品を扱う美容通販サイトです。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">ABOUT THE PRICE</p>
+      <h2>価格の考え方</h2>
+      <p>ザ・ヘアケア アデノバイタル アドバンスト スカルプエッセンスは ¥5,776。通常価格¥7,700から24%オフ、差額は¥1,924です。</p>
+      <p>このシリーズで紹介してきた5本は、¥3,740 / ¥4,180 / ¥4,290 / ¥7,260 / ¥8,800。合計¥28,270、1本あたりの平均は¥5,654です。つまり今回の¥5,776は、5本の平均とほぼ同じ位置にあります。第5弾(¥8,800)から見れば下がりますが、これは安売りに転じたのではなく、"特別なケア"から"毎日続ける基本のケア"へ戻ってきた、という位置づけです。</p>
+      <p>180mLで、朝晩1日2回・1回約20プッシュ(1日およそ4mL前後)なら約45日分。1日あたり、約128円。夜だけの1日1回なら約90日分で、1日あたり約64円。1mLあたりに直すと約¥32.1という計算になります。</p>
+      <p>ここで一度だけ、正直に振り返ってみてほしいんです。私はこのシリーズで、毛先から中間のケアに合計¥28,270を使ってきました。同じ期間、頭皮に使った金額は¥0です。毛先に¥28,270、土台に¥0。比率でいえば、100対0。私はこの数字を並べたとき、正直ちょっと笑ってしまいました。"見える場所にだけ全額を投じてきたコスト"のほうが、よっぽど偏っていたからです。</p>
+
+      <div class="price-box">
+        <div class="amount">¥5,776<span>/ 180mL・朝晩使用で約45日分・1日あたり約128円</span></div>
+        <p style="margin-top:14px;">そしてもう一つ。これは薬用育毛エッセンスであり、頭皮保湿成分APコンプレックス配合の頭皮用美容液でもあります。"予防のケア"と"乾燥のケア"を、別々に2本持たなくていい。高いか安いかは、値札だけでは決まりません。"今ある髪を良く見せる"だけでなく、"これから生えてくる髪の場所を保っておくか"。そこで考えたとき、1日約128円は、一度試してみる価値のある金額だと、私は思っています。</p>
+      </div>
+
+      <p class="price-note">※価格・在庫は変動します。最新情報は必ず商品ページでご確認ください。使用日数・単価は使用量による概算です。</p>
+
+      <div class="cta-row" style="margin-top:30px;">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4901872037353" target="_blank" rel="noopener sponsored">
+          最新の価格・在庫を商品ページで確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">BEFORE YOU GO</p>
+      <h2>安心して試すために</h2>
+      <p>「医薬部外品の育毛剤って、自分にはまだ早いんじゃないの?」その気持ち、よく分かります。私も5回ぶん、まったく同じことを思っていました。</p>
+      <p>だからこそ、この商品の効能が「薄毛・脱毛の予防」だという点は大きいと思っています。"すでに起きていることをどうにかする"ではなく、"これから起きうることに備える"。予防という言葉が付いているアイテムは、本来いちばん早く始めるほど意味があります。そして有効成分が6つ、すべて名前で公開されているので、「なんとなく良さそう」ではなく、確認したうえで選べます。</p>
+      <p>今回紹介している ALBUM ONLINE STORE は、株式会社オニカムが運営する、美容室専売品を扱う美容通販サイトです。第1弾のオラプレックス、第2弾・第4弾のケラスターゼ、第3弾のTHE HAIR BALM 997、第5弾のLOA、そして今回の資生堂プロフェッショナル。6回ぜんぶ、ずっと同じお店です。</p>
+      <p>そして何より、いきなり6本すべてを揃える必要はありません。第1〜5弾で紹介したケアを、まず自分のペースで試す。そのうえで「毛先のケアはひと通りやっているのに、なんとなく髪全体に元気がない」と感じたタイミングで、この1本を下に敷く。その順番でまったく問題ありません。</p>
+      <p>というより、この6本の中でいちばん"順番を選ばない"のが、たぶんこのエッセンスです。毛先のケアは、傷み具合や髪質によって合う・合わないが出ます。頭皮のケアは、今の6本のどれを使っていようと、その下に置けます。何かをやめる必要も、置き換える必要もありません。</p>
+      <p>結果は毛先、土台は頭皮。大きく生活を変える買い物ではなく、「今夜のお風呂上がりに20プッシュ足す」だけの、小さな一歩です。ケアの工程が置き換わらないという気軽さこそが、続けられる理由になります。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※本商品は医薬部外品であり、承認された効能は「薄毛・脱毛の予防」です。発毛を確約するものではなく、効果の感じ方には個人差があります。<br>※頭皮に異常が現れた場合は使用を中止し、必要に応じて医師等にご相談ください。<br>※価格・在庫・配送などの詳細は、リンク先の販売ページの情報をご確認ください。</p>
+
+      <div class="series-nav">
+        シリーズで読む:
+        <a href="../round1/">第1弾・オラプレックス No.6(洗い流さないトリートメント)</a> ／
+        <a href="../round2/">第2弾・ケラスターゼ バン セラピュート(シャンプー)</a> ／
+        <a href="../round3/">第3弾・THE HAIR BALM 997(スタイリングバーム)</a> ／
+        <a href="../round4/">第4弾・ケラスターゼ RE マスク セラピュート(集中ヘアパック)</a> ／
+        <a href="../round5/">第5弾・LOA THE OIL PARFUM ザ ネロリ(香水オイル)</a> ／
+        第6弾・アデノバイタル アドバンスト スカルプエッセンス(頭皮ケア・このページ)
+      </div>
+    </div>
+  </section>
+
+  <section class="beat deep final">
+    <div class="wrap">
+      <p class="eyebrow">LAST WORD</p>
+      <h2>「洗う」「足す」「整える」「週数回の特別ケア」「香りの仕上げ」。5回かけて紹介してきた"今ある髪"のケアは、これで完成しています。<br>でも、それはぜんぶ"結果"へのケアでした。</h2>
+      <p>毛先を良く見せる仕組みであって、その髪が出てくる場所を保っておく仕組みではありません。</p>
+      <p>このまま6本目のトリートメントを探し続けて、「まだケアが足りないのかも」と思いながらまた半年過ごすのか。それとも、整った結果の"下"に土台のケアを1枚敷いて、今ある髪とこれからの髪の両方に手を届かせるのか。</p>
+      <p>小さな選択に見えて、5年後に振り返ったときの景色は、案外ここで変わります。そして、変えられるのは、いつだって"今夜の20プッシュ"からです。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4901872037353" target="_blank" rel="noopener sponsored">
+          今すぐ ALBUM ONLINE STORE で詳細を見る <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ps">
+        <p class="eyebrow">追伸</p>
+        <p>正直に言うと、このエッセンスも「魔法の1本」ではありません。医薬部外品として承認されている効能は「薄毛・脱毛の予防」であり、使えば必ず何かが生えてくる、という類の商品ではありません。感じ方には個人差があります。</p>
+        <p>それでも私がこの1本を紹介したいのは、「見えない場所は、後回しにしていいことにしていた」自分をやめられたからです。足りなかったのは、ケアの質でも量でも本数でもなく、"結果"と"土台"を、別の階層として持つという考え方でした。</p>
+        <p>6回に分けて紹介してきましたが、この6つを全部揃える必要はまったくありません。市販品ジプシーだった頃の私は、髪をどうにかしようと毛先ばかりいじっていました。地肌のことなんて、考えたこともなかった。土台を見るようになってから、遠回りしてきた分だけ「そもそもここから整えればよかったのか」と思うことが増えました。</p>
+        <p>もし、毛先のケアはひと通りやっているのに、「なんとなく髪全体に元気がない」がずっと消えていないなら。足りない最後の1つは、たぶん6本目のトリートメントではなく、その下にあります。今夜のお風呂上がり、20プッシュから確かめてみてください。</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4901872037353" target="_blank" rel="noopener sponsored">
+            アデノバイタル アドバンスト スカルプエッセンスを見てみる <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="brand">サロン専売品ラボ</p>
+    <p>本ページはアフィリエイトプログラム(A8.net)を利用した商品紹介であり、記載内容は一般的な商品情報および個人の使用感に基づくものです。本商品は医薬部外品であり、承認された効能は「薄毛・脱毛の予防」です。発毛・増毛を確約するものではなく、効果の感じ方には個人差があります。1日あたりの使用量・使用日数・単価の目安は、髪の長さや量、地肌の状態によって変動する概算です。記載の使用方法・使用量は一般的な目安であり、必ずパッケージの表示および使用上の注意をご確認ください。頭皮に異常が現れた場合は使用を中止してください。価格・在庫・仕様は変更される場合があるため、最新情報は販売ページをご確認ください。</p>
+  </div>
+</footer>
+
+</body>
+</html>
