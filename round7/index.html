@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ハートロック スカルプブラシ｜サロン専売品ラボ</title>
+<style>
+  :root {
+    --ink: #212b21;
+    --ink-soft: #4c5a4a;
+    --paper: #f6f7f0;
+    --paper-raise: #ffffff;
+    --sage: #7c9473;
+    --sage-deep: #47593f;
+    --sage-line: #c7d2bd;
+    --mist: #e9ede2;
+    --clay: #b5674a;
+    --clay-deep: #954f37;
+    --clay-tint: #f1ded3;
+    --shadow: 0 1px 2px rgba(33, 43, 33, 0.06);
+    --measure: 38em;
+    --radius: 3px;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #e9ecE2;
+    --ink-soft: #b9c2b2;
+    --paper: #171d15;
+    --paper-raise: #1e251b;
+    --sage: #9bb391;
+    --sage-deep: #c3d4b9;
+    --sage-line: #3a462f;
+    --mist: #212a1d;
+    --clay: #dd9270;
+    --clay-deep: #eaab8b;
+    --clay-tint: #2c211b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e9ecE2;
+      --ink-soft: #b9c2b2;
+      --paper: #171d15;
+      --paper-raise: #1e251b;
+      --sage: #9bb391;
+      --sage-deep: #c3d4b9;
+      --sage-line: #3a462f;
+      --mist: #212a1d;
+      --clay: #dd9270;
+      --clay-deep: #eaab8b;
+      --clay-tint: #2c211b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Noto Sans JP", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    color: var(--sage-deep);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  p { margin: 0 0 1.1em; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---- PR bar ---- */
+  .prbar {
+    background: var(--sage-deep);
+    color: var(--paper-raise);
+  }
+  .prbar .wrap-wide {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #eef1e8;
+  }
+  .prbar strong { color: var(--clay-tint); font-weight: 700; }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    padding: 76px 0 88px;
+    background: linear-gradient(180deg, var(--mist) 0%, var(--paper) 78%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--sage-line), transparent 70%);
+    opacity: 0.55;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero .prehead {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    box-shadow: inset 0 -0.42em 0 var(--clay-tint);
+  }
+  .hero .sub {
+    max-width: 32em;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  .sprig {
+    margin-top: 40px;
+    width: 96px;
+    height: auto;
+    color: var(--sage);
+  }
+
+  /* ---- CTA button ---- */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 15px 30px;
+    background: var(--clay);
+    color: #fff8f3;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: var(--clay-deep); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+  .cta .arrow { font-size: 1.05em; }
+  .cta-row { display: flex; justify-content: flex-start; }
+  .cta-row.center { justify-content: center; }
+  .price-note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Section rhythm ---- */
+  section.beat {
+    padding: 68px 0;
+  }
+  section.beat.tint { background: var(--mist); }
+  section.beat.deep {
+    background: var(--sage-deep);
+    color: #eef1e8;
+  }
+  section.beat.deep h2 { color: #fff; }
+  section.beat.deep .eyebrow { color: var(--clay-tint); }
+  section.beat.deep p { color: #dbe3d3; }
+
+  .beat h2 {
+    font-size: clamp(1.28rem, 2.6vw, 1.6rem);
+    line-height: 1.6;
+    margin: 10px 0 26px;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Figures (images/ 配下・後で実画像を差し替え) ---- */
+  .shot {
+    margin: 32px 0 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    background: var(--mist);
+  }
+  .shot figcaption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Check list ---- */
+  .checks {
+    list-style: none;
+    margin: 26px 0 24px;
+    padding: 0;
+  }
+  .checks li {
+    position: relative;
+    padding: 12px 0 12px 32px;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.96rem;
+    color: var(--ink);
+  }
+  .checks li:first-child { border-top: 1px solid var(--sage-line); }
+  .checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    color: var(--clay);
+    font-weight: 700;
+  }
+
+  /* ---- Reasons / cards ---- */
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .reason-card {
+    background: var(--paper-raise);
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+  }
+  .reason-card .num {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 1.7rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .reason-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .reason-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Spec table ---- */
+  .spec {
+    margin: 30px 0;
+    border-top: 1px solid var(--sage-line);
+  }
+  .spec dl {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    margin: 0;
+  }
+  .spec dt, .spec dd {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.92rem;
+  }
+  .spec dt {
+    color: var(--sage);
+    font-weight: 700;
+  }
+  .spec dd { margin: 0; }
+
+  .price-tag {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- Feature rows ---- */
+  .feature {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--sage-line);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .feature:first-of-type { border-top: 1px solid var(--sage-line); }
+  .feature .f-title { font-weight: 700; color: var(--ink); }
+  .feature .f-chain {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .feature .f-chain span.step { color: var(--sage); }
+
+  /* ---- Trust grid ---- */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .trust-item {
+    padding: 20px;
+    background: var(--paper-raise);
+    border-radius: var(--radius);
+    border: 1px solid var(--sage-line);
+  }
+  .trust-item h3 {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+  .trust-item p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Voice quotes ---- */
+  .voice {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .voice-item {
+    padding-left: 18px;
+    border-left: 2px solid var(--sage);
+  }
+  .voice-item .v-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .voice-item p { font-size: 0.94rem; margin: 0; }
+  .voice-foot {
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- FAQ ---- */
+  .faq { margin-top: 28px; border-top: 1px solid var(--sage-line); }
+  .faq details {
+    border-bottom: 1px solid var(--sage-line);
+  }
+  .faq summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    font-size: 0.96rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before {
+    content: "Q";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--clay);
+    flex: none;
+  }
+  .faq summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq .a {
+    display: flex;
+    gap: 12px;
+    padding: 0 4px 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .faq .a::before {
+    content: "A";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage);
+    flex: none;
+  }
+
+  /* ---- Price reflection ---- */
+  .price-box {
+    margin-top: 28px;
+    padding: 26px 24px;
+    background: var(--clay-tint);
+    border-radius: var(--radius);
+  }
+  .price-box .amount {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 2rem;
+    color: var(--clay-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .price-box .amount span { font-size: 0.9rem; margin-left: 6px; color: var(--ink-soft); font-family: inherit; }
+
+  /* ---- Final ---- */
+  .final h2 { color: #fff; }
+  .ps {
+    margin-top: 46px;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+  }
+  .ps .eyebrow { color: var(--clay-tint); }
+
+  footer {
+    padding: 40px 0 56px;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  footer .brand {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage-deep);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  /* ---- Series nav (round1〜7 相互リンク) ---- */
+  .series-nav {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--sage-line);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .series-nav a { color: var(--sage-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .spec dl { grid-template-columns: 7em 1fr; }
+    section.beat { padding: 52px 0; }
+    .hero { padding: 56px 0 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="prbar">
+  <div class="wrap-wide">
+    【PR】本ページはアフィリエイトプログラム(A8.net)を利用して商品を紹介しています。ページ内リンクからの購入により、当方に<strong>成果報酬</strong>が発生する場合があります。記載内容は特定の効果効能を保証するものではなく、一般的な商品情報と個人の使用感に基づいています。本商品は頭皮ケア用の<strong>ブラシ(道具)</strong>であり、化粧品・医薬部外品ではありません。育毛・発毛等の効果を持つものではありません。
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="prehead">洗う・足す・整える・特別ケア・香り・頭皮。6本ぜんぶ揃えた。でもその6本は、ぜんぶ「塗るもの」でした。塗るための道具は、一度も買っていません。</p>
+    <h1>第6弾の使い方に書いてあった「そのまま指の腹でなじませ、軽くマッサージ」。その一文を、私はずっと読み飛ばしていました。7本目に買ったのは、<em>中身が一滴も入っていない¥2,200</em>です。</h1>
+    <p class="sub">ハートロック スカルプブラシ(グリーン)/ SINN PURETE。¥2,200(税込)。乾いた頭皮に使うドライブラシとしても、シャンプー中のシャンプーブラシとしても使える、ハート型の頭皮ケアブラシです。長さの異なる3種類のピンで、いわゆる「痛気持ちいい」当たりになるよう設計されています。第1〜6弾はすべて化粧品でしたが、これはシリーズで初めての「道具」。中身は入っていません。だから、今使っているどの1本とも競合しません。6回ぶん"何を塗るか"を探し続けた私が、7回目でようやく"どう届けるか"に手を出した話をします。</p>
+    <div class="cta-row">
+      <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4573501391657" target="_blank" rel="noopener sponsored">
+        ハートロック スカルプブラシを見てみる <span class="arrow">→</span>
+      </a>
+    </div>
+    <svg class="sprig" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 118 C50 80 44 50 50 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M50 70 C34 62 24 46 22 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M50 44 C64 38 74 24 76 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="50" cy="8" r="4" fill="currentColor"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">EMPATHY</p>
+      <h2>こんな「塗ったのに、そこで終わっている」、心当たりありませんか。</h2>
+      <ul class="checks">
+        <li>頭皮用のアイテムを塗ったあと、マッサージまでちゃんとやれた日が数えるほどしかない</li>
+        <li>シャンプー中、指をワシャワシャ動かしているだけで「洗えた」ことにしている</li>
+        <li>爪が長い・ネイルをしているので、地肌をしっかり触るのが正直こわい</li>
+        <li>マッサージを始めても、腕が上がったまま疲れて30秒でやめてしまう</li>
+        <li>サロンでヘッドスパをしてもらった翌日の頭の軽さは覚えているのに、自宅ではあの触り方をまったく再現できていない</li>
+        <li>「頭皮ケア」を"何を塗るか"の話だと思っていて、"どう触るか"の話だと思ったことがなかった</li>
+        <li>髪をとかすブラシは持っているのに、地肌に当てるための道具は1つもない</li>
+      </ul>
+      <p>一つでも頷いたなら、あと3分だけ読み進めてほしいんです。</p>
+      <p>私はこのシリーズで、6回かけてアイテムを揃えてきました。第2弾で毎日のシャンプーを変え、第1弾で洗い流さないトリートメントを足し、第3弾で仕上げのバームを加え、第4弾で週数回の集中ケアを挟み、第5弾で香りを乗せ、そして第6弾でついに頭皮まで下りてきた。合計¥34,046。自分でも、よくここまで来たと思います。</p>
+      <p>でも、第7弾を選ぶために6本を机に並べたとき、妙なことに気づいてしまったんです。</p>
+      <p>6本とも、ボトルでした。中身が入っていて、使えば減るものでした。つまり私が6回かけて買ってきたのは、ぜんぶ「塗るもの」だった。</p>
+      <p>じゃあ、それを塗る道具は?──ありませんでした。6回ぶん、ゼロです。</p>
+      <p>もっと言うと、第6弾のスカルプエッセンスの使い方には、はっきりこう書いてあります。<strong>「そのまま指の腹でなじませ、軽くマッサージ」</strong>。私はこの一文を、たぶん一度も真面目にやっていません。20プッシュして、髪を乾かして、終わり。</p>
+      <p>説明書に書いてある工程を飛ばしておいて、「うーん、まだ何か足りない気がする」と言っていたわけです。──足りなかったのは7本目のボトルじゃなくて、6本目をちゃんと使い切る手のほうだったのかもしれない、と思いました。</p>
+
+      <figure class="shot">
+        <img src="images/01_eyecatch.png" alt="中身と、それを届ける手というイメージ" loading="lazy">
+        <figcaption>6回買ってきたのは"中身"。7回目は、それを届ける"手"です。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">IF NOTHING CHANGES</p>
+      <h2>正直に言うと、いちばん怖いのは「マッサージをサボっていること」そのものじゃありません。<br>やっていない自分の指で、¥34,046ぶんの"答え合わせ"をしてしまうことです。</h2>
+      <p>考えてみてください。説明書どおりに使っていない状態で「あんまり変わらないな」と感じたら、人はどう結論づけるでしょうか。だいたい、こうです。──「この商品、私には合わなかったかも」。</p>
+      <p>商品を疑うんです。実行を疑わずに。</p>
+      <p>そして次に何をするかというと、7本目のボトルを探しに行く。もっと良さそうな成分、もっと評判のいいブランド、もっと高い1本。6本目を半分しか使えていないのに、7本目の比較記事を読み始めるんです。</p>
+      <p>私はこれを、市販品ジプシーだった頃に何十回とやってきました。"ジプシー"の正体って、実は「商品を変え続けること」じゃなくて、<strong>「実行を変えないまま、商品だけ変え続けること」</strong>だったんだと思います。</p>
+      <p>しかも、この構造はとても静かに続きます。塗るのは、3秒で終わります。だから続きます。マッサージは、1分かかります。腕も上がったままです。爪も気になります。やらなくても、その日は何も困りません。──痛みがないから、10年でも飛ばせてしまう。</p>
+      <p>半年後も、たぶん同じです。洗面台には7本目、8本目のボトルが増えていて、どれも8割くらい残ったまま並んでいる。そして相変わらず、シャンプー中は指をワシャワシャ動かしているだけ。</p>
+      <p>いちばんもったいないのは、ここです。第1〜6弾で、"何を使うか"の答えはもう出ているんです。出ていないのは、"それをどう届けるか"のほうだけ。</p>
+      <p>しかも皮肉なことに、答えのほうが安い。6本の平均は¥5,674でした。届ける側の道具は、¥2,200です。6本平均の、約39%。シリーズで唯一、¥3,000を切ります。</p>
+      <p>──足りなかったのは、7本目の中身じゃありませんでした。6本ぶんの中身を、ちゃんと頭皮まで運ぶ手のほうです。まだ間に合います。変えられるのは、今夜のシャンプー1回からです。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">THE TURN</p>
+      <h2>そこでたどり着いたのが、「ハートロック スカルプブラシ」でした。</h2>
+      <p>ここで一つ、はっきりさせておきたいことがあります。第1〜6弾で紹介してきたものは、どれも「中身」でした。補修する、洗う、まとめる、集中ケアする、香らせる、頭皮に足す。種類は違っても、全部「何かを髪や頭皮に加えるもの」です。</p>
+      <p>これは欠点ではありません。むしろ当然です。髪と頭皮に足りないものを足すのが、ケアの基本だからです。6本とも、その役割をきちんと果たしてくれました。</p>
+      <p>一方で今回のアイテムは、そもそも役割の位置が違います。足すものではなく、<strong>足したものを届ける側</strong>。中身は一滴も入っていません。ハート型のブラシ、それだけです。</p>
+      <p>言ってしまえば、第1〜6弾が"何を"のケア。そしてこの1本が"どう"のケア。何を使うかは6回で決まりました。7回目は、どう使うかです。</p>
+      <p class="lede">私がこのブラシを選んだ理由は、大きく3つ。</p>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <span class="num">壱</span>
+          <h3>中身が入っていないから、6本のどれとも競合しない</h3>
+          <p>シリーズで初めて、「今使っているものを何ひとつ疑わなくていい回」です。置き換えも、買い替えも、比較検討も発生しません。シャンプーはそのまま、エッセンスもそのまま。触り方だけが変わります。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">弐</span>
+          <h3>ドライとインバス、1本で2つの場面をカバーする</h3>
+          <p>乾いた頭皮のドライブラシとしても、シャンプー中のシャンプーブラシとしても使えます。朝の身支度と夜のお風呂、どちらにも置ける。「生活のどこかで必ず1回は触る」状態を作りやすいのが、続ける道具としては大きいと感じました。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">参</span>
+          <h3>長さの異なる3種類のピンが、指では作れない当たりを出す</h3>
+          <p>同じ長さのピンが並ぶブラシではなく、3種類の長さで構成されています。メーカーの説明では、これによって「痛気持ちいい」当たりになる設計とのこと。自分の指は5本とも同じ長さで、しかも爪が付いています。この差は、実際に当ててみると分かりやすい違いでした。</p>
+        </div>
+      </div>
+      <p style="margin-top:28px;">「何を塗るか」から、「それをどう届けるか」へ。6回かけて中身を揃えてきたからこそ、いま手のほうに投資する意味があります。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※本商品は頭皮ケア用のブラシ(道具)であり、化粧品・医薬部外品ではありません。育毛・発毛その他の効果を持つものではなく、感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">THE PRODUCT</p>
+      <h2>ハートロック スカルプブラシ(グリーン)とは</h2>
+      <p>SINN PURETE(シンピュルテ)は、ヘアケア・スキンケアを展開しているブランド。第1〜6弾で紹介したどのブランドとも重なりません。今回がシリーズ初登場です。</p>
+      <p>そして商品そのものも、シリーズ初です。第1〜6弾は、洗い流さないトリートメント、シャンプー、バーム、ヘアマスク、香水オイル、スカルプエッセンス。呼び方は違っても、全部「化粧品」でした。今回は「道具」。カテゴリそのものが変わる、シリーズ唯一の1つになります。</p>
+
+      <figure class="shot">
+        <img src="images/04_product_photo.png" alt="ハートロック スカルプブラシ(グリーン)" loading="lazy">
+        <figcaption>ハートロック スカルプブラシ(グリーン)/ SINN PURETE</figcaption>
+      </figure>
+
+      <div class="spec">
+        <dl>
+          <dt>タイプ</dt><dd>頭皮ケアブラシ(ドライブラシ/シャンプーブラシ兼用の道具)</dd>
+          <dt>価格</dt><dd class="price-tag">¥2,200(税込)/ ALBUM ONLINE STORE・シリーズ最安</dd>
+          <dt>カラー</dt><dd>グリーン(ユニセックスで使える色味)</dd>
+          <dt>形状</dt><dd>ハート型。手のひらになじむよう設計されたフォルム</dd>
+          <dt>ピン</dt><dd>長さの異なる3種類のピンを配置。メーカー説明では「痛気持ちいい」当たりになる設計</dd>
+          <dt>保管</dt><dd>吊り下げ用フック付き。使用後に吊るして乾かせる</dd>
+          <dt>使う場所</dt><dd>頭皮(毛先ではありません)</dd>
+          <dt>使う場面</dt><dd>乾いた頭皮へのドライブラシ / シャンプー中のシャンプーブラシ</dd>
+          <dt>ブランド</dt><dd>SINN PURETE(シンピュルテ)・シリーズ初登場</dd>
+          <dt>位置づけ</dt><dd>シリーズ初の「道具」カテゴリ(第1〜6弾はすべて化粧品)</dd>
+          <dt>減り方</dt><dd>消耗しない(シリーズで唯一の買い切りアイテム)</dd>
+        </dl>
+      </div>
+
+      <p>このブラシのいちばんの特徴は、「今のケアの工程を、1つも置き換えない」という点です。シャンプーもトリートメントもオイルもバームもエッセンスも、今のまま。第1〜6弾で作った流れには、何も手を加えません。変わるのは、その工程を"何で触るか"だけ。</p>
+      <p>そしてもう一つ、地味ですが決定的な違いがあります。──これは、減りません。</p>
+      <p>第1〜6弾は、すべて消耗品でした。使えば減り、なくなればまた買う。第6弾のエッセンスは180mLで約45日分。1年続ければ、年に何本か必要になります。このブラシは、¥2,200を一度払えば、そのあとは減りません。1年毎日使うなら1日あたり約6.0円、2年なら約3.0円。使えば使うほど1日あたりが下がっていく、唯一のアイテムです。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※耐久性は使用状況・お手入れ方法によって変わります。1日あたり単価は使用年数を仮定した概算です。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4573501391657" target="_blank" rel="noopener sponsored">
+          商品ページで詳細・価格を確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHY IT WORKS</p>
+      <h2>「で、結局それの何がいいの?」に、飾らず正直に答えます。</h2>
+
+      <div class="features">
+        <div class="feature">
+          <div class="f-title">中身が一滴も入っていない道具である</div>
+          <div class="f-chain"><span class="step">だから</span> 第1〜6弾のどれとも役割が競合しない ── <span class="step">つまり</span> 今使っているものを1つも捨てず、1つも疑わずに始められる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">ドライブラシとシャンプーブラシを兼用できる</div>
+          <div class="f-chain"><span class="step">だから</span> 乾いた頭皮にも、シャンプー中にも同じ1本で使える ── <span class="step">つまり</span> 朝でも夜でも、続けやすいほうの時間帯に置ける</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">長さの異なる3種類のピンで構成されている</div>
+          <div class="f-chain"><span class="step">だから</span> 同じ長さの指5本では作れない当たり方になる ── <span class="step">つまり</span> 「自己流でなんとなく揉む」から「道具に任せる」に変わる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">ハート型で手のひらになじむ形状</div>
+          <div class="f-chain"><span class="step">だから</span> 握り込まずに動かせる ── <span class="step">つまり</span> 腕が疲れて30秒でやめる、という中断が起きにくくなる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">爪ではなくピンが地肌に当たる</div>
+          <div class="f-chain"><span class="step">だから</span> ネイルをしていても地肌をしっかり触れる ── <span class="step">つまり</span> 「爪で傷つけそうでこわい」という理由で避けてきた人が始められる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">吊り下げ用フックが付いている</div>
+          <div class="f-chain"><span class="step">だから</span> 使ったあと浴室に吊るして乾かせる ── <span class="step">つまり</span> 洗面台の隅で湿ったまま放置される道具にならない</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">消耗品ではなく、使っても減らない</div>
+          <div class="f-chain"><span class="step">だから</span> 一度買えばリピート購入の判断が発生しない ── <span class="step">つまり</span> 「また買わなきゃ」で挫折する道が、そもそも存在しない</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">¥2,200という、シリーズ最安の価格</div>
+          <div class="f-chain"><span class="step">だから</span> 6本平均¥5,674の約39%で試せる ── <span class="step">つまり</span> 合うかどうかを確かめるハードルが、7回の中でいちばん低い</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">第6弾の「指の腹でなじませ、軽くマッサージ」を実行しやすくする道具である</div>
+          <div class="f-chain"><span class="step">だから</span> 説明書に書いてあった工程を飛ばさずに済む ── <span class="step">つまり</span> 6本ぶんの中身を、書かれたとおりの手順で使い切れるようになる</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;">6回かけて「何を塗るか」を揃えてきたからこそ、7回目でようやく「ちゃんと使えているのか」に目が向きました。これは、6本ぶん遠回りしたからこそ出てきた、私のいちばん正直な実感です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記は道具としての使い勝手に関する説明です。本商品は育毛・発毛等の効果を持つものではなく、感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">WHY TRUST IT</p>
+      <h2>正直に言うと、私は「新商品だから」だけでは商品を信じないタイプです。</h2>
+      <p class="lede">それでもこのブラシを紹介したいと思えたのは、こんな背景があるからです。</p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>シリーズで初めて、"置き換えリスク"がゼロの回</h3>
+          <p>これまでの6回は、どれも「今使っているものをやめて、こっちにする?」という判断が伴いました。今回は伴いません。中身が入っていないので、競合しようがない。合わなかったとしても、失うのは¥2,200と、洗面所の場所だけです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>長さの異なる3種類のピンという、設計が明示されている</h3>
+          <p>「気持ちいいブラシです」だけで終わらせず、3種類の長さという構造で説明されている点は、判断材料になりました。なんとなく良さそう、ではなく、なぜそう感じる設計なのかが言葉になっています。</p>
+        </div>
+        <div class="trust-item">
+          <h3>ドライとインバスの両対応が、最初から想定されている</h3>
+          <p>後から「濡れても使えます」と付け足された仕様ではなく、両方の場面で使う前提で作られています。だからこそ、吊り下げフックが最初から付いています。</p>
+        </div>
+        <div class="trust-item">
+          <h3>吊り下げ用フックという、地味すぎる仕様</h3>
+          <p>私はここをかなり評価しています。浴室で使う道具は、乾かせないと結局使われなくなるからです。「毎日使ってほしい」と思って設計しないと、この仕様は付きません。</p>
+        </div>
+        <div class="trust-item">
+          <h3>¥2,200という、シリーズ最安の価格設定</h3>
+          <p>第1弾¥3,740、第2弾¥4,180、第3弾¥4,290、第4弾¥7,260、第5弾¥8,800、第6弾¥5,776。合計¥34,046、平均¥5,674。第7弾は¥2,200。7回の中で唯一、¥3,000を切ります。しかも唯一、減りません。</p>
+        </div>
+        <div class="trust-item">
+          <h3>サロン専売品を、公式通販でそのまま買える</h3>
+          <p>今回紹介する ALBUM ONLINE STORE(株式会社ALBUM運営)は、美容室専売品を扱う美容通販サイト。第1弾のオラプレックス、第2弾・第4弾のケラスターゼ、第3弾のTHE HAIR BALM 997、第5弾のLOA、第6弾の資生堂プロフェッショナル、そして第7弾のSINN PURETE。7回ぜんぶ、ずっと同じお店です。</p>
+        </div>
+      </div>
+      <p style="margin-top:24px; font-size:0.8rem; color:var(--ink-soft);">※価格・在庫は変動します。最新情報は必ず商品ページでご確認ください。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHAT PEOPLE NOTICE</p>
+      <h2>こんな使用感(声の傾向)</h2>
+      <p>道具は、化粧品と違って「成分で語れない」アイテムです。だからこそ、盛らずに、触った感じをそのまま整理してみます。</p>
+
+      <div class="voice">
+        <div class="voice-item">
+          <p class="v-label">当たりの強さについて</p>
+          <p>最初にドライで当てたとき、「あ、これ指では絶対にできないやつだ」と思いました。3種類の長さのピンが同時に当たるので、一点を押す感じではなく、面で捉えられる感覚があります。いわゆる「痛気持ちいい」で表現される当たりですが、力を入れすぎると普通に痛いので、ほぼ添えるだけで十分でした。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">シャンプー中の使い勝手について</p>
+          <p>泡立ててから当てるとよく滑ります。私は「指で予洗い→泡立てる→ブラシで地肌を動かす」という順番に落ち着きました。いきなり乾いた髪にゴリゴリ使うより、泡がクッションになるぶん扱いやすいです。ただ、髪が長いと絡む場面はあるので、毛流れに逆らわず、根元だけを動かすのがコツでした。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">持ちやすさについて</p>
+          <p>ハート型なので、握り込むというより手のひらに乗せて動かす感じになります。ぎゅっと握らなくていいぶん、腕の疲れ方がだいぶ違いました。私が指マッサージを30秒でやめていた最大の理由は、実は「腕が疲れるから」だったので、ここは地味に効いています。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">保管について</p>
+          <p>吊り下げ用フックが本当にありがたいです。浴室に置きっぱなしにする道具は、水が溜まると使う気が失せます。吊るせるだけで、翌日また手に取れる。続く道具って、たぶんこういう差です。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">ネイルをしている人にとって</p>
+          <p>私はここが一番の変化でした。爪が伸びていると、地肌を触るのがどうしても怖くなります。力加減が分からないので、結局「表面をなでるだけ」になる。ピンが当たる道具に持ち替えるだけで、その怖さが消えました。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">続け方について</p>
+          <p>これがいちばん正直な話なのですが、頭皮ケアは"実感で続けるアイテム"ではありません。ただ、このブラシに関しては「気持ちいいから続く」という、これまでの6本にはなかった続き方をしています。効くから続けるのではなく、やりたいから続く。サボりがちだった第6弾のエッセンスを、私はこれでやっと毎日使えています。</p>
+        </div>
+      </div>
+      <p class="voice-foot">もちろん、地肌の状態も髪質も人それぞれ。だからこそ、「自分の生活のどこに置けるか」を一度試してみる価値がある道具だと思っています。<br>※上記は一般的な使用感の傾向および個人の感想であり、効果を保証するものではありません。力の入れすぎは頭皮を傷める原因になります。やさしくお使いください。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>よくある質問</h2>
+
+      <div class="faq">
+        <details>
+          <summary>ブラシに¥2,200って、正直高くないですか?</summary>
+          <div class="a">1本のブラシとしては、安くはないと思います。ただ、このシリーズで買ってきた6本は平均¥5,674で、しかも全部減ります。これは唯一減りません。1年毎日使えば1日あたり約6.0円、2年なら約3.0円。7回の中でいちばん試しやすい価格だと考えています。</div>
+        </details>
+        <details>
+          <summary>第6弾のスカルプエッセンスと一緒に使えますか?</summary>
+          <div class="a">使えます。というより、私はそのために買いました。第6弾の使い方には「そのまま指の腹でなじませ、軽くマッサージ」と書かれています。その"マッサージ"の部分を、指の代わりにこの道具で行う、という使い方です。エッセンスを塗ったあと、乾いた頭皮に当てています。※ブラシ自体が育毛等の効果を持つわけではありません。</div>
+        </details>
+        <details>
+          <summary>第1〜6弾のケアと併用できますか?</summary>
+          <div class="a">できます。というより、何ひとつ変わりません。中身が入っていない道具なので、そもそも競合しようがないんです。シリーズ7回の中で、唯一「今使っているものを1つも見直さなくていい回」です。</div>
+        </details>
+        <details>
+          <summary>ドライとシャンプー中、どちらで使うのがいいですか?</summary>
+          <div class="a">どちらでも使えます。私は最終的に両方使っています。夜はシャンプー中に地肌を動かし、エッセンスを塗ったあとにもう一度、乾いた頭皮に軽く当てる流れです。ただ、最初は「続けられるほう1つ」から始めるほうが確実だと思います。</div>
+        </details>
+        <details>
+          <summary>爪が長い・ネイルをしていても使えますか?</summary>
+          <div class="a">むしろ、そういう方のための道具だと思っています。地肌に当たるのは爪ではなくピンなので、「傷つけそうでこわい」という理由で頭皮を触れずにいた方こそ、持ち替える意味が大きいはずです。</div>
+        </details>
+        <details>
+          <summary>髪が長いと絡みませんか?</summary>
+          <div class="a">毛流れに逆らって動かすと絡む場面はあります。根元(地肌)だけを動かす意識で、毛先まで通そうとしないのがコツです。シャンプー中は泡がクッションになるので、乾いた状態より扱いやすいです。</div>
+        </details>
+        <details>
+          <summary>力はどのくらい入れればいいですか?</summary>
+          <div class="a">ほとんど添えるだけで十分でした。3種類の長さのピンが当たるので、押し込まなくても当たります。力を入れすぎると頭皮を傷める原因になるので、やさしく動かしてください。</div>
+        </details>
+        <details>
+          <summary>毎日使っても大丈夫ですか?</summary>
+          <div class="a">使う頻度や強さの目安は、商品パッケージの記載をご確認ください。私は毎日使っていますが、地肌が敏感な日は回数や強さを落としています。痛みや違和感があるときは、無理に続けないでください。</div>
+        </details>
+        <details>
+          <summary>男性が使っても大丈夫ですか?</summary>
+          <div class="a">グリーンはユニセックスで使いやすい色味です。性別を限定した道具ではありません。</div>
+        </details>
+        <details>
+          <summary>お手入れはどうすればいいですか?</summary>
+          <div class="a">使用後は水でよくすすぎ、水気を切って吊り下げ用フックで乾かしています。浴室で使う道具は、乾かせるかどうかが寿命と衛生に直結します。フックが最初から付いているのは、地味ですが大きな利点です。</div>
+        </details>
+        <details>
+          <summary>どのくらいで実感できますか?</summary>
+          <div class="a">ここは正直にお伝えします。これは道具であり、育毛・発毛などの効果を持つものではありません。期待できるのは「これまで指でやっていた工程を、続けやすくなる」ことです。触った瞬間の気持ちよさは初日から分かりますが、それは効果ではなく体感です。感じ方には個人差があります。</div>
+        </details>
+        <details>
+          <summary>頭皮が敏感なのですが大丈夫ですか?</summary>
+          <div class="a">肌に合うかどうかは体質や状態によります。最初は短時間・弱い力から試し、赤みや痛みなど異常を感じたときは使用を中止して、必要に応じて医師等にご相談ください。パッケージの使用上の注意も必ずご確認ください。</div>
+        </details>
+        <details>
+          <summary>カラーやパーマをしていても使えますか?</summary>
+          <div class="a">頭皮に当てる道具なので、髪の施術内容そのものを妨げる設計ではありません。ただし施術直後の頭皮の状態は人によって異なるため、気になる場合は担当の美容師さんに相談してから始めるのが安心です。</div>
+        </details>
+        <details>
+          <summary>まず1つだけ試したいのですが、それでも大丈夫?</summary>
+          <div class="a">もちろんです。むしろ、7回の中でいちばん"1つだけ"に向いています。今のケアを何ひとつ変えず、触り方だけを変えて始められます。</div>
+        </details>
+        <details>
+          <summary>どこで買えますか?</summary>
+          <div class="a">下記リンクの ALBUM ONLINE STORE で購入できます。第1弾から第7弾までずっと同じ、美容室専売品を扱う美容通販サイトです。在庫は変動するため、最新の状況は商品ページでご確認ください。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">ABOUT THE PRICE</p>
+      <h2>価格の考え方</h2>
+      <p>ハートロック スカルプブラシは ¥2,200(税込)。このシリーズで紹介してきた7つの中で、いちばん安い価格です。</p>
+      <p>これまでの6本を並べてみます。¥3,740 / ¥4,180 / ¥4,290 / ¥7,260 / ¥8,800 / ¥5,776。合計¥34,046、1本あたりの平均は¥5,674。今回の¥2,200は、その平均の約39%。唯一、¥3,000を切ります。第6弾(¥5,776)と比べると、¥3,576も下です。</p>
+      <p>ただ、ここで「安いから買いやすいですよ」で終わらせたくないんです。価格が下がっている理由は、安物だからではなく、性質が違うからです。</p>
+      <p>第1〜6弾は、すべて消耗品でした。使えば減ります。第6弾のエッセンスは180mLで約45日分。毎日続けるなら、1年でおおよそ8本前後が必要になる計算です。</p>
+      <p>このブラシは、減りません。¥2,200を一度払えば、そのあとの支出はゼロ。1年間毎日使うなら1日あたり約6.0円。2年使えば約3.0円。使い続けるほど1日あたりの単価が下がっていく、7つの中で唯一のアイテムです。</p>
+      <p>そしてもう一度、正直に振り返らせてください。私はこのシリーズで、6本・合計¥34,046を「中身」に使ってきました。同じ期間、それを頭皮まで届ける道具に使った金額は¥0です。中身に¥34,046、届ける手に¥0。比率でいえば、100対0。6本ぶんのボトルを机に並べて、その数字を眺めたとき、私はちょっと笑ってしまいました。"全部を中身に投じてきたコスト"のほうが、よっぽど偏っていたからです。</p>
+
+      <div class="price-box">
+        <div class="amount">¥2,200<span>/ 税込・消耗しないため1年毎日使う前提なら1日あたり約6.0円</span></div>
+        <p style="margin-top:14px;">そしてもう一つ。これは1本で2役です。乾いた頭皮に使うドライブラシと、シャンプー中のシャンプーブラシ。場面ごとに2つ持たなくていい。高いか安いかは、値札だけでは決まりません。"何を塗るか"に¥34,046を使ってきた自分が、"それをどう届けるか"に¥2,200を出せないのは、さすがに変だと思ったんです。</p>
+      </div>
+
+      <p class="price-note">※価格・在庫は変動します。最新情報は必ず商品ページでご確認ください。1日あたりの単価は使用年数を仮定した概算であり、耐久性は使用状況やお手入れ方法によって変わります。</p>
+
+      <div class="cta-row" style="margin-top:30px;">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4573501391657" target="_blank" rel="noopener sponsored">
+          最新の価格・在庫を商品ページで確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">BEFORE YOU GO</p>
+      <h2>安心して試すために</h2>
+      <p>「ブラシ1つで何か変わるの?」その気持ち、よく分かります。私も6回ぶん、まったく同じことを思っていました。頭皮ケアといえば"何を塗るか"の話で、道具の話だとは考えたこともなかった。</p>
+      <p>だからこそ、この回は「何も失わない」という点を強調しておきたいんです。</p>
+      <p>これまでの6回は、どれも判断が必要でした。今のシャンプーをやめてこっちにするか。今のオイルより高いこれを買うか。比較して、迷って、置き換える。それなりの覚悟が要ります。</p>
+      <p>今回は、その判断がありません。中身が入っていないので、何とも競合しない。シャンプーも、トリートメントも、エッセンスも、今のまま続けられます。仮に「私には合わなかった」となっても、失うのは¥2,200と、浴室のフックひとつぶんの場所だけです。</p>
+      <p>そして、いきなり7つすべてを揃える必要もまったくありません。第1〜6弾で紹介したケアを、まず自分のペースで試す。そのうえで「塗るものは揃ったのに、ちゃんと使えている気がしない」と感じたタイミングで、この1つを足す。その順番でまったく問題ありません。</p>
+      <p>というより、この7つの中でいちばん"順番を選ばない"のが、たぶんこのブラシです。中身のアイテムは、髪質や地肌の状態によって合う・合わないが出ます。道具は、今どのアイテムを使っていようと、その横に置けます。何かをやめる必要も、置き換える必要もありません。</p>
+      <p>何を塗るかは6回で決まりました。7回目は、どう届けるかです。大きく生活を変える買い物ではなく、「今夜のシャンプーを、指ではなくこれでやってみる」だけの、小さな一歩です。ケアの中身が置き換わらないという気軽さこそが、続けられる理由になります。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※本商品は頭皮ケア用のブラシ(道具)であり、化粧品・医薬部外品ではありません。育毛・発毛その他の効果を持つものではなく、感じ方には個人差があります。<br>※力の入れすぎは頭皮を傷める原因になります。やさしくお使いください。頭皮に異常が現れた場合は使用を中止し、必要に応じて医師等にご相談ください。<br>※価格・在庫・配送などの詳細は、リンク先の販売ページの情報をご確認ください。</p>
+
+      <div class="series-nav">
+        シリーズで読む:
+        <a href="../round1/">第1弾・オラプレックス No.6(洗い流さないトリートメント)</a> ／
+        <a href="../round2/">第2弾・ケラスターゼ バン セラピュート(シャンプー)</a> ／
+        <a href="../round3/">第3弾・THE HAIR BALM 997(スタイリングバーム)</a> ／
+        <a href="../round4/">第4弾・ケラスターゼ RE マスク セラピュート(集中ヘアパック)</a> ／
+        <a href="../round5/">第5弾・LOA THE OIL PARFUM ザ ネロリ(香水オイル)</a> ／
+        <a href="../round6/">第6弾・アデノバイタル アドバンスト スカルプエッセンス(頭皮ケア)</a> ／
+        第7弾・ハートロック スカルプブラシ(頭皮ケアの道具・このページ)
+      </div>
+    </div>
+  </section>
+
+  <section class="beat deep final">
+    <div class="wrap">
+      <p class="eyebrow">LAST WORD</p>
+      <h2>「洗う」「足す」「整える」「特別ケア」「香り」「頭皮」。6回かけて紹介してきたアイテムで、"何を塗るか"はもう出揃っています。<br>でも、それはぜんぶ「中身」の話でした。</h2>
+      <p>中身をどこに、どうやって届けるかの話は、6回とも一度も出てきていません。</p>
+      <p>このまま7本目のボトルを探し続けて、「まだ何か足りないのかも」と思いながらまた半年過ごすのか。それとも、6本ぶんの中身をちゃんと届ける手を1つ持って、今ある6本を書かれたとおりに使い切るのか。</p>
+      <p>小さな選択に見えて、洗面台の景色は、案外ここで変わります。そして、変えられるのは、いつだって"今夜のシャンプー1回"からです。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4573501391657" target="_blank" rel="noopener sponsored">
+          今すぐ ALBUM ONLINE STORE で詳細を見る <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ps">
+        <p class="eyebrow">追伸</p>
+        <p>正直に言うと、このブラシも「魔法の1つ」ではありません。これは道具であり、育毛・発毛などの効果を持つものではありません。使った瞬間に何かが生えるわけでも、髪質が変わるわけでもない。感じ方には個人差があります。</p>
+        <p>それでも私がこれを紹介したいのは、「商品を疑う前に、実行を疑う」を、6回目にしてやっと覚えたからです。足りなかったのは、中身の質でも量でも本数でもなく、"何を"と"どう"を、別の話として持つという考え方でした。</p>
+        <p>7回に分けて紹介してきましたが、この7つを全部揃える必要はまったくありません。市販品ジプシーだった頃の私は、うまくいかないたびに商品を変えていました。使い方を変えたことは、たぶん一度もなかった。だからボトルだけが増えて、どれも8割残ったまま並んでいたんだと思います。</p>
+        <p>もし、アイテムはひと通り揃っているのに、「ちゃんと使えている気がしない」がずっと消えていないなら。足りない最後の1つは、たぶん7本目のボトルではなく、それを持つ手のほうです。今夜のシャンプー、指ではなくこれで洗ってみてください。</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4573501391657" target="_blank" rel="noopener sponsored">
+            ハートロック スカルプブラシを見てみる <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="brand">サロン専売品ラボ</p>
+    <p>本ページはアフィリエイトプログラム(A8.net)を利用した商品紹介であり、記載内容は一般的な商品情報および個人の使用感に基づくものです。本商品は頭皮ケア用のブラシ(道具)であり、化粧品・医薬部外品ではありません。育毛・発毛・抜け毛の減少その他の効果を保証するものではなく、使用感の感じ方には個人差があります。1日あたりの単価は使用年数を仮定した概算であり、耐久性は使用状況やお手入れ方法によって変動します。記載の使い方は一般的な目安であり、必ずパッケージの表示および使用上の注意をご確認ください。力の入れすぎは頭皮を傷める原因になります。頭皮に異常が現れた場合は使用を中止してください。価格・在庫・仕様は変更される場合があるため、最新情報は販売ページをご確認ください。</p>
+  </div>
+</footer>
+
+</body>
+</html>
