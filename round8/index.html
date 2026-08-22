@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オラプレックス No.3 ヘアパーフェクター｜サロン専売品ラボ</title>
+<style>
+  :root {
+    --ink: #212b21;
+    --ink-soft: #4c5a4a;
+    --paper: #f6f7f0;
+    --paper-raise: #ffffff;
+    --sage: #7c9473;
+    --sage-deep: #47593f;
+    --sage-line: #c7d2bd;
+    --mist: #e9ede2;
+    --clay: #b5674a;
+    --clay-deep: #954f37;
+    --clay-tint: #f1ded3;
+    --shadow: 0 1px 2px rgba(33, 43, 33, 0.06);
+    --measure: 38em;
+    --radius: 3px;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #e9ecE2;
+    --ink-soft: #b9c2b2;
+    --paper: #171d15;
+    --paper-raise: #1e251b;
+    --sage: #9bb391;
+    --sage-deep: #c3d4b9;
+    --sage-line: #3a462f;
+    --mist: #212a1d;
+    --clay: #dd9270;
+    --clay-deep: #eaab8b;
+    --clay-tint: #2c211b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e9ecE2;
+      --ink-soft: #b9c2b2;
+      --paper: #171d15;
+      --paper-raise: #1e251b;
+      --sage: #9bb391;
+      --sage-deep: #c3d4b9;
+      --sage-line: #3a462f;
+      --mist: #212a1d;
+      --clay: #dd9270;
+      --clay-deep: #eaab8b;
+      --clay-tint: #2c211b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Noto Sans JP", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    color: var(--sage-deep);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  p { margin: 0 0 1.1em; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---- PR bar ---- */
+  .prbar {
+    background: var(--sage-deep);
+    color: var(--paper-raise);
+  }
+  .prbar .wrap-wide {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #eef1e8;
+  }
+  .prbar strong { color: var(--clay-tint); font-weight: 700; }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    padding: 76px 0 88px;
+    background: linear-gradient(180deg, var(--mist) 0%, var(--paper) 78%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--sage-line), transparent 70%);
+    opacity: 0.55;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero .prehead {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    box-shadow: inset 0 -0.42em 0 var(--clay-tint);
+  }
+  .hero .sub {
+    max-width: 32em;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  .sprig {
+    margin-top: 40px;
+    width: 96px;
+    height: auto;
+    color: var(--sage);
+  }
+
+  /* ---- CTA button ---- */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 15px 30px;
+    background: var(--clay);
+    color: #fff8f3;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: var(--clay-deep); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+  .cta .arrow { font-size: 1.05em; }
+  .cta-row { display: flex; justify-content: flex-start; }
+  .cta-row.center { justify-content: center; }
+  .price-note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Section rhythm ---- */
+  section.beat {
+    padding: 68px 0;
+  }
+  section.beat.tint { background: var(--mist); }
+  section.beat.deep {
+    background: var(--sage-deep);
+    color: #eef1e8;
+  }
+  section.beat.deep h2 { color: #fff; }
+  section.beat.deep .eyebrow { color: var(--clay-tint); }
+  section.beat.deep p { color: #dbe3d3; }
+
+  .beat h2 {
+    font-size: clamp(1.28rem, 2.6vw, 1.6rem);
+    line-height: 1.6;
+    margin: 10px 0 26px;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Figures (images/ 配下・後で実画像を差し替え) ---- */
+  .shot {
+    margin: 32px 0 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    background: var(--mist);
+  }
+  .shot figcaption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Check list ---- */
+  .checks {
+    list-style: none;
+    margin: 26px 0 24px;
+    padding: 0;
+  }
+  .checks li {
+    position: relative;
+    padding: 12px 0 12px 32px;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.96rem;
+    color: var(--ink);
+  }
+  .checks li:first-child { border-top: 1px solid var(--sage-line); }
+  .checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    color: var(--clay);
+    font-weight: 700;
+  }
+
+  /* ---- Reasons / cards ---- */
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .reason-card {
+    background: var(--paper-raise);
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+  }
+  .reason-card .num {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 1.7rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .reason-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .reason-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Spec table ---- */
+  .spec {
+    margin: 30px 0;
+    border-top: 1px solid var(--sage-line);
+  }
+  .spec dl {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    margin: 0;
+  }
+  .spec dt, .spec dd {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.92rem;
+  }
+  .spec dt {
+    color: var(--sage);
+    font-weight: 700;
+  }
+  .spec dd { margin: 0; }
+
+  .price-tag {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- Feature rows ---- */
+  .feature {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--sage-line);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .feature:first-of-type { border-top: 1px solid var(--sage-line); }
+  .feature .f-title { font-weight: 700; color: var(--ink); }
+  .feature .f-chain {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .feature .f-chain span.step { color: var(--sage); }
+
+  /* ---- Trust grid ---- */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .trust-item {
+    padding: 20px;
+    background: var(--paper-raise);
+    border-radius: var(--radius);
+    border: 1px solid var(--sage-line);
+  }
+  .trust-item h3 {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+  .trust-item p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Voice quotes ---- */
+  .voice {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .voice-item {
+    padding-left: 18px;
+    border-left: 2px solid var(--sage);
+  }
+  .voice-item .v-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .voice-item p { font-size: 0.94rem; margin: 0; }
+  .voice-foot {
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- FAQ ---- */
+  .faq { margin-top: 28px; border-top: 1px solid var(--sage-line); }
+  .faq details {
+    border-bottom: 1px solid var(--sage-line);
+  }
+  .faq summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    font-size: 0.96rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before {
+    content: "Q";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--clay);
+    flex: none;
+  }
+  .faq summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq .a {
+    display: flex;
+    gap: 12px;
+    padding: 0 4px 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .faq .a::before {
+    content: "A";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage);
+    flex: none;
+  }
+
+  /* ---- Price reflection ---- */
+  .price-box {
+    margin-top: 28px;
+    padding: 26px 24px;
+    background: var(--clay-tint);
+    border-radius: var(--radius);
+  }
+  .price-box .amount {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 2rem;
+    color: var(--clay-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .price-box .amount span { font-size: 0.9rem; margin-left: 6px; color: var(--ink-soft); font-family: inherit; }
+
+  /* ---- Final ---- */
+  .final h2 { color: #fff; }
+  .ps {
+    margin-top: 46px;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+  }
+  .ps .eyebrow { color: var(--clay-tint); }
+
+  footer {
+    padding: 40px 0 56px;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  footer .brand {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage-deep);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  /* ---- Series nav (round1〜7 相互リンク) ---- */
+  .series-nav {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--sage-line);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .series-nav a { color: var(--sage-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .spec dl { grid-template-columns: 7em 1fr; }
+    section.beat { padding: 52px 0; }
+    .hero { padding: 56px 0 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="prbar">
+  <div class="wrap-wide">
+    【PR】本ページはアフィリエイトプログラム(A8.net)を利用して商品を紹介しています。ページ内リンクからの購入により、当方に<strong>成果報酬</strong>が発生する場合があります。記載内容は特定の効果効能を保証するものではなく、一般的な商品情報と個人の使用感に基づいています。本商品は<strong>化粧品</strong>です。文中の「補修」「結合」等はメーカーの製品説明に基づく表現であり、医薬品的な効果を示すものではありません。仕上がりの感じ方には個人差があります。
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="prehead">洗う・足す・整える・特別ケア・香り・頭皮・道具。7本ぜんぶ揃えた。でもその7本は、ぜんぶ「お風呂に入ってから」の話でした。入る前の私は、髪に何もしていません。</p>
+    <h1>1本目に買ったのは、オラプレックスの<em>No.6</em>でした。8本目に買ったのは、同じブランドの<em>No.3</em>です。7本かけて先に進んだつもりで、私は<em>1本目の手前</em>に戻ってきました。</h1>
+    <p class="sub">オラプレックス No.3 ヘアパーフェクター。¥3,740(税込)/ 100ml。シャンプー前の乾いた髪に塗って、5分以上おいてから洗い流す、週1〜2回のプレトリートメントです。第1〜7弾はすべて「洗う」か「洗った後」に使うものでした。これは、その全部より手前に立つ、シリーズで唯一の「洗う前」。しかも第1弾で紹介したNo.6と同じブランドで、番号は3つ若い。順番を飛ばしていたことに、8回目でようやく気づいた話をします。</p>
+    <div class="cta-row">
+      <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F0896364002350" target="_blank" rel="noopener sponsored">
+        No.3 ヘアパーフェクターを見てみる <span class="arrow">→</span>
+      </a>
+    </div>
+    <svg class="sprig" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 118 C50 80 44 50 50 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M50 70 C34 62 24 46 22 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M50 44 C64 38 74 24 76 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="50" cy="8" r="4" fill="currentColor"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">EMPATHY</p>
+      <h2>こんな「お風呂に入ってからが、ケアの始まりだと思っている」、心当たりありませんか。</h2>
+      <ul class="checks">
+        <li>髪のケアはシャンプーから始まるものだと、疑ったことがない</li>
+        <li>お風呂に入る前の自分が、髪に対して何かをした記憶がまったくない</li>
+        <li>洗い流さないトリートメントは持っているのに、「洗う前に塗るもの」は1本も持っていない</li>
+        <li>商品名の番号(No.3、No.6など)を、ただの型番だと思って読み飛ばしてきた</li>
+        <li>いいアイテムを何本も揃えたのに、「まだ何か足りない気がする」が消えない</li>
+        <li>ダメージケアの話になると、いつも「どれを買うか」から考え始めてしまう</li>
+        <li>自分がケアのどの工程に立っているのか、説明しろと言われたら答えられない</li>
+      </ul>
+      <p>一つでも頷いたなら、あと3分だけ読み進めてほしいんです。</p>
+      <p>私はこのシリーズで、7回かけてアイテムを揃えてきました。第2弾で毎日のシャンプーを変え、第1弾で洗い流さないトリートメントを足し、第3弾で仕上げのバームを加え、第4弾で週数回の集中ケアを挟み、第5弾で香りを乗せ、第6弾で頭皮まで下り、第7弾でそれを届ける道具を持ちました。合計¥36,246。7本並べて、正直「よくここまで来た」と思っていました。</p>
+      <p>ところが、第8弾を選ぶために7本を机に並べたとき、また妙なことに気づいてしまったんです。</p>
+      <p>7本とも、<strong>お風呂に入ってから使うもの</strong>でした。洗う、洗った後に足す、乾かす前に整える、頭皮に入れる、それをブラシで届ける。全部、浴室のドアを開けてからの話です。</p>
+      <p>じゃあ、ドアを開ける前は?──何もしていませんでした。7回ぶん、ゼロです。</p>
+      <p>もっと言うと、私が1本目に選んだのは「オラプレックス No.6」でした。当時の私は、この「6」を単なる商品名だと思っていたんです。でも番号があるということは、他の番号もあるということで。調べ直したら、<strong>No.3は「シャンプー前」に使うもの</strong>でした。つまり私は、1本目の時点で工程を1つ飛ばして、その先から入っていたことになります。</p>
+      <p>順番を間違えたまま、7本進んでいた。──足りなかったのは8本目の新しい何かじゃなくて、1本目より手前にあった工程のほうだったのかもしれない、と思いました。</p>
+
+      <figure class="shot">
+        <img src="images/01_eyecatch.png" alt="洗う前という、空白だった工程のイメージ" loading="lazy">
+        <figcaption>7回ぶん揃えたのは「洗った後」。8回目は、その手前に戻ります。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">IF NOTHING CHANGES</p>
+      <h2>正直に言うと、いちばん怖いのは「工程を1つ飛ばしていること」そのものじゃありません。<br>飛ばしたまま、¥36,246ぶんの"答え合わせ"をしてしまうことです。</h2>
+      <p>考えてみてください。前提の工程が抜けている状態で「思ったより変わらないな」と感じたら、人はどう結論づけるでしょうか。だいたい、こうです。──「この商品、私には合わなかったかも」。</p>
+      <p>商品を疑うんです。順番を疑わずに。</p>
+      <p>そして次に何をするかというと、8本目を探しに行く。もっといい成分、もっと評価の高いブランド、もっと高い1本。7本目までの工程がまだ埋まっていないのに、8本目の比較記事を読み始めるんです。</p>
+      <p>私はこれを、市販品ジプシーだった頃に何十回とやってきました。第7弾では、"ジプシー"の正体は「実行を変えないまま、商品だけ変え続けること」だと書きました。今回もう一段わかったのは、その手前があったということです。──<strong>そもそも、自分が立っている工程を知らないまま買い続けていた。</strong></p>
+      <p>しかも、この構造はとても静かに続きます。お風呂に入る前に何かを塗る習慣は、誰にも指摘されません。抜けていても、その日は何も困らない。鏡を見ても分かりません。──痛みがないから、7年でも飛ばせてしまう。</p>
+      <p>半年後も、たぶん同じです。洗面台には8本目、9本目が増えていて、どれも「たぶん効いてる気がする」という曖昧な評価のまま並んでいる。そして相変わらず、ケアはシャンプーから始まっている。</p>
+      <p>いちばんもったいないのは、ここです。第1〜7弾で、"何を使うか"の答えはもう出そろっているんです。出ていないのは、<strong>"どこから始めるか"</strong>のほうだけ。</p>
+      <p>しかも皮肉なことに、その答えは新商品ではありませんでした。1本目に買ったのと同じブランドの、番号が3つ若いほうです。7本の平均は¥5,178。今回の¥3,740はその約72%で、しかも第1弾とまったく同じ金額。──8本目にして、価格まで1本目に戻ってきました。</p>
+      <p>足りなかったのは、8本目の新しい発見じゃありませんでした。1本目の"手前"です。まだ間に合います。変えられるのは、今夜お風呂に入る5分前からです。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">THE TURN</p>
+      <h2>そこでたどり着いたのが、「オラプレックス No.3 ヘアパーフェクター」でした。</h2>
+      <p>ここで一つ、はっきりさせておきたいことがあります。第1〜7弾で紹介してきたものは、どれも「洗う」か「洗った後」に使うものでした。洗う、足す、整える、集中ケアする、香らせる、頭皮に入れる、それを届ける。役割は違っても、全部お風呂のドアを開けてからの話です。</p>
+      <p>これは欠点ではありません。ケアの大半は洗った後に行うものだからです。7本とも、それぞれの持ち場をきちんと果たしてくれました。</p>
+      <p>一方で今回のアイテムは、そもそも立っている位置が違います。足すものでも、届けるものでもなく、<strong>その全部より前に置くもの</strong>。シャンプーで泡立てるより先、髪がまだ乾いている段階で使います。</p>
+      <p>言ってしまえば、第1〜7弾が"洗った後"のケア。そしてこの1本が"洗う前"のケア。何を使うかは7回で決まりました。8回目は、どこから始めるかです。</p>
+      <p class="lede">私がこの1本を選んだ理由は、大きく3つ。</p>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <span class="num">壱</span>
+          <h3>シリーズで唯一、既存の7本より「前」に立つ</h3>
+          <p>今使っているシャンプーもトリートメントもオイルも、何ひとつ置き換えません。既存の工程を差し替えるのではなく、7本が並んでいる列の先頭に1つ足すだけです。置き換えも買い替えも比較検討も発生しません。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">弐</span>
+          <h3>第1弾と同じブランドの、番号が3つ若いほう</h3>
+          <p>No.6は乾かす前に使うもの、No.3は洗う前に使うもの。同じシリーズの中で、役割と使うタイミングが明確に分けられています。8本目にして1本目の"続き"ではなく"手前"を選ぶという、シリーズ8回目でしか作れない構図になりました。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">参</span>
+          <h3>放置時間が、お風呂の待ち時間とそのまま重なる</h3>
+          <p>塗ってから5分以上おく必要があります。これは一見ハードルですが、実際には「服を脱ぐ前に塗って、湯船に浸かっている間に終わる」だけです。工程が増えるというより、もともとあった待ち時間を髪に使う感覚に近いと感じました。</p>
+        </div>
+      </div>
+      <p style="margin-top:28px;">「何を使うか」から、「どこから始めるか」へ。7回かけてアイテムを揃えてきたからこそ、いま順番のほうに目を向ける意味があります。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※本商品は化粧品です。記載の成分・技術に関する内容はメーカーの製品説明に基づくものであり、効果を保証するものではありません。感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">THE PRODUCT</p>
+      <h2>オラプレックス No.3 ヘアパーフェクターとは</h2>
+      <p>オラプレックス(OLAPLEX)は、第1弾で紹介した No.6 ボンドスムーサーと同じブランドです。第2〜7弾で登場したケラスターゼ、リンク、LOA、資生堂プロフェッショナル、SINN PURETE とは重なりません。シリーズ8回のうち、同じブランドが2度登場するのは今回が初めてです。</p>
+      <p>そして商品そのものの位置づけも、シリーズ初です。第1〜7弾は、洗い流さないトリートメント、シャンプー、バーム、ヘアマスク、香水オイル、スカルプエッセンス、スカルプブラシ。使う場面は違っても、全部「洗う」か「洗った後」でした。今回は「洗う前」。工程そのものが変わる、シリーズ唯一の1本になります。</p>
+
+      <figure class="shot">
+        <img src="images/04_product_photo.png" alt="オラプレックス No.3 ヘアパーフェクター 100ml" loading="lazy">
+        <figcaption>No.3 ヘアパーフェクター / OLAPLEX</figcaption>
+      </figure>
+
+      <div class="spec">
+        <dl>
+          <dt>タイプ</dt><dd>プレケア(シャンプー前のプレトリートメント)</dd>
+          <dt>価格</dt><dd class="price-tag">¥3,740(税込)/ 100ml・1mlあたり約¥37 / 第1弾とまったく同額</dd>
+          <dt>使うタイミング</dt><dd>シャンプーの前。髪が乾いた状態で塗布する</dd>
+          <dt>放置時間</dt><dd>5分以上。髪が湿っている限り最大30〜45分程度まで置ける</dd>
+          <dt>頻度</dt><dd>週1〜2回のスペシャルトリートメント(毎日使うものではありません)</dd>
+          <dt>使用量の目安</dt><dd>ショート5ml〜 / ミディアム10ml〜 / ロング15ml〜</dd>
+          <dt>特徴成分</dt><dd>ジマレイン酸ビスアミノプロピルジグリコール(メーカー表記では日本初の新成分)</dd>
+          <dt>技術</dt><dd>ボンドサイエンステクノロジー(メーカーによる世界特許技術との表記)</dd>
+          <dt>着目点</dt><dd>ブリーチ・カラー・パーマ等の施術や、熱・摩擦・紫外線などで切断された毛髪のS-S結合</dd>
+          <dt>香り</dt><dd>洋ナシ系の、甘くフレッシュな香り</dd>
+          <dt>ブランド</dt><dd>OLAPLEX(オラプレックス)・第1弾のNo.6と同ブランド</dd>
+          <dt>位置づけ</dt><dd>シリーズ唯一の「洗う前」(第1〜7弾はすべて洗う/洗った後)</dd>
+        </dl>
+      </div>
+
+      <p>この1本のいちばんの特徴は、「今のケアの工程を、1つも置き換えない」という点です。シャンプーもトリートメントもオイルもバームもエッセンスもブラシも、今のまま。第1〜7弾で作った流れには、何も手を加えません。変わるのは、その流れが<strong>どこから始まるか</strong>だけです。</p>
+      <p>そしてもう一つ、公式の説明で個人的にいちばん腑に落ちた話があります。メーカーは髪を建物にたとえていて、S-S結合を「柱」と表現しています。木造建築と鉄筋建築の違いだ、と。</p>
+      <p>この比喩を借りるなら、表面をなめらかに整えるトリートメントは、壁紙を張り替える作業です。見た目はきれいになる。でも柱そのものには触れていない。──7回かけて私がやってきたのは、たぶんずっと壁紙の話だったんだな、と思いました。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※「日本初の新成分」「世界特許技術」はメーカーの表記に基づく記載です。建物のたとえもメーカーによる説明上の比喩であり、実際の効果を保証するものではありません。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F0896364002350" target="_blank" rel="noopener sponsored">
+          商品ページで詳細・価格を確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHY IT WORKS</p>
+      <h2>「で、結局それの何がいいの?」に、飾らず正直に答えます。</h2>
+
+      <div class="features">
+        <div class="feature">
+          <div class="f-title">シャンプーより「前」に使う、シリーズ唯一の工程である</div>
+          <div class="f-chain"><span class="step">だから</span> 第1〜7弾のどれとも役割が重ならない ── <span class="step">つまり</span> 今使っているものを1つも捨てず、1つも疑わずに始められる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">放置時間が5分以上と決まっている</div>
+          <div class="f-chain"><span class="step">だから</span> 服を脱ぐ前に塗れば、湯船に浸かっている間に終わる ── <span class="step">つまり</span> 新しく時間を作るのではなく、もともとあった待ち時間を使うだけで済む</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">週1〜2回のスペシャルケアという設計である</div>
+          <div class="f-chain"><span class="step">だから</span> 毎日やらなくていい ── <span class="step">つまり</span> 「毎晩続ける自信がない」という理由で見送らなくていい</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">第1弾のNo.6と同じブランドで、番号で工程が分かれている</div>
+          <div class="f-chain"><span class="step">だから</span> どちらを先に使うのか迷わない ── <span class="step">つまり</span> No.3は洗う前、No.6は乾かす前と、自分の立ち位置が番号で確認できる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">乾いた髪に塗って洗い流す、という単純な手順である</div>
+          <div class="f-chain"><span class="step">だから</span> 特別な道具も技術も要らない ── <span class="step">つまり</span> 手に取って全体になじませ、時間を置いて洗うだけで工程が完了する</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">使用量が髪の長さごとに明示されている</div>
+          <div class="f-chain"><span class="step">だから</span> 「どれくらい使えばいいのか分からない」が起きにくい ── <span class="step">つまり</span> ショート5ml〜、ミディアム10ml〜、ロング15ml〜という目安で自分の量が決まる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">シャンプー後に使うという別の使い方も公式に案内されている</div>
+          <div class="f-chain"><span class="step">だから</span> 生活リズムに合わせて工程の位置を変えられる ── <span class="step">つまり</span> 前に使えばサラサラでふんわり、後に使えばしっとりまとまる、と質感で選べる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">¥3,740という、第1弾とまったく同じ価格</div>
+          <div class="f-chain"><span class="step">だから</span> 7本平均¥5,178の約72%で試せる ── <span class="step">つまり</span> シリーズを1本目から追ってきた人にとって、支払う金額の感覚がすでに分かっている</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">週1〜2回・ミディアム10mlなら、100mlで10回前後使える</div>
+          <div class="f-chain"><span class="step">だから</span> 1回あたりおよそ¥374という計算になる ── <span class="step">つまり</span> 「週末だけのスペシャルケア」として、月あたりの負担を見積もりやすい</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;">7回かけて「何を塗るか」を揃えてきたからこそ、8回目でようやく「どこから始めていたのか」に目が向きました。これは、7本ぶん遠回りしたからこそ出てきた、私のいちばん正直な実感です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記は使い方・設計に関する説明です。効果には個人差があり、特定の結果を保証するものではありません。1回あたりの金額は使用量を仮定した概算です。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">WHY TRUST IT</p>
+      <h2>正直に言うと、私は「有名なブランドだから」だけでは商品を信じないタイプです。</h2>
+      <p class="lede">それでもこの1本を紹介したいと思えたのは、こんな背景があるからです。</p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>シリーズで唯一、"置き換えリスク"がゼロの回</h3>
+          <p>これまでの7回のうち、化粧品を扱った6回は「今使っているものをやめて、こっちにする?」という判断が伴いました。今回は伴いません。洗う前という空いている工程に置くだけなので、競合しようがない。合わなかったとしても、失うのは¥3,740と、週末の5分だけです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>番号で工程が分かれている、という設計思想</h3>
+          <p>「いいトリートメントです」で終わらせず、No.0からNo.9まで番号で役割を割り振っているブランドです。使う順番を製品名そのもので示している。今回のように「自分がどの工程に立っているか」を確かめたい人には、これ以上ないくらい分かりやすい設計だと思いました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>もともとブリーチ用ではなく、施術の前処理剤として開発された</h3>
+          <p>ブリーチ毛の救世主というイメージで見ていたのですが、公式によれば出発点はパーマの前処理剤・後処理剤だったそうです。「施術の前に何をしておくか」から始まったブランドだと知って、今回の"洗う前"という文脈とつながった気がしました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>No.0との併用まで公式に説明されている</h3>
+          <p>No.0は水状で毛髪の内部に、No.3はカチオン基剤で毛髪の外側に働くという住み分けが明示され、併用も推奨されています。1本で全部解決しますと言い切らないところに、かえって納得感がありました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>¥3,740という、第1弾と同額の価格設定</h3>
+          <p>第1弾¥3,740、第2弾¥4,180、第3弾¥4,290、第4弾¥7,260、第5弾¥8,800、第6弾¥5,776、第7弾¥2,200。合計¥36,246、平均¥5,178。第8弾は¥3,740。8回目にして、1本目とぴったり同じ金額に戻りました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>サロン専売品を、公式通販でそのまま買える</h3>
+          <p>ALBUM ONLINE STOREは正規販売店です。サロン専売品は流通経路によって真贋や保管状態が読めないことがあるので、私は毎回ここを確認してから紹介しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHAT PEOPLE NOTICE</p>
+      <h2>こんな使用感(声の傾向)</h2>
+      <p>週1〜2回のケアなので、初日に劇的な何かが起きるタイプのアイテムではありません。だからこそ、盛らずに、使ってみて分かったことをそのまま整理してみます。</p>
+
+      <div class="voice">
+        <div class="voice-item">
+          <p class="v-label">テクスチャーについて</p>
+          <p>とろみのあるクリーム状で、乾いた髪にもよくなじみます。水っぽくないので、洗面所で塗っていて垂れてくるということはありませんでした。ただ、量をケチると全体に行き渡らないので、公式の目安量は守ったほうがいいと感じています。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">香りについて</p>
+          <p>洋ナシ系と説明されている通り、甘くフレッシュな香りです。ただしこれは洗い流すものなので、香りが残るタイプのアイテムではありません。第5弾の香水オイルのような「まとう」用途とはまったく別物として考えたほうがいいです。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">放置時間の使い方について</p>
+          <p>ここがいちばん実用的な発見でした。塗ってから5分以上おく必要があるのですが、私は服を脱ぐ前に塗って、そのまま湯船に浸かっています。浸かり終わる頃には放置時間が終わっているので、体感としては「工程が増えた」感じがほとんどありません。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">洗い上がりについて</p>
+          <p>公式の説明では、シャンプー前に使うとサラサラでふんわり、シャンプー後に使うとしっとりまとまる、と質感が変わるとされています。私は前者の使い方をしていて、翌朝のブラシの通り方がいちばん分かりやすい違いでした。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">頻度について</p>
+          <p>毎日やらなくていい、というのは思っていたより大きいです。第6弾のエッセンスは朝晩1日2回で、正直サボる日がありました。これは週1〜2回なので、「週末にやる」と決めてしまえば忘れません。頻度が低いことが、続く理由になるタイプのアイテムだと思います。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">第1弾のNo.6との関係について</p>
+          <p>念のため書いておくと、No.6が要らなくなるわけではありません。No.3は洗う前、No.6は乾かす前で、担当する工程が違います。私は今、週末だけNo.3を足して、No.6はこれまで通り毎日使っています。増えたのは1工程で、減ったものはありません。</p>
+        </div>
+      </div>
+      <p class="voice-foot">もちろん、髪質も施術履歴も人それぞれ。だからこそ、「自分の生活のどこに置けるか」を一度試してみる価値があるアイテムだと思っています。<br>※上記は一般的な使用感の傾向および個人の感想であり、効果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>よくある質問</h2>
+
+      <div class="faq">
+        <details>
+          <summary>第1弾のNo.6を持っています。買い替えということですか?</summary>
+          <div class="a">いいえ、買い替えではありません。No.3は洗う前、No.6は乾かす前に使うもので、担当する工程がまったく違います。どちらかを選ぶ関係ではなく、順番に並ぶ関係です。No.6をやめる必要はまったくありません。</div>
+        </details>
+        <details>
+          <summary>シャンプー前に何かを塗るって、正直めんどうではないですか?</summary>
+          <div class="a">私も最初はそう思いました。ただ実際にやってみると、服を脱ぐ前に塗って、湯船に浸かっている間に放置時間が終わります。工程が1つ増えるというより、もともとあった待ち時間を髪に使う感覚に近いです。しかも週1〜2回なので、毎日の手間にはなりません。</div>
+        </details>
+        <details>
+          <summary>第1〜7弾のケアと併用できますか?</summary>
+          <div class="a">できます。今使っているシャンプー、トリートメント、オイル、バーム、エッセンス、ブラシ、どれも変える必要はありません。今回はそれらの列の先頭に1つ足すだけの回です。シリーズ8回の中で、唯一「今使っているものを1つも見直さなくていい回」でもあります。</div>
+        </details>
+        <details>
+          <summary>どのくらい置けばいいですか? 長く置いたほうが効きますか?</summary>
+          <div class="a">公式では5分以上とされていて、髪が湿っている限り最大30〜45分程度まで置けるとされています。ただ、長く置けば置くほど良くなると保証されているわけではありません。まずは5〜10分から、生活の中で無理のない長さで始めるのが現実的だと思います。</div>
+        </details>
+        <details>
+          <summary>ブリーチもカラーもしていませんが、使う意味はありますか?</summary>
+          <div class="a">公式には、ブリーチ毛だけでなく、ドライヤーやアイロンの熱、ブラッシングやヘアゴムの摩擦、紫外線などの日常的なダメージにも対応するとされています。またもともとはパーマの前処理剤として開発された経緯があり、サロン施術を受けていなくても使えると案内されています。</div>
+        </details>
+        <details>
+          <summary>No.0とどちらを買えばいいですか?</summary>
+          <div class="a">公式の説明では、No.0は水状で毛髪の内部に、No.3はカチオン基剤で毛髪の外側に働くとされ、併用が推奨されています。ただ最初の1本としては、単体で完結する使い方が明示されているNo.3のほうが分かりやすいと思います。私も今回はNo.3だけで始めました。</div>
+        </details>
+        <details>
+          <summary>100mlで、どのくらい持ちますか?</summary>
+          <div class="a">使用量の目安がショート5ml〜、ミディアム10ml〜、ロング15ml〜なので、ミディアムなら単純計算で10回前後です。週1回なら2ヶ月強、週2回なら1ヶ月強という計算になります。1回あたりに直すとおよそ¥374です(使用量を仮定した概算です)。</div>
+        </details>
+        <details>
+          <summary>使ったら、傷んだ髪が治るということですか?</summary>
+          <div class="a">いいえ。本商品は化粧品であり、髪が治る・元に戻るといった医薬品的な効果を持つものではありません。メーカーはS-S結合という毛髪内部の結合に着目した技術だと説明していますが、感じ方には個人差があります。過度な期待ではなく、工程を1つ埋めるという感覚で試すのが現実的だと思います。</div>
+        </details>
+        <details>
+          <summary>ワックスやバームをつけた日でも使えますか?</summary>
+          <div class="a">公式では、ハード系のスタイリング剤を使用している場合は、塗布前に予洗いしてタオルドライすることが推奨されています。しっかり整えた日は、一度流してから使うと考えておくとよさそうです。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">ABOUT THE PRICE</p>
+      <h2>価格の考え方</h2>
+      <p>No.3 ヘアパーフェクターは ¥3,740(税込)/ 100ml。第1弾で紹介したNo.6 ボンドスムーサーと、まったく同じ金額です。</p>
+      <p>これまでの7本を並べてみます。¥3,740 / ¥4,180 / ¥4,290 / ¥7,260 / ¥8,800 / ¥5,776 / ¥2,200。合計¥36,246、1本あたりの平均は¥5,178。今回の¥3,740は、その平均の約72%にあたります。</p>
+      <p>ただ、ここで「平均より安いですよ」で終わらせたくないんです。今回いちばん考えてほしいのは、金額そのものより、その金額が<strong>どの工程に払われるか</strong>のほうだからです。</p>
+      <p>私はこのシリーズで、7本・合計¥36,246を「洗う」と「洗った後」に使ってきました。同じ期間、「洗う前」に使った金額は¥0です。洗った後に¥36,246、洗う前に¥0。比率でいえば、100対0。7本を机に並べてその数字を眺めたとき、第7弾のときと同じように、私はまた笑ってしまいました。私はどうやら、毎回どこか1箇所だけを完全に空白にしたまま買い物をしているらしいんです。</p>
+      <p>頻度の話も、正直に書いておきます。これは週1〜2回のケアです。ミディアムで10mlずつ使うなら、100mlでおよそ10回。週1回なら2ヶ月強もちます。1回あたりに直すと、およそ¥374。第6弾のエッセンスのように毎日使うものではないので、月あたりの負担で見ると、実はシリーズの中でも軽いほうに入ります。</p>
+
+      <div class="price-box">
+        <div class="amount">¥3,740<span>/ 税込・100ml。ミディアム10ml換算で約10回分、1回あたり約¥374</span></div>
+        <p style="margin-top:14px;">そしてもう一つ。この1本は、何かの代わりに買うものではありません。今使っている7本は、そのまま全部残ります。増えるのは、お風呂に入る5分前という、これまで一度も使っていなかった時間だけです。"洗った後"に¥36,246を使ってきた自分が、"洗う前"に¥3,740を出せないのは、さすがに変だと思ったんです。</p>
+      </div>
+
+      <p class="price-note">※価格・在庫は変動します。最新情報は必ず商品ページでご確認ください。1回あたりの金額は使用量を仮定した概算であり、髪の長さや使い方によって変わります。</p>
+
+      <div class="cta-row" style="margin-top:30px;">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F0896364002350" target="_blank" rel="noopener sponsored">
+          最新の価格・在庫を商品ページで確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">BEFORE YOU GO</p>
+      <h2>安心して試すために</h2>
+      <p>「洗う前に1つ増やすだけで、何か変わるの?」その気持ち、よく分かります。私も7回ぶん、そもそもその工程の存在を知りませんでした。ケアといえば"何を塗るか"の話で、"どこから始めるか"の話だとは考えたこともなかった。</p>
+      <p>だからこそ、この回は「何も失わない」という点を強調しておきたいんです。</p>
+      <p>これまでの7回のうち、化粧品を扱った6回は、どれも判断が必要でした。今のシャンプーをやめてこっちにするか。今のオイルより高いこれを買うか。比較して、迷って、置き換える。それなりの覚悟が要ります。</p>
+      <p>今回は、その判断がありません。空いている工程に置くだけなので、何とも競合しない。シャンプーも、トリートメントも、エッセンスも、今のまま続けられます。仮に「私には合わなかった」となっても、失うのは¥3,740と、週末の5分だけです。</p>
+      <p>そして、いきなり8つすべてを揃える必要もまったくありません。第1〜7弾で紹介したケアを、まず自分のペースで試す。そのうえで「揃えたはずなのに、まだ何か足りない気がする」と感じたタイミングで、この1つを列の先頭に足す。その順番でまったく問題ありません。</p>
+      <p>というより、この8つの中でいちばん"順番を選ばない"のが、たぶんこの1本です。というのも、これ自体が順番の話だからです。今どのアイテムを使っていようと、その全部より前に置けます。何かをやめる必要も、置き換える必要もありません。</p>
+      <p>何を使うかは7回で決まりました。8回目は、どこから始めるかです。大きく生活を変える買い物ではなく、「今週末、お風呂に入る5分前に塗ってみる」だけの、小さな一歩です。今のケアが1つも置き換わらないという気軽さこそが、試しやすい理由になります。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※頭皮や肌に異常が現れた場合は使用を中止し、必要に応じて医師等にご相談ください。目に入った場合はすぐに洗い流してください。使用前に必ずパッケージの表示と使用上の注意をご確認ください。</p>
+
+      <div class="series-nav">
+        シリーズで読む:
+        <a href="../round1/">第1弾・オラプレックス No.6(洗い流さないトリートメント)</a> ／
+        <a href="../round2/">第2弾・ケラスターゼ バン セラピュート(シャンプー)</a> ／
+        <a href="../round3/">第3弾・THE HAIR BALM 997(スタイリングバーム)</a> ／
+        <a href="../round4/">第4弾・ケラスターゼ RE マスク セラピュート(集中ヘアパック)</a> ／
+        <a href="../round5/">第5弾・LOA THE OIL PARFUM ザ ネロリ(香水オイル)</a> ／
+        <a href="../round6/">第6弾・アデノバイタル アドバンスト スカルプエッセンス(頭皮ケア)</a> ／
+        <a href="../round7/">第7弾・ハートロック スカルプブラシ(頭皮ケアの道具)</a> ／
+        第8弾・オラプレックス No.3 ヘアパーフェクター(洗う前のプレケア・このページ)
+      </div>
+    </div>
+  </section>
+
+  <section class="beat deep final">
+    <div class="wrap">
+      <p class="eyebrow">LAST WORD</p>
+      <h2>「洗う」「足す」「整える」「特別ケア」「香り」「頭皮」「道具」。7回かけて紹介してきたアイテムで、"何を使うか"はもう出揃っています。<br>でも、それはぜんぶ「洗った後」の話でした。</h2>
+      <p>お風呂に入る前に何をするかの話は、7回とも一度も出てきていません。</p>
+      <p>このまま8本目の新しい何かを探し続けて、「まだ何か足りないのかも」と思いながらまた半年過ごすのか。それとも、7本ぶんのケアが始まる場所を1つ手前にずらして、そこから流れを作り直すのか。</p>
+      <p>小さな選択に見えて、洗面台の景色は、案外ここで変わります。そして、変えられるのは、いつだって"今週末、お風呂に入る5分前"からです。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F0896364002350" target="_blank" rel="noopener sponsored">
+          今すぐ ALBUM ONLINE STORE で詳細を見る <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ps">
+        <p class="eyebrow">追伸</p>
+        <p>正直に言うと、この1本も「魔法の1本」ではありません。これは化粧品であり、傷んだ髪が治る・元に戻るといった効果を持つものではない。使った翌朝に別人の髪になるわけでもありません。感じ方には個人差があります。</p>
+        <p>それでも私がこれを紹介したいのは、「商品を疑う前に、順番を疑う」を、8回目にしてやっと覚えたからです。第7弾では「実行を疑う」と書きました。今回わかったのは、その手前に「自分がどの工程に立っているかを知る」があるということでした。</p>
+        <p>8回に分けて紹介してきましたが、この8つを全部揃える必要はまったくありません。市販品ジプシーだった頃の私は、いい商品を見つけることばかり考えていました。8本紹介してきて思うのは、たぶん商品より先に、自分がどの工程に立っているのかを知るほうが早かったということです。</p>
+        <p>もし、アイテムはひと通り揃っているのに、「まだ何か足りない気がする」がずっと消えていないなら。足りない最後の1つは、8本目の新しい何かではなく、1本目より手前にある工程のほうかもしれません。今週末、お風呂に入る5分前に塗ってみてください。</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F0896364002350" target="_blank" rel="noopener sponsored">
+            No.3 ヘアパーフェクターを見てみる <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="brand">サロン専売品ラボ</p>
+    <p>本ページはアフィリエイトプログラム(A8.net)を利用した商品紹介であり、記載内容は一般的な商品情報および個人の使用感に基づくものです。本商品は化粧品であり、傷んだ髪が治る・元に戻る等の医薬品的な効果を保証するものではありません。「日本初の新成分」「世界特許技術」等はメーカーの表記に基づく記載であり、建物のたとえもメーカーによる説明上の比喩です。仕上がりや感じ方には髪質・施術履歴による個人差があります。1回あたりの金額は使用量を仮定した概算であり、髪の長さや使い方によって変動します。記載の使い方は一般的な目安であり、必ずパッケージの表示および使用上の注意をご確認ください。頭皮や肌に異常が現れた場合は使用を中止してください。価格・在庫・仕様は変更される場合があるため、最新情報は販売ページをご確認ください。</p>
+  </div>
+</footer>
+
+</body>
+</html>
