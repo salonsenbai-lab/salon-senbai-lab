@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>イオ クリーム メルトリペア｜サロン専売品ラボ</title>
+<style>
+  :root {
+    --ink: #212b21;
+    --ink-soft: #4c5a4a;
+    --paper: #f6f7f0;
+    --paper-raise: #ffffff;
+    --sage: #7c9473;
+    --sage-deep: #47593f;
+    --sage-line: #c7d2bd;
+    --mist: #e9ede2;
+    --clay: #b5674a;
+    --clay-deep: #954f37;
+    --clay-tint: #f1ded3;
+    --shadow: 0 1px 2px rgba(33, 43, 33, 0.06);
+    --measure: 38em;
+    --radius: 3px;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #e9ecE2;
+    --ink-soft: #b9c2b2;
+    --paper: #171d15;
+    --paper-raise: #1e251b;
+    --sage: #9bb391;
+    --sage-deep: #c3d4b9;
+    --sage-line: #3a462f;
+    --mist: #212a1d;
+    --clay: #dd9270;
+    --clay-deep: #eaab8b;
+    --clay-tint: #2c211b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e9ecE2;
+      --ink-soft: #b9c2b2;
+      --paper: #171d15;
+      --paper-raise: #1e251b;
+      --sage: #9bb391;
+      --sage-deep: #c3d4b9;
+      --sage-line: #3a462f;
+      --mist: #212a1d;
+      --clay: #dd9270;
+      --clay-deep: #eaab8b;
+      --clay-tint: #2c211b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Noto Sans JP", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    color: var(--sage-deep);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  p { margin: 0 0 1.1em; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---- PR bar ---- */
+  .prbar {
+    background: var(--sage-deep);
+    color: var(--paper-raise);
+  }
+  .prbar .wrap-wide {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #eef1e8;
+  }
+  .prbar strong { color: var(--clay-tint); font-weight: 700; }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    padding: 76px 0 88px;
+    background: linear-gradient(180deg, var(--mist) 0%, var(--paper) 78%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--sage-line), transparent 70%);
+    opacity: 0.55;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero .prehead {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    box-shadow: inset 0 -0.42em 0 var(--clay-tint);
+  }
+  .hero .sub {
+    max-width: 32em;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  .sprig {
+    margin-top: 40px;
+    width: 96px;
+    height: auto;
+    color: var(--sage);
+  }
+
+  /* ---- CTA button ---- */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 15px 30px;
+    background: var(--clay);
+    color: #fff8f3;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: var(--clay-deep); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+  .cta .arrow { font-size: 1.05em; }
+  .cta-row { display: flex; justify-content: flex-start; }
+  .cta-row.center { justify-content: center; }
+  .price-note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Section rhythm ---- */
+  section.beat {
+    padding: 68px 0;
+  }
+  section.beat.tint { background: var(--mist); }
+  section.beat.deep {
+    background: var(--sage-deep);
+    color: #eef1e8;
+  }
+  section.beat.deep h2 { color: #fff; }
+  section.beat.deep .eyebrow { color: var(--clay-tint); }
+  section.beat.deep p { color: #dbe3d3; }
+
+  .beat h2 {
+    font-size: clamp(1.28rem, 2.6vw, 1.6rem);
+    line-height: 1.6;
+    margin: 10px 0 26px;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Figures (images/ 配下・後で実画像を差し替え) ---- */
+  .shot {
+    margin: 32px 0 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    background: var(--mist);
+  }
+  .shot figcaption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Check list ---- */
+  .checks {
+    list-style: none;
+    margin: 26px 0 24px;
+    padding: 0;
+  }
+  .checks li {
+    position: relative;
+    padding: 12px 0 12px 32px;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.96rem;
+    color: var(--ink);
+  }
+  .checks li:first-child { border-top: 1px solid var(--sage-line); }
+  .checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    color: var(--clay);
+    font-weight: 700;
+  }
+
+  /* ---- Reasons / cards ---- */
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .reason-card {
+    background: var(--paper-raise);
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+  }
+  .reason-card .num {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 1.7rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .reason-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .reason-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Spec table ---- */
+  .spec {
+    margin: 30px 0;
+    border-top: 1px solid var(--sage-line);
+  }
+  .spec dl {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    margin: 0;
+  }
+  .spec dt, .spec dd {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.92rem;
+  }
+  .spec dt {
+    color: var(--sage);
+    font-weight: 700;
+  }
+  .spec dd { margin: 0; }
+
+  .price-tag {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- Feature rows ---- */
+  .feature {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--sage-line);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .feature:first-of-type { border-top: 1px solid var(--sage-line); }
+  .feature .f-title { font-weight: 700; color: var(--ink); }
+  .feature .f-chain {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .feature .f-chain span.step { color: var(--sage); }
+
+  /* ---- Trust grid ---- */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .trust-item {
+    padding: 20px;
+    background: var(--paper-raise);
+    border-radius: var(--radius);
+    border: 1px solid var(--sage-line);
+  }
+  .trust-item h3 {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+  .trust-item p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Voice quotes ---- */
+  .voice {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .voice-item {
+    padding-left: 18px;
+    border-left: 2px solid var(--sage);
+  }
+  .voice-item .v-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .voice-item p { font-size: 0.94rem; margin: 0; }
+  .voice-foot {
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- FAQ ---- */
+  .faq { margin-top: 28px; border-top: 1px solid var(--sage-line); }
+  .faq details {
+    border-bottom: 1px solid var(--sage-line);
+  }
+  .faq summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    font-size: 0.96rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before {
+    content: "Q";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--clay);
+    flex: none;
+  }
+  .faq summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq .a {
+    display: flex;
+    gap: 12px;
+    padding: 0 4px 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .faq .a::before {
+    content: "A";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage);
+    flex: none;
+  }
+
+  /* ---- Price reflection ---- */
+  .price-box {
+    margin-top: 28px;
+    padding: 26px 24px;
+    background: var(--clay-tint);
+    border-radius: var(--radius);
+  }
+  .price-box .amount {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 2rem;
+    color: var(--clay-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .price-box .amount span { font-size: 0.9rem; margin-left: 6px; color: var(--ink-soft); font-family: inherit; }
+
+  /* ---- Final ---- */
+  .final h2 { color: #fff; }
+  .ps {
+    margin-top: 46px;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+  }
+  .ps .eyebrow { color: var(--clay-tint); }
+
+  footer {
+    padding: 40px 0 56px;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  footer .brand {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage-deep);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  /* ---- Series nav (round1〜7 相互リンク) ---- */
+  .series-nav {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--sage-line);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .series-nav a { color: var(--sage-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .spec dl { grid-template-columns: 7em 1fr; }
+    section.beat { padding: 52px 0; }
+    .hero { padding: 56px 0 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="prbar">
+  <div class="wrap-wide">
+    【PR】本ページはアフィリエイトプログラム(A8.net)を利用して商品を紹介しています。ページ内リンクからの購入により、当方に<strong>成果報酬</strong>が発生する場合があります。記載内容は特定の効果効能を保証するものではなく、一般的な商品情報と個人の使用感に基づいています。本商品は<strong>化粧品</strong>です。文中の「疎水化コントロール」等はメーカーの製品説明に基づく表現であり、医薬品的な効果を示すものではありません。<strong>価格は変動します</strong>(現在は割引適用中)。最新の価格・在庫は必ず商品ページでご確認ください。
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="prehead">洗う前・洗う・乾かす前・仕上げ・週数回・香り・頭皮・道具。8本を工程順に並べ直したら、まん中がひとつだけ空いていました。</p>
+    <h1>シャンプーは、第2弾で変えました。<br>でもその<em>30秒後</em>に手を伸ばすものだけは、8回ぶん<em>一度も話題にしていなかった</em>んです。</h1>
+    <p class="sub">ルベル イオ クリーム メルトリペア 600ml。シャンプーのあとに使って、最後に洗い流すインバストリートメントです。第4弾のヘアマスクは「週2〜3回のスペシャルケア」、第1弾のNo.6は「洗い流さないアウトバス」。つまり<strong>「シャンプーの直後に手に取って、最後に流すやつ」だけが、シリーズで完全な空白</strong>でした。しかもこれは、ほぼ毎日通る工程です。今回は何かを足す回ではありません。もう毎日やっている30秒の、中身だけを入れ替える回です。</p>
+    <div class="cta-row">
+      <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4952195624263" target="_blank" rel="noopener sponsored">
+        イオ クリーム メルトリペアを見てみる <span class="arrow">→</span>
+      </a>
+    </div>
+    <svg class="sprig" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 118 C50 80 44 50 50 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M50 70 C34 62 24 46 22 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M50 44 C64 38 74 24 76 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="50" cy="8" r="4" fill="currentColor"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">EMPATHY</p>
+      <h2>こんな「トリートメントだけは、選んだ記憶がない」、心当たりありませんか。</h2>
+      <ul class="checks">
+        <li>シャンプーは吟味して選んだのに、トリートメントは「ついてきたもの」を何となく使っている</li>
+        <li>いま洗面所にあるトリートメントを、いつ・なぜ買ったのか思い出せない</li>
+        <li>詰め替えを買い足しているだけで、中身を見直したことが何年もない</li>
+        <li>ヘアマスクは持っているが、それは週に数回のもので、毎日のトリートメントとは別だと気づいていなかった</li>
+        <li>洗い流さないトリートメントには詳しいのに、洗い流すほうは説明できない</li>
+        <li>傷んだ髪は「乾燥している」ものだと思っている</li>
+        <li>ケアを足すことばかり考えていて、すでに毎日やっている工程を疑ったことがない</li>
+      </ul>
+      <p>一つでも頷いたなら、あと3分だけ読み進めてほしいんです。</p>
+      <p>私はこのシリーズで、8回かけてアイテムを揃えてきました。第8弾でついに「洗う前」まで埋めて、工程がぐるっと一周した気になっていました。合計¥39,986。正直、やり切ったと思っていたんです。</p>
+      <p>念のため、8本を工程順に並べ直してみました。</p>
+      <p>洗う前が第8弾。洗うが第2弾。そのあと、乾かす前が第1弾で、仕上げが第3弾。週に数回のマスクが第4弾、香りが第5弾、頭皮が第6弾、それを届ける道具が第7弾。──きれいに埋まっているように見えて、ひとつだけ抜けていました。</p>
+      <p><strong>洗ったあと、流す前に使うほうのトリートメントです。</strong></p>
+      <p>第4弾のヘアマスクは週2〜3回のスペシャルケアで、毎日のものではありません。第1弾のNo.6は洗い流さないアウトバス。つまり「シャンプーの直後に手に取って、最後に流すやつ」だけが、8回かけて一度も出てきていなかった。</p>
+      <p>もっと言うと、私はそこで何年も前から洗面所にある市販品を、何も考えずに使い続けていました。第2弾でシャンプーだけ良くして、そのあと毎日それを上書きしていたことになります。</p>
+
+      <figure class="shot">
+        <img src="images/01_eyecatch.png" alt="工程の並びのまん中がひとつだけ空いているイメージ" loading="lazy">
+        <figcaption>8本を工程順に並べ直したら、まん中がひとつ空いていました。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">IF NOTHING CHANGES</p>
+      <h2>正直に言うと、いちばん怖いのは「トリートメントが安物であること」じゃありません。<br>¥39,986ぶんのケアを、毎日その30秒で上書きし続けることです。</h2>
+      <p>考えてみてください。この工程は、飛ばせません。シャンプーをした日は、ほぼ必ず何かを塗ります。つまり<strong>シリーズで唯一、「やらない日がない」工程</strong>なんです。</p>
+      <p>第8弾のプレケアは週1〜2回。第4弾のマスクも週2〜3回。第5弾の香りは、つけたい日だけ。どれも「やらない日」が存在します。でもこれだけは、毎日発生する。8本の中でいちばん回数が多い工程を、私はいちばん考えずに通過していました。</p>
+      <p>しかも、この状態は自覚しにくい。トリートメントは「切らしたら買う」ものになっているので、選び直すタイミングが来ないんです。シャンプーは「変えようかな」と思うのに、トリートメントは詰め替えを足すだけで何年も過ぎる。</p>
+      <p>そして半年後も、たぶん同じです。洗面台には10本目、11本目の新しいアイテムが増えていて、でも毎日いちばん多く触れているのは、いつ買ったか思い出せないあの1本のまま。</p>
+      <p>いちばんもったいないのは、ここです。第1〜8弾で、"何を足すか"の答えはもう出そろっているんです。出ていないのは、<strong>すでに毎日やっている工程の中身</strong>のほうだけ。</p>
+      <p>しかも皮肉なことに、その入れ替えには手間が1秒も増えません。新しい工程を生活に足す話ではなく、もう手が覚えている30秒の、持つボトルが変わるだけです。8本の平均は¥4,998。今回はその約59%です。</p>
+      <p>──足りなかったのは、9本目の新しい工程じゃありませんでした。8回ぶん見落としていた、毎日の30秒のほうです。まだ間に合います。変えられるのは、今夜のシャンプーの直後からです。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">THE TURN</p>
+      <h2>そこでたどり着いたのが、「イオ クリーム メルトリペア」でした。</h2>
+      <p>ここで一つ、はっきりさせておきたいことがあります。第1〜8弾で紹介してきたものは、どれも<strong>「新しく足す」もの</strong>でした。洗う前の工程を足す、頭皮のケアを足す、香りを足す、道具を足す。生活に何かを1つ増やす提案だった、ということです。</p>
+      <p>これは欠点ではありません。ケアを厚くするには、工程を足すしかない場面があります。8本とも、その役割を果たしてくれました。</p>
+      <p>一方で今回のアイテムは、そもそも立ち位置が違います。足すのではなく、<strong>すでに毎日やっている工程の中身を入れ替える</strong>。工程は増えません。手順も、かかる時間も、まったく同じです。</p>
+      <p>言ってしまえば、第1〜8弾が"足す"ケア。そしてこの1本が"入れ替える"ケア。何を足すかは8回で決まりました。9回目は、もう毎日やっていることの中身です。</p>
+      <p class="lede">私がこの1本を選んだ理由は、大きく3つ。</p>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <span class="num">壱</span>
+          <h3>シリーズで唯一、「やらない日がない」工程を担当する</h3>
+          <p>プレケアは週1〜2回、マスクは週2〜3回、香りはつけたい日だけ。でもシャンプー後のトリートメントは、シャンプーをした日は必ず発生します。回数がいちばん多い工程だからこそ、中身を変えたときの積み上がり方も違ってきます。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">弐</span>
+          <h3>ダメージの捉え方が、第8弾とまったく別の角度</h3>
+          <p>第8弾のオラプレックスは「切れた結合をつなぎ直す=柱を強くする」話でした。イオは「疎水化コントロール」。ダメージ部分は脂質が流出して水となじみすぎる状態になっていて、そのままではケア成分の油分が定着しづらい、という説明です。同じ"補修"でも、見ている場所が違います。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">参</span>
+          <h3>仕上がりで選べる姉妹品がある</h3>
+          <p>しっとりまとまる「メルトリペア」と、さらさら軽い「シルキーリペア」の2種類が同じ価格で用意されています。毎日使うものなので、「重くなるのが苦手」という理由で続かなくなる道を、最初から避けられます。</p>
+        </div>
+      </div>
+      <p style="margin-top:28px;">「何を足すか」から、「もうやっている工程の中身」へ。8回かけてアイテムを揃えてきたからこそ、いちばん回数の多い30秒に目が向きました。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※本商品は化粧品です。記載の成分・技術に関する内容はメーカーの製品説明に基づくものであり、効果を保証するものではありません。感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">THE PRODUCT</p>
+      <h2>イオ クリーム メルトリペアとは</h2>
+      <p>ルベル(タカラベルモント)は、美容室向けの製品を長く手がけてきたメーカーです。第1〜8弾で登場したオラプレックス、ケラスターゼ、リンク、LOA、資生堂プロフェッショナル、SINN PURETE とは重なりません。シリーズ初登場です。</p>
+      <p>そして商品の位置づけも、シリーズ初です。第1〜8弾は、洗い流さないトリートメント、シャンプー、バーム、ヘアマスク、香水オイル、スカルプエッセンス、スカルプブラシ、プレトリートメント。役割は違っても、全部「新しく足すもの」でした。今回は「入れ替えるもの」。工程が1つも増えない、シリーズ唯一の回になります。</p>
+
+      <figure class="shot">
+        <img src="images/04_product_photo.png" alt="ルベル イオ クリーム メルトリペア 600ml" loading="lazy">
+        <figcaption>イオ クリーム メルトリペア 600ml / ルベル</figcaption>
+      </figure>
+
+      <div class="spec">
+        <dl>
+          <dt>タイプ</dt><dd>インバストリートメント(シャンプー後に使い、洗い流す)</dd>
+          <dt>価格</dt><dd class="price-tag">¥2,950(税込)/ 600ml・1mlあたり約¥4.9 ※メーカー希望小売価格 ¥3,960 からの割引適用中</dd>
+          <dt>使うタイミング</dt><dd>シャンプーの直後。髪の水気を軽くきってから</dd>
+          <dt>頻度</dt><dd>毎日(シャンプーをした日は毎回)</dd>
+          <dt>使い方</dt><dd>適量を髪全体、とくに毛先を中心になじませ、よくすすぐ</dd>
+          <dt>考え方</dt><dd>疎水化コントロール。ダメージ部分を疎水化して均質にし、ケア成分を受け入れやすい状態に整える</dd>
+          <dt>配合</dt><dd>保湿力の高いハチミツ、ツヤ密度を高める「CMCカクテル」</dd>
+          <dt>容器</dt><dd>ポンプ式のボトル(濡れた手でも片手で出せる)</dd>
+          <dt>香り</dt><dd>ローズグリーンの香り</dd>
+          <dt>姉妹品</dt><dd>シルキーリペア(さらさら・軽い仕上がり / 同価格)</dd>
+          <dt>ブランド</dt><dd>ルベル(タカラベルモント)・シリーズ初登場</dd>
+          <dt>位置づけ</dt><dd>シリーズ唯一の「入れ替える」回(第1〜8弾はすべて足すもの)</dd>
+        </dl>
+      </div>
+
+      <p>この1本のいちばんの特徴は、<strong>生活に何も足さない</strong>という点です。シャンプーもアウトバスもバームもエッセンスもブラシも、今のまま。第1〜8弾で作った流れには、工程を1つも加えません。変わるのは、シャンプーを流したあとに手を伸ばすボトルだけです。</p>
+      <p>そしてもう一つ、公式の説明で個人的にいちばん腑に落ちた話があります。「疎水化」という発想です。</p>
+      <p>傷んだ髪は乾燥しているもの、と私はずっと思っていました。ところがメーカーの説明では、ダメージ部分は内部の脂質が流出して<strong>"親水化"</strong>している、とされています。水となじみやすくなっている状態です。そうなると、ケア成分の油分のほうが定着しづらくなる。だから先に疎水化して均質な状態に整えてから、ケア成分を届ける。──「足りないから与える」ではなく、「受け取れる状態にしてから与える」という順番の話でした。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※「疎水化コントロール」「CMCカクテル」はメーカーの表記に基づく記載です。効果を保証するものではありません。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4952195624263" target="_blank" rel="noopener sponsored">
+          商品ページで詳細・価格を確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHY IT WORKS</p>
+      <h2>「で、結局それの何がいいの?」に、飾らず正直に答えます。</h2>
+
+      <div class="features">
+        <div class="feature">
+          <div class="f-title">工程を1つも増やさない、シリーズ唯一の回である</div>
+          <div class="f-chain"><span class="step">だから</span> 生活に新しい習慣を作る必要がない ── <span class="step">つまり</span> 「続けられるかどうか」を心配せずに始められる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">シャンプーをした日は必ず発生する工程である</div>
+          <div class="f-chain"><span class="step">だから</span> シリーズでいちばん回数が多い ── <span class="step">つまり</span> 中身を変えたときに触れる回数も、8本の中でいちばん多くなる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">疎水化コントロールという設計思想である</div>
+          <div class="f-chain"><span class="step">だから</span> 「与える」前に「受け取れる状態にする」順番になっている ── <span class="step">つまり</span> 第8弾の"結合"とは別の角度から毛先を見られる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">600mlという大容量である</div>
+          <div class="f-chain"><span class="step">だから</span> 1mlあたり約¥4.9に収まる ── <span class="step">つまり</span> 毎日たっぷり使っても、量をケチる動機が生まれにくい</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">しっとり(メルトリペア)とさらさら(シルキーリペア)が同価格で選べる</div>
+          <div class="f-chain"><span class="step">だから</span> 仕上がりの好みで外しにくい ── <span class="step">つまり</span> 「重くなるのが苦手」という理由で毎日のケアが止まらない</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">シャンプー後、水気をきってから使うと明記されている</div>
+          <div class="f-chain"><span class="step">だから</span> 薄まらず、少ない量で行き渡る ── <span class="step">つまり</span> 使い方を1つ知るだけで、同じ商品でも指通りが変わる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">週数回のヘアマスク(第4弾)と役割が違う</div>
+          <div class="f-chain"><span class="step">だから</span> どちらかを選ぶ関係ではない ── <span class="step">つまり</span> 今あるマスクを捨てずに、毎日側だけを入れ替えられる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">「与える」まえに「落とす」というブランドの考え方がある</div>
+          <div class="f-chain"><span class="step">だから</span> シャンプーとトリートメントが一続きの設計になっている ── <span class="step">つまり</span> 第2弾で洗う側を変えた人にとって、次に見る場所として筋が通る</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">¥2,950という、8本平均¥4,998の約59%の価格</div>
+          <div class="f-chain"><span class="step">だから</span> 毎日使うものとして現実的な範囲に収まる ── <span class="step">つまり</span> 「良いものだけど、もったいなくて毎日は使えない」が起きにくい</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;">8回かけて「何を足すか」を揃えてきたからこそ、9回目でようやく「もう毎日やっていること」に目が向きました。これは、8本ぶん遠回りしたからこそ出てきた、私のいちばん正直な実感です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記は使い方・設計に関する説明です。効果には個人差があり、特定の結果を保証するものではありません。1mlあたりの金額は割引適用時の価格に基づく概算です。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">WHY TRUST IT</p>
+      <h2>正直に言うと、私は「定番だから」だけでは商品を信じないタイプです。</h2>
+      <p class="lede">それでもこの1本を紹介したいと思えたのは、こんな背景があるからです。</p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>シリーズで唯一、"増やさない"回</h3>
+          <p>これまでの8回は、どれも生活に何かを1つ足す提案でした。今回は足しません。もう毎日やっている工程の中身が変わるだけです。合わなかったとしても、失うのは¥2,950と、洗面所の場所ひとつぶんだけです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>「乾燥している」ではなく「なじみすぎている」という説明</h3>
+          <p>傷んだ髪=乾燥、という単純な図式で終わらせず、脂質が流出して親水化した状態だと説明している点に納得感がありました。だから先に疎水化する、という順番にも理屈が通っています。</p>
+        </div>
+        <div class="trust-item">
+          <h3>「与える」まえに「落とす」という設計思想</h3>
+          <p>トリートメント単体ではなく、シャンプーからの一続きで考えられているブランドです。第2弾で洗う側を変えた私にとっては、次に見る場所として自然でした。</p>
+        </div>
+        <div class="trust-item">
+          <h3>仕上がりで2種類に分けている</h3>
+          <p>1本で全員に合いますとは言っていません。しっとりと、さらさら。毎日使うものを1種類で押し切らないところは、むしろ信頼できると感じました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>¥2,950 / 600ml という、毎日側にふさわしい価格</h3>
+          <p>第1弾¥3,740、第2弾¥4,180、第3弾¥4,290、第4弾¥7,260、第5弾¥8,800、第6弾¥5,776、第7弾¥2,200、第8弾¥3,740。合計¥39,986、平均¥4,998。第9弾は¥2,950。いちばん回数が多い工程が、いちばん安いほうに来たのは、個人的には納得のいく並びでした。</p>
+        </div>
+        <div class="trust-item">
+          <h3>サロン専売品を、公式通販でそのまま買える</h3>
+          <p>ALBUM ONLINE STOREは正規販売店です。サロン専売品は流通経路によって真贋や保管状態が読めないことがあるので、私は毎回ここを確認してから紹介しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHAT PEOPLE NOTICE</p>
+      <h2>こんな使用感(声の傾向)</h2>
+      <p>毎日使うものなので、初日に劇的な変化が起きるタイプではありません。だからこそ、盛らずに、使ってみて分かったことをそのまま整理してみます。</p>
+
+      <div class="voice">
+        <div class="voice-item">
+          <p class="v-label">テクスチャーについて</p>
+          <p>しっかりしたクリーム状で、手に取ったときに垂れません。ポンプ式なので、濡れた手でも片手で出せます。600mlのボトルはそれなりに大きいので、浴室の棚に置けるサイズかどうかだけは、買う前に一度見ておいたほうがいいです。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">水気をきることの効果について</p>
+          <p>これがいちばん実用的な発見でした。公式に「軽く水気をきり」と書かれている通りにしてみたら、同じ量でも明らかに指通りが違いました。びしょびしょのまま塗ると薄まるうえに量も要ります。地味ですが、ここだけは守る価値があります。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">すすぎについて</p>
+          <p>「よくすすぐ」と書かれているのを、私はずっと軽視していました。ぬるっとした感触を残したほうが効いている気がしていたんですが、すすぎ残しのほうが髪にはよくありません。しっかり流したほうが、翌朝のべたつきがない状態に落ち着きました。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">香りについて</p>
+          <p>ローズグリーンと説明されている通り、青みのある落ち着いた香りです。洗い流すものなので香りが強く残るタイプではありません。第5弾の香水オイルのような「まとう」用途とは、まったく別物として考えたほうがいいです。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">しっとり/さらさらの選び方について</p>
+          <p>私はブリーチとカラーでパサつくほうなのでメルトリペア(しっとり)にしました。細い髪やボリュームが気になる人がしっとりを選ぶと重く感じることがあるので、そこはシルキーリペアのほうが向くと思います。毎日使うものなので、ここは無理をしないほうが続きます。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">第4弾のヘアマスクとの関係について</p>
+          <p>念のため書いておくと、マスクが要らなくなるわけではありません。マスクは週2〜3回の集中ケア、こちらは毎日の土台です。私はいま、平日はこれ、週末にマスクという分け方に落ち着いています。増えたものはなく、毎日側の中身が入れ替わっただけです。</p>
+        </div>
+      </div>
+      <p class="voice-foot">もちろん、髪質も施術履歴も人それぞれ。だからこそ、「自分の毎日のどこに置けるか」を一度試してみる価値があるアイテムだと思っています。<br>※上記は一般的な使用感の傾向および個人の感想であり、効果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>よくある質問</h2>
+
+      <div class="faq">
+        <details>
+          <summary>第4弾のヘアマスクを持っています。買い替えということですか?</summary>
+          <div class="a">いいえ。マスクは週2〜3回の集中ケア、こちらは毎日の土台で、役割が違います。どちらかを選ぶ関係ではなく、頻度で棲み分ける関係です。マスクをやめる必要はまったくありません。</div>
+        </details>
+        <details>
+          <summary>第2弾のシャンプー(ケラスターゼ)と、ブランドが違っても大丈夫ですか?</summary>
+          <div class="a">メーカーとしては同じライン同士での使用を想定しているので、ライン一式で揃えたほうが設計意図には忠実です。ただ、シャンプーとトリートメントを別ブランドで使っている人はとても多いですし、私自身そうしています。まずは片方だけ替えてみて、合わなければもう片方も見直す、という進め方で十分だと思います。</div>
+        </details>
+        <details>
+          <summary>しっとり(メルトリペア)とさらさら(シルキーリペア)、どちらを選べばいいですか?</summary>
+          <div class="a">ブリーチやカラーでパサつく・広がるならメルトリペア、細い髪でボリュームが落ちるのが気になる・重いのが苦手ならシルキーリペアが向きます。価格は同じです。毎日使うものなので、仕上がりの好みを優先したほうが結果的に続きます。</div>
+        </details>
+        <details>
+          <summary>600mlは多すぎませんか?</summary>
+          <div class="a">毎日使うものなので、実際にはそこまで持て余しません。むしろ大容量のほうが1mlあたりが下がるので、量をケチらずに使えます。ただ浴室の棚に置けるサイズかどうかは、買う前に一度確認しておくことをおすすめします。</div>
+        </details>
+        <details>
+          <summary>洗い流さないトリートメント(第1弾のNo.6)があれば、これは要りませんか?</summary>
+          <div class="a">工程が違うので、代わりにはなりません。こちらは洗い流すもので、お風呂の中で使います。No.6はお風呂を出たあと、乾かす前に使うものです。実際、私は両方を毎日使っています。</div>
+        </details>
+        <details>
+          <summary>「疎水化」ってどういうことですか?</summary>
+          <div class="a">メーカーの説明では、ダメージを受けた毛先は内部の脂質が流出して水となじみやすい状態(親水化)になっており、そのままではケア成分の油分が定着しづらいとされています。そこでダメージ部分を疎水化して均質な状態に整え、ケア成分を受け入れやすくする、という考え方です。「与える前に、受け取れる状態にする」と理解しています。</div>
+        </details>
+        <details>
+          <summary>使ったら、傷んだ髪が治るということですか?</summary>
+          <div class="a">いいえ。本商品は化粧品であり、髪が治る・元に戻るといった医薬品的な効果を持つものではありません。感じ方には個人差があります。毎日通る工程の中身を見直す、という感覚で試すのが現実的だと思います。</div>
+        </details>
+        <details>
+          <summary>いまの価格はずっと続きますか?</summary>
+          <div class="a">いいえ。現在はメーカー希望小売価格から割引が入っている状態です。割引は終了する可能性がありますし、在庫状況によっても変わります。購入前に必ず商品ページで最新の価格を確認してください。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">ABOUT THE PRICE</p>
+      <h2>価格の考え方</h2>
+      <p>イオ クリーム メルトリペアは 600ml で ¥2,950(税込)。メーカー希望小売価格 ¥3,960 からの割引が適用されている状態です。1mlあたりに直すと、約¥4.9になります。</p>
+      <p>これまでの8本を並べてみます。¥3,740 / ¥4,180 / ¥4,290 / ¥7,260 / ¥8,800 / ¥5,776 / ¥2,200 / ¥3,740。合計¥39,986、1本あたりの平均は¥4,998。今回の¥2,950は、その約59%にあたります。</p>
+      <p>ただ、ここで「平均より安いですよ」で終わらせたくないんです。今回いちばん見てほしいのは、金額そのものより<strong>1回あたりの重み</strong>のほうだからです。</p>
+      <p>前回の第8弾は100mlで¥3,740。1mlあたり約¥37でした。週1〜2回のスペシャルケアなので、私はそれでいいと思っています。特別な工程には、特別な単価があっていい。</p>
+      <p>今回は1mlあたり約¥4.9。前回のおよそ<strong>7分の1</strong>です。そしてこちらは、シャンプーをした日は必ず使います。単価がいちばん低い工程が、いちばん回数の多い工程でもある。この並びは、毎日続けるものとしてかなり現実的だと感じました。</p>
+      <p>逆に言うと、ここが高いと続きません。「良いものだけど、もったいなくて少しずつ使う」は、毎日側のアイテムでは起きてほしくないことです。たっぷり使えて、切らしても抵抗なく買い直せる。毎日の工程に必要なのは、たぶんそういう性質のほうです。</p>
+
+      <div class="price-box">
+        <div class="amount">¥2,950<span>/ 税込・600ml。1mlあたり約¥4.9(第8弾の約7分の1) ※割引適用中の価格</span></div>
+        <p style="margin-top:14px;">そしてもう一つ。この1本は、何かの代わりに買うものではありますが、<strong>何かを新しく増やすものではありません</strong>。今使っている8本はそのまま全部残ります。増えるのは、生活の中では何もありません。変わるのは、シャンプーを流したあとに手を伸ばすボトルだけです。</p>
+      </div>
+
+      <p class="price-note">※価格・在庫は変動します。現在の¥2,950はメーカー希望小売価格¥3,960からの割引適用時の価格で、割引が終了する場合があります。最新情報は必ず商品ページでご確認ください。1mlあたりの金額は割引適用時の価格に基づく概算です。</p>
+
+      <div class="cta-row" style="margin-top:30px;">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4952195624263" target="_blank" rel="noopener sponsored">
+          最新の価格・在庫を商品ページで確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">BEFORE YOU GO</p>
+      <h2>安心して試すために</h2>
+      <p>「トリートメントを替えるだけで、そんなに変わるの?」その気持ち、よく分かります。私も8回ぶん、そこを一度も疑いませんでした。トリートメントは"シャンプーについてくるもの"くらいの扱いで、選ぶ対象だと思っていなかった。</p>
+      <p>だからこそ、この回は「何も増えない」という点を強調しておきたいんです。</p>
+      <p>これまでの8回は、どれも生活に工程を1つ足す提案でした。夜のケアが1ステップ増える、朝の身支度に1手間加わる。小さくても、続けられるかどうかの判断が必要でした。</p>
+      <p>今回は、その判断がありません。すでに毎日やっている30秒の、持つボトルが変わるだけです。手順も、かかる時間も、1秒も増えません。仮に「私には合わなかった」となっても、失うのは¥2,950と、浴室の棚のスペースひとつぶんだけです。</p>
+      <p>そして、いきなり9つすべてを揃える必要もまったくありません。第1〜8弾で紹介したケアを、まず自分のペースで試す。そのうえで「揃えたはずなのに、まだ何か足りない気がする」と感じたタイミングで、いま毎日使っているものを一度見直す。その順番でまったく問題ありません。</p>
+      <p>というより、この9つの中でいちばん"始めやすい"のが、たぶんこの1本です。新しい習慣を作る必要がないからです。今どんなケアをしていようと、その中の1本が置き換わるだけ。何かをやめる必要も、時間を作る必要もありません。</p>
+      <p>何を足すかは8回で決まりました。9回目は、もう毎日やっていることの中身です。大きく生活を変える買い物ではなく、「今夜、シャンプーを流したあとに手に取るものを変えてみる」だけの、小さな一歩です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※頭皮や肌に異常が現れた場合は使用を中止し、必要に応じて医師等にご相談ください。目に入った場合はすぐに洗い流してください。使用前に必ずパッケージの表示と使用上の注意をご確認ください。</p>
+
+      <div class="series-nav">
+        シリーズで読む:
+        <a href="../round1/">第1弾・オラプレックス No.6(洗い流さないトリートメント)</a> ／
+        <a href="../round2/">第2弾・ケラスターゼ バン セラピュート(シャンプー)</a> ／
+        <a href="../round3/">第3弾・THE HAIR BALM 997(スタイリングバーム)</a> ／
+        <a href="../round4/">第4弾・ケラスターゼ RE マスク セラピュート(集中ヘアパック)</a> ／
+        <a href="../round5/">第5弾・LOA THE OIL PARFUM ザ ネロリ(香水オイル)</a> ／
+        <a href="../round6/">第6弾・アデノバイタル アドバンスト スカルプエッセンス(頭皮ケア)</a> ／
+        <a href="../round7/">第7弾・ハートロック スカルプブラシ(頭皮ケアの道具)</a> ／
+        <a href="../round8/">第8弾・オラプレックス No.3 ヘアパーフェクター(洗う前のプレケア)</a> ／
+        第9弾・イオ クリーム メルトリペア(毎日のインバストリートメント・このページ)
+      </div>
+    </div>
+  </section>
+
+  <section class="beat deep final">
+    <div class="wrap">
+      <p class="eyebrow">LAST WORD</p>
+      <h2>「洗う前」「洗う」「乾かす前」「仕上げ」「週数回」「香り」「頭皮」「道具」。8回かけて、足すものはもう出揃っています。<br>でも、それはぜんぶ「増やす」話でした。</h2>
+      <p>すでに毎日やっている工程の中身を疑う話は、8回とも一度も出てきていません。</p>
+      <p>このまま10本目の新しい工程を探し続けて、「まだ何か足りないのかも」と思いながらまた半年過ごすのか。それとも、いちばん回数の多い30秒の中身を一度だけ見直して、そこから積み上げ直すのか。</p>
+      <p>小さな選択に見えて、洗面台の景色は、案外ここで変わります。そして、変えられるのは、いつだって"今夜のシャンプーの直後"からです。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4952195624263" target="_blank" rel="noopener sponsored">
+          今すぐ ALBUM ONLINE STORE で詳細を見る <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ps">
+        <p class="eyebrow">追伸</p>
+        <p>正直に言うと、この1本も「魔法の1本」ではありません。これは化粧品であり、傷んだ髪が治る・元に戻るといった効果を持つものではない。使った翌朝に別人の髪になるわけでもありません。感じ方には個人差があります。</p>
+        <p>それでも私がこれを紹介したいのは、「足す前に、もうやっていることを疑う」を、9回目にしてやっと覚えたからです。第7弾では「実行を疑う」、第8弾では「順番を疑う」と書きました。今回わかったのは、その隣に「もう毎日やっている工程の中身を疑う」があるということでした。</p>
+        <p>9回に分けて紹介してきましたが、この9つを全部揃える必要はまったくありません。市販品ジプシーだった頃の私は、うまくいかないたびに何かを買い足していました。減らすことも、入れ替えることも、たぶん一度も考えなかった。だから洗面台のボトルだけが増えていったんだと思います。</p>
+        <p>もし、アイテムはひと通り揃っているのに、「まだ何か足りない気がする」がずっと消えていないなら。足りない最後の1つは、10本目の新しい何かではなく、もう毎日手に取っている、いつ買ったか思い出せないあの1本のほうかもしれません。今夜、シャンプーを流したあとに手を伸ばすものを、一度だけ見てみてください。</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4952195624263" target="_blank" rel="noopener sponsored">
+            イオ クリーム メルトリペアを見てみる <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="brand">サロン専売品ラボ</p>
+    <p>本ページはアフィリエイトプログラム(A8.net)を利用した商品紹介であり、記載内容は一般的な商品情報および個人の使用感に基づくものです。本商品は化粧品であり、傷んだ髪が治る・元に戻る等の医薬品的な効果を保証するものではありません。「疎水化コントロール」「CMCカクテル」等はメーカーの表記に基づく記載です。仕上がりや感じ方には髪質・施術履歴による個人差があります。1mlあたりの金額は割引適用時の価格に基づく概算です。掲載の¥2,950はメーカー希望小売価格¥3,960からの割引適用時の価格であり、割引の終了・在庫状況により変動します。記載の使い方は一般的な目安であり、必ずパッケージの表示および使用上の注意をご確認ください。頭皮や肌に異常が現れた場合は使用を中止してください。価格・在庫・仕様は変更される場合があるため、最新情報は販売ページをご確認ください。</p>
+  </div>
+</footer>
+
+</body>
+</html>
