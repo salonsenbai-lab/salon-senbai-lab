@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>クレイツ イオン ドライ SD-1200｜サロン専売品ラボ</title>
+<style>
+  :root {
+    --ink: #212b21;
+    --ink-soft: #4c5a4a;
+    --paper: #f6f7f0;
+    --paper-raise: #ffffff;
+    --sage: #7c9473;
+    --sage-deep: #47593f;
+    --sage-line: #c7d2bd;
+    --mist: #e9ede2;
+    --clay: #b5674a;
+    --clay-deep: #954f37;
+    --clay-tint: #f1ded3;
+    --shadow: 0 1px 2px rgba(33, 43, 33, 0.06);
+    --measure: 38em;
+    --radius: 3px;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #e9ecE2;
+    --ink-soft: #b9c2b2;
+    --paper: #171d15;
+    --paper-raise: #1e251b;
+    --sage: #9bb391;
+    --sage-deep: #c3d4b9;
+    --sage-line: #3a462f;
+    --mist: #212a1d;
+    --clay: #dd9270;
+    --clay-deep: #eaab8b;
+    --clay-tint: #2c211b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e9ecE2;
+      --ink-soft: #b9c2b2;
+      --paper: #171d15;
+      --paper-raise: #1e251b;
+      --sage: #9bb391;
+      --sage-deep: #c3d4b9;
+      --sage-line: #3a462f;
+      --mist: #212a1d;
+      --clay: #dd9270;
+      --clay-deep: #eaab8b;
+      --clay-tint: #2c211b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Noto Sans JP", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    color: var(--sage-deep);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  p { margin: 0 0 1.1em; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---- PR bar ---- */
+  .prbar {
+    background: var(--sage-deep);
+    color: var(--paper-raise);
+  }
+  .prbar .wrap-wide {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #eef1e8;
+  }
+  .prbar strong { color: var(--clay-tint); font-weight: 700; }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    padding: 76px 0 88px;
+    background: linear-gradient(180deg, var(--mist) 0%, var(--paper) 78%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--sage-line), transparent 70%);
+    opacity: 0.55;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero .prehead {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    box-shadow: inset 0 -0.42em 0 var(--clay-tint);
+  }
+  .hero .sub {
+    max-width: 32em;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  .sprig {
+    margin-top: 40px;
+    width: 96px;
+    height: auto;
+    color: var(--sage);
+  }
+
+  /* ---- CTA button ---- */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 15px 30px;
+    background: var(--clay);
+    color: #fff8f3;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: var(--clay-deep); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+  .cta .arrow { font-size: 1.05em; }
+  .cta-row { display: flex; justify-content: flex-start; }
+  .cta-row.center { justify-content: center; }
+  .price-note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Section rhythm ---- */
+  section.beat {
+    padding: 68px 0;
+  }
+  section.beat.tint { background: var(--mist); }
+  section.beat.deep {
+    background: var(--sage-deep);
+    color: #eef1e8;
+  }
+  section.beat.deep h2 { color: #fff; }
+  section.beat.deep .eyebrow { color: var(--clay-tint); }
+  section.beat.deep p { color: #dbe3d3; }
+
+  .beat h2 {
+    font-size: clamp(1.28rem, 2.6vw, 1.6rem);
+    line-height: 1.6;
+    margin: 10px 0 26px;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Figures (images/ 配下・後で実画像を差し替え) ---- */
+  .shot {
+    margin: 32px 0 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    background: var(--mist);
+  }
+  .shot figcaption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Check list ---- */
+  .checks {
+    list-style: none;
+    margin: 26px 0 24px;
+    padding: 0;
+  }
+  .checks li {
+    position: relative;
+    padding: 12px 0 12px 32px;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.96rem;
+    color: var(--ink);
+  }
+  .checks li:first-child { border-top: 1px solid var(--sage-line); }
+  .checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    color: var(--clay);
+    font-weight: 700;
+  }
+
+  /* ---- Reasons / cards ---- */
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .reason-card {
+    background: var(--paper-raise);
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+  }
+  .reason-card .num {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 1.7rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .reason-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .reason-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Spec table ---- */
+  .spec {
+    margin: 30px 0;
+    border-top: 1px solid var(--sage-line);
+  }
+  .spec dl {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    margin: 0;
+  }
+  .spec dt, .spec dd {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.92rem;
+  }
+  .spec dt {
+    color: var(--sage);
+    font-weight: 700;
+  }
+  .spec dd { margin: 0; }
+
+  .price-tag {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- Feature rows ---- */
+  .feature {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--sage-line);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .feature:first-of-type { border-top: 1px solid var(--sage-line); }
+  .feature .f-title { font-weight: 700; color: var(--ink); }
+  .feature .f-chain {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .feature .f-chain span.step { color: var(--sage); }
+
+  /* ---- Trust grid ---- */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .trust-item {
+    padding: 20px;
+    background: var(--paper-raise);
+    border-radius: var(--radius);
+    border: 1px solid var(--sage-line);
+  }
+  .trust-item h3 {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+  .trust-item p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Voice quotes ---- */
+  .voice {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .voice-item {
+    padding-left: 18px;
+    border-left: 2px solid var(--sage);
+  }
+  .voice-item .v-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .voice-item p { font-size: 0.94rem; margin: 0; }
+  .voice-foot {
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- FAQ ---- */
+  .faq { margin-top: 28px; border-top: 1px solid var(--sage-line); }
+  .faq details {
+    border-bottom: 1px solid var(--sage-line);
+  }
+  .faq summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    font-size: 0.96rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before {
+    content: "Q";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--clay);
+    flex: none;
+  }
+  .faq summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq .a {
+    display: flex;
+    gap: 12px;
+    padding: 0 4px 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .faq .a::before {
+    content: "A";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage);
+    flex: none;
+  }
+
+  /* ---- Price reflection ---- */
+  .price-box {
+    margin-top: 28px;
+    padding: 26px 24px;
+    background: var(--clay-tint);
+    border-radius: var(--radius);
+  }
+  .price-box .amount {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 2rem;
+    color: var(--clay-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .price-box .amount span { font-size: 0.9rem; margin-left: 6px; color: var(--ink-soft); font-family: inherit; }
+
+  /* ---- Final ---- */
+  .final h2 { color: #fff; }
+  .ps {
+    margin-top: 46px;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+  }
+  .ps .eyebrow { color: var(--clay-tint); }
+
+  footer {
+    padding: 40px 0 56px;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  footer .brand {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage-deep);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  /* ---- Series nav (round1〜7 相互リンク) ---- */
+  .series-nav {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--sage-line);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .series-nav a { color: var(--sage-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .spec dl { grid-template-columns: 7em 1fr; }
+    section.beat { padding: 52px 0; }
+    .hero { padding: 56px 0 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="prbar">
+  <div class="wrap-wide">
+    【PR】本ページはアフィリエイトプログラム(A8.net)を利用して商品を紹介しています。ページ内リンクからの購入により、当方に<strong>成果報酬</strong>が発生する場合があります。記載内容は特定の効果効能を保証するものではなく、一般的な商品情報と個人の使用感に基づいています。本商品は<strong>家電</strong>です。「クレイツイオン」「遠赤外線」に関する記載および仕様は<strong>メーカーの公表内容</strong>に基づくもので、効果の感じ方には個人差があります。使用前に必ず取扱説明書と使用上の注意をご確認ください。
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="prehead">9本を工程順ではなく「種類」で分けてみました。つけるもの、つけるもの、つけるもの……8本。残り1本は手で動かすブラシ。</p>
+    <h1>じゃあ、毎晩いちばん長く髪に当たっているものは何か。<br><em>ドライヤーの熱風</em>でした。9回ぶん、一度も話題にしていません。</h1>
+    <p class="sub">クレイツ イオン ドライ SD-1200。¥9,350(税込)。サロン向けの製品を出しているブランドの、スタンダードモデルという位置づけのドライヤーです。第1弾で紹介したオラプレックス No.6は、正確には「乾かす前に塗るもの」でした。塗るところまではやっていたのに、<strong>そのあと何を当てるかは9回ぶん空白</strong>だった。仮に1日10分として、1年でおよそ60時間。ケアの中でいちばん長く髪に触れているのは、たぶんこれです。</p>
+    <div class="cta-row">
+      <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4988338201565" target="_blank" rel="noopener sponsored">
+        クレイツ イオン ドライ SD-1200を見てみる <span class="arrow">→</span>
+      </a>
+    </div>
+    <svg class="sprig" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 118 C50 80 44 50 50 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M50 70 C34 62 24 46 22 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M50 44 C64 38 74 24 76 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="50" cy="8" r="4" fill="currentColor"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">EMPATHY</p>
+      <h2>こんな「ドライヤーだけは、選んだ記憶がない」、心当たりありませんか。</h2>
+      <ul class="checks">
+        <li>いま使っているドライヤーを、いつ・いくらで買ったのか思い出せない</li>
+        <li>壊れていないから替えていない、という理由だけで何年も使っている</li>
+        <li>シャンプーやトリートメントは吟味するのに、ドライヤーは「あるもの」で済ませている</li>
+        <li>乾かすのに時間がかかるので、途中で面倒になって半乾きでやめる日がある</li>
+        <li>冷風ボタンがあることは知っているが、使ったことがない</li>
+        <li>吸込口のホコリを掃除したことが一度もない</li>
+        <li>ヘアケア＝髪に塗るもの、だと無意識に思っている</li>
+      </ul>
+      <p>一つでも頷いたなら、あと3分だけ読み進めてほしいんです。</p>
+      <p>私はこのシリーズで、9回かけてアイテムを揃えてきました。合計¥42,936。第9弾でついに「シャンプー直後の毎日のトリートメント」まで埋めて、お風呂の中も外もひと通り揃った感覚がありました。</p>
+      <p>そのあと、9本を工程順ではなく「種類」で分けてみたんです。</p>
+      <p>シャンプー、トリートメント、ヘアマスク、洗い流さないトリートメント、バーム、香水オイル、スカルプエッセンス、プレトリートメント。──ここまで8本、全部「髪や頭皮につけるもの」でした。残りの1本が第7弾のスカルプブラシで、これは道具。でも手で動かすものです。</p>
+      <p>つまり9本とも、<strong>「髪につけるもの」か「手で触る道具」</strong>だった。</p>
+      <p>じゃあ、毎晩いちばん長く髪に当たっているものは何かというと。──ドライヤーの熱風でした。</p>
+      <p>そして私は、いま使っているドライヤーをいつ買ったのか思い出せません。壊れていないから替えていない。ただそれだけの理由で、たぶん何年も使い続けています。</p>
+
+      <figure class="shot">
+        <img src="images/01_eyecatch.png" alt="塗るものと、それを乾かす風というイメージ" loading="lazy">
+        <figcaption>9本ぶん揃えたのは「塗るもの」。10回目は、それに当てている風の話です。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">IF NOTHING CHANGES</p>
+      <h2>正直に言うと、いちばん引っかかったのは「古いドライヤーを使っていること」じゃありません。<br>塗るものに¥42,936、それを乾かす風に¥0という比率のほうです。</h2>
+      <p>考えてみてください。9本のうち、洗い流さないトリートメントもバームもオイルも、使うタイミングは「乾かす前」か「乾かした後」です。つまりこのシリーズで揃えたものの多くは、<strong>ドライヤーの前後に挟まっている</strong>。</p>
+      <p>その真ん中にある行為だけ、9回とも一度も検討していませんでした。塗るところまでは吟味して、その直後に何分間なにを当てているかは考えたことがなかった。</p>
+      <p>仮に1日10分だとすると、1年でおよそ60時間です。トリートメントを髪に置いている時間より、たぶんずっと長い。しかも髪は濡れているときがいちばん無防備だとよく言われます。その状態で熱を当てている時間なので、本当ならケアの文脈で真っ先に見直してもよかった場所でした。</p>
+      <p>しかも、この状態はとても気づきにくい。ドライヤーは「壊れたら買う」ものだからです。シャンプーは切らせば選び直す機会が来るし、トリートメントも詰め替えのたびに一瞬考える。でもドライヤーは、動いている限り検討のタイミングが一生来ません。</p>
+      <p>半年後も、たぶん同じです。洗面台には11本目、12本目の新しいアイテムが増えていて、でも毎晩いちばん長く髪に当たっているのは、いつ買ったか思い出せないあの1台のまま。</p>
+      <p>いちばんもったいないのは、ここです。第1〜9弾で、"何を塗るか"の答えはもう出そろっているんです。出ていないのは、<strong>塗ったあとに何を当てているか</strong>のほうだけ。</p>
+      <p>──ただ、ここで急かすつもりはまったくありません。これはシリーズでいちばん高い買い物ですし、いま使っているものが問題なく動いているなら、それを使い切るのが順当だと思っています。この回でお伝えしたいのは「今すぐ買い替えて」ではなく、「そこも髪に触れている、と一度知っておいてほしい」だけです。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">THE TURN</p>
+      <h2>そこでたどり着いたのが、「クレイツ イオン ドライ SD-1200」でした。</h2>
+      <p>ここで一つ、はっきりさせておきたいことがあります。第1〜9弾で紹介してきたものは、9本中8本が「髪につけるもの」でした。残る1本の第7弾スカルプブラシも、手で動かす道具です。</p>
+      <p>これは欠点ではありません。ケアの中心は、足りないものを足すことだからです。9本とも、その役割を果たしてくれました。</p>
+      <p>一方で今回のアイテムは、そもそも種類が違います。塗るものでも、手で動かす道具でもなく、<strong>電源を入れて熱と風を出す機械</strong>。シリーズで初めての家電になります。</p>
+      <p>言ってしまえば、第1〜9弾が"何を髪に足すか"。そしてこの1台が"何を髪に当てているか"。塗るものは9回で決まりました。10回目は、それを乾かす側です。</p>
+      <p class="lede">私がこの1台を選んだ理由は、大きく3つ。</p>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <span class="num">壱</span>
+          <h3>シリーズ最大の空白「乾かす」を、初めて正面から扱える</h3>
+          <p>第1弾のNo.6は「乾かす前に塗るもの」でした。塗るところまではやっていたのに、乾かす行為そのものは9回とも空白。毎晩必ず通るのに一度も検討していない、シリーズで唯一の場所でした。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">弐</span>
+          <h3>効果の説明ではなく、風量という数字で選べる</h3>
+          <p>イオンや遠赤外線の話は、正直なところ私には検証しようがありません。ただ「大風量11.5m/秒」というメーカー公表値は、早く乾く=熱に当たる時間が短くなる、という単純な理屈につながります。私はそこを見て選びました。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">参</span>
+          <h3>買い切りで、しかもシャンプーをした日は必ず使う</h3>
+          <p>第7弾のブラシに続く2つ目の"減らないもの"です。ただしブラシと違って、これは使わない日がほぼありません。金額はシリーズ最高ですが、1日あたりで見ると景色が変わります(後述)。</p>
+        </div>
+      </div>
+      <p style="margin-top:28px;">「何を塗るか」から、「何を当てているか」へ。9回かけて塗るものを揃えてきたからこそ、その真ん中にあった10分に目が向きました。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※本商品は家電です。記載の仕様・技術に関する内容はメーカーの公表内容に基づくものであり、効果を保証するものではありません。感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">THE PRODUCT</p>
+      <h2>クレイツ イオン ドライ SD-1200とは</h2>
+      <p>クレイツは、サロン向けのヘアアイロンやドライヤーを手がけているブランドです。第1〜9弾で登場したオラプレックス、ケラスターゼ、リンク、LOA、資生堂プロフェッショナル、SINN PURETE、ルベルとは重なりません。シリーズ初登場です。</p>
+      <p>そして商品の種類も、シリーズ初です。第1〜9弾は、化粧品が8本と、手で動かすブラシが1本。今回は電源を入れて使う家電。カテゴリそのものが変わる、シリーズ唯一の1台になります。</p>
+
+      <figure class="shot">
+        <img src="images/04_product_photo.png" alt="クレイツ イオン ドライ SD-1200" loading="lazy">
+        <figcaption>イオン ドライ SD-1200 / クレイツ</figcaption>
+      </figure>
+
+      <div class="spec">
+        <dl>
+          <dt>タイプ</dt><dd>ヘアドライヤー(シリーズ初の家電)</dd>
+          <dt>価格</dt><dd class="price-tag">¥9,350(税込)/ シリーズ最高価格。ただし消耗しない買い切り</dd>
+          <dt>位置づけ</dt><dd>メーカーによる説明は「トータルバランスを追求したスタンダードドライヤー」</dd>
+          <dt>風量</dt><dd>11.5m/秒(メーカー公表値)。ロングヘアでも短時間で乾かせる設計とされています</dd>
+          <dt>風量調節</dt><dd>HIGH(強風)/ LOW(弱風)の2段階</dd>
+          <dt>温度</dt><dd>冷風・温風/ 2段階温度調節</dd>
+          <dt>消費電力</dt><dd>1200W(温度・風量HIGH時)</dd>
+          <dt>重量</dt><dd>本体 約450g(コード込・ノズル除く約655g)/ ノズル約25g</dd>
+          <dt>サイズ</dt><dd>約H235×W230×D85mm(ノズル除く)</dd>
+          <dt>コード長</dt><dd>約3.0m</dd>
+          <dt>お手入れ</dt><dd>吸込口のキャップが取り外せるので、ホコリの掃除ができる</dd>
+          <dt>メーカー説明</dt><dd>「クレイツイオン ディフューザー」から高密度のクレイツイオンを放出し、遠赤外線が髪と地肌に作用するとされています</dd>
+          <dt>ブランド</dt><dd>クレイツ・シリーズ初登場</dd>
+        </dl>
+      </div>
+
+      <p>この1台のいちばんの特徴は、<strong>今のケアを1つも置き換えない</strong>という点です。シャンプーもトリートメントもオイルもバームもエッセンスもブラシも、今のまま。第1〜9弾で作った流れには、何も手を加えません。変わるのは、その流れの真ん中で当てている風だけです。</p>
+      <p>そして正直に書いておくと、私がこの機種を選んだ決め手は、イオンでも遠赤外線でもありませんでした。それらの効果は私には確かめようがないので、「メーカーがそう説明している」以上のことは書かないでおきます。</p>
+      <p>決め手になったのは、もっと単純な部分です。<strong>風量が大きいと、早く乾く。早く乾くということは、熱に当たっている時間が短くなる。</strong>髪が濡れているあいだが無防備だとよく言われることを踏まえると、この理屈がいちばん納得できました。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記の仕様・説明はすべてメーカーの公表内容に基づく記載です。効果を保証するものではなく、感じ方には個人差があります。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4988338201565" target="_blank" rel="noopener sponsored">
+          商品ページで詳細・価格を確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHY IT WORKS</p>
+      <h2>「で、結局それの何がいいの?」に、飾らず正直に答えます。</h2>
+
+      <div class="features">
+        <div class="feature">
+          <div class="f-title">風量11.5m/秒という、検証できる数字が公表されている</div>
+          <div class="f-chain"><span class="step">だから</span> 効果の言葉ではなく仕様で比較できる ── <span class="step">つまり</span> 「なんとなり良さそう」ではない理由で選べる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">早く乾くほど、熱を当てている時間が短くなる</div>
+          <div class="f-chain"><span class="step">だから</span> 同じ髪でも熱にさらされる総時間が減る ── <span class="step">つまり</span> ケアを足すのではなく、負担のほうを減らす発想になる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">冷風と温風、2段階の温度調節がある</div>
+          <div class="f-chain"><span class="step">だから</span> 8割乾いたところで冷風に切り替えられる ── <span class="step">つまり</span> 仕上げの落ち着かせ方を、道具側で用意できる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">本体約450g(コード込・ノズル除く約655g)</div>
+          <div class="f-chain"><span class="step">だから</span> 腕を上げ続けても負担が少ない ── <span class="step">つまり</span> 途中で面倒になって半乾きでやめる、が起きにくくなる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">コードが約3.0mある</div>
+          <div class="f-chain"><span class="step">だから</span> コンセントの位置に姿勢を引っ張られない ── <span class="step">つまり</span> 毎晩10分の姿勢が楽になる(地味ですが毎日効きます)</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">吸込口のキャップが取り外せる</div>
+          <div class="f-chain"><span class="step">だから</span> ホコリを掃除できる ── <span class="step">つまり</span> 目詰まりで風量が落ちたまま使い続ける、が防げる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">消耗品ではなく、使っても減らない</div>
+          <div class="f-chain"><span class="step">だから</span> 一度買えばリピート購入の判断が発生しない ── <span class="step">つまり</span> 「また買わなきゃ」で止まる道が存在しない</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">今のケアを1つも置き換えない</div>
+          <div class="f-chain"><span class="step">だから</span> 第1〜9弾のどれとも競合しない ── <span class="step">つまり</span> 今使っているものを1つも捨てずに始められる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">サロン向けブランドの「スタンダード」という位置づけ</div>
+          <div class="f-chain"><span class="step">だから</span> 同ブランドの上位機(¥10,780〜¥25,300)より手前にある ── <span class="step">つまり</span> 最初の1台として選ぶ理由が説明しやすい</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;">9回かけて「何を塗るか」を揃えてきたからこそ、10回目でようやく「何を当てているか」に目が向きました。これは、9本ぶん遠回りしたからこそ出てきた、私のいちばん正直な実感です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記は仕様と使い勝手に関する説明です。効果には個人差があり、特定の結果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">WHY TRUST IT</p>
+      <h2>正直に言うと、私は「イオンが出るから」だけでは商品を信じないタイプです。</h2>
+      <p class="lede">それでもこの1台を紹介したいと思えたのは、こんな背景があるからです。</p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>効果ではなく、仕様で判断できる部分がある</h3>
+          <p>イオンや遠赤外線の効果は、正直なところ私には検証できません。だからそこは判断材料から外しました。代わりに風量、重量、コード長、温度調節という、確かめられる数字だけを見ています。ここが判断できる商品は、実はそう多くありません。</p>
+        </div>
+        <div class="trust-item">
+          <h3>「足す」ではなく「減らす」方向の提案である</h3>
+          <p>ケアを1つ増やすのではなく、熱に当たる時間のほうを短くする。9回続けて何かを足してきたシリーズの中で、初めて負担側を減らす回になりました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>ブランド内での位置づけが「スタンダード」と明示されている</h3>
+          <p>同じクレイツには¥10,780、¥19,800、¥25,300の上位機もあります。その中でこれは標準機だと説明されている。「いちばん良いものです」ではなく「基準の1台です」と言われているほうが、最初の1台としては選びやすいと感じました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>掃除できる構造になっている</h3>
+          <p>吸込口のキャップが外せます。ドライヤーは目詰まりすると風量が落ちますが、掃除できない構造だとそのまま使い続けることになる。長く使う前提の設計だと受け取りました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>¥9,350はシリーズ最高。それでも紹介する理由</h3>
+          <p>第1弾¥3,740、第2弾¥4,180、第3弾¥4,290、第4弾¥7,260、第5弾¥8,800、第6弾¥5,776、第7弾¥2,200、第8弾¥3,740、第9弾¥2,950。合計¥42,936、平均¥4,771。第10弾は¥9,350で、これまでの最高だった第5弾を上回ります。ただしこれは減りません。9本の合計を「塗るもの」に使ってきた自分が、それを乾かす側に一度も出していなかった、という比率のほうが気になりました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>サロン専売品を、公式通販でそのまま買える</h3>
+          <p>ALBUM ONLINE STOREは正規販売店です。家電は特に、保証や真贋の面で購入先が重要になるので、私は毎回ここを確認してから紹介しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHAT PEOPLE NOTICE</p>
+      <h2>こんな使用感(声の傾向)</h2>
+      <p>家電なので、成分では語れません。だからこそ、盛らずに、使ってみて分かったことをそのまま整理してみます。</p>
+
+      <div class="voice">
+        <div class="voice-item">
+          <p class="v-label">乾く時間について</p>
+          <p>いちばん分かりやすい変化はここでした。これまで「なんとなく長いな」と思いながら当て続けていたのが、明らかに短くなりました。髪質が変わったというより、当てている時間が減ったという話だと思っています。ちなみにタオルドライを丁寧にやるほど、この差はさらに大きくなります。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">音について</p>
+          <p>風量が大きいぶん、静かではありません。深夜に集合住宅で使うことを考えている人は、そこは把握しておいたほうがいいと思います。ただ、当てている時間そのものは短くなるので、トータルの騒音時間で見ると単純比較にはならないかもしれません。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">重さについて</p>
+          <p>本体約450g(コード込・ノズルを除くと約655g)。持った瞬間に軽いと感じるタイプではありませんが、腕を上げ続けたときの疲れ方が変わりました。私は途中で面倒になって半乾きでやめる日があったので、そこが減ったのは地味に大きいです。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">コードの長さについて</p>
+          <p>約3.0mあります。これは買う前に注目していなかったのですが、実際にいちばん「毎日効くな」と思った部分でした。洗面所のコンセントの位置に姿勢を引っ張られなくなります。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">冷風について</p>
+          <p>正直に言うと、私はこれまで冷風ボタンを使ったことがありませんでした。8割乾いたところで切り替える、という使い方を始めてから、翌朝の落ち着き方が変わった気がしています。ただこれは道具そのものより、使い方を変えた効果のほうが大きいかもしれません。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">イオン・遠赤外線について</p>
+          <p>ここは正直に書きます。メーカーはクレイツイオンと遠赤外線について説明していますが、私にはその効果を検証する手段がありません。なので判断材料に入れていません。この回で私が評価しているのは、風量・重量・コード長・温度調節という、確かめられる部分だけです。</p>
+        </div>
+      </div>
+      <p class="voice-foot">もちろん、髪の量も長さも人それぞれ。だからこそ、「自分の毎晩の10分がどう変わるか」で考えてみる価値がある道具だと思っています。<br>※上記は一般的な使用感の傾向および個人の感想であり、効果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>よくある質問</h2>
+
+      <div class="faq">
+        <details>
+          <summary>今のドライヤーがまだ動いています。買い替えるべきですか?</summary>
+          <div class="a">いいえ。動いているなら、それを使い切るのが順当だと思います。この回でお伝えしたいのは「今すぐ買い替えて」ではなく、「ドライヤーも毎日髪に触れている道具だと一度知っておいてほしい」ということです。壊れたとき、次の1台を選ぶ判断材料として読んでもらえれば十分です。</div>
+        </details>
+        <details>
+          <summary>シリーズでいちばん高いですが、それだけの価値がありますか?</summary>
+          <div class="a">価値の感じ方は人によります。ただ計算としては、消耗しないので5年使えば1日あたり約¥5.1、3年でも約¥8.5です(使用年数を仮定した概算)。第9弾のトリートメントが1mlあたり約¥4.9だったので、毎日減っていくものとほぼ同じ日額になります。金額そのものより、そこをどう見るかだと思います。</div>
+        </details>
+        <details>
+          <summary>イオンや遠赤外線には本当に効果がありますか?</summary>
+          <div class="a">私には検証する手段がないので、断定できません。メーカーは「クレイツイオン ディフューザー」から高密度のクレイツイオンを放出し、遠赤外線が髪と地肌に作用すると説明していますが、この記事ではそれを「メーカーがそう説明している」以上には扱っていません。私が選んだ理由は風量・重量・コード長・温度調節という確かめられる部分です。</div>
+        </details>
+        <details>
+          <summary>第1〜9弾のケアと併用できますか?</summary>
+          <div class="a">できます。というより、何ひとつ変わりません。今使っているシャンプーもトリートメントもオイルもブラシも、そのままです。今回はケアの流れの真ん中で当てている風が変わるだけで、工程は1つも増減しません。</div>
+        </details>
+        <details>
+          <summary>音は大きいですか?</summary>
+          <div class="a">風量が大きいぶん、静かではありません。深夜に集合住宅で使う予定があるなら、そこは考慮したほうがいいと思います。ただ乾かし終わるまでの時間は短くなるので、音が出ている総時間で考えると単純な比較にはなりません。</div>
+        </details>
+        <details>
+          <summary>上位機種との違いは何ですか?</summary>
+          <div class="a">同じクレイツには¥10,780、¥19,800、¥25,300といった上位機もあります。この機種はメーカーの説明で「スタンダードドライヤー」と位置づけられている標準機です。初めてドライヤーを選び直す1台としては、まずここを基準にして、必要を感じたら上を検討するのが分かりやすいと思います。</div>
+        </details>
+        <details>
+          <summary>お手入れは必要ですか?</summary>
+          <div class="a">吸込口のホコリは定期的に掃除してください。目詰まりすると風量が落ちて、結果的に乾く時間が延びます。この機種は吸込口のキャップが取り外せるので、そこは手入れしやすい構造になっています。</div>
+        </details>
+        <details>
+          <summary>使うと髪が傷まなくなるということですか?</summary>
+          <div class="a">いいえ。本商品は家電であり、髪が治る・傷まなくなるといった効果を保証するものではありません。早く乾けば熱に当たる時間が短くなる、という理屈はありますが、仕上がりや感じ方には髪質・施術履歴による個人差があります。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">ABOUT THE PRICE</p>
+      <h2>価格の考え方</h2>
+      <p>クレイツ イオン ドライ SD-1200は ¥9,350(税込)。<strong>このシリーズで紹介してきた10個の中で、いちばん高い金額です。</strong>これまでの最高は第5弾の¥8,800だったので、更新してしまいました。</p>
+      <p>だから最初に、いちばん正直なことを書いておきます。<strong>これは今すぐ買うべきものではありません。</strong>いま使っているドライヤーが問題なく動いているなら、それを使い切ってからで十分です。壊れたときに、次の1台を選ぶ判断材料として思い出してもらえれば、それでいいと思っています。</p>
+      <p>そのうえで、数字の見え方だけ整理させてください。</p>
+      <p>これまでの9本を並べてみます。¥3,740 / ¥4,180 / ¥4,290 / ¥7,260 / ¥8,800 / ¥5,776 / ¥2,200 / ¥3,740 / ¥2,950。合計¥42,936、1本あたりの平均は¥4,771。今回の¥9,350は、その約2倍です。</p>
+      <p>ただ、これは減りません。第7弾のブラシに続く、シリーズ2つ目の買い切りです。しかもブラシと違って、シャンプーをした日は必ず使います。5年使う前提なら1日あたり約¥5.1。3年でも約¥8.5です。</p>
+      <p>ここで妙な符合がありました。前回の第9弾、毎日使うトリートメントは1mlあたり約¥4.9でした。<strong>毎日減っていくものと、毎日減らないものが、だいたい同じ日額になる。</strong>並べてみて、なるほどと思ったんです。金額の大きさと、1日あたりの重さは、必ずしも同じ方向を向いていない。</p>
+      <p>そしてもう一度、比率の話をさせてください。私はこのシリーズで、9本・合計¥42,936を「塗るもの」に使ってきました。同じ期間、それを乾かす側に使った金額は¥0です。塗るものに¥42,936、当てる風に¥0。──毎回この計算をして毎回笑っているのですが、私はどうやら、毎回どこか1箇所を完全に空白にしたまま買い物をしているらしいんです。</p>
+
+      <div class="price-box">
+        <div class="amount">¥9,350<span>/ 税込・消耗しないため5年使う前提なら1日あたり約¥5.1(3年なら約¥8.5)</span></div>
+        <p style="margin-top:14px;">繰り返しになりますが、急いで買うものではありません。今のものが動いているなら、それが寿命を迎えるまでは今のままで大丈夫です。ただ、次に選ぶときには「ヘアケアの一部だ」という前提で選んでほしい。9回ぶん塗るものを吟味してきた人ほど、ここが空白なのはもったいないと思うんです。</p>
+      </div>
+
+      <p class="price-note">※価格・在庫は変動します。最新情報は必ず商品ページでご確認ください。1日あたりの金額は使用年数を仮定した概算であり、耐久性・寿命は使用状況によって変わります。</p>
+
+      <div class="cta-row" style="margin-top:30px;">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4988338201565" target="_blank" rel="noopener sponsored">
+          最新の価格・在庫を商品ページで確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">BEFORE YOU GO</p>
+      <h2>安心して試すために</h2>
+      <p>「ドライヤーを替えるだけで、そんなに変わるの?」その気持ち、よく分かります。私も9回ぶん、そこを一度も疑いませんでした。ヘアケアといえば"何を塗るか"の話で、"何を当てているか"の話だとは考えたこともなかった。</p>
+      <p>だからこそ、この回は他の回といちばん違う言い方をしておきます。<strong>急がなくていいです。</strong></p>
+      <p>これまでの9回は、どれも「試してみてほしい」と書いてきました。金額も¥2,200〜¥8,800で、合わなくても大きな損にはならない範囲でした。今回は¥9,350で、シリーズ最高です。合わなかったときの損も、これまでよりは大きい。</p>
+      <p>だから、いま使っているドライヤーが動いているなら、それを使い切ってください。この回は「買ってください」ではなく、「壊れたとき、次を適当に選ばないでください」という話です。</p>
+      <p>そのうえで、もし買い替えを考えるタイミングが来たなら。そのときは、風量・重さ・コードの長さ・温度調節という、確かめられる数字で選んでほしいと思っています。イオンや遠赤外線の説明は各社ありますが、そこは検証しようがない。私はそう割り切りました。</p>
+      <p>そして、いきなり10個すべてを揃える必要もまったくありません。第1〜9弾で紹介したケアを、まず自分のペースで試す。そのうえで「塗るものはひと通り揃ったな」と思えたときに、その真ん中にある10分を思い出してもらえれば十分です。</p>
+      <p>何を塗るかは9回で決まりました。10回目は、それに何を当てているかです。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※本商品は電気製品です。使用前に必ず取扱説明書と使用上の注意をご確認ください。コードを傷つけないよう扱い、吸込口は定期的に清掃してください。異常を感じた場合はただちに使用を中止してください。</p>
+
+      <div class="series-nav">
+        シリーズで読む:
+        <a href="../round1/">第1弾・オラプレックス No.6(洗い流さないトリートメント)</a> ／
+        <a href="../round2/">第2弾・ケラスターゼ バン セラピュート(シャンプー)</a> ／
+        <a href="../round3/">第3弾・THE HAIR BALM 997(スタイリングバーム)</a> ／
+        <a href="../round4/">第4弾・ケラスターゼ RE マスク セラピュート(集中ヘアパック)</a> ／
+        <a href="../round5/">第5弾・LOA THE OIL PARFUM ザ ネロリ(香水オイル)</a> ／
+        <a href="../round6/">第6弾・アデノバイタル アドバンスト スカルプエッセンス(頭皮ケア)</a> ／
+        <a href="../round7/">第7弾・ハートロック スカルプブラシ(頭皮ケアの道具)</a> ／
+        <a href="../round8/">第8弾・オラプレックス No.3 ヘアパーフェクター(洗う前のプレケア)</a> ／
+        <a href="../round9/">第9弾・イオ クリーム メルトリペア(毎日のインバストリートメント)</a> ／
+        第10弾・クレイツ イオン ドライ SD-1200(乾かす・このページ)
+      </div>
+    </div>
+  </section>
+
+  <section class="beat deep final">
+    <div class="wrap">
+      <p class="eyebrow">LAST WORD</p>
+      <h2>「洗う前」「洗う」「毎日のトリートメント」「乾かす前」「仕上げ」「週数回」「香り」「頭皮」「道具」。9回かけて、塗るものはもう出揃っています。<br>でも、それはぜんぶ「髪に足すもの」の話でした。</h2>
+      <p>足したものに、そのあと何を当てているかの話は、9回とも一度も出てきていません。</p>
+      <p>このまま11本目の新しいアイテムを探し続けて、「まだ何か足りないのかも」と思いながらまた半年過ごすのか。それとも、毎晩10分の風のことを一度だけ思い出しておいて、次に買い替えるときの判断材料にするのか。</p>
+      <p>今日じゃなくていいんです。ただ、その日が来たときに、適当に選ばないでいてほしい。それだけの話です。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4988338201565" target="_blank" rel="noopener sponsored">
+          今すぐ ALBUM ONLINE STORE で詳細を見る <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ps">
+        <p class="eyebrow">追伸</p>
+        <p>正直に言うと、この1台も「魔法の1台」ではありません。これは家電であり、髪が治る・傷まなくなるといった効果を持つものではない。使った翌朝に別人の髪になるわけでもありません。感じ方には個人差があります。</p>
+        <p>それでも私がこれを紹介したいのは、「髪に触れているのは、塗るものだけじゃない」を、10回目にしてやっと言葉にできたからです。第7弾では「実行を疑う」、第8弾では「順番を疑う」、第9弾では「もうやっている工程の中身を疑う」と書きました。今回わかったのは、そのどれとも違う場所に、毎晩10分の空白があったということでした。</p>
+        <p>10回に分けて紹介してきましたが、この10個を全部揃える必要はまったくありません。とくに今回は、急いでほしくない回です。市販品ジプシーだった頃の私は、うまくいかないたびに塗るものを買い替えていました。手も、道具も、風も、同じように毎日髪に当たっているとは考えたことがなかった。</p>
+        <p>もし、アイテムはひと通り揃っているのに、「まだ何か足りない気がする」がずっと消えていないなら。足りない最後の1つは、11本目のボトルではなく、毎晩10分あなたの髪に当たり続けている、あの風のほうかもしれません。今日は買わなくていいので、次に選ぶときのために覚えておいてください。</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4988338201565" target="_blank" rel="noopener sponsored">
+            クレイツ イオン ドライ SD-1200を見てみる <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="brand">サロン専売品ラボ</p>
+    <p>本ページはアフィリエイトプログラム(A8.net)を利用した商品紹介であり、記載内容は一般的な商品情報および個人の使用感に基づくものです。本商品は家電であり、髪が治る・傷まなくなる等の効果を保証するものではありません。「クレイツイオン」「遠赤外線」に関する記載および風量・重量・サイズ等の仕様は、すべてメーカーの公表内容に基づく記載です。仕上がりや感じ方には髪質・施術履歴による個人差があります。1日あたりの金額は使用年数を仮定した概算であり、耐久性・寿命は使用状況によって変動します。電気製品のため、使用前に必ず取扱説明書および使用上の注意をご確認ください。コードを傷つけないよう取り扱い、吸込口は定期的に清掃してください。異常を感じた場合はただちに使用を中止してください。価格・在庫・仕様は変更される場合があるため、最新情報は販売ページをご確認ください。</p>
+  </div>
+</footer>
+
+</body>
+</html>
