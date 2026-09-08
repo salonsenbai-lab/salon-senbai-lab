@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ハホニコ ヘアドライマイクロファイバータオル｜サロン専売品ラボ</title>
+<style>
+  :root {
+    --ink: #212b21;
+    --ink-soft: #4c5a4a;
+    --paper: #f6f7f0;
+    --paper-raise: #ffffff;
+    --sage: #7c9473;
+    --sage-deep: #47593f;
+    --sage-line: #c7d2bd;
+    --mist: #e9ede2;
+    --clay: #b5674a;
+    --clay-deep: #954f37;
+    --clay-tint: #f1ded3;
+    --shadow: 0 1px 2px rgba(33, 43, 33, 0.06);
+    --measure: 38em;
+    --radius: 3px;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #e9ecE2;
+    --ink-soft: #b9c2b2;
+    --paper: #171d15;
+    --paper-raise: #1e251b;
+    --sage: #9bb391;
+    --sage-deep: #c3d4b9;
+    --sage-line: #3a462f;
+    --mist: #212a1d;
+    --clay: #dd9270;
+    --clay-deep: #eaab8b;
+    --clay-tint: #2c211b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e9ecE2;
+      --ink-soft: #b9c2b2;
+      --paper: #171d15;
+      --paper-raise: #1e251b;
+      --sage: #9bb391;
+      --sage-deep: #c3d4b9;
+      --sage-line: #3a462f;
+      --mist: #212a1d;
+      --clay: #dd9270;
+      --clay-deep: #eaab8b;
+      --clay-tint: #2c211b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Noto Sans JP", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    color: var(--sage-deep);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  p { margin: 0 0 1.1em; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---- PR bar ---- */
+  .prbar {
+    background: var(--sage-deep);
+    color: var(--paper-raise);
+  }
+  .prbar .wrap-wide {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #eef1e8;
+  }
+  .prbar strong { color: var(--clay-tint); font-weight: 700; }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    padding: 76px 0 88px;
+    background: linear-gradient(180deg, var(--mist) 0%, var(--paper) 78%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--sage-line), transparent 70%);
+    opacity: 0.55;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero .prehead {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    box-shadow: inset 0 -0.42em 0 var(--clay-tint);
+  }
+  .hero .sub {
+    max-width: 32em;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  .sprig {
+    margin-top: 40px;
+    width: 96px;
+    height: auto;
+    color: var(--sage);
+  }
+
+  /* ---- CTA button ---- */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 15px 30px;
+    background: var(--clay);
+    color: #fff8f3;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: var(--clay-deep); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+  .cta .arrow { font-size: 1.05em; }
+  .cta-row { display: flex; justify-content: flex-start; }
+  .cta-row.center { justify-content: center; }
+  .price-note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Section rhythm ---- */
+  section.beat {
+    padding: 68px 0;
+  }
+  section.beat.tint { background: var(--mist); }
+  section.beat.deep {
+    background: var(--sage-deep);
+    color: #eef1e8;
+  }
+  section.beat.deep h2 { color: #fff; }
+  section.beat.deep .eyebrow { color: var(--clay-tint); }
+  section.beat.deep p { color: #dbe3d3; }
+
+  .beat h2 {
+    font-size: clamp(1.28rem, 2.6vw, 1.6rem);
+    line-height: 1.6;
+    margin: 10px 0 26px;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Figures (images/ 配下・後で実画像を差し替え) ---- */
+  .shot {
+    margin: 32px 0 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    background: var(--mist);
+  }
+  .shot figcaption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Check list ---- */
+  .checks {
+    list-style: none;
+    margin: 26px 0 24px;
+    padding: 0;
+  }
+  .checks li {
+    position: relative;
+    padding: 12px 0 12px 32px;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.96rem;
+    color: var(--ink);
+  }
+  .checks li:first-child { border-top: 1px solid var(--sage-line); }
+  .checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    color: var(--clay);
+    font-weight: 700;
+  }
+
+  /* ---- Reasons / cards ---- */
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .reason-card {
+    background: var(--paper-raise);
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+  }
+  .reason-card .num {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 1.7rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .reason-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .reason-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Spec table ---- */
+  .spec {
+    margin: 30px 0;
+    border-top: 1px solid var(--sage-line);
+  }
+  .spec dl {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    margin: 0;
+  }
+  .spec dt, .spec dd {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.92rem;
+  }
+  .spec dt {
+    color: var(--sage);
+    font-weight: 700;
+  }
+  .spec dd { margin: 0; }
+
+  .price-tag {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- Feature rows ---- */
+  .feature {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--sage-line);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .feature:first-of-type { border-top: 1px solid var(--sage-line); }
+  .feature .f-title { font-weight: 700; color: var(--ink); }
+  .feature .f-chain {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .feature .f-chain span.step { color: var(--sage); }
+
+  /* ---- Trust grid ---- */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .trust-item {
+    padding: 20px;
+    background: var(--paper-raise);
+    border-radius: var(--radius);
+    border: 1px solid var(--sage-line);
+  }
+  .trust-item h3 {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+  .trust-item p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Voice quotes ---- */
+  .voice {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .voice-item {
+    padding-left: 18px;
+    border-left: 2px solid var(--sage);
+  }
+  .voice-item .v-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .voice-item p { font-size: 0.94rem; margin: 0; }
+  .voice-foot {
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- FAQ ---- */
+  .faq { margin-top: 28px; border-top: 1px solid var(--sage-line); }
+  .faq details {
+    border-bottom: 1px solid var(--sage-line);
+  }
+  .faq summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    font-size: 0.96rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before {
+    content: "Q";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--clay);
+    flex: none;
+  }
+  .faq summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq .a {
+    display: flex;
+    gap: 12px;
+    padding: 0 4px 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .faq .a::before {
+    content: "A";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage);
+    flex: none;
+  }
+
+  /* ---- Price reflection ---- */
+  .price-box {
+    margin-top: 28px;
+    padding: 26px 24px;
+    background: var(--clay-tint);
+    border-radius: var(--radius);
+  }
+  .price-box .amount {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 2rem;
+    color: var(--clay-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .price-box .amount span { font-size: 0.9rem; margin-left: 6px; color: var(--ink-soft); font-family: inherit; }
+
+  /* ---- Final ---- */
+  .final h2 { color: #fff; }
+  .ps {
+    margin-top: 46px;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+  }
+  .ps .eyebrow { color: var(--clay-tint); }
+
+  footer {
+    padding: 40px 0 56px;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  footer .brand {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage-deep);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  /* ---- Series nav (round1〜7 相互リンク) ---- */
+  .series-nav {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--sage-line);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .series-nav a { color: var(--sage-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .spec dl { grid-template-columns: 7em 1fr; }
+    section.beat { padding: 52px 0; }
+    .hero { padding: 56px 0 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="prbar">
+  <div class="wrap-wide">
+    【PR】本ページはアフィリエイトプログラム(A8.net)を利用して商品を紹介しています。ページ内リンクからの購入により、当方に<strong>成果報酬</strong>が発生する場合があります。記載内容は特定の効果効能を保証するものではなく、一般的な商品情報と個人の使用感に基づいています。吸水性・速乾性・摩擦負担の軽減に関する記載および累計販売数は、すべて<strong>メーカーの公表内容</strong>に基づくもので、感じ方には個人差があります。
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="prehead">前回、ドライヤーの話を書きました。その記事の中で、私は使い方の項目に一行だけこう書いています。「タオルドライをしっかりしてから使う」。</p>
+    <h1>10回書いて、タオルの話はその一行だけ。<br>でも濡れた髪にいちばん最初に触れているのは、<em>ドライヤーではなくタオル</em>でした。</h1>
+    <p class="sub">ハホニコ ヘアドライマイクロファイバータオル。¥894(税込)。<strong>シリーズ最安です。</strong>前回はシリーズ最高の¥9,350でした。10回かけて「何を使うか」は吟味してきたのに、「どう扱うか」は一度も見ていなかった。髪がいちばん無防備な数分間に、私はバスタオルでゴシゴシ拭いていました。</p>
+    <div class="cta-row">
+      <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4580641207168" target="_blank" rel="noopener sponsored">
+        ハホニコ ヘアドライマイクロファイバータオルを見てみる <span class="arrow">→</span>
+      </a>
+    </div>
+    <svg class="sprig" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 118 C50 80 44 50 50 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M50 70 C34 62 24 46 22 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M50 44 C64 38 74 24 76 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="50" cy="8" r="4" fill="currentColor"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">EMPATHY</p>
+      <h2>こんな「タオルだけは、選んだ記憶がない」、心当たりありませんか。</h2>
+      <ul class="checks">
+        <li>お風呂上がり、体を拭いたバスタオルでそのまま髪も拭いている</li>
+        <li>早く乾かしたくて、頭を掴んでガシガシ動かしている</li>
+        <li>タオルを頭に巻いたまま、しばらく別のことをしている</li>
+        <li>シャンプーもトリートメントも選び直したのに、タオルは選んだ記憶がない</li>
+        <li>洗面所のそのタオルが、いつからそこにあるのか思い出せない</li>
+        <li>髪は濡れているときがいちばん傷みやすい、と聞いたことはある</li>
+        <li>ヘアケア＝髪に「何を使うか」の話だと、無意識に思っている</li>
+      </ul>
+      <p>一つでも頷いたなら、あと3分だけ読み進めてほしいんです。</p>
+      <p>私はこのシリーズで、10回かけてアイテムを揃えてきました。合計¥52,286。前回はついにドライヤーまで見直して、洗う前から乾かすところまで、ひと通り揃った感覚がありました。</p>
+      <p>その前回の記事で、私は使い方の項目に一行だけこう書いています。<strong>「タオルドライをしっかりしてから使う(ここを丁寧にやるほど時間が減ります)」</strong>。</p>
+      <p>……書いておいて、そのタオルについては一度も考えたことがありませんでした。10回書いて、タオルに触れたのはこの一行だけです。</p>
+      <p>同じ記事で、私はこうも書いていました。「髪は濡れているときがいちばん無防備だとよく言われます」。だから熱を当てる時間を短くしたい、という話でした。</p>
+      <p>書いたあとで気づいたんです。その<strong>いちばん無防備な状態のとき、私は何をしているだろう</strong>、と。──バスタオルで、ゴシゴシ拭いていました。</p>
+
+      <figure class="shot">
+        <img src="images/01_eyecatch.png" alt="洗面台に置かれたタオルと植物のイメージ" loading="lazy">
+        <figcaption>10本ぶん揃えたのは「何を使うか」。11回目は、「どう扱っているか」の話です。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">IF NOTHING CHANGES</p>
+      <h2>正直に言うと、いちばん引っかかったのは「古いタオルを使っていること」じゃありません。<br>10回とも、「どう扱うか」を一度も見ていなかったことのほうです。</h2>
+      <p>工程を順番に並べてみてください。洗う → 流す → トリートメント → 流す → <strong>タオルで拭く</strong> → 洗い流さないトリートメントを塗る → ドライヤーで乾かす。</p>
+      <p>前回扱ったドライヤーは、この並びの後ろのほうです。その手前に、タオルがあります。<strong>濡れた髪にいちばん最初に触れているのは、ドライヤーではなくタオルのほう</strong>でした。</p>
+      <p>しかも私が使っていたのは、体を拭くためのバスタオルです。体を拭く前提で作られた厚みと大きさのものを、髪に流用していただけでした。悪気はまったくなくて、そこに置いてあったからです。</p>
+      <p>そして、この状態はとても気づきにくい。<strong>タオルには、検討のタイミングが一生来ない</strong>からです。シャンプーは切らせば選び直す機会が来る。トリートメントも詰め替えのたびに一瞬考える。前回のドライヤーですら、壊れれば買い替えのタイミングが来ます。でもタオルは、多少くたびれても「まだ使える」で通ってしまう。</p>
+      <p>半年後も、たぶん同じです。洗面台には12本目、13本目の新しいアイテムが増えていて、でも濡れた髪をいちばん最初に触っているのは、いつからそこにあるのか分からないあのバスタオルのまま。</p>
+      <p>いちばんもったいないのは、ここです。第1〜10弾で、"何を使うか"の答えはもう出そろっているんです。出ていないのは、<strong>その手前で、どう扱っているか</strong>のほうだけ。</p>
+      <p>──ただ、先に言っておきます。この回は¥894です。急かす気はまったくありませんし、そもそもこの回でいちばん大事なのは、たぶん商品のほうではありません。それは後半で書きます。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">THE TURN</p>
+      <h2>そこでたどり着いたのが、「ハホニコ ヘアドライマイクロファイバータオル」でした。</h2>
+      <p>ここで一つ、はっきりさせておきたいことがあります。第1〜10弾で紹介してきたものは、10本中8本が「髪につけるもの」、1本が手で動かすブラシ、1台が熱を出すドライヤーでした。</p>
+      <p>これは欠点ではありません。ケアの中心は、足りないものを足すことだからです。10本とも、その役割を果たしてくれました。</p>
+      <p>一方で今回のものは、そもそも種類が違います。塗るものでも、手で動かす道具でも、電源を入れる機械でもなく、<strong>ただの布</strong>です。シリーズで初めての、繊維でできたものになります。</p>
+      <p>言ってしまえば、第1〜10弾が"何を髪に使うか"。そしてこの1枚が"それをどう扱っているか"。使うものは10回で決まりました。11回目は、扱い方のほうです。</p>
+      <p class="lede">私がこの1枚を選んだ理由は、大きく3つ。</p>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <span class="num">壱</span>
+          <h3>順番として、前回のドライヤーよりさらに手前にある</h3>
+          <p>第8弾で「洗う前」に戻ったのと同じ構造です。今回は「乾かす前」に戻ります。濡れた髪に最初に触れるものを変えないまま、そのあとの工程だけ整えていたことになります。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">弐</span>
+          <h3>この回の半分は、買わなくても実行できる</h3>
+          <p>擦らない、挟んで押さえる。これは¥894を払わなくても今日からできます。11回書いてきて、初めて「商品を買わない部分」を主役に置ける回になりました。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">参</span>
+          <h3>¥894。合わなかったときに失うものがいちばん小さい</h3>
+          <p>シリーズ最安です。従来の最安は第7弾のブラシ¥2,200でしたが、その4割。前回が¥9,350だったので、金額の落差は自分でも笑ってしまいました。</p>
+        </div>
+      </div>
+      <p style="margin-top:28px;">「何を使うか」から、「どう扱うか」へ。10回かけて使うものを揃えてきたからこそ、その手前にあった数分に目が向きました。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※本商品の吸水性・速乾性・摩擦負担の軽減に関する記載はメーカーの公表内容に基づくものであり、効果を保証するものではありません。感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">THE PRODUCT</p>
+      <h2>ハホニコ ヘアドライマイクロファイバータオルとは</h2>
+      <p>ハホニコは、サロン向けのヘアケア用品を手がけているメーカーです。第1〜10弾で登場したオラプレックス、ケラスターゼ、リンク、LOA、資生堂プロフェッショナル、SINN PURETE、ルベル、クレイツとは重なりません。シリーズ初登場です。</p>
+      <p>そして商品の種類も、シリーズ初です。第1〜10弾は、化粧品が8本、ブラシが1本、家電が1台。今回は布です。カテゴリそのものが変わる、シリーズ唯一の1枚になります。</p>
+
+      <figure class="shot">
+        <img src="images/04_product_photo.png" alt="ハホニコ ヘアドライマイクロファイバータオル ミルキーベージュ" loading="lazy">
+        <figcaption>ヘアドライマイクロファイバータオル ミルキーベージュ / ハホニコ</figcaption>
+      </figure>
+
+      <div class="spec">
+        <dl>
+          <dt>タイプ</dt><dd>ヘアドライタオル(シリーズ初の繊維製品)</dd>
+          <dt>価格</dt><dd class="price-tag">¥894(税込)/ シリーズ最安。従来最安の第7弾¥2,200の約4割</dd>
+          <dt>位置づけ</dt><dd>メーカーによる説明は「美容師さんが考えた"髪のためのタオル"」</dd>
+          <dt>素材の特徴</dt><dd>一般的なマイクロファイバーよりも毛足の長い超極細繊維。やさしく抑え拭きするだけで吸水するとされています</dd>
+          <dt>織り</dt><dd>一般的なタオルとは異なるカットパイル仕上げ。ふんわりなめらかな肌触りとされています</dd>
+          <dt>摩擦について</dt><dd>濡れた髪をやさしく包み込み、摩擦で生じるキューティクルの剥離や角質への負担を軽減する、とメーカーは説明しています</dd>
+          <dt>速乾性</dt><dd>繊維が水分を吸収したあと、繊維同士のスキマが空気を取り込み水分を拡散するため、湿気がこもりにくいとされています</dd>
+          <dt>サイズ感</dt><dd>フェイスタオルよりは長く、バスタオルよりは短い、髪のケアに向いたコンパクトサイズ。ショートからロングまで対応</dd>
+          <dt>実績</dt><dd>シリーズ累計販売数300万枚(2014年11月〜2024年8月末のメーカー出荷数)</dd>
+          <dt>カラー</dt><dd>今回紹介しているのはミルキーベージュ</dd>
+          <dt>ブランド</dt><dd>ハホニコ・シリーズ初登場</dd>
+        </dl>
+      </div>
+
+      <p>この1枚のいちばんの特徴は、<strong>今のケアを1つも置き換えない</strong>という点です。シャンプーもトリートメントもオイルもバームもエッセンスもブラシもドライヤーも、今のまま。第1〜10弾で作った流れには、何も手を加えません。変わるのは、その流れの手前で髪に最初に触れるものだけです。</p>
+      <p>そして正直に書いておくと、私がこれを選んだ決め手は「吸水力がすごいから」ではありませんでした。そこは各社が言っていることで、比べるのが難しい。</p>
+      <p>決め手になったのは、もっと単純な部分です。<strong>吸ってくれる道具に替えると、擦る必要がなくなる。</strong>バスタオルで押さえてもなかなか水が減らないから、結局ゴシゴシしたくなるんです。正しい拭き方を意志で続けるより、そうしたくならない道具に替えるほうが早い、と思いました。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記の素材・構造・実績に関する記載はすべてメーカーの公表内容に基づくものです。効果を保証するものではなく、感じ方には個人差があります。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4580641207168" target="_blank" rel="noopener sponsored">
+          商品ページで詳細・価格を確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHY IT WORKS</p>
+      <h2>「で、結局894円の布で何が変わるの?」に、飾らず正直に答えます。</h2>
+
+      <div class="features">
+        <div class="feature">
+          <div class="f-title">毛足の長い超極細繊維で、抑え拭きするだけで吸水するとされている</div>
+          <div class="f-chain"><span class="step">だから</span> 押さえるだけで水が減る ── <span class="step">つまり</span> 擦りたくならない。正しい拭き方を意志で続けなくてよくなる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">一般的なタオルとは異なるカットパイル仕上げ</div>
+          <div class="f-chain"><span class="step">だから</span> マイクロファイバー特有のひっかかりが出にくい ── <span class="step">つまり</span> 髪が引っかかって余計に触る、が起きにくくなる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">フェイスタオルより長く、バスタオルより短い専用サイズ</div>
+          <div class="f-chain"><span class="step">だから</span> 髪だけを扱うのにちょうどいい ── <span class="step">つまり</span> 体を拭く前提の大きさを持て余さなくなる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">タオルドライが進むほど、ドライヤーを当てる時間が減る</div>
+          <div class="f-chain"><span class="step">だから</span> 熱にさらされる時間そのものが短くなる ── <span class="step">つまり</span> 第10弾で書いた「早く乾く=熱に当たる時間が短い」と地続きになる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">繊維同士のスキマが空気を取り込み、湿気がこもりにくいとされている</div>
+          <div class="f-chain"><span class="step">だから</span> タオル自体が乾きやすい ── <span class="step">つまり</span> 毎晩使うものとして回しやすい</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">シリーズ累計300万枚(2014年11月〜2024年8月末の出荷数)</div>
+          <div class="f-chain"><span class="step">だから</span> 定番として長く流通している ── <span class="step">つまり</span> 珍しいものに賭ける買い物ではない</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">¥894。シリーズ最安</div>
+          <div class="f-chain"><span class="step">だから</span> 合わなかったときの損がいちばん小さい ── <span class="step">つまり</span> 迷っている時間のほうがもったいない価格帯になる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">消耗品ではないので、使っても減らない</div>
+          <div class="f-chain"><span class="step">だから</span> リピート購入の判断が発生しない ── <span class="step">つまり</span> 「また買わなきゃ」で止まる道が存在しない</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">今のケアを1つも置き換えない</div>
+          <div class="f-chain"><span class="step">だから</span> 第1〜10弾のどれとも競合しない ── <span class="step">つまり</span> 今使っているものを1つも捨てずに始められる</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;">10回かけて「何を使うか」を揃えてきたからこそ、11回目でようやく「どう扱っているか」に目が向きました。これは、10本ぶん遠回りしたからこそ出てきた、私のいちばん正直な実感です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記は素材・構造・使い勝手に関する説明です。効果には個人差があり、特定の結果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">WHY TRUST IT</p>
+      <h2>正直に言うと、私は「吸水力がすごい」だけでは商品を信じないタイプです。</h2>
+      <p class="lede">それでもこの1枚を紹介したいと思えたのは、こんな背景があるからです。</p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>効果ではなく、順番で説明できる</h3>
+          <p>吸水力や速乾性の数値は、正直なところ横並びで比べようがありません。だから私は、そこを主な判断材料にしていません。私が納得したのは「濡れた髪に最初に触れているのはタオルだ」という、確かめようのある順番のほうです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>買わなくてもできることを、先に書ける商品である</h3>
+          <p>この回の半分は「擦らない、押さえる」という拭き方の話で、これは¥894を払わなくても実行できます。商品を買わなくても得るものがある回を作れたのは、11回目にして初めてでした。</p>
+        </div>
+        <div class="trust-item">
+          <h3>累計300万枚という、期間つきの数字が出ている</h3>
+          <p>2014年11月〜2024年8月末のメーカー出荷数として公表されています。「大人気」ではなく期間と数字で言われているぶん、受け取りやすいと感じました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>前回のドライヤーと矛盾しない。むしろ前提になる</h3>
+          <p>第10弾の記事で私は「タオルドライをしっかりやるほど乾かす時間が減る」と書きました。今回はその一行を実行するための話です。前回買った人の役に立ち、前回買わなかった人にも効きます。</p>
+        </div>
+        <div class="trust-item">
+          <h3>¥894はシリーズ最安。それでも1回まるごと使って紹介する理由</h3>
+          <p>第1弾¥3,740、第2弾¥4,180、第3弾¥4,290、第4弾¥7,260、第5弾¥8,800、第6弾¥5,776、第7弾¥2,200、第8弾¥3,740、第9弾¥2,950、第10弾¥9,350。合計¥52,286、平均¥5,229。今回はその合計の1.7%です。金額が小さいから軽い話、とは思いませんでした。工程の順番でいちばん最初にあるものなので。</p>
+        </div>
+        <div class="trust-item">
+          <h3>サロン専売品を、公式通販でそのまま買える</h3>
+          <p>ALBUM ONLINE STOREは正規販売店です。私は毎回ここを確認してから紹介しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHAT PEOPLE NOTICE</p>
+      <h2>こんな使用感(声の傾向)</h2>
+      <p>布なので、成分では語れません。だからこそ、盛らずに、使ってみて分かったことをそのまま整理してみます。</p>
+
+      <div class="voice">
+        <div class="voice-item">
+          <p class="v-label">拭き方が変わったこと</p>
+          <p>いちばん大きかったのはここでした。これまでは頭全体を掴んでガシガシ動かしていたのが、挟んで押さえるだけで済むようになりました。「丁寧にやろう」と決意したからではなく、押さえるだけで水が減るので擦る理由がなくなった、というほうが正確です。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">ドライヤーを当て始めるときの状態</p>
+          <p>乾かし始めの水の残り方が変わりました。結果としてドライヤーの時間も短くなっています。ただ、どこまでがタオルの性能で、どこからが拭き方を変えた効果なのかは、正直なところ切り分けられていません。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">サイズについて</p>
+          <p>バスタオルより小さいので、最初は「足りるかな」と思いました。実際には髪だけを扱うぶんには持て余さないほうが扱いやすかったです。ただ、髪がとても長い・量が多い方は、感じ方が違う可能性はあると思います。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">洗濯について</p>
+          <p>毎日使うものなので、洗い替えがあると回しやすいです。マイクロファイバーは一般に柔軟剤を使うと吸水性が落ちると言われるので、私は使っていません。洗濯方法は商品の表示をご確認ください。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">巻いたままにすることについて</p>
+          <p>私は以前、タオルを巻いたまましばらく他のことをしていました。今は巻きっぱなしにしないようにしています。巻いている間も髪は濡れたままですし、蒸れます。これは商品の話ではなく、単に習慣の話です。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">期待しすぎないほうがいい部分</p>
+          <p>ここは正直に書きます。タオルを替えても、髪が生まれ変わることはありません。ダメージが治るわけでもない。あくまで「濡れているあいだの扱いが雑でなくなる」だけです。894円でできることの範囲は、その範囲だと思っています。</p>
+        </div>
+      </div>
+      <p class="voice-foot">もちろん、髪の量も長さも人それぞれ。だからこそ、「自分がお風呂上がりの数分で何をしているか」で考えてみる価値がある道具だと思っています。<br>※上記は一般的な使用感の傾向および個人の感想であり、効果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>よくある質問</h2>
+
+      <div class="faq">
+        <details>
+          <summary>普通のバスタオルではダメなんですか?</summary>
+          <div class="a">ダメではありません。ただ、バスタオルは体を拭く前提で作られています。その厚みと大きさは髪のために設計されたものではない、というだけの話です。まず今日からできるのは、擦らずに押さえて拭くこと。それはバスタオルでも実行できます。</div>
+        </details>
+        <details>
+          <summary>894円で、本当に何か変わりますか?</summary>
+          <div class="a">髪が生まれ変わるようなことは起きません。変わるのは「濡れているあいだの扱い」です。押さえるだけで水が減るので擦る必要がなくなり、結果としてドライヤーを当てる時間も短くなりました。期待していただける範囲は、その範囲だと思っています。</div>
+        </details>
+        <details>
+          <summary>何枚あればいいですか?</summary>
+          <div class="a">毎日使うものなので、洗い替えがあると回しやすいです。ただ最初の1枚で、押さえて拭く感覚がどう違うかを確かめてからでいいと思います。</div>
+        </details>
+        <details>
+          <summary>洗濯はどうすればいいですか?</summary>
+          <div class="a">洗濯方法は商品の表示に従ってください。一般論として、マイクロファイバーは柔軟剤を使うと吸水性が落ちると言われます。私は使っていません。</div>
+        </details>
+        <details>
+          <summary>タオルを頭に巻いたままでもいいですか?</summary>
+          <div class="a">長時間の巻きっぱなしは避けたほうがいいと思います。巻いている間も髪は濡れたままですし、蒸れます。吸わせたら外して、洗い流さないトリートメントを塗って、乾かす。この流れのほうが早いです。</div>
+        </details>
+        <details>
+          <summary>第10弾のドライヤーと、両方必要ですか?</summary>
+          <div class="a">いいえ。むしろ順番で言えば、こちらのほうが先にあります。前回の記事で私は「タオルドライをしっかりしてから使う」と書きましたが、今回はその一行のほうの話です。ドライヤーを買っていない方にも、そのまま当てはまります。</div>
+        </details>
+        <details>
+          <summary>第1〜10弾のケアと併用できますか?</summary>
+          <div class="a">できます。というより、何ひとつ変わりません。今使っているシャンプーもトリートメントもオイルもブラシもドライヤーも、そのままです。今回は、その流れの手前で髪に最初に触れるものが変わるだけです。</div>
+        </details>
+        <details>
+          <summary>使うと髪が傷まなくなるということですか?</summary>
+          <div class="a">いいえ。本商品はタオルであり、髪が治る・傷まなくなるといった効果を保証するものではありません。摩擦負担の軽減や吸水性についての記載はメーカーの公表内容に基づくもので、感じ方には髪質・施術履歴による個人差があります。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">ABOUT THE PRICE</p>
+      <h2>価格の考え方</h2>
+      <p>ハホニコ ヘアドライマイクロファイバータオルは ¥894(税込)。<strong>このシリーズで紹介してきた11個の中で、いちばん安い金額です。</strong>これまでの最安は第7弾のブラシ¥2,200だったので、その約4割まで下がりました。</p>
+      <p>前回が¥9,350で、シリーズ最高でした。その次がこれです。落差については、自分でも笑ってしまいました。</p>
+      <p>これまでの10本を並べてみます。¥3,740 / ¥4,180 / ¥4,290 / ¥7,260 / ¥8,800 / ¥5,776 / ¥2,200 / ¥3,740 / ¥2,950 / ¥9,350。合計¥52,286、1本あたりの平均は¥5,229。<strong>今回の¥894は、その合計の1.7%です。</strong></p>
+      <p>そのうえで、前回とつなげた計算をひとつだけ置いておきます。前回のドライヤーは1200W。仮にタオルドライを丁寧にして、毎晩の乾かす時間が3分短くなったとすると、1年でおよそ21.9kWh。電気代を1kWhあたり31円で計算すると、年間で約¥680です。</p>
+      <p>つまりこのタオル代は、うまくいけば<strong>1年ちょっとで電気代のほうから返ってくる</strong>計算になります。もちろん短縮できる時間には個人差がありますし、これを目的に買うものでもありません。ただ、894円という金額の意味を考えるときの材料にはなると思っています。</p>
+      <p>そしてもう一度、比率の話をさせてください。私はこのシリーズで、10本・合計¥52,286を「何を使うか」に使ってきました。同じ期間、「どう扱うか」に使った金額は¥0です。──毎回この計算をして毎回笑っているのですが、私はどうやら、毎回どこか1箇所を完全に空白にしたまま買い物をしているらしいんです。</p>
+
+      <div class="price-box">
+        <div class="amount">¥894<span>/ 税込・シリーズ最安。10本合計¥52,286の約1.7%</span></div>
+        <p style="margin-top:14px;">そして繰り返しますが、この回でいちばん大事なのは、たぶん商品ではありません。擦らずに押さえて拭く。それは今日、いま家にあるタオルで実行できます。まずそこからで十分です。</p>
+      </div>
+
+      <p class="price-note">※価格・在庫は変動します。最新情報は必ず商品ページでご確認ください。電気代の試算は「乾かす時間が3分短縮できた場合」を仮定した概算であり、短縮できる時間・電力量・単価は使用状況によって変わります。</p>
+
+      <div class="cta-row" style="margin-top:30px;">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4580641207168" target="_blank" rel="noopener sponsored">
+          最新の価格・在庫を商品ページで確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">BEFORE YOU GO</p>
+      <h2>安心して試すために</h2>
+      <p>「タオルを替えるだけで、そんなに変わるの?」その気持ち、よく分かります。私も10回ぶん、そこを一度も疑いませんでした。ヘアケアといえば"何を使うか"の話で、"どう扱っているか"の話だとは考えたこともなかった。</p>
+      <p>だからこの回は、他の回といちばん違う言い方をしておきます。<strong>買わなくていいので、拭き方だけ先に変えてください。</strong></p>
+      <p>擦らない。挟んで押さえる。毛先は握って吸わせる。巻きっぱなしにしない。これだけです。今日、いま家にあるタオルでできます。</p>
+      <p>そのうえで、押さえてもなかなか水が減らないな、結局擦ってしまうな、と感じたなら。そのときに初めて、吸う側の道具を替えることを考えてもらえればいいと思っています。順番としては、そちらのほうが自然です。</p>
+      <p>金額は¥894で、このシリーズでいちばん安い。合わなかったときに失うものも、いちばん小さい回です。ただ、安いから軽い話だとは思っていません。工程の順番でいちばん最初にあるものなので。</p>
+      <p>そして、いきなり11個すべてを揃える必要もまったくありません。第1〜10弾で紹介したケアを、まず自分のペースで試す。そのうえで「使うものはひと通り揃ったな」と思えたときに、その手前にある数分を思い出してもらえれば十分です。</p>
+      <p>何を使うかは10回で決まりました。11回目は、それをどう扱っているかです。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※洗濯方法は商品の表示をご確認ください。マイクロファイバーと柔軟剤に関する記載は一般的に言われている内容であり、製品ごとの指定が優先されます。</p>
+
+      <div class="series-nav">
+        シリーズで読む:
+        <a href="../round1/">第1弾・オラプレックス No.6(洗い流さないトリートメント)</a> ／
+        <a href="../round2/">第2弾・ケラスターゼ バン セラピュート(シャンプー)</a> ／
+        <a href="../round3/">第3弾・THE HAIR BALM 997(スタイリングバーム)</a> ／
+        <a href="../round4/">第4弾・ケラスターゼ RE マスク セラピュート(集中ヘアパック)</a> ／
+        <a href="../round5/">第5弾・LOA THE OIL PARFUM ザ ネロリ(香水オイル)</a> ／
+        <a href="../round6/">第6弾・アデノバイタル アドバンスト スカルプエッセンス(頭皮ケア)</a> ／
+        <a href="../round7/">第7弾・ハートロック スカルプブラシ(頭皮ケアの道具)</a> ／
+        <a href="../round8/">第8弾・オラプレックス No.3 ヘアパーフェクター(洗う前のプレケア)</a> ／
+        <a href="../round9/">第9弾・イオ クリーム メルトリペア(毎日のインバストリートメント)</a> ／
+        <a href="../round10/">第10弾・クレイツ イオン ドライ SD-1200(乾かす)</a> ／
+        第11弾・ハホニコ ヘアドライマイクロファイバータオル(拭く・このページ)
+      </div>
+    </div>
+  </section>
+
+  <section class="beat deep final">
+    <div class="wrap">
+      <p class="eyebrow">LAST WORD</p>
+      <h2>「洗う前」「洗う」「毎日のトリートメント」「乾かす前」「仕上げ」「週数回」「香り」「頭皮」「道具」「乾かす」。10回かけて、使うものはもう出揃っています。<br>でも、それはぜんぶ「何を使うか」の話でした。</h2>
+      <p>それを、どう扱っているかの話は、10回とも一度も出てきていません。</p>
+      <p>このまま12本目の新しいアイテムを探し続けて、「まだ何か足りないのかも」と思いながらまた半年過ごすのか。それとも、今日のお風呂上がりだけ、擦らずに押さえてみるのか。</p>
+      <p>後者にはお金がかかりません。今夜から試せます。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4580641207168" target="_blank" rel="noopener sponsored">
+          今すぐ ALBUM ONLINE STORE で詳細を見る <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ps">
+        <p class="eyebrow">追伸</p>
+        <p>正直に言うと、この1枚も「魔法のタオル」ではありません。これはタオルであり、髪が治る・傷まなくなるといった効果を持つものではない。使った翌朝に別人の髪になるわけでもありません。感じ方には個人差があります。</p>
+        <p>それでも私がこれを紹介したいのは、「髪に何を使うか」ではなく「それをどう扱っているか」を、11回目にしてやっと言葉にできたからです。第7弾では「実行を疑う」、第8弾では「順番を疑う」、第9弾では「もうやっている工程の中身を疑う」、第10弾では「塗るもの以外も髪に触れている」と書きました。今回わかったのは、そのどれとも違う場所──いちばん無防備な数分間に、いちばん雑なことをしていた、ということでした。</p>
+        <p>11回に分けて紹介してきましたが、この11個を全部揃える必要はまったくありません。とくに今回は、買わないまま実行できる部分があります。市販品ジプシーだった頃の私は、うまくいかないたびに使うものを買い替えていました。同じ道具でも、扱い方で結果が変わるとは考えたことがなかった。</p>
+        <p>もし、アイテムはひと通り揃っているのに、「まだ何か足りない気がする」がずっと消えていないなら。足りない最後の1つは、12本目のボトルではなく、お風呂上がりのあの数分の手つきのほうかもしれません。今夜、擦らずに押さえてみてください。それが今回いちばんお伝えしたいことです。</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4580641207168" target="_blank" rel="noopener sponsored">
+            ハホニコ ヘアドライマイクロファイバータオルを見てみる <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="brand">サロン専売品ラボ</p>
+    <p>本ページはアフィリエイトプログラム(A8.net)を利用した商品紹介であり、記載内容は一般的な商品情報および個人の使用感に基づくものです。本商品はタオルであり、髪が治る・傷まなくなる等の効果を保証するものではありません。吸水性・速乾性・摩擦負担の軽減・素材や織りに関する記載、およびシリーズ累計販売数(2014年11月〜2024年8月末のメーカー出荷数)は、すべてメーカーの公表内容に基づく記載です。仕上がりや感じ方には髪質・施術履歴による個人差があります。電気代の試算は「乾かす時間が3分短縮できた場合」を仮定した概算であり、短縮できる時間・電力量・電力単価は使用状況によって変わります。洗濯方法は商品の表示をご確認ください。マイクロファイバーと柔軟剤に関する記載は一般的に言われている内容であり、製品ごとの指定が優先されます。価格・在庫・仕様は変更される場合があるため、最新情報は販売ページをご確認ください。</p>
+  </div>
+</footer>
+
+</body>
+</html>
