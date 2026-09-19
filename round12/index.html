@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KINUJO シルクリッチ ナイトキャップ｜サロン専売品ラボ</title>
+<style>
+  :root {
+    --ink: #212b21;
+    --ink-soft: #4c5a4a;
+    --paper: #f6f7f0;
+    --paper-raise: #ffffff;
+    --sage: #7c9473;
+    --sage-deep: #47593f;
+    --sage-line: #c7d2bd;
+    --mist: #e9ede2;
+    --clay: #b5674a;
+    --clay-deep: #954f37;
+    --clay-tint: #f1ded3;
+    --shadow: 0 1px 2px rgba(33, 43, 33, 0.06);
+    --measure: 38em;
+    --radius: 3px;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #e9ecE2;
+    --ink-soft: #b9c2b2;
+    --paper: #171d15;
+    --paper-raise: #1e251b;
+    --sage: #9bb391;
+    --sage-deep: #c3d4b9;
+    --sage-line: #3a462f;
+    --mist: #212a1d;
+    --clay: #dd9270;
+    --clay-deep: #eaab8b;
+    --clay-tint: #2c211b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e9ecE2;
+      --ink-soft: #b9c2b2;
+      --paper: #171d15;
+      --paper-raise: #1e251b;
+      --sage: #9bb391;
+      --sage-deep: #c3d4b9;
+      --sage-line: #3a462f;
+      --mist: #212a1d;
+      --clay: #dd9270;
+      --clay-deep: #eaab8b;
+      --clay-tint: #2c211b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Noto Sans JP", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    color: var(--sage-deep);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  p { margin: 0 0 1.1em; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---- PR bar ---- */
+  .prbar {
+    background: var(--sage-deep);
+    color: var(--paper-raise);
+  }
+  .prbar .wrap-wide {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #eef1e8;
+  }
+  .prbar strong { color: var(--clay-tint); font-weight: 700; }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    padding: 76px 0 88px;
+    background: linear-gradient(180deg, var(--mist) 0%, var(--paper) 78%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--sage-line), transparent 70%);
+    opacity: 0.55;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero .prehead {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    box-shadow: inset 0 -0.42em 0 var(--clay-tint);
+  }
+  .hero .sub {
+    max-width: 32em;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  .sprig {
+    margin-top: 40px;
+    width: 96px;
+    height: auto;
+    color: var(--sage);
+  }
+
+  /* ---- CTA button ---- */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 15px 30px;
+    background: var(--clay);
+    color: #fff8f3;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: var(--clay-deep); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+  .cta .arrow { font-size: 1.05em; }
+  .cta-row { display: flex; justify-content: flex-start; }
+  .cta-row.center { justify-content: center; }
+  .price-note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Section rhythm ---- */
+  section.beat {
+    padding: 68px 0;
+  }
+  section.beat.tint { background: var(--mist); }
+  section.beat.deep {
+    background: var(--sage-deep);
+    color: #eef1e8;
+  }
+  section.beat.deep h2 { color: #fff; }
+  section.beat.deep .eyebrow { color: var(--clay-tint); }
+  section.beat.deep p { color: #dbe3d3; }
+
+  .beat h2 {
+    font-size: clamp(1.28rem, 2.6vw, 1.6rem);
+    line-height: 1.6;
+    margin: 10px 0 26px;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Figures (images/ 配下・後で実画像を差し替え) ---- */
+  .shot {
+    margin: 32px 0 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    background: var(--mist);
+  }
+  .shot figcaption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Check list ---- */
+  .checks {
+    list-style: none;
+    margin: 26px 0 24px;
+    padding: 0;
+  }
+  .checks li {
+    position: relative;
+    padding: 12px 0 12px 32px;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.96rem;
+    color: var(--ink);
+  }
+  .checks li:first-child { border-top: 1px solid var(--sage-line); }
+  .checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    color: var(--clay);
+    font-weight: 700;
+  }
+
+  /* ---- Reasons / cards ---- */
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .reason-card {
+    background: var(--paper-raise);
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+  }
+  .reason-card .num {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 1.7rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .reason-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .reason-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Spec table ---- */
+  .spec {
+    margin: 30px 0;
+    border-top: 1px solid var(--sage-line);
+  }
+  .spec dl {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    margin: 0;
+  }
+  .spec dt, .spec dd {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.92rem;
+  }
+  .spec dt {
+    color: var(--sage);
+    font-weight: 700;
+  }
+  .spec dd { margin: 0; }
+
+  .price-tag {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- Feature rows ---- */
+  .feature {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--sage-line);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .feature:first-of-type { border-top: 1px solid var(--sage-line); }
+  .feature .f-title { font-weight: 700; color: var(--ink); }
+  .feature .f-chain {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .feature .f-chain span.step { color: var(--sage); }
+
+  /* ---- Trust grid ---- */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .trust-item {
+    padding: 20px;
+    background: var(--paper-raise);
+    border-radius: var(--radius);
+    border: 1px solid var(--sage-line);
+  }
+  .trust-item h3 {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+  .trust-item p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Voice quotes ---- */
+  .voice {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .voice-item {
+    padding-left: 18px;
+    border-left: 2px solid var(--sage);
+  }
+  .voice-item .v-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .voice-item p { font-size: 0.94rem; margin: 0; }
+  .voice-foot {
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- FAQ ---- */
+  .faq { margin-top: 28px; border-top: 1px solid var(--sage-line); }
+  .faq details {
+    border-bottom: 1px solid var(--sage-line);
+  }
+  .faq summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    font-size: 0.96rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before {
+    content: "Q";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--clay);
+    flex: none;
+  }
+  .faq summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq .a {
+    display: flex;
+    gap: 12px;
+    padding: 0 4px 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .faq .a::before {
+    content: "A";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage);
+    flex: none;
+  }
+
+  /* ---- Price reflection ---- */
+  .price-box {
+    margin-top: 28px;
+    padding: 26px 24px;
+    background: var(--clay-tint);
+    border-radius: var(--radius);
+  }
+  .price-box .amount {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 2rem;
+    color: var(--clay-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .price-box .amount span { font-size: 0.9rem; margin-left: 6px; color: var(--ink-soft); font-family: inherit; }
+
+  /* ---- Final ---- */
+  .final h2 { color: #fff; }
+  .ps {
+    margin-top: 46px;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+  }
+  .ps .eyebrow { color: var(--clay-tint); }
+
+  footer {
+    padding: 40px 0 56px;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  footer .brand {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage-deep);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  /* ---- Series nav (round1〜7 相互リンク) ---- */
+  .series-nav {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--sage-line);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .series-nav a { color: var(--sage-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .spec dl { grid-template-columns: 7em 1fr; }
+    section.beat { padding: 52px 0; }
+    .hero { padding: 56px 0 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="prbar">
+  <div class="wrap-wide">
+    【PR】本ページはアフィリエイトプログラム(A8.net)を利用して商品を紹介しています。ページ内リンクからの購入により、当方に<strong>成果報酬</strong>が発生する場合があります。記載内容は特定の効果効能を保証するものではなく、一般的な商品情報と個人の使用感に基づいています。シルクの等級・匁数、摩擦や乾燥の軽減、寝癖・絡まり・切れ毛の軽減に関する記載は、すべて<strong>メーカーの公表内容</strong>に基づくもので、感じ方には個人差があります。
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="prehead">これまでの11本を「いつ使うか」で分けてみました。お風呂の中、お風呂上がり、仕上げ、頭皮。</p>
+    <h1>11本ぜんぶ、起きている間に使うものでした。<br>でも1日でいちばん長く髪に触れているのは、<em>寝ている間の枕</em>です。</h1>
+    <p class="sub">KINUJO シルクリッチ ナイトキャップ。¥9,350(税込)。仮に1日6時間寝るとして、1年でおよそ2,190時間。第10弾で書いたドライヤー(年に約60時間)の<strong>約36倍</strong>です。しかもその間の寝返りは、自分では止められない。前回までの11本は全部「気をつければ変えられること」でした。今回だけは、<strong>気をつけようがない時間</strong>の話です。</p>
+    <div class="cta-row">
+      <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4589946770896" target="_blank" rel="noopener sponsored">
+        KINUJO シルクリッチ ナイトキャップを見てみる <span class="arrow">→</span>
+      </a>
+    </div>
+    <svg class="sprig" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 118 C50 80 44 50 50 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M50 70 C34 62 24 46 22 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M50 44 C64 38 74 24 76 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="50" cy="8" r="4" fill="currentColor"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">EMPATHY</p>
+      <h2>こんな「寝ている間のことは、考えたこともなかった」、心当たりありませんか。</h2>
+      <ul class="checks">
+        <li>夜はちゃんとケアしたのに、朝起きると毛先が絡まっている</li>
+        <li>寝癖を直すために、朝またドライヤーやアイロンを当てている</li>
+        <li>髪が半乾きのまま、そのまま布団に入ってしまう日がある</li>
+        <li>枕カバーの素材を、一度も気にしたことがない</li>
+        <li>ロングヘアを、何もまとめずにそのまま寝ている</li>
+        <li>自分が一晩に何回寝返りを打っているか、知らない</li>
+        <li>ヘアケアは「起きている間にやるもの」だと、無意識に思っている</li>
+      </ul>
+      <p>一つでも頷いたなら、あと3分だけ読み進めてほしいんです。</p>
+      <p>私はこのシリーズで、11回かけてアイテムを揃えてきました。合計¥53,180。前回はタオルまで見直して、濡れた髪にいちばん最初に触れるところも整いました。</p>
+      <p>その前回の記事で、私はこう書いています。<strong>「正しい拭き方を意志で続けるより、そうしたくならない道具に替えるほうが早い」</strong>。</p>
+      <p>書いたあとで、もう一段考えました。そもそも、<strong>意志がまったく使えない時間</strong>があるな、と。</p>
+      <p>寝ている間です。</p>
+      <p>11本を「いつ使うか」で分けてみると、お風呂の中が4本、お風呂上がりが3本、仕上げが2本、頭皮が2本。──11本とも、<strong>起きている間に、自分の手で使うもの</strong>でした。</p>
+
+      <figure class="shot">
+        <img src="images/01_eyecatch.png" alt="夜の寝室、枕の上に置かれたシルクのナイトキャップのイメージ" loading="lazy">
+        <figcaption>11本ぶん揃えたのは「起きている間」のケア。12回目は、寝ている間の話です。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">IF NOTHING CHANGES</p>
+      <h2>正直に言うと、いちばん引っかかったのは「枕カバーが普通の綿だったこと」じゃありません。<br>1日でいちばん長い時間を、11回とも一度も考えていなかったことのほうです。</h2>
+      <p>1日のうちで、髪がいちばん長く何かに触れ続けているのはどこか。枕でした。</p>
+      <p>仮に1日6時間寝るとすると、1年でおよそ<strong>2,190時間</strong>。第10弾で書いたドライヤーは1日10分として年に約60時間だったので、その約36倍です。前回のタオルは1回数分。桁がまったく違いました。</p>
+      <p>しかも、この6時間には決定的な違いがあります。<strong>自分では何もできない</strong>ということです。何回寝返りを打っているのか知らないし、止めようと思っても止められない。第1〜11弾の話は全部「気をつければ変えられること」でしたが、ここだけは気をつけようがありません。</p>
+      <p>そして、この状態はとても気づきにくい。寝ている間のことは、そもそも見ていないからです。朝起きて毛先が絡まっていても、それを「寝ている間の摩擦の結果」だとは考えない。前の晩のケアが足りなかったのかな、と思って、また何かを足そうとする。</p>
+      <p>半年後も、たぶん同じです。洗面台には13本目、14本目の新しいアイテムが増えていて、夜にどれだけ丁寧に整えても、毎晩6時間、同じ枕に擦られ続けている。</p>
+      <p>いちばんもったいないのは、ここです。第1〜11弾で、"起きている間に何をするか"の答えはもう出そろっているんです。出ていないのは、<strong>寝ている6時間に何が起きているか</strong>のほうだけ。</p>
+      <p>──ただ、先に言っておきます。この回でいちばんのハードルは、たぶん値段ではありません。<strong>洗濯</strong>です。それも後半で正直に書きます。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">THE TURN</p>
+      <h2>そこでたどり着いたのが、「KINUJO シルクリッチ ナイトキャップ」でした。</h2>
+      <p>ここで一つ、はっきりさせておきたいことがあります。第1〜11弾で紹介してきたものは、11本とも「起きている間に、自分の手で使うもの」でした。</p>
+      <p>これは欠点ではありません。ケアの中心は、自分でできることを整えることだからです。11本とも、その役割を果たしてくれました。</p>
+      <p>一方で今回のものは、使う時間そのものが違います。被ったあとは、<strong>自分が寝ている間、代わりに髪を守り続けるもの</strong>。シリーズで初めての、寝ている間に働くアイテムになります。</p>
+      <p>言ってしまえば、第1〜11弾が"起きている間に自分でやること"。そしてこの1枚が"寝ている間に任せること"。自分でやれることは11回で揃いました。12回目は、任せるほうです。</p>
+      <p class="lede">私がこの1枚を選んだ理由は、大きく3つ。</p>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <span class="num">壱</span>
+          <h3>意志が届かない時間を、道具で埋められる</h3>
+          <p>前回「意志で続けるより道具に替えるほうが早い」と書きました。でも寝ている間は、意志そのものが使えない。気をつけようがない時間は、道具に任せるしかありません。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">弐</span>
+          <h3>時間の長さが、これまでと桁違い</h3>
+          <p>ドライヤー1日10分、タオル数分に対して、睡眠は仮に6時間。年間でドライヤーの約36倍です。ケアの中で髪にいちばん長く触れている時間に、初めて手を入れます。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">参</span>
+          <h3>¥9,350。シリーズの最高額は更新しない</h3>
+          <p>第10弾のドライヤーと同額です。同じKINUJOのピローケース(¥13,200)を主役にしなかった理由の一つがこれでした。ピローケースは、被るのが合わない人向けの選択肢として後半で紹介します。</p>
+        </div>
+      </div>
+      <p style="margin-top:28px;">「起きている間に自分でやること」から、「寝ている間に任せること」へ。11回かけて自分でできることを揃えてきたからこそ、自分の手が届かない6時間に目が向きました。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※睡眠時間・年間時間は仮定に基づく概算です。摩擦や乾燥の軽減に関する記載はメーカーの公表内容に基づくものであり、効果を保証するものではありません。感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">THE PRODUCT</p>
+      <h2>KINUJO シルクリッチ ナイトキャップとは</h2>
+      <p>KINUJO(キヌージョ)は、シルクの名前を冠したヘアケアブランドです。第1〜11弾で登場したオラプレックス、ケラスターゼ、リンク、LOA、資生堂プロフェッショナル、SINN PURETE、ルベル、クレイツ、ハホニコとは重なりません。シリーズ初登場です。美容室ALBUMの公式通販は、KINUJOの正規店として扱っています。</p>
+      <p>そして商品の種類も、シリーズ初です。第1〜11弾は、化粧品が8本、ブラシが1本、家電が1台、タオルが1枚。今回は、寝ている間に被るものです。使う時間帯そのものが変わる、シリーズ唯一の1枚になります。</p>
+
+      <figure class="shot">
+        <img src="images/04_product_photo.png" alt="KINUJO シルクリッチ ナイトキャップ シャンパンゴールド" loading="lazy">
+        <figcaption>Silk Rich Nightcap シャンパンゴールド / KINUJO</figcaption>
+      </figure>
+
+      <div class="spec">
+        <dl>
+          <dt>タイプ</dt><dd>ナイトキャップ(シリーズ初の、寝ている間に使うもの)</dd>
+          <dt>価格</dt><dd class="price-tag">¥9,350(税込)/ 第10弾と同額。シリーズ最高額は更新しない</dd>
+          <dt>素材</dt><dd>天然シルク100%。メーカーによれば最高ランクの6Aグレード</dd>
+          <dt>生地</dt><dd>19匁(もんめ)の高密度シルク。匁はシルク生地の重さの単位で、数字が大きいほど密度が高い</dd>
+          <dt>形</dt><dd>全長58cmの筒型。ロングヘアも毛先まで収まるとされています</dd>
+          <dt>フィット</dt><dd>全周ゴム仕様。締め付け感を抑えながらフィットする、とメーカーは説明しています</dd>
+          <dt>摩擦について</dt><dd>睡眠中の摩擦や乾燥から髪と頭皮を守り、寝癖・絡まり・切れ毛を軽減する、とされています</dd>
+          <dt>うるおい</dt><dd>シルクの吸湿性・放湿性で、うるおいを保つとされています</dd>
+          <dt>使い方</dt><dd>髪を軽くまとめ、毛先までキャップに収める → 全周ゴムを頭にフィットさせる → そのまま就寝</dd>
+          <dt>お手入れ</dt><dd>30℃以下のぬるま湯と中性洗剤でやさしく手洗い。洗濯機・乾燥機・漂白剤・脱水機は不可。陰干し</dd>
+          <dt>カラー</dt><dd>シャンパンゴールド / ロゼ ピンク(どちらも¥9,350)</dd>
+          <dt>ブランド</dt><dd>KINUJO・シリーズ初登場</dd>
+        </dl>
+      </div>
+
+      <p>この1枚のいちばんの特徴は、<strong>今のケアを1つも置き換えない</strong>という点です。シャンプーもトリートメントもオイルもバームもエッセンスもブラシもドライヤーもタオルも、今のまま。第1〜11弾で作った流れには、何も手を加えません。全部やり終えたあと、最後に被って寝るだけです。</p>
+      <p>そして正直に書いておくと、私がこれを選んだ決め手は「6Aシルクだから」ではありませんでした。シルクの等級や匁数は、私には手で触った感触くらいでしか確かめようがありません。</p>
+      <p>決め手になったのは、もっと単純な部分です。<strong>寝ている間は、自分では何もできない。</strong>だったら、被った時点で仕事が終わるものがいい。一度被ってしまえば、そのあと6時間、私が何もしなくても髪は包まれたままです。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記の素材・等級・構造・効果に関する記載はすべてメーカーの公表内容に基づくものです。効果を保証するものではなく、感じ方には個人差があります。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4589946770896" target="_blank" rel="noopener sponsored">
+          商品ページで詳細・価格を確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHY IT WORKS</p>
+      <h2>「で、結局寝るときに被るだけで何が変わるの?」に、飾らず正直に答えます。</h2>
+
+      <div class="features">
+        <div class="feature">
+          <div class="f-title">被ったあとは、自分が何もしなくていい</div>
+          <div class="f-chain"><span class="step">だから</span> 寝ている間の意志が要らない ── <span class="step">つまり</span> 「気をつけようがない6時間」に、初めて手が入る</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">髪が枕に直接触れなくなる</div>
+          <div class="f-chain"><span class="step">だから</span> 寝返りのたびに枕と擦れる、が起きにくくなる ── <span class="step">つまり</span> 朝の絡まりの原因の一つに、直接手を入れられる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">天然シルク100%(メーカーによれば6Aグレード・19匁)</div>
+          <div class="f-chain"><span class="step">だから</span> 肌触りがなめらかな生地で包める ── <span class="step">つまり</span> 摩擦を減らす目的に対して、素材の筋が通っている</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">全長58cmの筒型</div>
+          <div class="f-chain"><span class="step">だから</span> ロングヘアも毛先まで収まるとされている ── <span class="step">つまり</span> いちばん絡まりやすい毛先を外に出さずに済む</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">全周ゴム仕様</div>
+          <div class="f-chain"><span class="step">だから</span> 締め付け感を抑えながらフィットするとされている ── <span class="step">つまり</span> 被り心地の違和感を減らす工夫が、最初からされている</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">夜のケアの「最後」に置ける</div>
+          <div class="f-chain"><span class="step">だから</span> 第1〜11弾の工程を全部やり終えたあとに被るだけ ── <span class="step">つまり</span> 積み上げたケアを、寝ている間に崩さない役目になる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">消耗品ではないので、使っても減らない</div>
+          <div class="f-chain"><span class="step">だから</span> リピート購入の判断が発生しない ── <span class="step">つまり</span> 「また買わなきゃ」で止まる道が存在しない(ただし手入れ次第で持ちは変わります)</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">今のケアを1つも置き換えない</div>
+          <div class="f-chain"><span class="step">だから</span> 第1〜11弾のどれとも競合しない ── <span class="step">つまり</span> 今使っているものを1つも捨てずに始められる</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;">11回かけて「起きている間に自分でやること」を揃えてきたからこそ、12回目でようやく「寝ている間に任せること」に目が向きました。これは、11本ぶん遠回りしたからこそ出てきた、私のいちばん正直な実感です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記は素材・構造・使い勝手に関する説明です。効果には個人差があり、特定の結果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">WHY TRUST IT</p>
+      <h2>正直に言うと、私は「最高級シルクだから」だけでは商品を信じないタイプです。</h2>
+      <p class="lede">それでもこの1枚を紹介したいと思えたのは、こんな背景があるからです。</p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>効果ではなく、時間の長さで説明できる</h3>
+          <p>シルクの等級や匁数の違いは、正直なところ私には確かめようがありません。だから主な判断材料にしていません。私が納得したのは「1日でいちばん長く髪に触れているのは枕だ」という、確かめようのある事実のほうです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>弱点を、メーカー自身が隠していない</h3>
+          <p>手洗い必須であること、洗濯機・乾燥機が使えないことが、商品ページにはっきり書かれています。さらに同じKINUJOのピローケースのページでは「ナイトキャップを被らずに美髪ケアしたい方」向けと、両者の違いまで説明されている。合わない人がいることを前提にしている説明は、信用しやすいと感じました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>第10弾・第11弾と矛盾しない。むしろその続き</h3>
+          <p>ドライヤーで乾かし、タオルで押さえて拭き、最後に被って寝る。前の2回で整えたものを、寝ている間に崩さないための1枚です。前回までに何を買った人にも、何も買っていない人にも当てはまります。</p>
+        </div>
+        <div class="trust-item">
+          <h3>シリーズの最高額は更新していない</h3>
+          <p>第1弾¥3,740、第2弾¥4,180、第3弾¥4,290、第4弾¥7,260、第5弾¥8,800、第6弾¥5,776、第7弾¥2,200、第8弾¥3,740、第9弾¥2,950、第10弾¥9,350、第11弾¥894。合計¥53,180、平均¥4,835。今回の¥9,350は第10弾と同額です。より高いピローケース(¥13,200)は、主役ではなく選択肢として紹介しています。</p>
+        </div>
+        <div class="trust-item">
+          <h3>正規店で買える</h3>
+          <p>ALBUM ONLINE STOREは、美容室ALBUMの公式通販で、KINUJOの正規店です。シルク製品は特に品質のばらつきが気になるので、私は購入先を確認してから紹介しています。</p>
+        </div>
+        <div class="trust-item">
+          <h3>買わなくてもできることを、先に書ける</h3>
+          <p>髪を完全に乾かしてから寝る。ロングヘアはゆるくまとめてから寝る。この2つはお金がかかりません。前回のタオルの回と同じく、今回も「買わない選択肢」を先に書いています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHAT PEOPLE NOTICE</p>
+      <h2>こんな使用感(声の傾向)</h2>
+      <p>寝ている間のことなので、自分では見えません。だからこそ、盛らずに、朝起きて分かることだけを整理してみます。</p>
+
+      <div class="voice">
+        <div class="voice-item">
+          <p class="v-label">朝の毛先について</p>
+          <p>いちばん分かりやすかったのはここでした。朝、手ぐしを通したときの引っかかり方が変わった気がします。ただ、同じ時期に「完全に乾かしてから寝る」も始めたので、どこまでがキャップの効果なのかは正直なところ切り分けられていません。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">被り心地について</p>
+          <p>最初の数晩は、頭に何かがある感覚が気になりました。これは人によってかなり違うと思います。寝るときに何かを被るのがどうしても苦手な人は、無理せずピローケースという選択肢を考えたほうがいいと思います。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">ずれについて</p>
+          <p>寝相は人それぞれなので、朝どのくらいずれているかも人によると思います。全周ゴムでフィットさせる作りですが、寝返りの多い人は、被るときに毛先までしっかり中に収めておくのがいいと思います。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">洗濯について</p>
+          <p>ここは正直に書きます。手洗いは面倒です。30℃以下のぬるま湯と中性洗剤でやさしく洗って、陰干し。洗濯機にも乾燥機にも入れられません。毎晩使うものなので、この手間を続けられるかどうかが、実は値段よりも大きな分かれ目だと思います。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">ロングヘアについて</p>
+          <p>全長58cmの筒型なので、長い髪でも毛先まで収まる作りです。髪を軽くまとめてから入れると収めやすいです。ショートヘアの方は、長さを持て余すかもしれません。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">期待しすぎないほうがいい部分</p>
+          <p>ここも正直に書きます。キャップを被っても、髪が生まれ変わることはありません。ダメージが治るわけでもない。あくまで「寝ている間の摩擦を減らす」ための道具です。そして、寝る前に髪が濡れたままなら、その効果もたぶん半減します。</p>
+        </div>
+      </div>
+      <p class="voice-foot">もちろん、髪の長さも寝相も人それぞれ。だからこそ、「自分が寝ている6時間に、髪に何が起きているか」で考えてみる価値がある道具だと思っています。<br>※上記は一般的な使用感の傾向および個人の感想であり、効果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>よくある質問</h2>
+
+      <div class="faq">
+        <details>
+          <summary>ナイトキャップとピローケース、どちらがいいですか?</summary>
+          <div class="a">寝るときに何かを被るのが平気なら、髪を毛先まで包めるナイトキャップ(¥9,350)。被るのがどうしても苦手なら、いつもの枕にかぶせるだけのピローケース(¥13,200)です。メーカー自身もピローケースを「ナイトキャップを被らずに美髪ケアしたい方」向けと説明しています。値段はピローケースのほうが上です。</div>
+        </details>
+        <details>
+          <summary>洗濯機で洗えますか?</summary>
+          <div class="a">いいえ。30℃以下のぬるま湯と中性洗剤で、やさしく手洗いしてください。洗濯機・乾燥機・漂白剤・脱水機は使えません。陰干しが推奨されています。ここが続けられるかどうかは、買う前に一度考えてみてほしいポイントです。</div>
+        </details>
+        <details>
+          <summary>ショートヘアでも使えますか?</summary>
+          <div class="a">使えます。ただ全長58cmの筒型なので、ロングヘアを想定した長さです。ショートヘアの方は長さを持て余すかもしれません。</div>
+        </details>
+        <details>
+          <summary>寝ている間に外れませんか?</summary>
+          <div class="a">全周ゴムでフィットさせる作りですが、寝相は人それぞれなので、ずれ方も人によると思います。被るときに毛先までしっかり中に収めておくのがおすすめです。</div>
+        </details>
+        <details>
+          <summary>髪が濡れたまま被ってもいいですか?</summary>
+          <div class="a">おすすめしません。髪を完全に乾かしてから寝るのは、キャップを使う・使わないに関係なく、いちばん最初にやっておきたいことです。第10弾・第11弾で書いてきた「乾かす」「拭く」は、この前提のための話でもあります。</div>
+        </details>
+        <details>
+          <summary>2色ありますが、違いはありますか?</summary>
+          <div class="a">シャンパンゴールドとロゼ ピンクの2色で、価格はどちらも¥9,350です。商品ページ上、色による仕様の違いは書かれていません。</div>
+        </details>
+        <details>
+          <summary>第1〜11弾のケアと併用できますか?</summary>
+          <div class="a">できます。というより、何ひとつ変わりません。今使っているシャンプーもトリートメントもオイルもドライヤーもタオルも、そのままです。全部やり終えたあと、最後に被って寝るだけです。</div>
+        </details>
+        <details>
+          <summary>被るだけで髪が傷まなくなるということですか?</summary>
+          <div class="a">いいえ。本商品はナイトキャップであり、髪が治る・傷まなくなるといった効果を保証するものではありません。摩擦や乾燥の軽減、寝癖・絡まり・切れ毛の軽減についての記載はメーカーの公表内容に基づくもので、感じ方には髪質・施術履歴による個人差があります。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">ABOUT THE PRICE</p>
+      <h2>価格の考え方</h2>
+      <p>KINUJO シルクリッチ ナイトキャップは ¥9,350(税込)。<strong>第10弾のドライヤーと同じ金額で、シリーズの最高額タイです。</strong>最高額は更新していません。同じKINUJOのピローケース(¥13,200)を主役にしなかった理由の一つがこれです。</p>
+      <p>前回のタオルが¥894だったので、また上がりました。高いものも安いものも、筋が通れば紹介する。このシリーズはそういうやり方でいきます。</p>
+      <p>これまでの11本を並べてみます。¥3,740 / ¥4,180 / ¥4,290 / ¥7,260 / ¥8,800 / ¥5,776 / ¥2,200 / ¥3,740 / ¥2,950 / ¥9,350 / ¥894。合計¥53,180、1本あたりの平均は¥4,835。今回の¥9,350は、その約2倍です。</p>
+      <p>ただ、これは減りません。第7弾のブラシ、第10弾のドライヤー、第11弾のタオルに続く、シリーズ4つ目の買い切りです。仮に1年使えたとすると1晩あたり約¥26、2年なら約¥13。ただしシルクは扱い方で持ちが大きく変わるので、<strong>あくまで仮定の概算</strong>です。</p>
+      <p>そしてもう一度、比率の話をさせてください。私はこのシリーズで、11本・合計¥53,180を「起きている間」に使ってきました。同じ期間、1日でいちばん長い「寝ている間」に使った金額は¥0です。──毎回この計算をして毎回笑っているのですが、私はどうやら、毎回どこか1箇所を完全に空白にしたまま買い物をしているらしいんです。</p>
+
+      <div class="price-box">
+        <div class="amount">¥9,350<span>/ 税込・第10弾と同額。仮に1年使えたとして1晩あたり約¥26(2年なら約¥13)</span></div>
+        <p style="margin-top:14px;">そして繰り返しますが、この回でいちばんのハードルは値段ではなく洗濯です。手洗いを続けられそうか、先にそこだけ考えてみてください。それから、お金をかけずにできる「完全に乾かしてから寝る」は、今夜からできます。まずそこからで十分です。</p>
+      </div>
+
+      <p class="price-note">※価格・在庫は変動します。最新情報は必ず商品ページでご確認ください。1晩あたりの金額は使用期間を仮定した概算であり、耐久性は使用状況やお手入れによって変わります。</p>
+
+      <div class="cta-row" style="margin-top:30px;">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4589946770896" target="_blank" rel="noopener sponsored">
+          最新の価格・在庫を商品ページで確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">BEFORE YOU GO</p>
+      <h2>安心して試すために</h2>
+      <p>「寝るときに被るだけで、そんなに変わるの?」その気持ち、よく分かります。私も11回ぶん、そこを一度も考えませんでした。ヘアケアといえば起きている間にやることで、寝ている間に何が起きているかは考えたこともなかった。</p>
+      <p>だからこの回は、順番を先に書いておきます。<strong>まず、髪を完全に乾かしてから寝てください。</strong></p>
+      <p>これはお金がかかりません。半乾きのまま布団に入れば、どんなキャップを被っても、濡れた髪が6時間擦られることになります。第10弾で書いた「乾かす」も、第11弾で書いた「拭く」も、実はこのための準備でした。ロングヘアなら、ゆるくまとめてから寝るのもおすすめです。強く結ぶと跡がつくので、ゆるく。</p>
+      <p>そのうえで、朝の絡まりがまだ気になるなら。そのときに初めて、寝ている間に任せる道具を考えてもらえればいいと思っています。</p>
+      <p>そして買う前に、2つだけ確認してください。手洗いを続けられそうか。寝るときに何かを被るのが平気か。後者がどうしても無理そうなら、ピローケースという選択肢もあります。</p>
+      <p>いきなり12個すべてを揃える必要もまったくありません。第1〜11弾で紹介したケアを、まず自分のペースで試す。そのうえで「起きている間のことはひと通り整ったな」と思えたときに、寝ている6時間を思い出してもらえれば十分です。</p>
+      <p>起きている間のことは11回で揃いました。12回目は、寝ている間のことです。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※お手入れは商品の表示・取扱説明に従ってください。シルクはデリケートな素材のため、強い摩擦や引っ掛けにご注意ください。被り心地や締め付け感には個人差があります。</p>
+
+      <div class="series-nav">
+        シリーズで読む:
+        <a href="../round1/">第1弾・オラプレックス No.6(洗い流さないトリートメント)</a> ／
+        <a href="../round2/">第2弾・ケラスターゼ バン セラピュート(シャンプー)</a> ／
+        <a href="../round3/">第3弾・THE HAIR BALM 997(スタイリングバーム)</a> ／
+        <a href="../round4/">第4弾・ケラスターゼ RE マスク セラピュート(集中ヘアパック)</a> ／
+        <a href="../round5/">第5弾・LOA THE OIL PARFUM ザ ネロリ(香水オイル)</a> ／
+        <a href="../round6/">第6弾・アデノバイタル アドバンスト スカルプエッセンス(頭皮ケア)</a> ／
+        <a href="../round7/">第7弾・ハートロック スカルプブラシ(頭皮ケアの道具)</a> ／
+        <a href="../round8/">第8弾・オラプレックス No.3 ヘアパーフェクター(洗う前のプレケア)</a> ／
+        <a href="../round9/">第9弾・イオ クリーム メルトリペア(毎日のインバストリートメント)</a> ／
+        <a href="../round10/">第10弾・クレイツ イオン ドライ SD-1200(乾かす)</a> ／
+        <a href="../round11/">第11弾・ハホニコ ヘアドライマイクロファイバータオル(拭く)</a> ／
+        第12弾・KINUJO シルクリッチ ナイトキャップ(寝る・このページ)
+      </div>
+    </div>
+  </section>
+
+  <section class="beat deep final">
+    <div class="wrap">
+      <p class="eyebrow">LAST WORD</p>
+      <h2>「洗う前」「洗う」「毎日のトリートメント」「拭く」「乾かす前」「乾かす」「仕上げ」「週数回」「香り」「頭皮」「道具」。11回かけて、起きている間のことはもう出揃っています。<br>でも、1日でいちばん長い6時間の話は、まだ一度もしていませんでした。</h2>
+      <p>夜にどれだけ丁寧に整えても、寝ている間に何が起きているかは、11回とも一度も出てきていません。</p>
+      <p>このまま13本目の新しいアイテムを探し続けて、「まだ何か足りないのかも」と思いながらまた半年過ごすのか。それとも、今夜だけ、髪を完全に乾かしてから布団に入ってみるのか。</p>
+      <p>後者にはお金がかかりません。今夜から試せます。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4589946770896" target="_blank" rel="noopener sponsored">
+          今すぐ ALBUM ONLINE STORE で詳細を見る <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ps">
+        <p class="eyebrow">追伸</p>
+        <p>正直に言うと、この1枚も「魔法のナイトキャップ」ではありません。これはシルクのキャップであり、髪が治る・傷まなくなるといった効果を持つものではない。被った翌朝に別人の髪になるわけでもありません。感じ方には個人差があります。</p>
+        <p>それでも私がこれを紹介したいのは、「気をつければ変えられる時間」と「気をつけようがない時間」があることを、12回目にしてやっと言葉にできたからです。第8弾では「順番を疑う」、第9弾では「もうやっている工程の中身を疑う」、第10弾では「塗るもの以外も髪に触れている」、第11弾では「どう扱っているか」と書きました。今回わかったのは、そのどれもが起きている間の話だった、ということでした。</p>
+        <p>12回に分けて紹介してきましたが、この12個を全部揃える必要はまったくありません。とくに今回は、先に「完全に乾かしてから寝る」だけで済む部分があります。市販品ジプシーだった頃の私は、うまくいかないたびに次に使うものを探していました。自分の手が届かない時間があるとは、考えたこともなかった。</p>
+        <p>もし、アイテムはひと通り揃っているのに、朝起きるたびに「まだ何か足りない気がする」が消えていないなら。足りない最後の1つは、13本目のボトルではなく、あなたが寝ている6時間のほうかもしれません。今夜は、髪を完全に乾かしてから眠ってみてください。それが今回いちばんお伝えしたいことです。</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4589946770896" target="_blank" rel="noopener sponsored">
+            KINUJO シルクリッチ ナイトキャップを見てみる <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="brand">サロン専売品ラボ</p>
+    <p>本ページはアフィリエイトプログラム(A8.net)を利用した商品紹介であり、記載内容は一般的な商品情報および個人の使用感に基づくものです。本商品はナイトキャップであり、髪が治る・傷まなくなる等の効果を保証するものではありません。シルクの等級(6A)・匁数(19匁)・形状・フィット感、摩擦や乾燥の軽減、寝癖・絡まり・切れ毛の軽減、吸湿性・放湿性に関する記載は、すべてメーカーの公表内容に基づく記載です。仕上がりや感じ方には髪質・施術履歴・寝相による個人差があります。睡眠時間・年間時間・1晩あたりの金額はすべて仮定に基づく概算であり、耐久性は使用状況やお手入れによって変動します。お手入れは商品の表示・取扱説明に従ってください。被り心地や締め付け感には個人差があります。価格・在庫・仕様は変更される場合があるため、最新情報は販売ページをご確認ください。</p>
+  </div>
+</footer>
+
+</body>
+</html>
