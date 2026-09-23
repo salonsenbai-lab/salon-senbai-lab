@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サブリミック エアリーフロー リファイニングフリュイド｜サロン専売品ラボ</title>
+<style>
+  :root {
+    --ink: #212b21;
+    --ink-soft: #4c5a4a;
+    --paper: #f6f7f0;
+    --paper-raise: #ffffff;
+    --sage: #7c9473;
+    --sage-deep: #47593f;
+    --sage-line: #c7d2bd;
+    --mist: #e9ede2;
+    --clay: #b5674a;
+    --clay-deep: #954f37;
+    --clay-tint: #f1ded3;
+    --shadow: 0 1px 2px rgba(33, 43, 33, 0.06);
+    --measure: 38em;
+    --radius: 3px;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #e9ecE2;
+    --ink-soft: #b9c2b2;
+    --paper: #171d15;
+    --paper-raise: #1e251b;
+    --sage: #9bb391;
+    --sage-deep: #c3d4b9;
+    --sage-line: #3a462f;
+    --mist: #212a1d;
+    --clay: #dd9270;
+    --clay-deep: #eaab8b;
+    --clay-tint: #2c211b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e9ecE2;
+      --ink-soft: #b9c2b2;
+      --paper: #171d15;
+      --paper-raise: #1e251b;
+      --sage: #9bb391;
+      --sage-deep: #c3d4b9;
+      --sage-line: #3a462f;
+      --mist: #212a1d;
+      --clay: #dd9270;
+      --clay-deep: #eaab8b;
+      --clay-tint: #2c211b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Noto Sans JP", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    color: var(--sage-deep);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  p { margin: 0 0 1.1em; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---- PR bar ---- */
+  .prbar {
+    background: var(--sage-deep);
+    color: var(--paper-raise);
+  }
+  .prbar .wrap-wide {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #eef1e8;
+  }
+  .prbar strong { color: var(--clay-tint); font-weight: 700; }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    padding: 76px 0 88px;
+    background: linear-gradient(180deg, var(--mist) 0%, var(--paper) 78%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--sage-line), transparent 70%);
+    opacity: 0.55;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero .prehead {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    box-shadow: inset 0 -0.42em 0 var(--clay-tint);
+  }
+  .hero .sub {
+    max-width: 32em;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  .sprig {
+    margin-top: 40px;
+    width: 96px;
+    height: auto;
+    color: var(--sage);
+  }
+
+  /* ---- CTA button ---- */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 15px 30px;
+    background: var(--clay);
+    color: #fff8f3;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: var(--clay-deep); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+  .cta .arrow { font-size: 1.05em; }
+  .cta-row { display: flex; justify-content: flex-start; }
+  .cta-row.center { justify-content: center; }
+  .price-note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Section rhythm ---- */
+  section.beat {
+    padding: 68px 0;
+  }
+  section.beat.tint { background: var(--mist); }
+  section.beat.deep {
+    background: var(--sage-deep);
+    color: #eef1e8;
+  }
+  section.beat.deep h2 { color: #fff; }
+  section.beat.deep .eyebrow { color: var(--clay-tint); }
+  section.beat.deep p { color: #dbe3d3; }
+
+  .beat h2 {
+    font-size: clamp(1.28rem, 2.6vw, 1.6rem);
+    line-height: 1.6;
+    margin: 10px 0 26px;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Figures (images/ 配下・後で実画像を差し替え) ---- */
+  .shot {
+    margin: 32px 0 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    background: var(--mist);
+  }
+  .shot figcaption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Check list ---- */
+  .checks {
+    list-style: none;
+    margin: 26px 0 24px;
+    padding: 0;
+  }
+  .checks li {
+    position: relative;
+    padding: 12px 0 12px 32px;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.96rem;
+    color: var(--ink);
+  }
+  .checks li:first-child { border-top: 1px solid var(--sage-line); }
+  .checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    color: var(--clay);
+    font-weight: 700;
+  }
+
+  /* ---- Reasons / cards ---- */
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .reason-card {
+    background: var(--paper-raise);
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+  }
+  .reason-card .num {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 1.7rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .reason-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .reason-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Spec table ---- */
+  .spec {
+    margin: 30px 0;
+    border-top: 1px solid var(--sage-line);
+  }
+  .spec dl {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    margin: 0;
+  }
+  .spec dt, .spec dd {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.92rem;
+  }
+  .spec dt {
+    color: var(--sage);
+    font-weight: 700;
+  }
+  .spec dd { margin: 0; }
+
+  .price-tag {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- Feature rows ---- */
+  .feature {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--sage-line);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .feature:first-of-type { border-top: 1px solid var(--sage-line); }
+  .feature .f-title { font-weight: 700; color: var(--ink); }
+  .feature .f-chain {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .feature .f-chain span.step { color: var(--sage); }
+
+  /* ---- Trust grid ---- */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .trust-item {
+    padding: 20px;
+    background: var(--paper-raise);
+    border-radius: var(--radius);
+    border: 1px solid var(--sage-line);
+  }
+  .trust-item h3 {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+  .trust-item p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Voice quotes ---- */
+  .voice {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .voice-item {
+    padding-left: 18px;
+    border-left: 2px solid var(--sage);
+  }
+  .voice-item .v-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .voice-item p { font-size: 0.94rem; margin: 0; }
+  .voice-foot {
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- FAQ ---- */
+  .faq { margin-top: 28px; border-top: 1px solid var(--sage-line); }
+  .faq details {
+    border-bottom: 1px solid var(--sage-line);
+  }
+  .faq summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    font-size: 0.96rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before {
+    content: "Q";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--clay);
+    flex: none;
+  }
+  .faq summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq .a {
+    display: flex;
+    gap: 12px;
+    padding: 0 4px 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .faq .a::before {
+    content: "A";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage);
+    flex: none;
+  }
+
+  /* ---- Price reflection ---- */
+  .price-box {
+    margin-top: 28px;
+    padding: 26px 24px;
+    background: var(--clay-tint);
+    border-radius: var(--radius);
+  }
+  .price-box .amount {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 2rem;
+    color: var(--clay-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .price-box .amount span { font-size: 0.9rem; margin-left: 6px; color: var(--ink-soft); font-family: inherit; }
+
+  /* ---- Final ---- */
+  .final h2 { color: #fff; }
+  .ps {
+    margin-top: 46px;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+  }
+  .ps .eyebrow { color: var(--clay-tint); }
+
+  footer {
+    padding: 40px 0 56px;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  footer .brand {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage-deep);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  /* ---- Series nav (round1〜7 相互リンク) ---- */
+  .series-nav {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--sage-line);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .series-nav a { color: var(--sage-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .spec dl { grid-template-columns: 7em 1fr; }
+    section.beat { padding: 52px 0; }
+    .hero { padding: 56px 0 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="prbar">
+  <div class="wrap-wide">
+    【PR】本ページはアフィリエイトプログラム(A8.net)を利用して商品を紹介しています。ページ内リンクからの購入により、当方に<strong>成果報酬</strong>が発生する場合があります。記載内容は特定の効果効能を保証するものではなく、一般的な商品情報と個人の使用感に基づいています。技術・成分・仕上がりに関する記載はすべて<strong>メーカーの公表内容</strong>に基づくもので、感じ方には個人差があります。また<strong>シリーズ全体の説明と個別製品の内容は同じではありません</strong>(毛髪形状補修成分はマスクに配合と明記されています)。
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="prehead">これまでの12本を「何を直そうとしていたか」で並べ直してみました。足すか、守るか、負担を減らすか。</p>
+    <h1>12本ぜんぶ、「傷み」の話でした。<br>でも<em>うねりは、傷みとは別の問題</em>です。</h1>
+    <p class="sub">サブリミック エアリーフロー リファイニングフリュイド。¥3,410(税込・125g)。傷んでいない髪でもうねりますし、補修を足しても髪の形そのものは変わりません。しかも湿気は、自分ではどうにもできない。第12弾が「意志が届かない時間」の話だったとすれば、今回は<strong>自分の外側にある条件</strong>の話です。</p>
+    <div class="cta-row">
+      <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4909978935757" target="_blank" rel="noopener sponsored">
+        エアリーフロー リファイニングフリュイドを見てみる <span class="arrow">→</span>
+      </a>
+    </div>
+    <svg class="sprig" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 118 C50 80 44 50 50 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M50 70 C34 62 24 46 22 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M50 44 C64 38 74 24 76 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="50" cy="8" r="4" fill="currentColor"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">EMPATHY</p>
+      <h2>こんな「まとまらない＝傷んでいる、だと思っていた」、心当たりありませんか。</h2>
+      <ul class="checks">
+        <li>朝はそれなりに決まっていたのに、昼には広がっている</li>
+        <li>雨の日と晴れの日で、同じ髪とは思えないくらい違う</li>
+        <li>補修系のケアを足しても、うねりだけは変わらない</li>
+        <li>毎朝ストレートアイロンで伸ばすのが前提になっている</li>
+        <li>湿気の日は結ぶしかない、と半ばあきらめている</li>
+        <li>「まとまらないのは傷んでいるからだ」と思ってきた</li>
+        <li>ヘアケア＝傷みを直すこと、だと無意識に思っている</li>
+      </ul>
+      <p>一つでも頷いたなら、あと3分だけ読み進めてほしいんです。</p>
+      <p>私はこのシリーズで、12回かけてアイテムを揃えてきました。合計¥62,530。前回はナイトキャップまで見直して、寝ている間の摩擦にも手が届きました。</p>
+      <p>そのあと、12本を「<strong>何を直そうとしていたか</strong>」で並べ直してみたんです。</p>
+      <p>傷みを直す・足す(シャンプー、トリートメント、ヘアマスク、プレトリートメント、洗い流さないトリートメント、バーム、香水オイル)。頭皮(スカルプエッセンス、スカルプブラシ)。傷ませない(ドライヤー、タオル、ナイトキャップ)。</p>
+      <p>足すか、守るか、負担を減らすか。やり方は変わっても、<strong>向いている先はずっと同じ</strong>でした。12本とも「傷み」まわりの話だったんです。</p>
+
+      <figure class="shot">
+        <img src="images/01_eyecatch.png" alt="雨の日の窓辺に置かれたポンプボトルのイメージ" loading="lazy">
+        <figcaption>12本ぶん埋めたのは「傷み」。13回目は、傷みではない問題の話です。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">IF NOTHING CHANGES</p>
+      <h2>正直に言うと、いちばん引っかかったのは「うねること」じゃありません。<br>12回とも、別の問題を直そうとしていたことのほうです。</h2>
+      <p>書き出してみて、抜けているものに気づきました。うねる。広がる。湿気の日にまとまらない。</p>
+      <p>私はこれをずっと、傷みのせいだと思っていました。だから補修を足していた。でも冷静に考えると、<strong>傷んでいない髪でもうねります</strong>。そして補修を足しても、髪の形そのものが変わるわけではありません。</p>
+      <p>ここが厄介なところで、補修を足すと手触りは実際に良くなるんです。だから「効いている」と感じる。なのに翌朝、湿気のある日にはやっぱり広がる。それで「まだ傷んでいるんだ」と解釈して、また次の補修を探す。──この往復を、私は何年も続けていました。</p>
+      <p>しかも湿気は、自分ではどうにもできません。前回は「寝ている間は意志が届かない」という話を書きましたが、今回は<strong>自分の外側にある条件</strong>です。雨の日を減らすことはできない。</p>
+      <p>半年後も、たぶん同じです。棚には14本目、15本目の新しい補修が増えていて、それでも雨の日の朝は鏡の前で同じことを思っている。</p>
+      <p>いちばんもったいないのは、ここです。第1〜12弾で、"傷み"側の答えはもう出そろっているんです。出ていないのは、<strong>傷みではない問題</strong>のほうだけ。</p>
+      <p>──ただ、先に言っておきます。これを塗ってもくせ毛が直るわけではありません。ストレートアイロンの代わりにもなりません。その線引きは後半で正直に書きます。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">THE TURN</p>
+      <h2>そこでたどり着いたのが、「サブリミック エアリーフロー リファイニングフリュイド」でした。</h2>
+      <p>ここで一つ、はっきりさせておきたいことがあります。第1〜12弾で紹介してきたものは、12本とも「傷み」まわりのアイテムでした。</p>
+      <p>これは欠点ではありません。傷みは実際にいちばん大きな問題だからです。12本とも、その役割を果たしてくれました。</p>
+      <p>一方で今回のものは、向いている先が違います。メーカーの説明によれば、くせやうねりのある髪の<strong>形と、内部の水分バランス</strong>に向けた設計。傷みを直すためのものではありません。</p>
+      <p>言ってしまえば、第1〜12弾が"傷みをどうにかする"。そしてこの1本が"傷みではないほうをどうにかする"。傷みは12回で揃いました。13回目は、別の問題のほうです。</p>
+      <p class="lede">私がこの1本を選んだ理由は、大きく3つ。</p>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <span class="num">壱</span>
+          <h3>シリーズで唯一、「傷み」以外に向いている</h3>
+          <p>12本は足すか守るか減らすかの違いで、向いている先は同じでした。うねりは傷みとは別の問題なので、どれだけいい補修を足しても届きません。13回目にして初めて、向き先が変わります。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">弐</span>
+          <h3>第1弾とまったく同じタイミングで塗る、別の目的</h3>
+          <p>タオルドライのあとに塗って、乾かす。第1弾のオラプレックス No.6と工程は完全に同じです。同じ棚の、同じ手順の、別の目的。「工程が埋まった＝もう足すものがない」ではなかった、という話でもあります。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">参</span>
+          <h3>第10弾で「減らしたい」と書いた熱を、逆から見る</h3>
+          <p>ドライヤーの回で、私は熱を減らしたい負担として書きました。この製品はメーカー説明上、その同じ熱を味方にする設計です。同じものでも、見る角度で役割が変わる。そこが面白いと思いました。</p>
+        </div>
+      </div>
+      <p style="margin-top:28px;">「傷みをどうにかする」から、「傷みではないほうをどうにかする」へ。12回かけて傷み側を埋めてきたからこそ、埋まらなかったものの正体に目が向きました。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※技術・成分・仕上がりに関する記載はメーカーの公表内容に基づくものであり、効果を保証するものではありません。くせ・うねりの出方や感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">THE PRODUCT</p>
+      <h2>サブリミック エアリーフロー リファイニングフリュイドとは</h2>
+      <p>資生堂プロフェッショナルの「サブリミック」というラインの中の、くせやうねりで扱いにくい髪に向けたシリーズが「エアリーフロー」です。その中の洗い流さないトリートメント(ヘア用乳液)が、このリファイニングフリュイドになります。</p>
+      <p>正直に書いておくと、資生堂プロフェッショナルはシリーズ2回目です。第6弾のアデノバイタル アドバンスト スカルプエッセンスが同じメーカーでした。ただしあちらは頭皮のライン、こちらはくせ・うねりのライン。中身としては別物です。</p>
+
+      <figure class="shot">
+        <img src="images/04_product_photo.png" alt="サブリミック エアリーフロー リファイニングフリュイド" loading="lazy">
+        <figcaption>エアリーフロー リファイニングフリュイド(UNRULY HAIR) / 資生堂プロフェッショナル サブリミック</figcaption>
+      </figure>
+
+      <div class="spec">
+        <dl>
+          <dt>タイプ</dt><dd>洗い流さないトリートメント(ヘア用乳液)・ポンプ式</dd>
+          <dt>価格</dt><dd class="price-tag">¥3,410(税込)/ 125g。12本の平均¥5,211より下、第1弾(¥3,740)に近い位置</dd>
+          <dt>向いている相手</dt><dd>くせやうねりなどで髪の扱いにくさに悩む人、とメーカーは説明しています</dd>
+          <dt>髪質タイプ</dt><dd><strong>UNRULY HAIR(ボリュームが普通〜出にくい髪用)</strong>。ボトルにもそう印字されています</dd>
+          <dt>技術</dt><dd>独自の「サーマルフローモーションシステム」。毎日使うアイロンやドライヤーの熱を味方にするケアステップ、とされています</dd>
+          <dt>湿気について</dt><dd>毛髪内の水分バランスを保ち、湿気によるくせ戻りを防ぐ、とされています</dd>
+          <dt>成分(公表)</dt><dd>毛髪保湿成分:ソルビトール / 毛髪保護成分:マカデミアナッツ脂肪酸フィトステリル</dd>
+          <dt>使い方</dt><dd>タオルドライ後、1〜2プッシュ(ミディアムレングスの目安)を手に取り、毛先を中心に全体へ。乾いた髪にも使えます</dd>
+          <dt>香り</dt><dd>花々と果実の甘くフレッシュな香りに、アールグレイのアクセント(メーカー表記)</dd>
+          <dt>ブランド</dt><dd>資生堂プロフェッショナル・サブリミック(メーカーとしては第6弾に続く2回目、ラインは別)</dd>
+        </dl>
+      </div>
+
+      <p>この1本のいちばんの特徴は、<strong>今のケアを1つも置き換えない</strong>という点です。シャンプーもトリートメントもドライヤーもタオルもナイトキャップも、今のまま。第1〜12弾で作った流れには何も手を加えません。タオルドライのあとに1〜2プッシュ増えるだけです。</p>
+      <p class="lede">そして、ここは書いておかないとフェアじゃないと思うので先に書きます。</p>
+      <p>商品ページのテクノロジー説明には、熱で髪の形を整える成分としてグリオキシル酸・グリコール酸の名前が出てきます。ただしそこには※がついていて、<strong>「マスクに配合」</strong>と書かれている。PEG-150という保護成分も「マスク・トリートメントに配合」です。</p>
+      <p>つまり<strong>シリーズ全体の説明と、このフリュイド1本にできることは同じではありません。</strong>ラインの説明をそのまま1本の説明として読むと、期待がずれます。メーカーがきちんと※で書き分けているのに、紹介する側がまとめて書いてしまったら意味がないので、そのまま書いておきます。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記の技術・成分・仕上がりに関する記載はすべてメーカーの公表内容に基づくものです。効果を保証するものではなく、感じ方には個人差があります。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4909978935757" target="_blank" rel="noopener sponsored">
+          商品ページで詳細・価格を確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHY IT WORKS</p>
+      <h2>「で、結局これを1〜2プッシュ足すと何が変わるの?」に、飾らず正直に答えます。</h2>
+
+      <div class="features">
+        <div class="feature">
+          <div class="f-title">向いている先が「傷み」ではなく「くせ・うねり」である</div>
+          <div class="f-chain"><span class="step">だから</span> 補修では届かなかった側に手が入る ── <span class="step">つまり</span> 「いいものを足しているのに変わらない」の理由がひとつ減る</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">毛髪内の水分バランスを保ち、湿気によるくせ戻りを防ぐとされている</div>
+          <div class="f-chain"><span class="step">だから</span> 自分で変えられない外の条件に備えられる ── <span class="step">つまり</span> 雨の日を減らすのではなく、雨の日の前に置いておく発想になる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">毎日の熱を味方にするケアステップ、とされている</div>
+          <div class="f-chain"><span class="step">だから</span> ドライヤーをやめる必要がない ── <span class="step">つまり</span> 第10弾で整えた「早く乾かす」とそのまま両立する</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">タオルドライ後に1〜2プッシュ、それだけ</div>
+          <div class="f-chain"><span class="step">だから</span> 新しい工程が増えない ── <span class="step">つまり</span> 続けるための意志がほとんど要らない(第11弾で書いた通りです)</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">乾いた髪にも使える</div>
+          <div class="f-chain"><span class="step">だから</span> 日中に広がってきたときにも触れる ── <span class="step">つまり</span> 夜だけでなく、崩れたタイミングでも1手ある</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">髪質タイプが2つに分けられている</div>
+          <div class="f-chain"><span class="step">だから</span> 「誰にでも効きます」と言っていない ── <span class="step">つまり</span> 自分が想定された相手かどうかを、買う前に判断できる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">今のケアを1つも置き換えない</div>
+          <div class="f-chain"><span class="step">だから</span> 第1〜12弾のどれとも競合しない ── <span class="step">つまり</span> 今使っているものを1つも捨てずに始められる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">配合先が※で書き分けられている</div>
+          <div class="f-chain"><span class="step">だから</span> どこまでがこの1本の話かが分かる ── <span class="step">つまり</span> 期待のかけ方を自分で調整できる(これは商品の美点だと思っています)</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;">12回かけて「傷みをどうにかする」を揃えてきたからこそ、13回目でようやく「それでは届かないもの」に目が向きました。これは、12本ぶん遠回りしたからこそ出てきた、私のいちばん正直な実感です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記は技術・使い方に関する説明です。効果には個人差があり、特定の結果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">WHY TRUST IT</p>
+      <h2>正直に言うと、私は「まとまる」と書いてあるだけでは商品を信じないタイプです。</h2>
+      <p class="lede">それでもこの1本を紹介したいと思えたのは、こんな背景があるからです。</p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>効果ではなく、問題の切り分けで選べる</h3>
+          <p>「どのくらいまとまるか」は、私には数字で確かめようがありません。だから主な判断材料にしていません。私が納得したのは「うねりは傷みとは別の問題だ」という、確かめようのある切り分けのほうです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>メーカーが、成分の配合先を※で書き分けている</h3>
+          <p>形を整える成分は「マスクに配合」と明記されています。ラインの説明を全製品に被せて書くこともできたはずなのに、そうしていない。ここを読んで、この商品ページは信用できると思いました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>髪質タイプを2つに分けている＝万人向けと言っていない</h3>
+          <p>ボリュームが出やすい髪には別タイプが用意されています。「誰にでも合います」と書かれた商品より、想定する相手をはっきり決めている商品のほうが、私は安心します。</p>
+        </div>
+        <div class="trust-item">
+          <h3>第1弾・第10弾と矛盾しない。むしろ続きになる</h3>
+          <p>塗るタイミングは第1弾とまったく同じ。熱の扱いは第10弾の裏返し。前回までに何を買った人にも、何も買っていない人にも、そのまま当てはまります。</p>
+        </div>
+        <div class="trust-item">
+          <h3>¥3,410はシリーズの平均より下</h3>
+          <p>第1弾¥3,740、第2弾¥4,180、第3弾¥4,290、第4弾¥7,260、第5弾¥8,800、第6弾¥5,776、第7弾¥2,200、第8弾¥3,740、第9弾¥2,950、第10弾¥9,350、第11弾¥894、第12弾¥9,350。合計¥62,530、平均¥5,211。今回はそれより下です。</p>
+        </div>
+        <div class="trust-item">
+          <h3>サロン専売品を、公式通販でそのまま買える</h3>
+          <p>ALBUM ONLINE STOREは正規販売店です。私は毎回ここを確認してから紹介しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHAT PEOPLE NOTICE</p>
+      <h2>こんな使用感(声の傾向)</h2>
+      <p>うねりは髪質で出方がまったく違います。だからこそ、盛らずに、分かったことだけを整理してみます。</p>
+
+      <div class="voice">
+        <div class="voice-item">
+          <p class="v-label">湿気のある日について</p>
+          <p>いちばん違いが出るのはここでした。晴れた日は正直よく分かりません。差が分かるのは雨の日や、湿度が高い日の午後です。逆に言えば、晴れた日に使って「変わらない」と判断するのは早いと思います。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">乾かしたあとの手触りについて</p>
+          <p>重くはなりません。オイルを足したときのような、しっとり寄せる感じとは違います。ふんわり側に着地する印象でした。ただ私はボリュームが出にくいほうなので、このタイプが合っていただけかもしれません。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">量について</p>
+          <p>ミディアムで1〜2プッシュが目安と書かれています。私は最初に多く出しすぎて、乾かしたあとに少し重く感じました。少なめから始めて、足りなければ足すほうがいいと思います。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">香りについて</p>
+          <p>花と果実にアールグレイのアクセント、とメーカーは説明しています。個人的には強すぎませんでしたが、香りは好みが分かれるところなので、そこは正直に「合う合わないがある」と書いておきます。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">タイプ違いについて</p>
+          <p>このフリュイドはUNRULY HAIR(ボリュームが普通〜出にくい髪用)です。髪の量が多くて広がりやすい方は、想定された相手ではありません。同じラインの「THICK, UNRULY HAIR」を選ぶほうが筋が通ります。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">期待しすぎないほうがいい部分</p>
+          <p>ここは正直に書きます。これを塗ってもくせ毛が直るわけではありません。ストレートアイロンの代わりにもなりません。形が変わるのではなく、扱いやすさの側を助けるもの、という理解がいちばん近いと思っています。</p>
+        </div>
+      </div>
+      <p class="voice-foot">もちろん、くせの出方も湿度の感じ方も人それぞれ。だからこそ、「自分のうねりは、傷みの問題なのか別の問題なのか」で考えてみる価値があると思っています。<br>※上記は一般的な使用感の傾向および個人の感想であり、効果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>よくある質問</h2>
+
+      <div class="faq">
+        <details>
+          <summary>今の傷みケアと併用できますか?</summary>
+          <div class="a">できます。というより、何ひとつ変わりません。シャンプーもトリートメントもドライヤーもタオルもそのままです。タオルドライのあとに1〜2プッシュ増えるだけです。</div>
+        </details>
+        <details>
+          <summary>第1弾のオラプレックス No.6とどちらを使えばいいですか?</summary>
+          <div class="a">直したい問題が違います。傷んでパサつく・引っかかるならNo.6、うねって広がる・湿気でまとまらないならこちらです。工程は同じ場所なので、迷ったら「自分の困りごとは傷みか、形か」で考えてみてください。</div>
+        </details>
+        <details>
+          <summary>ボリュームが出やすい髪でも使えますか?</summary>
+          <div class="a">このフリュイドは「UNRULY HAIR(ボリュームが普通〜出にくい髪用)」です。広がりやすい方には、同じラインの「THICK, UNRULY HAIR」タイプが用意されています。ボトルの表記を確認してから選んでください。</div>
+        </details>
+        <details>
+          <summary>乾いた髪にも使えますか?</summary>
+          <div class="a">使えます。メーカーの使用方法にも明記されています。日中に広がってきたときに少量足す、という使い方もできます。</div>
+        </details>
+        <details>
+          <summary>ストレートアイロンの代わりになりますか?</summary>
+          <div class="a">なりません。これは塗るものであって、髪の形を物理的に変える道具ではありません。メーカーの説明も「扱いやすさとまとまりを高める」というもので、くせを伸ばすとは書かれていません。</div>
+        </details>
+        <details>
+          <summary>湿気の日でも絶対にまとまりますか?</summary>
+          <div class="a">絶対、ということはありません。メーカーは「湿気によるくせ戻りを防止する」と説明していますが、くせの強さも湿度もその日次第です。効かない日がある前提で考えておくほうが、がっかりしないと思います。</div>
+        </details>
+        <details>
+          <summary>形を整える成分が入っているんですよね?</summary>
+          <div class="a">ここは注意が必要です。商品ページでは、毛髪形状補修成分(グリオキシル酸・グリコール酸)は<strong>マスクに配合</strong>、PEG-150はマスク・トリートメントに配合と※で明記されています。シリーズの説明をこの1本の説明として読まないほうがいいです。</div>
+        </details>
+        <details>
+          <summary>使うと髪の傷みが治るということですか?</summary>
+          <div class="a">いいえ。本商品は化粧品であり、髪が治る・傷まなくなるといった効果を保証するものではありません。そもそもこの回は「うねりは傷みとは別の問題だった」という話なので、傷み側は第1〜12弾のほうで扱っています。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">ABOUT THE PRICE</p>
+      <h2>価格の考え方</h2>
+      <p>サブリミック エアリーフロー リファイニングフリュイドは ¥3,410(税込)、125gです。</p>
+      <p>これまでの12本を並べてみます。¥3,740 / ¥4,180 / ¥4,290 / ¥7,260 / ¥8,800 / ¥5,776 / ¥2,200 / ¥3,740 / ¥2,950 / ¥9,350 / ¥894 / ¥9,350。合計¥62,530、1本あたりの平均は¥5,211。<strong>今回はその平均より下です。</strong></p>
+      <p>前回が¥9,350、その前が¥894。ずいぶん振れましたが、今回は真ん中あたりに戻りました。第1弾のオラプレックス No.6(¥3,740)に近い位置というのも、同じタイミングで塗るものとしては分かりやすいと思います。</p>
+      <p>そしてもう一度、比率の話をさせてください。私はこのシリーズで、12本・合計¥62,530を「傷み」に使ってきました。同じ期間、「傷みではないほう」に使った金額は¥0です。──毎回この計算をして毎回笑っているのですが、私はどうやら、毎回どこか1箇所を完全に空白にしたまま買い物をしているらしいんです。</p>
+
+      <div class="price-box">
+        <div class="amount">¥3,410<span>/ 税込・125g。12本の平均¥5,211より下、第1弾(¥3,740)に近い位置</span></div>
+        <p style="margin-top:14px;">買う前に2つだけ確認してください。自分のうねりが「傷みの問題」なのか「形の問題」なのか。そして、自分がUNRULY HAIR(ボリュームが普通〜出にくい髪)のほうなのか。この2つが合っていないと、金額の大小に関係なく届きません。</p>
+      </div>
+
+      <p class="price-note">※価格・在庫は変動します。最新情報は必ず商品ページでご確認ください。仕上がりや感じ方には髪質による個人差があります。</p>
+
+      <div class="cta-row" style="margin-top:30px;">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4909978935757" target="_blank" rel="noopener sponsored">
+          最新の価格・在庫を商品ページで確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">BEFORE YOU GO</p>
+      <h2>安心して試すために</h2>
+      <p>「結局また1本増えるだけでは?」その疑いは、まっとうだと思います。私も12回ぶん、同じ場所に足し続けてきました。</p>
+      <p>だからこの回は、買う前にやってほしいことを先に書いておきます。<strong>自分のうねりが、傷みの問題なのか形の問題なのかを切り分けてください。</strong></p>
+      <p>目安はこうです。<strong>晴れた日と雨の日で差が大きいなら、それは形と湿気の問題</strong>。天気に関係なくパサついて引っかかるなら、そちらは傷みの問題で、第1〜12弾の側の話です。これはお金をかけずに、今週の自分の髪を観察するだけで分かります。</p>
+      <p>そのうえで、雨の日だけ別人みたいになる、というほうに心当たりがあるなら。そのときに初めて、向き先の違うものを1本足すことを考えてもらえればいいと思っています。</p>
+      <p>そして買う前にもう1つ。ボトルの「UNRULY HAIR」表記を確認してください。ボリュームが出やすい方は、このフリュイドは想定された相手ではありません。</p>
+      <p>いきなり13個すべてを揃える必要もまったくありません。第1〜12弾で紹介したケアを、まず自分のペースで試す。そのうえで「傷みのほうはひと通りやったな」と思えたときに、残っていた別の問題を思い出してもらえれば十分です。</p>
+      <p>傷みは12回で揃いました。13回目は、傷みではないほうです。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※本商品はくせを伸ばす・髪質を変えるためのものではありません。仕上がりや感じ方には髪質・湿度・施術履歴による個人差があります。</p>
+
+      <div class="series-nav">
+        シリーズで読む:
+        <a href="../round1/">第1弾・オラプレックス No.6(洗い流さないトリートメント)</a> ／
+        <a href="../round2/">第2弾・ケラスターゼ バン セラピュート(シャンプー)</a> ／
+        <a href="../round3/">第3弾・THE HAIR BALM 997(スタイリングバーム)</a> ／
+        <a href="../round4/">第4弾・ケラスターゼ RE マスク セラピュート(集中ヘアパック)</a> ／
+        <a href="../round5/">第5弾・LOA THE OIL PARFUM ザ ネロリ(香水オイル)</a> ／
+        <a href="../round6/">第6弾・アデノバイタル アドバンスト スカルプエッセンス(頭皮ケア)</a> ／
+        <a href="../round7/">第7弾・ハートロック スカルプブラシ(頭皮ケアの道具)</a> ／
+        <a href="../round8/">第8弾・オラプレックス No.3 ヘアパーフェクター(洗う前のプレケア)</a> ／
+        <a href="../round9/">第9弾・イオ クリーム メルトリペア(毎日のインバストリートメント)</a> ／
+        <a href="../round10/">第10弾・クレイツ イオン ドライ SD-1200(乾かす)</a> ／
+        <a href="../round11/">第11弾・ハホニコ ヘアドライマイクロファイバータオル(拭く)</a> ／
+        <a href="../round12/">第12弾・KINUJO シルクリッチ ナイトキャップ(寝る)</a> ／
+        第13弾・サブリミック エアリーフロー リファイニングフリュイド(うねり・このページ)
+      </div>
+    </div>
+  </section>
+
+  <section class="beat deep final">
+    <div class="wrap">
+      <p class="eyebrow">LAST WORD</p>
+      <h2>「洗う前」「洗う」「毎日のトリートメント」「拭く」「乾かす前」「乾かす」「仕上げ」「週数回」「香り」「頭皮」「道具」「寝る」。12回かけて、傷み側はもう出揃っています。<br>でも、それはぜんぶ「傷みをどうにかする」話でした。</h2>
+      <p>傷みではない問題の話は、12回とも一度も出てきていません。</p>
+      <p>このまま14本目の補修を探し続けて、「まだ足りないのかも」と思いながらまた半年過ごすのか。それとも、今週の自分の髪を、晴れた日と雨の日で見比べてみるのか。</p>
+      <p>後者にはお金がかかりません。今週から試せます。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4909978935757" target="_blank" rel="noopener sponsored">
+          今すぐ ALBUM ONLINE STORE で詳細を見る <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ps">
+        <p class="eyebrow">追伸</p>
+        <p>正直に言うと、この1本も「魔法の1本」ではありません。これは化粧品であり、くせが直る・髪が生まれ変わるといったものではない。塗った翌朝に別人の髪になるわけでもありません。感じ方には個人差があります。</p>
+        <p>それでも私がこれを紹介したいのは、「<strong>直そうとしている問題が違えば、どれだけいいものを足しても届かない</strong>」を、13回目にしてやっと言葉にできたからです。第9弾では「もうやっている工程の中身を疑う」、第10弾では「塗るもの以外も髪に触れている」、第11弾では「どう扱っているか」、第12弾では「意志が届かない時間」と書きました。今回わかったのは、そのどれもが傷みの話だった、ということでした。</p>
+        <p>13回に分けて紹介してきましたが、この13個を全部揃える必要はまったくありません。とくに今回は、買う前に自分の髪を観察するほうが先です。市販品ジプシーだった頃の私は、まとまらないたびに「もっといい補修を」と探していました。問題そのものが別の場所にあるとは、考えたこともなかった。</p>
+        <p>もし、傷みケアはひと通り揃っているのに、雨の日の朝だけ毎回がっかりしているなら。足りない最後の1つは、14本目の補修ではなく、向き先のほうかもしれません。まずは今週、晴れた日と雨の日の自分の髪を見比べてみてください。それが今回いちばんお伝えしたいことです。</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4909978935757" target="_blank" rel="noopener sponsored">
+            エアリーフロー リファイニングフリュイドを見てみる <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="brand">サロン専売品ラボ</p>
+    <p>本ページはアフィリエイトプログラム(A8.net)を利用した商品紹介であり、記載内容は一般的な商品情報および個人の使用感に基づくものです。本商品は化粧品であり、くせが直る・髪が治る等の効果を保証するものではありません。「サーマルフローモーションシステム」「熱を味方にする」「水分バランス」「くせ戻り防止」および配合成分に関する記載は、すべてメーカーの公表内容に基づく記載です。シリーズ全体の説明と個別製品の内容は同じではなく、毛髪形状補修成分(グリオキシル酸・グリコール酸)はマスクに配合、PEG-150はマスク・トリートメントに配合と商品ページに明記されています。本製品はボリュームが普通〜出にくい髪用(UNRULY HAIR)です。仕上がりや感じ方には髪質・湿度・施術履歴による個人差があります。香りの感じ方には個人差があります。価格・在庫・仕様は変更される場合があるため、最新情報は販売ページをご確認ください。</p>
+  </div>
+</footer>
+
+</body>
+</html>
