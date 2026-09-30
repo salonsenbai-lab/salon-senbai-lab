@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アルタイム カラー ミラクルカラーシーラー｜サロン専売品ラボ</title>
+<style>
+  :root {
+    --ink: #212b21;
+    --ink-soft: #4c5a4a;
+    --paper: #f6f7f0;
+    --paper-raise: #ffffff;
+    --sage: #7c9473;
+    --sage-deep: #47593f;
+    --sage-line: #c7d2bd;
+    --mist: #e9ede2;
+    --clay: #b5674a;
+    --clay-deep: #954f37;
+    --clay-tint: #f1ded3;
+    --shadow: 0 1px 2px rgba(33, 43, 33, 0.06);
+    --measure: 38em;
+    --radius: 3px;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #e9ecE2;
+    --ink-soft: #b9c2b2;
+    --paper: #171d15;
+    --paper-raise: #1e251b;
+    --sage: #9bb391;
+    --sage-deep: #c3d4b9;
+    --sage-line: #3a462f;
+    --mist: #212a1d;
+    --clay: #dd9270;
+    --clay-deep: #eaab8b;
+    --clay-tint: #2c211b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e9ecE2;
+      --ink-soft: #b9c2b2;
+      --paper: #171d15;
+      --paper-raise: #1e251b;
+      --sage: #9bb391;
+      --sage-deep: #c3d4b9;
+      --sage-line: #3a462f;
+      --mist: #212a1d;
+      --clay: #dd9270;
+      --clay-deep: #eaab8b;
+      --clay-tint: #2c211b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Noto Sans JP", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    color: var(--sage-deep);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  p { margin: 0 0 1.1em; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---- PR bar ---- */
+  .prbar {
+    background: var(--sage-deep);
+    color: var(--paper-raise);
+  }
+  .prbar .wrap-wide {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #eef1e8;
+  }
+  .prbar strong { color: var(--clay-tint); font-weight: 700; }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    padding: 76px 0 88px;
+    background: linear-gradient(180deg, var(--mist) 0%, var(--paper) 78%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--sage-line), transparent 70%);
+    opacity: 0.55;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero .prehead {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    box-shadow: inset 0 -0.42em 0 var(--clay-tint);
+  }
+  .hero .sub {
+    max-width: 32em;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  .sprig {
+    margin-top: 40px;
+    width: 96px;
+    height: auto;
+    color: var(--sage);
+  }
+
+  /* ---- CTA button ---- */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 15px 30px;
+    background: var(--clay);
+    color: #fff8f3;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: var(--clay-deep); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+  .cta .arrow { font-size: 1.05em; }
+  .cta-row { display: flex; justify-content: flex-start; }
+  .cta-row.center { justify-content: center; }
+  .price-note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Section rhythm ---- */
+  section.beat {
+    padding: 68px 0;
+  }
+  section.beat.tint { background: var(--mist); }
+  section.beat.deep {
+    background: var(--sage-deep);
+    color: #eef1e8;
+  }
+  section.beat.deep h2 { color: #fff; }
+  section.beat.deep .eyebrow { color: var(--clay-tint); }
+  section.beat.deep p { color: #dbe3d3; }
+
+  .beat h2 {
+    font-size: clamp(1.28rem, 2.6vw, 1.6rem);
+    line-height: 1.6;
+    margin: 10px 0 26px;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Figures (images/ 配下・後で実画像を差し替え) ---- */
+  .shot {
+    margin: 32px 0 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    background: var(--mist);
+  }
+  .shot figcaption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Check list ---- */
+  .checks {
+    list-style: none;
+    margin: 26px 0 24px;
+    padding: 0;
+  }
+  .checks li {
+    position: relative;
+    padding: 12px 0 12px 32px;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.96rem;
+    color: var(--ink);
+  }
+  .checks li:first-child { border-top: 1px solid var(--sage-line); }
+  .checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    color: var(--clay);
+    font-weight: 700;
+  }
+
+  /* ---- Reasons / cards ---- */
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .reason-card {
+    background: var(--paper-raise);
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+  }
+  .reason-card .num {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 1.7rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .reason-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .reason-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Spec table ---- */
+  .spec {
+    margin: 30px 0;
+    border-top: 1px solid var(--sage-line);
+  }
+  .spec dl {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    margin: 0;
+  }
+  .spec dt, .spec dd {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.92rem;
+  }
+  .spec dt {
+    color: var(--sage);
+    font-weight: 700;
+  }
+  .spec dd { margin: 0; }
+
+  .price-tag {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- Feature rows ---- */
+  .feature {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--sage-line);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .feature:first-of-type { border-top: 1px solid var(--sage-line); }
+  .feature .f-title { font-weight: 700; color: var(--ink); }
+  .feature .f-chain {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .feature .f-chain span.step { color: var(--sage); }
+
+  /* ---- Trust grid ---- */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .trust-item {
+    padding: 20px;
+    background: var(--paper-raise);
+    border-radius: var(--radius);
+    border: 1px solid var(--sage-line);
+  }
+  .trust-item h3 {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+  .trust-item p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Voice quotes ---- */
+  .voice {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .voice-item {
+    padding-left: 18px;
+    border-left: 2px solid var(--sage);
+  }
+  .voice-item .v-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .voice-item p { font-size: 0.94rem; margin: 0; }
+  .voice-foot {
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- FAQ ---- */
+  .faq { margin-top: 28px; border-top: 1px solid var(--sage-line); }
+  .faq details {
+    border-bottom: 1px solid var(--sage-line);
+  }
+  .faq summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    font-size: 0.96rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before {
+    content: "Q";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--clay);
+    flex: none;
+  }
+  .faq summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq .a {
+    display: flex;
+    gap: 12px;
+    padding: 0 4px 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .faq .a::before {
+    content: "A";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage);
+    flex: none;
+  }
+
+  /* ---- Price reflection ---- */
+  .price-box {
+    margin-top: 28px;
+    padding: 26px 24px;
+    background: var(--clay-tint);
+    border-radius: var(--radius);
+  }
+  .price-box .amount {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 2rem;
+    color: var(--clay-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .price-box .amount span { font-size: 0.9rem; margin-left: 6px; color: var(--ink-soft); font-family: inherit; }
+
+  /* ---- Final ---- */
+  .final h2 { color: #fff; }
+  .ps {
+    margin-top: 46px;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+  }
+  .ps .eyebrow { color: var(--clay-tint); }
+
+  footer {
+    padding: 40px 0 56px;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  footer .brand {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage-deep);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  /* ---- Series nav (round1〜7 相互リンク) ---- */
+  .series-nav {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--sage-line);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .series-nav a { color: var(--sage-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .spec dl { grid-template-columns: 7em 1fr; }
+    section.beat { padding: 52px 0; }
+    .hero { padding: 56px 0 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="prbar">
+  <div class="wrap-wide">
+    【PR】本ページはアフィリエイトプログラム(A8.net)を利用して商品を紹介しています。ページ内リンクからの購入により、当方に<strong>成果報酬</strong>が発生する場合があります。記載内容は特定の効果効能を保証するものではなく、一般的な商品情報と個人の使用感に基づいています。pH・酸性トリートメント・カラーの定着や色持ちに関する記載はすべて<strong>メーカーの公表内容</strong>に基づくもので、感じ方には個人差があります。<strong>ヘアカラーの色落ちを止めるものではありません。</strong>本ページは髪を染めている方に向けた内容です。
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="prehead">これまでの13本を「いつ使うものか」で並べ直してみました。毎日か、週に数回か。違いはあっても、全部が日常の習慣でした。</p>
+    <h1>13本ぜんぶ、「いつもの日」の話でした。<br><em>サロンでカラーをした日</em>だけ、普段と同じに扱っていた。</h1>
+    <p class="sub">アルタイム カラー ミラクルカラーシーラー。¥4,598(税込・185ml)。カラー直後の髪はアルカリに傾いた状態だと、メーカーは説明しています。そして色がいちばん抜けやすいのも最初の数日だとよく言われます。──<strong>いちばん状態が違う日に、いちばん普通のことをしていました。</strong>(※この回は髪を染めている方に向けた内容です)</p>
+    <div class="cta-row">
+      <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4068359150995" target="_blank" rel="noopener sponsored">
+        ミラクルカラーシーラーを見てみる <span class="arrow">→</span>
+      </a>
+    </div>
+    <svg class="sprig" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 118 C50 80 44 50 50 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M50 70 C34 62 24 46 22 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M50 44 C64 38 74 24 76 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="50" cy="8" r="4" fill="currentColor"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">EMPATHY</p>
+      <h2>こんな「カラーをした日も、家では普段どおりだった」、心当たりありませんか。</h2>
+      <ul class="checks">
+        <li>美容室でカラーをした日も、家に帰ったら普段どおり洗っている</li>
+        <li>染めた色が、思っていたより早く抜けていく</li>
+        <li>「色落ちしにくいシャンプー」を探したことはある</li>
+        <li>サロンで何か言われた気もするけれど、正直あまり覚えていない</li>
+        <li>カラー当日にシャンプーしていいのか、実はよく分かっていない</li>
+        <li>抜けたらまた染めればいい、と半ばあきらめている</li>
+        <li>ヘアケア＝毎日の習慣のこと、だと無意識に思っている</li>
+      </ul>
+      <p>一つでも頷いたなら、あと3分だけ読み進めてほしいんです。</p>
+      <p>私はこのシリーズで、13回かけてアイテムを揃えてきました。合計¥65,940。前回はうねりまで手が届いて、傷み以外の問題にも入れました。</p>
+      <p>そのあと、13本を「<strong>いつ使うものか</strong>」で並べ直してみたんです。</p>
+      <p>毎日(シャンプー、トリートメント、洗い流さないトリートメント、バーム、タオル、ドライヤー、ナイトキャップ、うねり用の乳液)。週に数回(ヘアマスク、プレトリートメント、スカルプエッセンス、スカルプブラシ)。仕上げ(香水オイル)。</p>
+      <p>毎日か、週に数回か。違いはありますが、<strong>全部「いつもの日」の習慣</strong>でした。13回書いてきて、月に1回あるかないかの日のことは、一度も書いていません。</p>
+
+      <figure class="shot">
+        <img src="images/01_eyecatch.png" alt="サロンから帰った日の玄関のイメージ" loading="lazy">
+        <figcaption>13本ぶん整えたのは「いつもの日」。14回目は、月に1回あるかないかの日の話です。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">IF NOTHING CHANGES</p>
+      <h2>正直に言うと、いちばん引っかかったのは「色が抜けること」じゃありません。<br>13回とも、扱いを変えるべき日があると考えなかったことのほうです。</h2>
+      <p>美容室でカラーをした日。私はこれまで、家に帰ってから普段どおりにシャンプーして、普段どおりに乾かして、普段どおりに寝ていました。</p>
+      <p>でもメーカーの説明を読むと、カラーの直後は髪が<strong>アルカリに傾いた状態</strong>だと書かれています。そして色がいちばん抜けやすいのは最初の数日だと、よく言われます。</p>
+      <p>つまり<strong>いちばん状態が違う日に、いちばん普通のことをしていた</strong>わけです。</p>
+      <p>ここが厄介なところで、その日は達成感があるんですよね。きれいになって帰ってくるので、もう終わった気になっている。実際には、そこから色が抜けていく数週間が始まるところなのに。</p>
+      <p>半年後も、たぶん同じです。棚には15本目、16本目の新しいアイテムが増えていて、それでもサロン帰りの夜だけは、いつもと同じことをしている。</p>
+      <p>いちばんもったいないのは、ここです。第1〜13弾で、"毎日"の答えはもう出そろっているんです。出ていないのは、<strong>扱いを変えるべき日</strong>のほうだけ。</p>
+      <p>──ただ、先に言っておきます。これを使っても色落ちは止まりません。遅くできるかどうかの話です。その線引きは後半で正直に書きます。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">THE TURN</p>
+      <h2>そこでたどり着いたのが、「アルタイム カラー ミラクルカラーシーラー」でした。</h2>
+      <p>ここで一つ、はっきりさせておきたいことがあります。第1〜13弾で紹介してきたものは、13本とも「いつもの日」に使うものでした。</p>
+      <p>これは欠点ではありません。毎日の積み重ねがケアの土台だからです。13本とも、その役割を果たしてくれました。</p>
+      <p>一方で今回のものは、使い始める日が決まっています。メーカーの使用方法に<strong>「ヘアサロンでカラーをした日からすぐにお使いいただけます」</strong>と書かれている。日常の習慣ではなく、<strong>特定の日から始めるケア</strong>です。</p>
+      <p>言ってしまえば、第1〜13弾が"毎日をどう整えるか"。そしてこの1本が"特別な日にどう合わせるか"。毎日は13回で揃いました。14回目は、合わせるほうです。</p>
+      <p class="lede">私がこの1本を選んだ理由は、大きく3つ。</p>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <span class="num">壱</span>
+          <h3>シリーズで唯一、「特別な日」に向いている</h3>
+          <p>13本は毎日か週に数回かの違いで、どれも日常の習慣でした。サロンでカラーをした日は月に1回あるかないか。頻度が違う日のことを、一度も考えていませんでした。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">弐</span>
+          <h3>使い始める日が、商品の説明に書いてある</h3>
+          <p>カラーケアの多くは「毎日のシャンプー・トリートメント」で、工程としては第2弾や第9弾と重なります。これは「サロンでカラーをした日から」と、始点そのものが説明に書かれている数少ない1本でした。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">参</span>
+          <h3>動詞が「足す」でも「守る」でもなく「戻す」</h3>
+          <p>カラー後のアルカリに傾いた状態を、酸性トリートメントでヘアカラー前の状態へ穏やかに戻す、という説明です。第1〜9弾が足す、第10〜12弾が守る・減らす、第13弾が別の問題。これは4つ目の動詞になります。</p>
+        </div>
+      </div>
+      <p style="margin-top:28px;">「毎日をどう整えるか」から、「特別な日にどう合わせるか」へ。13回かけて毎日を整えてきたからこそ、素通りしていた1日に目が向きました。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※pH・酸性トリートメント・カラーの定着に関する記載はメーカーの公表内容に基づくものであり、効果を保証するものではありません。色持ちの感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">THE PRODUCT</p>
+      <h2>アルタイム カラー ミラクルカラーシーラーとは</h2>
+      <p>ウエラ プロフェッショナルの「アルタイム カラー」は、ヘアカラーを楽しむ髪のためのライン。その中のヘア＆スキャルプミストが、このミラクルカラーシーラーです。サロンでカラー剤を出しているメーカーが、カラーの<strong>あと</strong>に出している製品、という位置づけになります。</p>
+      <p>ブランドとしてはシリーズ初登場です。第1〜13弾で登場したオラプレックス、ケラスターゼ、リンク、LOA、資生堂プロフェッショナル、SINN PURETE、ルベル、クレイツ、ハホニコ、KINUJOとは重なりません。</p>
+
+      <figure class="shot">
+        <img src="images/04_product_photo.png" alt="ウエラ プロフェッショナル アルタイム カラー ミラクルカラーシーラー" loading="lazy">
+        <figcaption>ULTIME COLOR ミラクルカラーシーラー / ウエラ プロフェッショナル</figcaption>
+      </figure>
+
+      <div class="spec">
+        <dl>
+          <dt>タイプ</dt><dd>洗い流さないトリートメント(カラー後用の酸性トリートメント)・トリガースプレー式</dd>
+          <dt>容量</dt><dd>185ml</dd>
+          <dt>価格</dt><dd class="price-tag">¥4,598(税込)/ 13本の平均¥5,072より少し下</dd>
+          <dt>向いている相手</dt><dd>ヘアカラーの色持ちを長く楽しみたい人、カラー直後からホームケアを始めたい人、とメーカーは説明しています</dd>
+          <dt>考え方</dt><dd>カラー後の髪と頭皮のpHレベルのバランスを整え、ヘアカラー前の状態へ穏やかに戻しながら安定させる、とされています</dd>
+          <dt>色持ちについて</dt><dd>すばやくカラーを定着させて保護し、ヘアカラーが長持ちするのをサポートする、とされています</dd>
+          <dt>キューティクル</dt><dd>カラー直後のデリケートなキューティクルを穏やかに閉じて、なめらかな状態へ、とのこと</dd>
+          <dt>配合(メーカー表記)</dt><dd>AHAとしてリンゴ酸(毛髪補修成分)/ OMEGA-9としてオレイン酸(毛髪保護成分)/ スクワラン(毛髪保護成分)/ グリシン(コンディショニング成分)/ プロビタミンB5(保湿成分)/ メタルピュリファイヤー(金属イオンをカプセル化する働き)</dd>
+          <dt>使い方</dt><dd>タオルドライ後、頭皮から毛先まで全体に10〜12プッシュ。なじませてそのまま乾かす(洗い流さない)</dd>
+          <dt>使い始め</dt><dd><strong>ヘアサロンでカラーをした日から</strong>使える、と使用方法に明記されています</dd>
+          <dt>香り</dt><dd>フローリエンタル。オレンジピール・アップル・グリーンリーフのトップノート(メーカー表記)</dd>
+          <dt>ブランド</dt><dd>ウエラ プロフェッショナル・シリーズ初登場</dd>
+        </dl>
+      </div>
+
+      <p>この1本のいちばんの特徴は、<strong>今のケアを1つも置き換えない</strong>という点です。シャンプーもトリートメントもドライヤーもタオルもナイトキャップも、今のまま。第1〜13弾で作った流れには何も手を加えません。タオルドライのあとに1工程増えるだけです。</p>
+      <p>そして、選ぶときに私が見たのは配合の派手さではありませんでした。<strong>商品ページに全成分表示が載っていること</strong>です。成分ごとの役割まで書いたうえで、全部を並べて出している。何が入っているかを隠さないページは、書いてあることも信用しやすいと感じました。</p>
+      <p>使用量が「10〜12プッシュ」と具体的に書かれているのも、地味ですが助かりました。適量、とだけ書かれている製品より、迷わずに済みます。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記の技術・成分・仕上がりに関する記載はすべてメーカーの公表内容に基づくものです。効果を保証するものではなく、感じ方には個人差があります。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4068359150995" target="_blank" rel="noopener sponsored">
+          商品ページで詳細・価格を確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHY IT WORKS</p>
+      <h2>「で、結局サロン帰りに吹きかけると何が変わるの?」に、飾らず正直に答えます。</h2>
+
+      <div class="features">
+        <div class="feature">
+          <div class="f-title">使い始める日が決まっている</div>
+          <div class="f-chain"><span class="step">だから</span> 「今日から」が迷わない ── <span class="step">つまり</span> 13本ぶん空白だった1日に、初めて手が入る</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">カラー後のアルカリに傾いた状態を戻す、という説明</div>
+          <div class="f-chain"><span class="step">だから</span> 足すのではなく元に戻す方向のケアになる ── <span class="step">つまり</span> 何かを重ねるより先に、状態をそろえる手が入る</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">トリガースプレー式</div>
+          <div class="f-chain"><span class="step">だから</span> 手に出して伸ばすより頭皮まで届かせやすい ── <span class="step">つまり</span> 塗り残しが出にくく、量も数えられる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">使用量が10〜12プッシュと具体的</div>
+          <div class="f-chain"><span class="step">だから</span> 多すぎ・少なすぎで迷わない ── <span class="step">つまり</span> 「効かない」の原因から量の問題を外せる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">タオルドライ後に使って、そのまま乾かすだけ</div>
+          <div class="f-chain"><span class="step">だから</span> 新しい手順が増えない ── <span class="step">つまり</span> 続けるための意志がほとんど要らない</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">全成分と、成分ごとの役割が公開されている</div>
+          <div class="f-chain"><span class="step">だから</span> 何が入っているかを自分で確かめられる ── <span class="step">つまり</span> 良さそうな言葉だけで判断しなくて済む</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">色の系統を選ばない</div>
+          <div class="f-chain"><span class="step">だから</span> 寒色でも暖色でも使える ── <span class="step">つまり</span> ムラシャン系のように「その色の人だけ」にならない</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">今のケアを1つも置き換えない</div>
+          <div class="f-chain"><span class="step">だから</span> 第1〜13弾のどれとも競合しない ── <span class="step">つまり</span> 今使っているものを1つも捨てずに始められる</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;">13回かけて「毎日」を整えてきたからこそ、14回目でようやく「毎日ではない日」に目が向きました。これは、13本ぶん遠回りしたからこそ出てきた、私のいちばん正直な実感です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記は仕様と使い勝手に関する説明です。効果には個人差があり、特定の結果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">WHY TRUST IT</p>
+      <h2>正直に言うと、私は「色持ちアップ」と書いてあるだけでは商品を信じないタイプです。</h2>
+      <p class="lede">それでもこの1本を紹介したいと思えたのは、こんな背景があるからです。</p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>効果ではなく、日が違うという話で選べる</h3>
+          <p>どのくらい色が持つかは、私には測りようがありません。だから主な判断材料にしていません。私が納得したのは「カラーをした日の髪は、いつもと状態が違う」という、確かめようのない効果ではなく確かめられる前提のほうです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>全成分と、成分ごとの役割が公開されている</h3>
+          <p>AHA、OMEGA-9、スクワラン、グリシン、プロビタミンB5、メタルピュリファイヤー。それぞれ何のためかを書いたうえで、全成分表示も載せています。良い言葉だけを並べて中身を出さないページより、ずっと読みやすいです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>「止める」ではなく「サポートする」と書いている</h3>
+          <p>メーカーの説明は「ヘアカラーが長持ちするのをサポート」です。色落ちを止めるとは書いていない。書ける範囲を超えていない説明は、それ自体が信用材料になると思っています。</p>
+        </div>
+        <div class="trust-item">
+          <h3>カラー剤を作っているメーカー自身の製品</h3>
+          <p>ウエラはサロンでカラー剤を出しているメーカーです。染める側が、染めたあとのために出している。筋としては分かりやすいと感じました。</p>
+        </div>
+        <div class="trust-item">
+          <h3>¥4,598はシリーズの平均より下</h3>
+          <p>第1弾¥3,740、第2弾¥4,180、第3弾¥4,290、第4弾¥7,260、第5弾¥8,800、第6弾¥5,776、第7弾¥2,200、第8弾¥3,740、第9弾¥2,950、第10弾¥9,350、第11弾¥894、第12弾¥9,350、第13弾¥3,410。合計¥65,940、平均¥5,072。今回はそれより下です。</p>
+        </div>
+        <div class="trust-item">
+          <h3>サロン専売品を、公式通販でそのまま買える</h3>
+          <p>ALBUM ONLINE STOREは正規販売店です。私は毎回ここを確認してから紹介しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHAT PEOPLE NOTICE</p>
+      <h2>こんな使用感(声の傾向)</h2>
+      <p>色持ちは条件でまったく変わります。だからこそ、盛らずに、分かったことだけを整理してみます。</p>
+
+      <div class="voice">
+        <div class="voice-item">
+          <p class="v-label">カラー直後の数日について</p>
+          <p>いちばん意味があると感じたのはここでした。染めた直後の数日だけでも扱いを変える、というのは今までしていなかったことです。ただ、色持ちが何日延びたかを自分で測ることはできないので、そこは断言しません。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">スプレーの扱いやすさについて</p>
+          <p>トリガー式なので、手に出して伸ばすタイプより頭皮に届かせやすいです。濡れた髪に吹きかけてなじませるだけなので、手が塞がっている感じもありません。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">量について</p>
+          <p>10〜12プッシュが目安と書かれています。最初は多い気がしましたが、頭皮から毛先まで全体となると意外とそのくらいでした。数えられるのは地味に便利です。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">香りについて</p>
+          <p>フローリエンタル、とメーカーは説明しています。個人的には強すぎませんでしたが、香りは好みが分かれるところなので、合う合わないはあると思います。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">続けることについて</p>
+          <p>カラーをした日から使うものですが、その日だけのものではありません。定期的に使うことでサポートする、という説明です。私は染めた直後の数日を特に意識して使っています。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">期待しすぎないほうがいい部分</p>
+          <p>ここは正直に書きます。<strong>色落ちは止まりません。</strong>遅くできるかどうかの話です。それと、これは色を足すものではないので、抜けてしまった色が戻るわけでもありません。そこはカラートリートメントの領域です。</p>
+        </div>
+      </div>
+      <p class="voice-foot">もちろん、カラーの種類も明るさも髪質も人それぞれ。だからこそ、「自分はサロン帰りの日に何をしているか」で考えてみる価値があると思っています。<br>※上記は一般的な使用感の傾向および個人の感想であり、効果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>よくある質問</h2>
+
+      <div class="faq">
+        <details>
+          <summary>髪を染めていなくても使えますか?</summary>
+          <div class="a">使えなくはないと思いますが、この製品はカラー後の髪と頭皮に向けて作られています。染めていないなら、優先順位はかなり下がります。この回は染めている方に向けた内容です。</div>
+        </details>
+        <details>
+          <summary>カラーをした当日から使っていいんですか?</summary>
+          <div class="a">はい。メーカーの使用方法に「ヘアサロンでカラーをした日からすぐにお使いいただけます」と明記されています。ただし施術内容によって美容師さんの指示が違うこともあるので、何か言われていればそちらが優先です。</div>
+        </details>
+        <details>
+          <summary>毎日使うものですか?</summary>
+          <div class="a">その日だけのものではありません。メーカーは「定期的に使用することで」色持ちをサポートすると説明しています。私は染めた直後の数日を特に意識しつつ、そのあとも使っています。</div>
+        </details>
+        <details>
+          <summary>これを使えば色落ちしなくなりますか?</summary>
+          <div class="a">いいえ。色落ちは止まりません。メーカーの説明も「長持ちするのをサポート」であって、止めるとは書かれていません。遅くできるかどうかの話だと考えてください。</div>
+        </details>
+        <details>
+          <summary>今使っている洗い流さないトリートメントと併用できますか?</summary>
+          <div class="a">できます。今のケアを1つも置き換えません。タオルドライのあとに1工程増えるだけです。第1弾のオラプレックス No.6も、第13弾のエアリーフローもそのままで大丈夫です。</div>
+        </details>
+        <details>
+          <summary>カラーシャンプー(ムラシャン)とどちらがいいですか?</summary>
+          <div class="a">役割が違います。カラーシャンプーは色を足して補正するもので、対象の色も決まっています。こちらは色を足すのではなく、カラー後の状態を整えて色が抜けにくい方向に持っていくもの、という説明です。色の系統を選ばないのはこちらです。</div>
+        </details>
+        <details>
+          <summary>頭皮にかかっても大丈夫ですか?</summary>
+          <div class="a">メーカーの使用方法が「頭皮から毛先まで全体になじませる」なので、頭皮に使う前提の製品です。ヘア＆スキャルプミストという位置づけになっています。</div>
+        </details>
+        <details>
+          <summary>使うと髪の傷みが治りますか?</summary>
+          <div class="a">いいえ。本商品は化粧品であり、髪が治る・傷まなくなるといった効果を保証するものではありません。この回は色の話で、傷み側は第1〜12弾のほうで扱っています。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">ABOUT THE PRICE</p>
+      <h2>価格の考え方</h2>
+      <p>アルタイム カラー ミラクルカラーシーラーは ¥4,598(税込)、185mlです。</p>
+      <p>これまでの13本を並べてみます。¥3,740 / ¥4,180 / ¥4,290 / ¥7,260 / ¥8,800 / ¥5,776 / ¥2,200 / ¥3,740 / ¥2,950 / ¥9,350 / ¥894 / ¥9,350 / ¥3,410。合計¥65,940、1本あたりの平均は¥5,072。<strong>今回はその平均より下です。</strong></p>
+      <p>前回が¥3,410、その前が¥9,350。今回は真ん中あたりに落ち着きました。</p>
+      <p>そしてもう一度、比率の話をさせてください。私はこのシリーズで、13本・合計¥65,940を「いつもの日」に使ってきました。同じ期間、サロンでカラーをした日のために使った金額は¥0です。──毎回この計算をして毎回笑っているのですが、私はどうやら、毎回どこか1箇所を完全に空白にしたまま買い物をしているらしいんです。</p>
+      <p>ついでに書いておくと、カラー自体の料金は1回でこの金額を軽く超えることが多いと思います。そこにお金を払っておいて、抜けるのを早めるようなことを家でしていたのだとしたら、順番としてはもったいなかった。</p>
+
+      <div class="price-box">
+        <div class="amount">¥4,598<span>/ 税込・185ml。13本の平均¥5,072より下</span></div>
+        <p style="margin-top:14px;">買う前に2つだけ確認してください。自分は髪を染めているか。そして、次にサロンに行く予定があるか。カラーをした日から使うものなので、<strong>次の予約の前に手元にあると意味が出ます</strong>。抜けきってから買っても、その回には間に合いません。</p>
+      </div>
+
+      <p class="price-note">※価格・在庫は変動します。最新情報は必ず商品ページでご確認ください。色持ちの感じ方はカラーの種類・明度・髪質・洗い方によって大きく異なります。</p>
+
+      <div class="cta-row" style="margin-top:30px;">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4068359150995" target="_blank" rel="noopener sponsored">
+          最新の価格・在庫を商品ページで確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">BEFORE YOU GO</p>
+      <h2>安心して試すために</h2>
+      <p>「結局また1本増えるだけでは?」その疑いは、まっとうだと思います。私も13回ぶん、毎日のケアに足し続けてきました。</p>
+      <p>だからこの回も、買う前に無料でできることを先に書いておきます。どちらもよく言われることです。</p>
+      <p><strong>カラーをした当日はシャンプーを控える。お湯の温度を上げすぎない。</strong>この2つはお金がかかりません。ただし施術内容によって美容師さんの指示が違うこともあるので、言われたことがあればそちらが優先です。私は今まで、何も聞かずにその日のうちに普通に洗っていました。</p>
+      <p>そのうえで、次にサロンでカラーをする予定があるなら。そのときに初めて、帰ってきた日から使えるものを1本用意しておくことを考えてもらえればいいと思っています。</p>
+      <p>逆に言うと、<strong>今すぐ買っても、次に染めるまでは出番が半分</strong>です。抜けかけた色を戻すものではないので、そこは正直に書いておきます。</p>
+      <p>そして、いきなり14個すべてを揃える必要もまったくありません。第1〜13弾で紹介したケアを、まず自分のペースで試す。そのうえで「毎日のほうはひと通りやったな」と思えたときに、月に1回の日を思い出してもらえれば十分です。</p>
+      <p>毎日は13回で揃いました。14回目は、毎日ではない日です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※本商品は色落ちを止めるものではなく、抜けた色を戻すものでもありません。カラー当日のシャンプーやお湯の温度に関する記載は一般に言われている内容であり、施術内容によっては美容師の指示が優先されます。</p>
+
+      <div class="series-nav">
+        シリーズで読む:
+        <a href="../round1/">第1弾・オラプレックス No.6(洗い流さないトリートメント)</a> ／
+        <a href="../round2/">第2弾・ケラスターゼ バン セラピュート(シャンプー)</a> ／
+        <a href="../round3/">第3弾・THE HAIR BALM 997(スタイリングバーム)</a> ／
+        <a href="../round4/">第4弾・ケラスターゼ RE マスク セラピュート(集中ヘアパック)</a> ／
+        <a href="../round5/">第5弾・LOA THE OIL PARFUM ザ ネロリ(香水オイル)</a> ／
+        <a href="../round6/">第6弾・アデノバイタル アドバンスト スカルプエッセンス(頭皮ケア)</a> ／
+        <a href="../round7/">第7弾・ハートロック スカルプブラシ(頭皮ケアの道具)</a> ／
+        <a href="../round8/">第8弾・オラプレックス No.3 ヘアパーフェクター(洗う前のプレケア)</a> ／
+        <a href="../round9/">第9弾・イオ クリーム メルトリペア(毎日のインバストリートメント)</a> ／
+        <a href="../round10/">第10弾・クレイツ イオン ドライ SD-1200(乾かす)</a> ／
+        <a href="../round11/">第11弾・ハホニコ ヘアドライマイクロファイバータオル(拭く)</a> ／
+        <a href="../round12/">第12弾・KINUJO シルクリッチ ナイトキャップ(寝る)</a> ／
+        <a href="../round13/">第13弾・サブリミック エアリーフロー リファイニングフリュイド(うねり)</a> ／
+        第14弾・アルタイム カラー ミラクルカラーシーラー(カラーをした日・このページ)
+      </div>
+    </div>
+  </section>
+
+  <section class="beat deep final">
+    <div class="wrap">
+      <p class="eyebrow">LAST WORD</p>
+      <h2>「洗う前」「洗う」「毎日のトリートメント」「拭く」「乾かす前」「乾かす」「仕上げ」「週数回」「香り」「頭皮」「道具」「寝る」「うねり」。13回かけて、毎日のほうはもう出揃っています。<br>でも、それはぜんぶ「いつもの日」の話でした。</h2>
+      <p>月に1回あるかないかの日の話は、13回とも一度も出てきていません。</p>
+      <p>このまま15本目の新しいアイテムを毎日のケアに足し続けて、「まだ足りないのかも」と思いながらまた半年過ごすのか。それとも、次にサロンに行った日の夜だけ、少し扱いを変えてみるのか。</p>
+      <p>当日に洗わない。お湯を熱くしすぎない。ここまではお金がかかりません。次の予約の日から試せます。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4068359150995" target="_blank" rel="noopener sponsored">
+          今すぐ ALBUM ONLINE STORE で詳細を見る <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ps">
+        <p class="eyebrow">追伸</p>
+        <p>正直に言うと、この1本も「魔法の1本」ではありません。これは化粧品であり、色落ちを止めるものでも、抜けた色を戻すものでもない。使った翌朝に別人の髪になるわけでもありません。感じ方には個人差があります。</p>
+        <p>それでも私がこれを紹介したいのは、「<strong>毎日を整えることと、特別な日に合わせることは別の話だ</strong>」を、14回目にしてやっと言葉にできたからです。第11弾では「どう扱っているか」、第12弾では「意志が届かない時間」、第13弾では「直そうとしている問題が違う」と書きました。今回わかったのは、そのどれもが<strong>いつもの日</strong>の話だった、ということでした。</p>
+        <p>14回に分けて紹介してきましたが、この14個を全部揃える必要はまったくありません。とくに今回は、次にサロンに行く予定がないなら急ぐ理由がない回です。市販品ジプシーだった頃の私は、毎日のケアばかり買い替えていました。月に1回の日に合わせる、という発想がそもそもなかった。</p>
+        <p>もし、毎日のケアはひと通り揃っているのに、染めた色が思ったより早く抜けていくのが毎回もやもやしているなら。足りない最後の1つは、15本目の毎日用ではなく、<strong>あの日の夜の扱い方</strong>のほうかもしれません。次に予約を取るときに、思い出してみてください。それが今回いちばんお伝えしたいことです。</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4068359150995" target="_blank" rel="noopener sponsored">
+            ミラクルカラーシーラーを見てみる <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="brand">サロン専売品ラボ</p>
+    <p>本ページはアフィリエイトプログラム(A8.net)を利用した商品紹介であり、記載内容は一般的な商品情報および個人の使用感に基づくものです。本商品は化粧品であり、髪が治る・傷まなくなる等の効果を保証するものではありません。pH・酸性トリートメント・カラーの定着や保護・色持ちのサポート・キューティクル・配合成分に関する記載は、すべてメーカーの公表内容に基づく記載です。ヘアカラーの色落ちを止めるものではなく、抜けた色を戻すものでもありません。色持ちの感じ方は、カラーの種類・明度・髪質・洗い方によって大きく異なります。カラー当日のシャンプーやお湯の温度に関する記載は一般に言われている内容であり、施術内容によっては美容師の指示が優先されます。香りの感じ方には個人差があります。価格・在庫・仕様は変更される場合があるため、最新情報は販売ページをご確認ください。</p>
+  </div>
+</footer>
+
+</body>
+</html>
