@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>タングルティーザー ザ・ウェットディタングラーPro｜サロン専売品ラボ</title>
+<style>
+  :root {
+    --ink: #212b21;
+    --ink-soft: #4c5a4a;
+    --paper: #f6f7f0;
+    --paper-raise: #ffffff;
+    --sage: #7c9473;
+    --sage-deep: #47593f;
+    --sage-line: #c7d2bd;
+    --mist: #e9ede2;
+    --clay: #b5674a;
+    --clay-deep: #954f37;
+    --clay-tint: #f1ded3;
+    --shadow: 0 1px 2px rgba(33, 43, 33, 0.06);
+    --measure: 38em;
+    --radius: 3px;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #e9ecE2;
+    --ink-soft: #b9c2b2;
+    --paper: #171d15;
+    --paper-raise: #1e251b;
+    --sage: #9bb391;
+    --sage-deep: #c3d4b9;
+    --sage-line: #3a462f;
+    --mist: #212a1d;
+    --clay: #dd9270;
+    --clay-deep: #eaab8b;
+    --clay-tint: #2c211b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e9ecE2;
+      --ink-soft: #b9c2b2;
+      --paper: #171d15;
+      --paper-raise: #1e251b;
+      --sage: #9bb391;
+      --sage-deep: #c3d4b9;
+      --sage-line: #3a462f;
+      --mist: #212a1d;
+      --clay: #dd9270;
+      --clay-deep: #eaab8b;
+      --clay-tint: #2c211b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Noto Sans JP", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    color: var(--sage-deep);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  p { margin: 0 0 1.1em; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---- PR bar ---- */
+  .prbar {
+    background: var(--sage-deep);
+    color: var(--paper-raise);
+  }
+  .prbar .wrap-wide {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #eef1e8;
+  }
+  .prbar strong { color: var(--clay-tint); font-weight: 700; }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    padding: 76px 0 88px;
+    background: linear-gradient(180deg, var(--mist) 0%, var(--paper) 78%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--sage-line), transparent 70%);
+    opacity: 0.55;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero .prehead {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    box-shadow: inset 0 -0.42em 0 var(--clay-tint);
+  }
+  .hero .sub {
+    max-width: 32em;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  .sprig {
+    margin-top: 40px;
+    width: 96px;
+    height: auto;
+    color: var(--sage);
+  }
+
+  /* ---- CTA button ---- */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 15px 30px;
+    background: var(--clay);
+    color: #fff8f3;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: var(--clay-deep); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+  .cta .arrow { font-size: 1.05em; }
+  .cta-row { display: flex; justify-content: flex-start; }
+  .cta-row.center { justify-content: center; }
+  .price-note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Section rhythm ---- */
+  section.beat {
+    padding: 68px 0;
+  }
+  section.beat.tint { background: var(--mist); }
+  section.beat.deep {
+    background: var(--sage-deep);
+    color: #eef1e8;
+  }
+  section.beat.deep h2 { color: #fff; }
+  section.beat.deep .eyebrow { color: var(--clay-tint); }
+  section.beat.deep p { color: #dbe3d3; }
+
+  .beat h2 {
+    font-size: clamp(1.28rem, 2.6vw, 1.6rem);
+    line-height: 1.6;
+    margin: 10px 0 26px;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Figures (images/ 配下・後で実画像を差し替え) ---- */
+  .shot {
+    margin: 32px 0 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    background: var(--mist);
+  }
+  .shot figcaption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Check list ---- */
+  .checks {
+    list-style: none;
+    margin: 26px 0 24px;
+    padding: 0;
+  }
+  .checks li {
+    position: relative;
+    padding: 12px 0 12px 32px;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.96rem;
+    color: var(--ink);
+  }
+  .checks li:first-child { border-top: 1px solid var(--sage-line); }
+  .checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    color: var(--clay);
+    font-weight: 700;
+  }
+
+  /* ---- Reasons / cards ---- */
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .reason-card {
+    background: var(--paper-raise);
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+  }
+  .reason-card .num {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 1.7rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .reason-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .reason-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Spec table ---- */
+  .spec {
+    margin: 30px 0;
+    border-top: 1px solid var(--sage-line);
+  }
+  .spec dl {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    margin: 0;
+  }
+  .spec dt, .spec dd {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.92rem;
+  }
+  .spec dt {
+    color: var(--sage);
+    font-weight: 700;
+  }
+  .spec dd { margin: 0; }
+
+  .price-tag {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- Feature rows ---- */
+  .feature {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--sage-line);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .feature:first-of-type { border-top: 1px solid var(--sage-line); }
+  .feature .f-title { font-weight: 700; color: var(--ink); }
+  .feature .f-chain {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .feature .f-chain span.step { color: var(--sage); }
+
+  /* ---- Trust grid ---- */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .trust-item {
+    padding: 20px;
+    background: var(--paper-raise);
+    border-radius: var(--radius);
+    border: 1px solid var(--sage-line);
+  }
+  .trust-item h3 {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+  .trust-item p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Voice quotes ---- */
+  .voice {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .voice-item {
+    padding-left: 18px;
+    border-left: 2px solid var(--sage);
+  }
+  .voice-item .v-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .voice-item p { font-size: 0.94rem; margin: 0; }
+  .voice-foot {
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- FAQ ---- */
+  .faq { margin-top: 28px; border-top: 1px solid var(--sage-line); }
+  .faq details {
+    border-bottom: 1px solid var(--sage-line);
+  }
+  .faq summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    font-size: 0.96rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before {
+    content: "Q";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--clay);
+    flex: none;
+  }
+  .faq summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq .a {
+    display: flex;
+    gap: 12px;
+    padding: 0 4px 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .faq .a::before {
+    content: "A";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage);
+    flex: none;
+  }
+
+  /* ---- Price reflection ---- */
+  .price-box {
+    margin-top: 28px;
+    padding: 26px 24px;
+    background: var(--clay-tint);
+    border-radius: var(--radius);
+  }
+  .price-box .amount {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 2rem;
+    color: var(--clay-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .price-box .amount span { font-size: 0.9rem; margin-left: 6px; color: var(--ink-soft); font-family: inherit; }
+
+  /* ---- Final ---- */
+  .final h2 { color: #fff; }
+  .ps {
+    margin-top: 46px;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+  }
+  .ps .eyebrow { color: var(--clay-tint); }
+
+  footer {
+    padding: 40px 0 56px;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  footer .brand {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage-deep);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  /* ---- Series nav (round1〜7 相互リンク) ---- */
+  .series-nav {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--sage-line);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .series-nav a { color: var(--sage-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .spec dl { grid-template-columns: 7em 1fr; }
+    section.beat { padding: 52px 0; }
+    .hero { padding: 56px 0 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="prbar">
+  <div class="wrap-wide">
+    【PR】本ページはアフィリエイトプログラム(A8.net)を利用して商品を紹介しています。ページ内リンクからの購入により、当方に<strong>成果報酬</strong>が発生する場合があります。記載内容は特定の効果効能を保証するものではなく、一般的な商品情報と個人の使用感に基づいています。濡れた髪の解きほぐし・髪への負担の軽減・キューティクル・長短二段構造に関する記載はすべて<strong>メーカーの公表内容</strong>に基づくもので、感じ方には個人差があります。<strong>ブラシは髪の傷みを補修するものではありません。</strong>メーカーは濡れ髪専用としています。
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="prehead">これまでの14本を「何をするための道具か」で並べ直してみました。塗る、洗う、もみほぐす、乾かす、拭く、被る。</p>
+    <h1>14本を動詞で並べたら、<br><em>「とかす」</em>だけが一度もありませんでした。</h1>
+    <p class="sub">タングルティーザー ザ・ウェットディタングラーPro。¥2,495(税込)。1日でいちばん回数が多い動作は、たぶん「とかす」です。しかも私は「髪は濡れているときがいちばん無防備」と2回も書いておきながら、その濡れた髪を普通のブラシで根元から引っ張っていました。──<strong>タオルで擦るのをやめた数分後に、同じ髪を引っ張っていたんです。</strong></p>
+    <div class="cta-row">
+      <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4589485763632" target="_blank" rel="noopener sponsored">
+        ウェットディタングラーProを見てみる <span class="arrow">→</span>
+      </a>
+    </div>
+    <svg class="sprig" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 118 C50 80 44 50 50 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M50 70 C34 62 24 46 22 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M50 44 C64 38 74 24 76 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="50" cy="8" r="4" fill="currentColor"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">EMPATHY</p>
+      <h2>こんな「濡れた髪のとかし方」、心当たりありませんか。</h2>
+      <ul class="checks">
+        <li>お風呂上がり、濡れた髪を根元から一気にとかしている</li>
+        <li>引っかかったら、そのまま力を入れて通してしまう</li>
+        <li>ブラシにいつも何本か髪が残っている</li>
+        <li>今のブラシをいつ買ったか、正直思い出せない</li>
+        <li>トリートメントは何本も試したのに、ブラシは替えたことがない</li>
+        <li>タオルで擦らないようには気をつけている</li>
+        <li>1日に何回とかしているか、数えたことがない</li>
+      </ul>
+      <p>一つでも頷いたなら、あと3分だけ読み進めてほしいんです。</p>
+      <p>私はこのシリーズで、14回かけてアイテムを揃えてきました。合計¥70,538。前回はカラーをした日のことまで手が届いて、「いつもの日」以外の話もできました。</p>
+      <p>そのあと、14本を「<strong>何をするための道具か</strong>」、つまり動詞で並べ直してみたんです。</p>
+      <p>塗る・つける9本(洗い流さないトリートメント、バーム、ヘアマスク、香水オイル、スカルプエッセンス、プレトリートメント、トリートメント、うねり用の乳液、カラー後のスプレー)。洗う1本(シャンプー)。もみほぐす1本(スカルプブラシ)。乾かす1本(ドライヤー)。拭く1本(タオル)。被る1本(ナイトキャップ)。</p>
+      <p><strong>「とかす」が、14回いちども出てきません。</strong>ブラシなら第7弾で紹介しています。でもあれは頭皮をもみほぐすための道具で、絡まった髪をほどくためのものではありませんでした。</p>
+
+      <figure class="shot">
+        <img src="images/01_eyecatch.png" alt="洗面台に置かれた濡れ髪用ブラシとタオルのイメージ" loading="lazy">
+        <figcaption>塗る、洗う、乾かす、拭く、被る。14回目までに出てこなかった動詞の話です。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">IF NOTHING CHANGES</p>
+      <h2>正直に言うと、いちばん引っかかったのはブラシの古さじゃありません。<br>「濡れているときがいちばん無防備」と2回書いた私が、その時間に何をしていたか、です。</h2>
+      <p>第10弾のドライヤーの回と、第11弾のタオルの回。私は2回続けて「髪は濡れているときがいちばん無防備だとよく言われる」と書いています。第11弾では、タオルでゴシゴシ擦るのをやめました。挟んで押さえるだけにしました。</p>
+      <p>それで、そのあと何をしていたか。同じ濡れた髪を、昔からある普通のブラシで、<strong>根元から一気に</strong>とかしていました。引っかかったら、そのまま力で通す。ブラシにはいつも何本か髪が残っていました。</p>
+      <p>つまり<strong>タオルで擦らないようにした数分後に、同じ髪を引っ張っていた</strong>わけです。</p>
+      <p>ここが厄介なところで、とかすのは一瞬なんです。数秒で終わるので、ヘアケアのうちに数えていない。でも数えてみると、タオルのあと、乾かしながら、朝、出かける前。私は1日に少なくとも4回とかしていました。1年なら<strong>1,460回</strong>です。</p>
+      <p>第12弾では、時間でいちばん長く髪に触れているのは枕だと書きました。回数でいちばん多く触れているのは、たぶんブラシです。なのに私のブラシは、何年前に買ったか思い出せないものでした。</p>
+      <p>半年後も、たぶん同じです。棚には16本目、17本目の新しいアイテムが増えていて、それでも毎晩、タオルのあとの数十秒だけは、昔と同じ手つきで引っ張っている。</p>
+      <p>いちばんもったいないのは、ここです。第1〜14弾で、髪に<strong>何を</strong>するかは14通り出そろっているんです。出ていないのは、いちばん回数が多い動詞のほうだけ。</p>
+      <p>──ただ、先に言っておきます。ブラシで傷みは治りません。減らせるかもしれないのは、とかすときに引っ張る負担だけです。その線引きは後半で正直に書きます。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">THE TURN</p>
+      <h2>そこでたどり着いたのが、「タングルティーザー ザ・ウェットディタングラーPro」でした。</h2>
+      <p>ここで一つ、はっきりさせておきたいことがあります。第1〜14弾で紹介してきたものは、14本とも「とかす」以外の動詞の道具でした。</p>
+      <p>これは欠点ではありません。塗る、洗う、乾かす、拭く。どれもケアの土台です。14本とも、その役割を果たしてくれました。</p>
+      <p>一方で今回のものは、メーカーが<strong>「濡れ髪専用」</strong>と言い切っているブラシです。乾いた髪を整えるためでも、乾かしながら形を作るためでもない。タオルのあと、ドライヤーの前。<strong>いちばん無防備な時間だけに絞った道具</strong>です。</p>
+      <p>言ってしまえば、第1〜14弾が"髪に何をするか"の14通り。そしてこの1本が、14回いちども出てこなかった15個目の動詞です。</p>
+      <p class="lede">私がこの1本を選んだ理由は、大きく3つ。</p>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <span class="num">壱</span>
+          <h3>14本を動詞で並べて、唯一空いていた「とかす」</h3>
+          <p>塗る9本、洗う・もみほぐす・乾かす・拭く・被るが1本ずつ。1日でいちばん回数が多い動作だけが、14回とも抜けていました。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">弐</span>
+          <h3>「濡れているとき」に絞っている</h3>
+          <p>第10弾・第11弾で2回書いた「濡れているときがいちばん無防備」の続きになります。タオル(第11弾)でほどく前を見直したなら、次はほどく道具そのものです。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">参</span>
+          <h3>ブラシは2本目。でも髪に向けたのは初めて</h3>
+          <p>第7弾のスカルプブラシは、頭皮をもみほぐすための道具でした。絡まった髪をほどくためのブラシは、シリーズで初めてです。</p>
+        </div>
+      </div>
+      <p style="margin-top:28px;">「何をするか」から、「いちばん何回しているか」へ。14回かけて髪にすることを揃えてきたからこそ、数えていなかった1つに目が向きました。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※濡れた髪の解きほぐしや髪への負担の軽減に関する記載はメーカーの公表内容に基づくものであり、効果を保証するものではありません。感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">THE PRODUCT</p>
+      <h2>タングルティーザー ザ・ウェットディタングラーProとは</h2>
+      <p>タングルティーザーは、絡まった髪をほどくブラシで知られるイギリス発のブランドです。その中の「ザ・ウェットディタングラー」が濡れた髪用のモデルで、今回のProは<strong>サロンワーク向けの大きめサイズ</strong>として出ています。</p>
+      <p>ブランドとしてはシリーズ初登場です。第1〜14弾で登場したオラプレックス、ケラスターゼ、リンク、LOA、資生堂プロフェッショナル、SINN PURETE、ルベル、クレイツ、ハホニコ、KINUJO、ウエラとは重なりません。</p>
+
+      <figure class="shot">
+        <img src="images/04_product_photo.png" alt="タングルティーザー ザ・ウェットディタングラーPro(リビングコーラル)" loading="lazy">
+        <figcaption>THE WET DETANGLER Pro(リビングコーラル)/ タングルティーザー</figcaption>
+      </figure>
+
+      <div class="spec">
+        <dl>
+          <dt>タイプ</dt><dd>濡れ髪専用のヘアブラシ(メーカー表記)</dd>
+          <dt>サイズ</dt><dd>ブラシ面がスタンダードサイズより20%大きい、大きめサイズ</dd>
+          <dt>価格</dt><dd class="price-tag">¥2,495(税込/リビングコーラル・ブラックグロス)、カプリブルーのみ¥2,895。希望小売価格¥2,750(カプリブルー¥3,190)から割引適用中(2026年10月7日時点)</dd>
+          <dt>色</dt><dd>リビングコーラル / ブラックグロス / カプリブルー</dd>
+          <dt>構造</dt><dd>日本・UK・EUで特許を取得している「長短二段構造」のブラシ(メーカー表記)</dd>
+          <dt>考え方</dt><dd>濡れた髪の間をするりと通り、無理な力をかけずに毛先までやさしく解きほぐす。引っ張らずにブラッシングでき、髪への負担を軽減する、とされています</dd>
+          <dt>キューティクル</dt><dd>濡れてダメージを受けやすくなったキューティクルも整えながらブラッシングできる、とのこと</dd>
+          <dt>持ち手</dt><dd>大きく、人間工学に基づいた設計。濡れた手でも滑りにくい、とメーカーは説明しています</dd>
+          <dt>使い方</dt><dd>タオルドライ後の濡れた髪に。シャンプー後のトリートメントを根元から毛先まで均一に塗布する使い方もできる、とのこと</dd>
+          <dt>向いている相手</dt><dd>髪の量が多い方やロングヘアの方が自分でとかす際にもおすすめ、とメーカーは説明しています</dd>
+          <dt>ブランド</dt><dd>タングルティーザー・シリーズ初登場</dd>
+        </dl>
+      </div>
+
+      <p>この1本のいちばんの特徴は、<strong>工程が1つも増えない</strong>という点です。これまでの回は、何かを1本足すたびに手順が1つ増えていました。今回は、今使っているブラシと入れ替えるだけ。第11弾のタオルで押さえて、このブラシでほどいて、第1弾のNo.6を塗って、第10弾のドライヤーで乾かす。順番はこれまでと同じです。</p>
+      <p>そして、選ぶときに私が見たのは「特許」という言葉の響きではありませんでした。<strong>商品ページに、ピンを真横から写した写真が載っていること</strong>です。長いピンと短いピンが交互に並んでいるのが、はっきり分かる。「二段構造」が言葉だけでなく、目で確かめられる。</p>
+      <p>スタンダードサイズと並べた比較の図もあって、「20%大きい」もだいたいの見当がつきます。効果のほうは私には測りようがないので、こういう<strong>見て確かめられる仕様</strong>があると信用しやすいです。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記の構造・仕上がり・負担の軽減に関する記載はすべてメーカーの公表内容に基づくものです。効果を保証するものではなく、感じ方には個人差があります。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4589485763632" target="_blank" rel="noopener sponsored">
+          商品ページで詳細・価格を確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHY IT WORKS</p>
+      <h2>「で、結局ブラシを替えると何が変わるの?」に、飾らず正直に答えます。</h2>
+
+      <div class="features">
+        <div class="feature">
+          <div class="f-title">濡れ髪専用、と用途が絞られている</div>
+          <div class="f-chain"><span class="step">だから</span> いちばん無防備な時間のためだけの道具になる ── <span class="step">つまり</span> 第10・11弾で2回書いたことの、続きに手が入る</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">長短二段構造(メーカー表記)</div>
+          <div class="f-chain"><span class="step">だから</span> 引っ張らずにとかせる設計だと説明されている ── <span class="step">つまり</span> 「引っかかったら力で通す」という癖を、道具の側で減らせる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">ブラシ面がスタンダードより20%大きい</div>
+          <div class="f-chain"><span class="step">だから</span> 一度に多くの髪をとかせる ── <span class="step">つまり</span> 毛量が多い人・ロングの人ほど、往復の回数が減る</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">持ち手が大きく、濡れた手でも滑りにくい</div>
+          <div class="f-chain"><span class="step">だから</span> 浴室の中でも扱える ── <span class="step">つまり</span> 洗面台でもお風呂でも、置き場所を選ばない</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">トリートメントを根元から毛先まで均一に塗布できる</div>
+          <div class="f-chain"><span class="step">だから</span> 手で塗っていたものを、ブラシで行き渡らせられる ── <span class="step">つまり</span> 第9弾のトリートメントや第4弾のマスクを、置き換えずに使い方だけ変えられる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">今のブラシと入れ替えるだけ</div>
+          <div class="f-chain"><span class="step">だから</span> 新しい手順が1つも増えない ── <span class="step">つまり</span> 続けるための意志がほとんど要らない</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">塗るものではなく、道具</div>
+          <div class="f-chain"><span class="step">だから</span> 使っても減らない ── <span class="step">つまり</span> 塗るもののように、使い切って買い直すことがない</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">構造が写真で確かめられる</div>
+          <div class="f-chain"><span class="step">だから</span> 買う前に、ピンの形を自分の目で見られる ── <span class="step">つまり</span> 良さそうな言葉だけで判断しなくて済む</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;">14回かけて「何をするか」を揃えてきたからこそ、15回目でようやく「何回しているか」に目が向きました。これは、14本ぶん遠回りしたからこそ出てきた、私のいちばん正直な実感です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記は仕様と使い勝手に関する説明です。効果には個人差があり、特定の結果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">WHY TRUST IT</p>
+      <h2>正直に言うと、私は「髪にやさしい」と書いてあるだけでは商品を信じないタイプです。</h2>
+      <p class="lede">それでもこの1本を紹介したいと思えたのは、こんな背景があるからです。</p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>効果ではなく、回数とタイミングで選べる</h3>
+          <p>引っ張る負担がどれだけ減るかは、私には測りようがありません。だから主な判断材料にしていません。私が納得したのは「1日でいちばん回数が多い」「いちばん無防備なときに使う」という、自分で数えられる前提のほうです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>構造を、写真で確かめられる</h3>
+          <p>ピンを真横から写した写真で、長いピンと短いピンが交互に並んでいるのが見えます。スタンダードサイズとの比較図もある。「特許」「二段構造」が言葉だけで終わっていないページです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>「治す」ではなく「負担を軽減」と書いている</h3>
+          <p>メーカーの説明は「髪への負担を軽減」です。傷みが治るとは書いていない。書ける範囲を超えていない説明は、それ自体が信用材料になると思っています。</p>
+        </div>
+        <div class="trust-item">
+          <h3>「濡れ髪専用」と、用途を絞っている</h3>
+          <p>何にでも使える、とは書いていません。乾いた髪にも、ブローにも、とは言わずに「濡れ髪専用」。使う場面を自分で限定している説明は、読む側としては判断しやすいです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>¥2,495はシリーズで3番目に安い</h3>
+          <p>第1弾¥3,740、第2弾¥4,180、第3弾¥4,290、第4弾¥7,260、第5弾¥8,800、第6弾¥5,776、第7弾¥2,200、第8弾¥3,740、第9弾¥2,950、第10弾¥9,350、第11弾¥894、第12弾¥9,350、第13弾¥3,410、第14弾¥4,598。合計¥70,538、平均¥5,038。今回はその半分以下です。</p>
+        </div>
+        <div class="trust-item">
+          <h3>美容室の公式通販で、正規品として扱われている</h3>
+          <p>ALBUM ONLINE STOREは美容室ALBUMの公式通販で、商品ページにも【正規品】と書かれています。今回は化粧品ではなく道具ですが、私は毎回ここを確認してから紹介しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHAT PEOPLE NOTICE</p>
+      <h2>こんな使用感(声の傾向)</h2>
+      <p>髪の長さも量も、絡まりやすさも人それぞれです。だからこそ、盛らずに、分かったことだけを整理してみます。</p>
+
+      <div class="voice">
+        <div class="voice-item">
+          <p class="v-label">引っかかりについて</p>
+          <p>いちばん違いを感じたのは、とかしている途中で手が止まる回数でした。ただ、それが髪の負担としてどれだけの差なのかは、自分では測れません。そこは断言しません。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">大きさについて</p>
+          <p>手に取って最初に思ったのは「大きい」でした。肩より長いと、一度に取れる量が多くて楽です。ショートだと持て余すかもしれません。持ち歩き用ではないと思います。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">お風呂の中で使うことについて</p>
+          <p>トリートメントをなじませるときに、そのままとかす使い方がメーカーの説明にあります。手で揉み込むより、毛先まで行き渡っている感じはしました。今のトリートメントを替える必要はありません。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">持ち手について</p>
+          <p>濡れた手でも滑りにくい、とメーカーは書いています。浴室で使うなら、ここは地味に大事だと思いました。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">手入れについて</p>
+          <p>ピンの間に髪が残るのは、どのブラシでも同じです。濡れた場所で使うものなので、私は使ったら髪を取って、水気を切ってから置いています。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">期待しすぎないほうがいい部分</p>
+          <p>ここは正直に書きます。<strong>ブラシで傷みは治りません。</strong>切れ毛や枝毛がなくなるわけでもない。減らせるかもしれないのは、とかすときに引っ張る負担だけです。それと、乾いた髪のスタイリング用でもありません。</p>
+        </div>
+      </div>
+      <p class="voice-foot">もちろん、髪の長さも量も質も人それぞれ。だからこそ、「自分は1日に何回、どうやってとかしているか」で考えてみる価値があると思っています。<br>※上記は一般的な使用感の傾向および個人の感想であり、効果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>よくある質問</h2>
+
+      <div class="faq">
+        <details>
+          <summary>乾いた髪にも使えますか?</summary>
+          <div class="a">メーカーは「濡れ髪専用」としています。この回は、タオルで拭いたあとの濡れた髪をほどく道具として紹介しています。乾いた髪を整えるブラシは別に考えてください。</div>
+        </details>
+        <details>
+          <summary>ドライヤーで乾かしながら使えますか?</summary>
+          <div class="a">乾かしながら形を作るブローブラシとしての使い方は、メーカーの説明にはありません。タオルのあと、ドライヤーの前にほどくもの、と考えてください。</div>
+        </details>
+        <details>
+          <summary>ショートヘアでも使えますか?</summary>
+          <div class="a">使えなくはないと思いますが、ブラシ面がスタンダードより20%大きいサイズです。メーカーも、髪の量が多い方やロングヘアの方におすすめとしています。短い方には大きすぎると感じるかもしれません。</div>
+        </details>
+        <details>
+          <summary>第7弾のスカルプブラシとは何が違いますか?</summary>
+          <div class="a">役割が違います。第7弾は頭皮をもみほぐすための道具で、今回は濡れた髪の絡まりをほどくためのブラシです。両方使っても重なりません。</div>
+        </details>
+        <details>
+          <summary>お風呂の中で使ってもいいですか?</summary>
+          <div class="a">はい。メーカーは、シャンプー後のトリートメントを根元から毛先まで均一に塗布する使い方も紹介しています。持ち手も濡れた手で滑りにくい設計とのことです。</div>
+        </details>
+        <details>
+          <summary>色によって違いはありますか?</summary>
+          <div class="a">価格が違います。リビングコーラルとブラックグロスが¥2,495、カプリブルーが¥2,895です(2026年10月7日時点)。色による機能の違いは、商品ページでは説明されていません。</div>
+        </details>
+        <details>
+          <summary>今のケアは替えなくていいですか?</summary>
+          <div class="a">替えなくて大丈夫です。今使っているブラシと入れ替えるだけで、トリートメントもドライヤーもタオルもそのままです。工程は1つも増えません。</div>
+        </details>
+        <details>
+          <summary>使うと切れ毛や枝毛がなくなりますか?</summary>
+          <div class="a">いいえ。ブラシは髪の傷みを補修するものではありません。減らせるかもしれないのは、とかすときに引っ張る負担だけです。もう傷んでいる毛先のことは、第1弾・第4弾・第8弾・第9弾のほうで扱っています。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">ABOUT THE PRICE</p>
+      <h2>価格の考え方</h2>
+      <p>タングルティーザー ザ・ウェットディタングラーProは ¥2,495(税込)です。カプリブルーだけ¥2,895。2026年10月7日時点で、希望小売価格の¥2,750から割引が入っています。</p>
+      <p>これまでの14本を並べてみます。¥3,740 / ¥4,180 / ¥4,290 / ¥7,260 / ¥8,800 / ¥5,776 / ¥2,200 / ¥3,740 / ¥2,950 / ¥9,350 / ¥894 / ¥9,350 / ¥3,410 / ¥4,598。合計¥70,538、1本あたりの平均は¥5,038。<strong>今回はその半分以下で、シリーズで3番目に安い回です。</strong></p>
+      <p>そしてもう一度、比率の話をさせてください。私はこのシリーズで、14本・合計¥70,538を「髪に何をするか」に使ってきました。同じ期間、1日でいちばん回数が多い「とかす」のために使った金額は¥0です。──毎回この計算をして毎回笑っているのですが、私はどうやら、毎回どこか1箇所を完全に空白にしたまま買い物をしているらしいんです。</p>
+      <p>しかも、ブラシは塗るものと違って減りません。1日4回とかすなら、1年で1,460回。使い切って買い直す、ということがない道具です。</p>
+
+      <div class="price-box">
+        <div class="amount">¥2,495<span>/ 税込。14本の平均¥5,038の半分以下</span></div>
+        <p style="margin-top:14px;">買う前に1つだけ確認してください。今のブラシで、濡れた髪をとかすときに<strong>引っかかるたびに力を入れているか</strong>。引っかからないなら、急いで替える理由はありません。</p>
+        <p>それともう1つ。ALBUMの送料無料は<strong>1注文あたり税込3,980円以上</strong>なので、ブラシ1本だとそこに届きません。何か補充するものがあるときに一緒に、が無駄がないと思います。</p>
+      </div>
+
+      <p class="price-note">※価格・在庫・送料条件は変動します。最新情報は必ず商品ページでご確認ください。使用感は髪の長さ・量・髪質によって大きく異なります。</p>
+
+      <div class="cta-row" style="margin-top:30px;">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4589485763632" target="_blank" rel="noopener sponsored">
+          最新の価格・在庫を商品ページで確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">BEFORE YOU GO</p>
+      <h2>安心して試すために</h2>
+      <p>「結局また1本増えるだけでは?」その疑いは、まっとうだと思います。私も14回ぶん、髪にすることを足し続けてきました。</p>
+      <p>だからこの回も、買う前に無料でできることを先に書いておきます。どれもよく言われることです。</p>
+      <p><strong>毛先からほどいて、少しずつ上へ進む。一度にたくさんの毛束を取らない。引っかかったら力で通さず、その少し下からほどき直す。トリートメントがついている状態のほうが通りやすい。</strong>この4つはお金がかかりません。私はずっと、根元から一気に下ろしていました。</p>
+      <p>道具を替える前に、まず順番を逆にするだけでも違うと思います。そのうえで、それでも今のブラシが毎回引っかかるなら。そのときに初めて、濡れた髪のための1本を考えてもらえればいいと思っています。</p>
+      <p>そして、いきなり15個すべてを揃える必要もまったくありません。第1〜14弾で紹介したケアを、まず自分のペースで試す。そのうえで「髪にすることはひと通りやったな」と思えたときに、いちばん回数の多い数十秒を思い出してもらえれば十分です。</p>
+      <p>髪にすることは14回で揃いました。15回目は、いちばん何回もしていることです。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※本商品は髪の傷みを補修するものではありません。とかし方に関する記載は一般に言われている内容です。</p>
+
+      <div class="series-nav">
+        シリーズで読む:
+        <a href="../round1/">第1弾・オラプレックス No.6(洗い流さないトリートメント)</a> ／
+        <a href="../round2/">第2弾・ケラスターゼ バン セラピュート(シャンプー)</a> ／
+        <a href="../round3/">第3弾・THE HAIR BALM 997(スタイリングバーム)</a> ／
+        <a href="../round4/">第4弾・ケラスターゼ RE マスク セラピュート(集中ヘアパック)</a> ／
+        <a href="../round5/">第5弾・LOA THE OIL PARFUM ザ ネロリ(香水オイル)</a> ／
+        <a href="../round6/">第6弾・アデノバイタル アドバンスト スカルプエッセンス(頭皮ケア)</a> ／
+        <a href="../round7/">第7弾・ハートロック スカルプブラシ(頭皮ケアの道具)</a> ／
+        <a href="../round8/">第8弾・オラプレックス No.3 ヘアパーフェクター(洗う前のプレケア)</a> ／
+        <a href="../round9/">第9弾・イオ クリーム メルトリペア(毎日のインバストリートメント)</a> ／
+        <a href="../round10/">第10弾・クレイツ イオン ドライ SD-1200(乾かす)</a> ／
+        <a href="../round11/">第11弾・ハホニコ ヘアドライマイクロファイバータオル(拭く)</a> ／
+        <a href="../round12/">第12弾・KINUJO シルクリッチ ナイトキャップ(寝る)</a> ／
+        <a href="../round13/">第13弾・サブリミック エアリーフロー リファイニングフリュイド(うねり)</a> ／
+        <a href="../round14/">第14弾・アルタイム カラー ミラクルカラーシーラー(カラーをした日)</a> ／
+        第15弾・タングルティーザー ザ・ウェットディタングラーPro(とかす・このページ)
+      </div>
+    </div>
+  </section>
+
+  <section class="beat deep final">
+    <div class="wrap">
+      <p class="eyebrow">LAST WORD</p>
+      <h2>塗る、洗う、もみほぐす、乾かす、拭く、被る。14回かけて、髪にすることはひと通り出揃ったつもりでした。<br>でも、1日でいちばん回数が多い「とかす」だけが、一度も出てきていません。</h2>
+      <p>しかもそれは、自分で2回も「いちばん無防備」と書いた、濡れた髪の上でのことでした。</p>
+      <p>このまま16本目の新しいアイテムを塗り足して、「まだ足りないのかも」と思いながらまた半年過ごすのか。それとも今夜、タオルのあとの数十秒だけ、毛先からほどいてみるのか。</p>
+      <p>毛先から。少しずつ。引っかかったら下から。ここまではお金がかかりません。今夜から試せます。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4589485763632" target="_blank" rel="noopener sponsored">
+          今すぐ ALBUM ONLINE STORE で詳細を見る <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ps">
+        <p class="eyebrow">追伸</p>
+        <p>正直に言うと、この1本も「魔法の1本」ではありません。化粧品ですらなく、ただのブラシです。傷みを治すものでも、切れ毛をなくすものでもない。使った翌朝に別人の髪になるわけでもありません。感じ方には個人差があります。</p>
+        <p>それでも私がこれを紹介したいのは、「<strong>時間でいちばん長く髪に触れているのは枕、回数でいちばん多く触れているのはブラシ</strong>」を、15回目にしてやっと言葉にできたからです。第11弾では「どう扱っているか」、第12弾では「意志が届かない時間」、第13弾では「直そうとしている問題が違う」、第14弾では「扱いを変えるべき日」と書きました。今回わかったのは、そのどれもが<strong>何をするか</strong>の話で、<strong>何回しているか</strong>は一度も数えていなかった、ということでした。</p>
+        <p>15回に分けて紹介してきましたが、この15個を全部揃える必要はまったくありません。とくに今回は、今のブラシで引っかからないなら急ぐ理由がない回です。送料のこともあるので、何か補充するときについでに、で十分です。市販品ジプシーだった頃の私は、何をつけるかばかり探していました。何回触っているかを数える、という発想がそもそもなかった。</p>
+        <p>もし、補修もドライヤーもタオルも見直したのに、濡れた髪をとかすたびにまだブラシが引っかかっているなら。足りない最後の1つは、16本目の塗るものではなく、<strong>タオルとドライヤーの間の数十秒</strong>のほうかもしれません。今夜お風呂から上がったら、1回だけ数えてみてください。それが今回いちばんお伝えしたいことです。</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4589485763632" target="_blank" rel="noopener sponsored">
+            ウェットディタングラーProを見てみる <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="brand">サロン専売品ラボ</p>
+    <p>本ページはアフィリエイトプログラム(A8.net)を利用した商品紹介であり、記載内容は一般的な商品情報および個人の使用感に基づくものです。本商品はヘアブラシであり、髪の傷みを補修する、切れ毛・枝毛がなくなる等の効果を保証するものではありません。濡れた髪の解きほぐし・髪への負担の軽減・キューティクルの整え・頭皮への刺激・長短二段構造と特許・サイズ・持ち手の設計・トリートメントの塗布に関する記載は、すべてメーカーの公表内容に基づく記載です。メーカーは濡れ髪専用としています。使用感は、髪の長さ・量・髪質によって大きく異なります。とかし方に関する記載は一般に言われている内容です。価格・在庫・送料条件・仕様は変更される場合があるため、最新情報は販売ページをご確認ください。</p>
+  </div>
+</footer>
+
+</body>
+</html>
