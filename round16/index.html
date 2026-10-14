@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オー ヘア スティックバーム｜サロン専売品ラボ</title>
+<style>
+  :root {
+    --ink: #212b21;
+    --ink-soft: #4c5a4a;
+    --paper: #f6f7f0;
+    --paper-raise: #ffffff;
+    --sage: #7c9473;
+    --sage-deep: #47593f;
+    --sage-line: #c7d2bd;
+    --mist: #e9ede2;
+    --clay: #b5674a;
+    --clay-deep: #954f37;
+    --clay-tint: #f1ded3;
+    --shadow: 0 1px 2px rgba(33, 43, 33, 0.06);
+    --measure: 38em;
+    --radius: 3px;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #e9ecE2;
+    --ink-soft: #b9c2b2;
+    --paper: #171d15;
+    --paper-raise: #1e251b;
+    --sage: #9bb391;
+    --sage-deep: #c3d4b9;
+    --sage-line: #3a462f;
+    --mist: #212a1d;
+    --clay: #dd9270;
+    --clay-deep: #eaab8b;
+    --clay-tint: #2c211b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e9ecE2;
+      --ink-soft: #b9c2b2;
+      --paper: #171d15;
+      --paper-raise: #1e251b;
+      --sage: #9bb391;
+      --sage-deep: #c3d4b9;
+      --sage-line: #3a462f;
+      --mist: #212a1d;
+      --clay: #dd9270;
+      --clay-deep: #eaab8b;
+      --clay-tint: #2c211b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Noto Sans JP", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+
+  h1, h2, h3 {
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    color: var(--sage-deep);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wrap-wide {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  p { margin: 0 0 1.1em; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---- PR bar ---- */
+  .prbar {
+    background: var(--sage-deep);
+    color: var(--paper-raise);
+  }
+  .prbar .wrap-wide {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #eef1e8;
+  }
+  .prbar strong { color: var(--clay-tint); font-weight: 700; }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    padding: 76px 0 88px;
+    background: linear-gradient(180deg, var(--mist) 0%, var(--paper) 78%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -80px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--sage-line), transparent 70%);
+    opacity: 0.55;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .hero .prehead {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    box-shadow: inset 0 -0.42em 0 var(--clay-tint);
+  }
+  .hero .sub {
+    max-width: 32em;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+  .sprig {
+    margin-top: 40px;
+    width: 96px;
+    height: auto;
+    color: var(--sage);
+  }
+
+  /* ---- CTA button ---- */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 15px 30px;
+    background: var(--clay);
+    color: #fff8f3;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: var(--clay-deep); transform: translateY(-1px); }
+  .cta:active { transform: translateY(0); }
+  .cta .arrow { font-size: 1.05em; }
+  .cta-row { display: flex; justify-content: flex-start; }
+  .cta-row.center { justify-content: center; }
+  .price-note {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Section rhythm ---- */
+  section.beat {
+    padding: 68px 0;
+  }
+  section.beat.tint { background: var(--mist); }
+  section.beat.deep {
+    background: var(--sage-deep);
+    color: #eef1e8;
+  }
+  section.beat.deep h2 { color: #fff; }
+  section.beat.deep .eyebrow { color: var(--clay-tint); }
+  section.beat.deep p { color: #dbe3d3; }
+
+  .beat h2 {
+    font-size: clamp(1.28rem, 2.6vw, 1.6rem);
+    line-height: 1.6;
+    margin: 10px 0 26px;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Figures (images/ 配下・後で実画像を差し替え) ---- */
+  .shot {
+    margin: 32px 0 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    background: var(--mist);
+  }
+  .shot figcaption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Check list ---- */
+  .checks {
+    list-style: none;
+    margin: 26px 0 24px;
+    padding: 0;
+  }
+  .checks li {
+    position: relative;
+    padding: 12px 0 12px 32px;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.96rem;
+    color: var(--ink);
+  }
+  .checks li:first-child { border-top: 1px solid var(--sage-line); }
+  .checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 12px;
+    color: var(--clay);
+    font-weight: 700;
+  }
+
+  /* ---- Reasons / cards ---- */
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .reason-card {
+    background: var(--paper-raise);
+    border: 1px solid var(--sage-line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+  }
+  .reason-card .num {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 1.7rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .reason-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .reason-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Spec table ---- */
+  .spec {
+    margin: 30px 0;
+    border-top: 1px solid var(--sage-line);
+  }
+  .spec dl {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    margin: 0;
+  }
+  .spec dt, .spec dd {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--sage-line);
+    font-size: 0.92rem;
+  }
+  .spec dt {
+    color: var(--sage);
+    font-weight: 700;
+  }
+  .spec dd { margin: 0; }
+
+  .price-tag {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- Feature rows ---- */
+  .feature {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--sage-line);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .feature:first-of-type { border-top: 1px solid var(--sage-line); }
+  .feature .f-title { font-weight: 700; color: var(--ink); }
+  .feature .f-chain {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+  .feature .f-chain span.step { color: var(--sage); }
+
+  /* ---- Trust grid ---- */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 30px;
+  }
+  .trust-item {
+    padding: 20px;
+    background: var(--paper-raise);
+    border-radius: var(--radius);
+    border: 1px solid var(--sage-line);
+  }
+  .trust-item h3 {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+  .trust-item p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  /* ---- Voice quotes ---- */
+  .voice {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .voice-item {
+    padding-left: 18px;
+    border-left: 2px solid var(--sage);
+  }
+  .voice-item .v-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .voice-item p { font-size: 0.94rem; margin: 0; }
+  .voice-foot {
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---- FAQ ---- */
+  .faq { margin-top: 28px; border-top: 1px solid var(--sage-line); }
+  .faq details {
+    border-bottom: 1px solid var(--sage-line);
+  }
+  .faq summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    font-size: 0.96rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before {
+    content: "Q";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--clay);
+    flex: none;
+  }
+  .faq summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--sage);
+    font-weight: 400;
+  }
+  .faq details[open] summary::after { content: "–"; }
+  .faq .a {
+    display: flex;
+    gap: 12px;
+    padding: 0 4px 18px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .faq .a::before {
+    content: "A";
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage);
+    flex: none;
+  }
+
+  /* ---- Price reflection ---- */
+  .price-box {
+    margin-top: 28px;
+    padding: 26px 24px;
+    background: var(--clay-tint);
+    border-radius: var(--radius);
+  }
+  .price-box .amount {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    font-size: 2rem;
+    color: var(--clay-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .price-box .amount span { font-size: 0.9rem; margin-left: 6px; color: var(--ink-soft); font-family: inherit; }
+
+  /* ---- Final ---- */
+  .final h2 { color: #fff; }
+  .ps {
+    margin-top: 46px;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+  }
+  .ps .eyebrow { color: var(--clay-tint); }
+
+  footer {
+    padding: 40px 0 56px;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  footer .brand {
+    font-family: "Hiragino Mincho ProN", "YuMincho", serif;
+    color: var(--sage-deep);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  /* ---- Series nav (round1〜7 相互リンク) ---- */
+  .series-nav {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--sage-line);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .series-nav a { color: var(--sage-deep); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .spec dl { grid-template-columns: 7em 1fr; }
+    section.beat { padding: 52px 0; }
+    .hero { padding: 56px 0 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="prbar">
+  <div class="wrap-wide">
+    【PR】本ページはアフィリエイトプログラム(A8.net)を利用して商品を紹介しています。ページ内リンクからの購入により、当方に<strong>成果報酬</strong>が発生する場合があります。記載内容は特定の効果効能を保証するものではなく、一般的な商品情報と個人の使用感に基づいています。静電気を防止する作用・保湿・パサつきの軽減・ツヤ・セット力に関する記載はすべて<strong>メーカーの公表内容</strong>に基づくもので、感じ方には個人差があります。<strong>静電気の起きやすさは、湿度や服の素材などで大きく変わります。</strong>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="prehead">これまでの15本を「どこで使うものか」で並べ直してみました。浴室5本、洗面所・脱衣所9本、寝室1本。</p>
+    <h1>15本ぜんぶ、家の中で使うものでした。<br><em>家を出てからの11時間</em>、髪には何もしていなかった。</h1>
+    <p class="sub">オー ヘア スティックバーム。¥2,420(税込・4g)。前回、私はブラシについて「持ち歩きには向きません」と書きました。書いたあとで気づいたんです。15本の中に、持ち歩けるものは1本もない。──<strong>髪がいちばん乱れるのは、たぶん家の外なのに。</strong></p>
+    <div class="cta-row">
+      <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4580596720866" target="_blank" rel="noopener sponsored">
+        ヘア スティックバームを見てみる <span class="arrow">→</span>
+      </a>
+    </div>
+    <svg class="sprig" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M50 118 C50 80 44 50 50 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M50 70 C34 62 24 46 22 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M50 44 C64 38 74 24 76 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="50" cy="8" r="4" fill="currentColor"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">EMPATHY</p>
+      <h2>こんな「家を出たあとの髪」、心当たりありませんか。</h2>
+      <ul class="checks">
+        <li>朝は整えて出たのに、昼過ぎには分け目や顔まわりが浮いている</li>
+        <li>マフラーやニットを脱いだ瞬間、髪がパチッと広がる</li>
+        <li>外で髪が乱れても、指で押さえてごまかすしかない</li>
+        <li>バッグの中に、髪のためのものが何も入っていない</li>
+        <li>ヘアケア用品は、全部洗面所かお風呂に置いてある</li>
+        <li>朝、根元が少し湿ったまま家を出ることがある</li>
+        <li>暖房の効いた部屋にいると、毛先がパサついてくる気がする</li>
+      </ul>
+      <p>一つでも頷いたなら、あと3分だけ読み進めてほしいんです。</p>
+      <p>私はこのシリーズで、15回かけてアイテムを揃えてきました。合計¥73,033。前回は、1日でいちばん回数が多い「とかす」の話まで手が届きました。</p>
+      <p>そのとき私は、ブラシについて「大きいので<strong>持ち歩きには向きません</strong>」と書いています。書いたあとで、15本を「<strong>どこで使うものか</strong>」で並べ直してみたんです。</p>
+      <p>浴室5本(シャンプー、ヘアマスク、スカルプブラシ、プレトリートメント、トリートメント)。洗面所・脱衣所9本(洗い流さないトリートメント、バーム、香水オイル、スカルプエッセンス、ドライヤー、タオル、うねり用の乳液、カラー後のスプレー、濡れ髪用のブラシ)。寝室1本(ナイトキャップ)。</p>
+      <p><strong>15本ぜんぶ、家の中で使うものでした。</strong>バッグに入れて持って出られるものは、1本もありません。</p>
+
+      <figure class="shot">
+        <img src="images/01_eyecatch.png" alt="玄関のベンチに置かれたマフラーとスティックバームのイメージ" loading="lazy">
+        <figcaption>浴室、洗面所、寝室。15本は全部、家の中に置いてあります。16回目は、玄関の外の話です。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">IF NOTHING CHANGES</p>
+      <h2>正直に言うと、いちばん引っかかったのは「外で髪が乱れること」じゃありません。<br>家の外にいる時間のほうが長いのに、15回とも家の中の話しかしていなかったことです。</h2>
+      <p>私の場合、平日は家を出てから帰るまで<strong>11時間</strong>くらいあります。平日だけで週55時間。15本のケアは、全部「家を出る前」か「帰ってから」で、その間は何もしていませんでした。</p>
+      <p>でも、髪がいちばん乱れるのは、たぶん家の外です。風、マフラー、ニット、暖房の効いた室内。10月に入って空気が乾いてきて、静電気でパチッとくる季節が始まりました。</p>
+      <p>朝は整えて出たのに、昼過ぎに鏡を見ると、分け目や顔まわりがふわっと浮いている。それを指で押さえて、なんとなくごまかして、席に戻る。<strong>毎年その繰り返し</strong>でした。</p>
+      <p>ここが厄介なところで、家の外の髪は「家に帰ったら直せばいい」と思ってしまうんですよね。でも帰るころには、もう誰にも見られない時間です。人にいちばん長く見られているのは、直せなかった11時間のほうなのに。</p>
+      <p>第12弾では「寝ている間は、意志そのものが使えない」と書きました。家の外は逆で、<strong>直したい気持ちはあるのに、手元に何もない時間</strong>です。</p>
+      <p>半年後も、たぶん同じです。洗面所には17本目、18本目の新しいアイテムが増えていて、それでも外では、指で押さえてごまかしている。</p>
+      <p>いちばんもったいないのは、ここです。第1〜15弾で、家の中の答えはもう出そろっているんです。出ていないのは、<strong>玄関の外</strong>のほうだけ。</p>
+      <p>──ただ、先に言っておきます。これはしっかり固めるためのものではありません。セット力はナチュラルで、4gと小さい。その線引きは後半で正直に書きます。</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">THE TURN</p>
+      <h2>そこでたどり着いたのが、「オー ヘア スティックバーム」でした。</h2>
+      <p>ここで一つ、はっきりさせておきたいことがあります。第1〜15弾で紹介してきたものは、15本とも家の中で使うものでした。</p>
+      <p>これは欠点ではありません。洗う、乾かす、整える。毎日の土台は家の中にあります。15本とも、その役割を果たしてくれました。</p>
+      <p>一方で今回のものは、メーカーが<strong>「手軽に持ち運びやすいスティックサイズ」</strong>と書いているヘアバームです。リップクリームのように繰り出して、気になったところに直接塗る。置き場所は洗面所ではなく、<strong>バッグの中</strong>です。</p>
+      <p>言ってしまえば、第1〜15弾が"家の中でどう整えるか"。そしてこの1本が"家の外でどう直すか"。家の中は15回で揃いました。16回目は、外です。</p>
+      <p class="lede">私がこの1本を選んだ理由は、大きく3つ。</p>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <span class="num">壱</span>
+          <h3>15本を場所で分けて、唯一空いていた「家の外」</h3>
+          <p>浴室5本、洗面所・脱衣所9本、寝室1本。家を出てから帰るまでの11時間に使えるものは、15回とも1本もありませんでした。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">弐</span>
+          <h3>「乾燥する時期」と、メーカーが季節まで書いている</h3>
+          <p>静電気を防止する作用もあるので、乾燥する時期の分け目や顔まわり、もみあげのポイントケアに、という説明です。10月半ばの今に、そのまま合います。</p>
+        </div>
+        <div class="reason-card">
+          <span class="num">参</span>
+          <h3>バームは2本目。でも持って出られるのは初めて</h3>
+          <p>第3弾のTHE HAIR BALM 997は、家で手のひらに取って全体に伸ばす仕上げ用でした。同じバームでも、持って出られるかどうかが違います。</p>
+        </div>
+      </div>
+      <p style="margin-top:28px;">「家の中をどう整えるか」から、「家の外でどう直すか」へ。15回かけて家の中を揃えてきたからこそ、玄関の外に目が向きました。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※静電気を防止する作用・保湿などに関する記載はメーカーの公表内容に基づくものであり、効果を保証するものではありません。感じ方には個人差があります。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">THE PRODUCT</p>
+      <h2>オー ヘア スティックバームとは</h2>
+      <p>オースキンの「オー ヘア スティックバーム」は、髪のデイリーケアとスタイリングができるスティック型のヘアバームです。同じブランドのO BALM(20ml・45ml)と同じ香りの、スティックタイプです。</p>
+      <p>ブランドとしてはシリーズ初登場です。第1〜15弾で登場したオラプレックス、ケラスターゼ、リンク、LOA、資生堂プロフェッショナル、SINN PURETE、ルベル、クレイツ、ハホニコ、KINUJO、ウエラ、タングルティーザーとは重なりません。</p>
+
+      <figure class="shot">
+        <img src="images/04_product_photo.png" alt="オースキン オー ヘア スティックバーム" loading="lazy">
+        <figcaption>O HAIR STICK BALM / オースキン</figcaption>
+      </figure>
+
+      <div class="spec">
+        <dl>
+          <dt>タイプ</dt><dd>スティック型のヘアバーム(繰り出して直接塗るタイプ)</dd>
+          <dt>容量・サイズ</dt><dd>4g / 直径(幅)1.5cm・高さ6.7cm(メーカー表記)</dd>
+          <dt>価格</dt><dd class="price-tag">¥2,420(税込・希望小売価格と同額)/ 15本の平均¥4,869の半分くらい</dd>
+          <dt>持ち運び</dt><dd>手軽に持ち運びやすいスティックサイズ。朝昼晩問わず、気になったときに使える、とメーカーは説明しています</dd>
+          <dt>静電気</dt><dd>静電気を防止する作用もあるので、乾燥する時期の分け目や顔まわり、もみあげなどのポイントケアに、とされています</dd>
+          <dt>スタイリング</dt><dd>ピンと立ったアホ毛や乱れた髪にサッとひと塗り。ナチュラルなセット力で、抜け感のあるスタイルをキープ、との説明</dd>
+          <dt>ケア</dt><dd>メドウフォームやナタネ由来成分をはじめとするバームが、髪を保湿しながら健やかに保つ。パサつきの軽減やツヤ出しも、とのこと</dd>
+          <dt>使い方</dt><dd>気になる部分に直接ひと塗り。全体にセット力が欲しいときは、手のひらに取ってから塗布する(メーカーの説明)</dd>
+          <dt>香り</dt><dd>100%天然精油による、ハーブ調の果実と花の香り(メーカー表記)</dd>
+          <dt>処方</dt><dd>シリコンフリー・パラベンフリー・鉱物油フリー・合成着色料フリー・紫外線吸収剤フリー・合成香料フリー・合成ポリマーフリー(メーカー表記)</dd>
+          <dt>ブランド</dt><dd>オースキン・シリーズ初登場</dd>
+        </dl>
+      </div>
+
+      <p>この1本のいちばんの特徴は、<strong>置き場所が変わる</strong>という点です。これまでの15本は、どれを足しても置き場所は浴室か洗面所か寝室でした。今回は、家のどこにも置きません。バッグの中です。朝は家でいつものケアをして、外ではこれで直す。家の中の流れには何も手を加えません。</p>
+      <p>そして、選ぶときに私が見たのは「静電気」という言葉の響きではありませんでした。<strong>商品ページに全成分表示が載っていること</strong>です。ヒマシ油、キャンデリラロウ、スクワラン、ホホバ種子油、シア脂、ミツロウ。香りがオレンジ油やラベンダー油、レモン果皮油などの精油から来ていることも、成分表で分かります。</p>
+      <p>何が入っているかを全部出しているページは、書いてあることも信用しやすいと感じました。第14弾のときと同じ理由です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記の静電気・保湿・パサつき・ツヤ・セット力・香りに関する記載はすべてメーカーの公表内容に基づくものです。効果を保証するものではなく、感じ方には個人差があります。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4580596720866" target="_blank" rel="noopener sponsored">
+          商品ページで詳細・価格を確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHY IT WORKS</p>
+      <h2>「で、結局バッグに1本入れると何が変わるの?」に、飾らず正直に答えます。</h2>
+
+      <div class="features">
+        <div class="feature">
+          <div class="f-title">持ち運びやすいスティックサイズ(直径1.5cm・高さ6.7cm)</div>
+          <div class="f-chain"><span class="step">だから</span> 小さなポーチにも入る ── <span class="step">つまり</span> 15回とも空白だった家の外の11時間に、初めて手が入る</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">繰り出して、髪に直接塗れる</div>
+          <div class="f-chain"><span class="step">だから</span> 手のひらにつけなくていい ── <span class="step">つまり</span> 手を洗う場所がすぐにない外でも使える</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">静電気を防止する作用もある、という説明</div>
+          <div class="f-chain"><span class="step">だから</span> 乾燥する時期の分け目や顔まわりに向けられている ── <span class="step">つまり</span> マフラーやニットの季節に合わせた1本になる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">ポイントケア向け(分け目・顔まわり・もみあげ・アホ毛)</div>
+          <div class="f-chain"><span class="step">だから</span> 気になったところにだけ塗ればいい ── <span class="step">つまり</span> 全体をやり直さずに済む</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">朝昼晩問わず使える</div>
+          <div class="f-chain"><span class="step">だから</span> 家で朝のスタイリングに使ってもいい ── <span class="step">つまり</span> 持って出るのを忘れても無駄にならない</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">家の中のケアを1つも置き換えない</div>
+          <div class="f-chain"><span class="step">だから</span> 第1〜15弾のどれとも競合しない ── <span class="step">つまり</span> 今使っているものを1つも捨てずに始められる</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">全成分と処方が公開されている</div>
+          <div class="f-chain"><span class="step">だから</span> 何が入っているかを自分で確かめられる ── <span class="step">つまり</span> 良さそうな言葉だけで判断しなくて済む</div>
+        </div>
+        <div class="feature">
+          <div class="f-title">¥2,420で割引なしの定価</div>
+          <div class="f-chain"><span class="step">だから</span> セールを待つ必要がない ── <span class="step">つまり</span> 必要になった季節に、そのまま買える</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;">15回かけて家の中を整えてきたからこそ、16回目でようやく玄関の外に目が向きました。これは、15本ぶん遠回りしたからこそ出てきた、私のいちばん正直な実感です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※上記は仕様と使い勝手に関する説明です。効果には個人差があり、特定の結果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">WHY TRUST IT</p>
+      <h2>正直に言うと、私は「静電気を防ぐ」と書いてあるだけでは商品を信じないタイプです。</h2>
+      <p class="lede">それでもこの1本を紹介したいと思えたのは、こんな背景があるからです。</p>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h3>効果ではなく、場所で選べる</h3>
+          <p>静電気がどれだけ減るかは、私には測りようがありません。湿度や服の素材でも変わります。だから主な判断材料にしていません。私が納得したのは「15本とも家の中で使うものだった」という、自分で数えられる事実のほうです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>全成分が公開されている</h3>
+          <p>ヒマシ油、キャンデリラロウ、スクワラン、ホホバ種子油、シア脂、ミツロウ。香りの元になる精油の名前まで並んでいます。良い言葉だけを並べて中身を出さないページより、ずっと読みやすいです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>「ナチュラルなセット力」と書いている</h3>
+          <p>強くキープ、とは書いていません。できることの範囲を自分で小さく書いている説明は、それ自体が信用材料になると思っています。</p>
+        </div>
+        <div class="trust-item">
+          <h3>使う場面が具体的</h3>
+          <p>分け目、顔まわり、もみあげ、アホ毛。乾燥する時期。朝昼晩。どこにいつ使うものかが、商品ページに具体的に書かれています。何にでも効く、という書き方ではありません。</p>
+        </div>
+        <div class="trust-item">
+          <h3>¥2,420はシリーズで3番目に安い</h3>
+          <p>第1弾¥3,740、第2弾¥4,180、第3弾¥4,290、第4弾¥7,260、第5弾¥8,800、第6弾¥5,776、第7弾¥2,200、第8弾¥3,740、第9弾¥2,950、第10弾¥9,350、第11弾¥894、第12弾¥9,350、第13弾¥3,410、第14弾¥4,598、第15弾¥2,495。合計¥73,033、平均¥4,869。今回はその半分くらいです。</p>
+        </div>
+        <div class="trust-item">
+          <h3>美容室の公式通販で買える</h3>
+          <p>ALBUM ONLINE STOREは美容室ALBUMの公式通販です。私は毎回ここを確認してから紹介しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">WHAT PEOPLE NOTICE</p>
+      <h2>こんな使用感(声の傾向)</h2>
+      <p>髪質も、通勤の距離も、職場の乾燥具合も人それぞれです。だからこそ、盛らずに、分かったことだけを整理してみます。</p>
+
+      <div class="voice">
+        <div class="voice-item">
+          <p class="v-label">外で使う場面について</p>
+          <p>いちばん出番が多いのは、昼休みのあとと、マフラーを外したあとでした。分け目と顔まわりにひと塗りして、指で軽くなでるくらい。全体を直すわけではないので、1分もかかりません。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">静電気について</p>
+          <p>メーカーは「静電気を防止する作用もある」と説明しています。ただ、静電気の起きやすさは湿度や服の素材でまったく変わるので、私が感じた違いがそのまま他の人に当てはまるとは思っていません。そこは断言しません。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">手が汚れないことについて</p>
+          <p>外で地味に助かるのがここでした。バームを手に取ると、そのあと手を洗う場所を探すことになります。スティックなら直接塗れるので、そのまま次のことに移れます。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">香りについて</p>
+          <p>天然精油のハーブ系の香りです。個人的には強すぎませんでしたが、職場で使うなら、香りは好みが分かれるところなので気になる人もいると思います。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">大きさについて</p>
+          <p>リップクリームより少し大きいくらいなので、小さなポーチにも入ります。その分4gと量は少ないので、全体に毎日たっぷり使うものではないと思います。</p>
+        </div>
+        <div class="voice-item">
+          <p class="v-label">期待しすぎないほうがいい部分</p>
+          <p>ここは正直に書きます。<strong>セット力はナチュラルです。</strong>しっかり固めたい人には物足りないと思います。それと、つけすぎるとベタつくはずなので、ひと塗りで足りるかを見てから足すほうが無難です。</p>
+        </div>
+      </div>
+      <p class="voice-foot">もちろん、髪質も、外にいる時間も、季節の乾燥具合も人それぞれ。だからこそ、「自分のバッグの中に、髪のためのものが何か入っているか」で考えてみる価値があると思っています。<br>※上記は一般的な使用感の傾向および個人の感想であり、効果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>よくある質問</h2>
+
+      <div class="faq">
+        <details>
+          <summary>家で使ってもいいですか?</summary>
+          <div class="a">使えます。メーカーも「朝昼晩問わず、気になったときに」と説明しています。ただ、家での全体の仕上げなら、手のひらで伸ばすタイプのバーム(第3弾など)のほうが向いていると思います。これは外に持って出る前提で紹介しています。</div>
+        </details>
+        <details>
+          <summary>髪全体のスタイリングにも使えますか?</summary>
+          <div class="a">メーカーは、全体にセット力が欲しい場合は手のひらに取ってから塗布する、と説明しています。ただ4gと小さく、セット力もナチュラルなので、全体を毎日しっかり整える用途には向かないと思います。</div>
+        </details>
+        <details>
+          <summary>静電気は起きなくなりますか?</summary>
+          <div class="a">言い切れません。メーカーの説明は「静電気を防止する作用もある」です。静電気の起きやすさは、湿度や服の素材、髪の状態で大きく変わります。</div>
+        </details>
+        <details>
+          <summary>第3弾のTHE HAIR BALM 997とはどちらがいいですか?</summary>
+          <div class="a">役割が違います。第3弾は家で手のひらに取って全体に伸ばす仕上げ用、今回は外で気になったところにだけ直接塗るポイント用です。朝は第3弾、外ではこれ、という併用もできます。</div>
+        </details>
+        <details>
+          <summary>ベタつきませんか?</summary>
+          <div class="a">つけすぎるとベタつくと思います。バームなので、ひと塗りで足りるかを見てから足すほうが無難です。</div>
+        </details>
+        <details>
+          <summary>どのくらいもちますか?</summary>
+          <div class="a">4gです。使う量と回数で大きく変わるので、何か月もつとは書けません。ポイントにだけ使うなら、少しずつ減っていく使い方になると思います。</div>
+        </details>
+        <details>
+          <summary>同じ形のリップ用やハンド用と間違えませんか?</summary>
+          <div class="a">ストアには同じ形の「オー リップ スティックバーム」「オー ハンド スティックバーム」もあります。髪用は「HAIR BALM」と書かれたものです。購入時に商品名を確認してください。</div>
+        </details>
+        <details>
+          <summary>男性でも使えますか?</summary>
+          <div class="a">メーカーは「男女問わずお使いいただきやすいデザイン」と説明しています。短い髪のアホ毛や、もみあげのはねにも使える、という書き方です。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="wrap">
+      <p class="eyebrow">ABOUT THE PRICE</p>
+      <h2>価格の考え方</h2>
+      <p>オー ヘア スティックバームは ¥2,420(税込)、4gです。今回は割引なしの定価です。</p>
+      <p>これまでの15本を並べてみます。¥3,740 / ¥4,180 / ¥4,290 / ¥7,260 / ¥8,800 / ¥5,776 / ¥2,200 / ¥3,740 / ¥2,950 / ¥9,350 / ¥894 / ¥9,350 / ¥3,410 / ¥4,598 / ¥2,495。合計¥73,033、1本あたりの平均は¥4,869。<strong>今回はその半分くらいで、シリーズで3番目に安い回です。</strong></p>
+      <p>そしてもう一度、比率の話をさせてください。私はこのシリーズで、15本・合計¥73,033を<strong>家の中</strong>に使ってきました。同じ期間、家の外の11時間のために使った金額は¥0です。──毎回この計算をして毎回笑っているのですが、私はどうやら、毎回どこか1箇所を完全に空白にしたまま買い物をしているらしいんです。</p>
+      <p>しかも今回の空白は、時間でいえばいちばん大きい空白でした。平日だけで週55時間です。</p>
+
+      <div class="price-box">
+        <div class="amount">¥2,420<span>/ 税込・4g。15本の平均¥4,869の半分くらい</span></div>
+        <p style="margin-top:14px;">買う前に1つだけ確認してください。外で髪が乱れたとき、今は<strong>何で直しているか</strong>。指で押さえるだけで困っていないなら、急いで買う理由はありません。</p>
+        <p>それともう1つ。ALBUMの送料無料は<strong>1注文あたり税込3,980円以上</strong>なので、これ1本だとそこに届きません。前回のブラシと同じで、何か補充するものがあるときに一緒に、が無駄がないと思います。</p>
+      </div>
+
+      <p class="price-note">※価格・在庫・送料条件は変動します。最新情報は必ず商品ページでご確認ください。使用感は髪質・湿度・服の素材などによって大きく異なります。</p>
+
+      <div class="cta-row" style="margin-top:30px;">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4580596720866" target="_blank" rel="noopener sponsored">
+          最新の価格・在庫を商品ページで確認する <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat tint">
+    <div class="wrap">
+      <p class="eyebrow">BEFORE YOU GO</p>
+      <h2>安心して試すために</h2>
+      <p>「結局また1本増えるだけでは?」その疑いは、まっとうだと思います。私も15回ぶん、家の中のケアを足し続けてきました。</p>
+      <p>だからこの回も、買う前に無料でできることを先に書いておきます。どれもよく言われることです。</p>
+      <p><strong>家を出る前に、根元まで完全に乾かしておく。静電気が出たら、手を少しだけ湿らせてからなでる。マフラーやニットを脱ぐときに、急いで引っ張らない。</strong>この3つはお金がかかりません。半乾きは乱れやすい、とよく言われます。私は朝、根元が少し湿ったまま出ていました。</p>
+      <p>そのうえで、それでも外で毎日のように髪が浮いて、指で押さえるしかないなら。そのときに初めて、バッグに入れておく1本を考えてもらえればいいと思っています。</p>
+      <p>そして、いきなり16個すべてを揃える必要もまったくありません。第1〜15弾で紹介したケアを、まず自分のペースで試す。そのうえで「家の中はひと通りやったな」と思えたときに、玄関の外の11時間を思い出してもらえれば十分です。</p>
+      <p>家の中は15回で揃いました。16回目は、家の外です。</p>
+      <p style="font-size:0.8rem; color:var(--ink-soft);">※乾かし方や静電気への対処に関する記載は一般に言われている内容です。静電気の起きやすさは湿度・服の素材などによって大きく異なります。</p>
+
+      <div class="series-nav">
+        シリーズで読む:
+        <a href="../round1/">第1弾・オラプレックス No.6(洗い流さないトリートメント)</a> ／
+        <a href="../round2/">第2弾・ケラスターゼ バン セラピュート(シャンプー)</a> ／
+        <a href="../round3/">第3弾・THE HAIR BALM 997(スタイリングバーム)</a> ／
+        <a href="../round4/">第4弾・ケラスターゼ RE マスク セラピュート(集中ヘアパック)</a> ／
+        <a href="../round5/">第5弾・LOA THE OIL PARFUM ザ ネロリ(香水オイル)</a> ／
+        <a href="../round6/">第6弾・アデノバイタル アドバンスト スカルプエッセンス(頭皮ケア)</a> ／
+        <a href="../round7/">第7弾・ハートロック スカルプブラシ(頭皮ケアの道具)</a> ／
+        <a href="../round8/">第8弾・オラプレックス No.3 ヘアパーフェクター(洗う前のプレケア)</a> ／
+        <a href="../round9/">第9弾・イオ クリーム メルトリペア(毎日のインバストリートメント)</a> ／
+        <a href="../round10/">第10弾・クレイツ イオン ドライ SD-1200(乾かす)</a> ／
+        <a href="../round11/">第11弾・ハホニコ ヘアドライマイクロファイバータオル(拭く)</a> ／
+        <a href="../round12/">第12弾・KINUJO シルクリッチ ナイトキャップ(寝る)</a> ／
+        <a href="../round13/">第13弾・サブリミック エアリーフロー リファイニングフリュイド(うねり)</a> ／
+        <a href="../round14/">第14弾・アルタイム カラー ミラクルカラーシーラー(カラーをした日)</a> ／
+        <a href="../round15/">第15弾・タングルティーザー ザ・ウェットディタングラーPro(とかす)</a> ／
+        第16弾・オー ヘア スティックバーム(家の外・このページ)
+      </div>
+    </div>
+  </section>
+
+  <section class="beat deep final">
+    <div class="wrap">
+      <p class="eyebrow">LAST WORD</p>
+      <h2>浴室5本、洗面所・脱衣所9本、寝室1本。15回かけて、家の中はもう出揃っています。<br>でも、家を出てから帰るまでの11時間には、1本もありませんでした。</h2>
+      <p>人にいちばん長く見られているのは、その11時間のほうなのに。</p>
+      <p>このまま17本目の新しいアイテムを洗面所に足して、「まだ足りないのかも」と思いながらまた半年過ごすのか。それとも明日の朝、根元まで乾かして家を出てみるのか。</p>
+      <p>根元まで乾かす。湿らせた手でなでる。脱ぐときに引っ張らない。ここまではお金がかかりません。明日の朝から試せます。</p>
+
+      <div class="cta-row">
+        <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4580596720866" target="_blank" rel="noopener sponsored">
+          今すぐ ALBUM ONLINE STORE で詳細を見る <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ps">
+        <p class="eyebrow">追伸</p>
+        <p>正直に言うと、この1本も「魔法の1本」ではありません。4gの小さなバームです。しっかり固めるものでも、静電気を必ず止めるものでもない。塗った瞬間に別人の髪になるわけでもありません。感じ方には個人差があります。</p>
+        <p>それでも私がこれを紹介したいのは、「<strong>髪がいちばん長く人に見られているのは、家の外にいる時間だ</strong>」を、16回目にしてやっと言葉にできたからです。第12弾では「意志が届かない時間」、第14弾では「扱いを変えるべき日」、第15弾では「いちばん回数が多い動作」と書きました。今回わかったのは、そのどれもが<strong>家の中</strong>の話だった、ということでした。</p>
+        <p>16回に分けて紹介してきましたが、この16個を全部揃える必要はまったくありません。とくに今回は、外で困っていないなら急ぐ理由がない回です。送料のこともあるので、何か補充するときについでに、で十分です。市販品ジプシーだった頃の私は、家でのケアばかり足していました。外に持って出る、という発想がそもそもなかった。</p>
+        <p>もし、家のケアはひと通り揃っているのに、昼過ぎの鏡で毎回もやもやしているなら。足りない最後の1つは、17本目の洗面所用ではなく、<strong>バッグの中の1本</strong>のほうかもしれません。明日、家を出る前に、自分のバッグの中を一度だけ見てみてください。それが今回いちばんお伝えしたいことです。</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=45G89D+BKRQ9M+5TJC+BW8O2&a8ejpredirect=https%3A%2F%2Fstore.album-hair.com%2Fproducts%2F4580596720866" target="_blank" rel="noopener sponsored">
+            ヘア スティックバームを見てみる <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="brand">サロン専売品ラボ</p>
+    <p>本ページはアフィリエイトプログラム(A8.net)を利用した商品紹介であり、記載内容は一般的な商品情報および個人の使用感に基づくものです。本商品は化粧品であり、髪が治る・傷まなくなる等の効果を保証するものではありません。静電気を防止する作用・保湿・パサつきの軽減・ツヤ・セット力・香り・処方・サイズに関する記載は、すべてメーカーの公表内容に基づく記載です。髪の乱れ方や静電気の起きやすさは、髪質・湿度・服の素材などによって大きく異なります。乾かし方や静電気への対処に関する記載は一般に言われている内容です。香りの感じ方には個人差があります。価格・在庫・送料条件・仕様は変更される場合があるため、最新情報は販売ページをご確認ください。</p>
+  </div>
+</footer>
+
+</body>
+</html>
